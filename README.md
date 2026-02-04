@@ -8,7 +8,7 @@ This is a collection of experiments and projects using Claude AI. Some have been
 
 Standard QGIS tutorials were redeveloped and adapted automatically to work with case studies relevant to ancient historians. These were written to RST format so that professional quality tutorials could be seamlessly embedded within the QGIS documentation interface
 
-### Humanist [Briefing](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-briefing-main.md) and [Primer]() on LLMs
+### Humanist [Briefing](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-briefing-main.md) and [Primer](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-use-cases-appendix-2.md) on LLMs
 
 An introduction to issues associated with AI for humanists, along with a primer on how to get started and potential use cases for experimentation. Collaboratively authored.
 
