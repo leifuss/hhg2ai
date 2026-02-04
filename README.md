@@ -12,7 +12,7 @@ Standard QGIS tutorials were redeveloped and adapted automatically to work with 
 
 An introduction to issues associated with AI for humanists, along with a primer on how to get started and potential use cases for experimentation. Collaboratively authored.
 
-### The _Lares_
+### [The _Lares_](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/the_lares-2.pdf)
 
 A humourous allegory that imagines how society might have reacted if Classicists and Theologians had unexpectedly discovered a new form of intelligence.
 
