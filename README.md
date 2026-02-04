@@ -1,6 +1,8 @@
 # Claude AI Experiments
 
-This is a collection of experiments and projects using Claude AI. Some have been used for teaching or research, others are simply a proof of concept. The intention of assembling a list of links to them here is to give others an idea of the capabilities of workin with AI agents. 
+This is a collection of experiments and projects using Claude AI. Some have been used for teaching or research, others are simply a proof of concept. 
+
+The intention of assembling a list of links to them here is to give others an idea of some of the capabilities of working with Large Language Models and AI agents. 
 
 ## Non-coding
 
