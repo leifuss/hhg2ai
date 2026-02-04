@@ -4,7 +4,7 @@ This is a collection of experiments and projects using Claude AI. Some have been
 
 ## Non-coding
 
-### [CLA3131 QGIS Tutorials for Ancient History] (https://scotchbon.net/qgis/html/en/docs/exeter_training_manual/index.html)
+### [CLA3131 QGIS Tutorials for Ancient History](https://scotchbon.net/qgis/html/en/docs/exeter_training_manual/index.html)
 
 Standard QGIS tutorials were redeveloped and adapted automatically to work with case studies relevant to ancient historians. These were written to RST format so that professional quality tutorials could be seamlessly embedded within the QGIS documentation interface
 
@@ -21,7 +21,7 @@ A humourous allegory that imagines how society might have reacted if Classicists
 
 This repository contains various experiments exploring Claude's capabilities across different domains and use cases.
 
-### [Gnomon Shadow Demo] (https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html)
+### [Gnomon Shadow Demo](https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html)
 
 An interactive demo to show how latitude can be calculated using a gnomon. Developed in 1-2 hours in January 2026
 
@@ -29,7 +29,7 @@ An interactive demo to show how latitude can be calculated using a gnomon. Devel
 
 A usable online viewer for Reflectance Transformation Image files
 
-### [Grammar Crammer] (https://leifuss.github.io/grammarcrammer/)
+### [Grammar Crammer](https://leifuss.github.io/grammarcrammer/)
 
 An experimental platform for targetted practice of Latin grammar. Learners take a rapid diagnostic test of key grammatical concepts, which identifies areas most requiring practice. They are then presented with relevant exercises for practice and production, followed by an exit quiz to test improvement, and final report. Cookies allow for improvement to be tracked over multiple iterations.
 
