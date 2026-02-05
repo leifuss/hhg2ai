@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Large Language Models: An Informed-Choice Briefing for Humanities Scholars</title>
+    <style>
+        :root {
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --accent: #3d5a80;
+            --accent-light: #98c1d9;
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --border: #e0e0e0;
+            --warning-bg: #fff8e6;
+            --warning-border: #e6c84a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.75;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            min-height: 100vh;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .note {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        nav.toc {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        nav.toc h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        nav.toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        nav.toc li {
+            margin: 0.5rem 0;
+        }
+
+        nav.toc a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        nav.toc a:hover {
+            text-decoration: underline;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: var(--bg-primary);
+            border-left: 4px solid var(--accent);
+            font-style: italic;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        a:hover {
+            color: var(--text-primary);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .ethical-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .ethical-section em {
+            color: var(--accent);
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .resources {
+            background: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .resources a {
+            margin-right: 1rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--accent);
+            font-style: italic;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Large Language Models: An Informed-Choice Briefing for Humanities Scholars</h1>
+            <p class="subtitle">December 2025 &middot; Leif Isaksen, with Claude (Anthropic)</p>
+            <a href="llm-use-cases.html" class="nav-link">Read the practical appendix &rarr;</a>
+        </header>
+
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#purpose">What this document is for</a></li>
+                <li><a href="#what-they-are">What these systems are</a></li>
+                <li><a href="#misconceptions">Two directions of misconception</a></li>
+                <li><a href="#philosophical">The philosophical question worth acknowledging</a></li>
+                <li><a href="#gains">What might be gained</a></li>
+                <li><a href="#losses">What might be lost</a></li>
+                <li><a href="#ethics">Ongoing ethical dimensions</a></li>
+                <li><a href="#awareness">Why awareness matters even without using these tools</a></li>
+                <li><a href="#beyond">Beyond the current moment</a></li>
+                <li><a href="#engagement">If one chooses to engage</a></li>
+                <li><a href="#essential">The essential point</a></li>
+            </ul>
+        </nav>
+
+        <section id="purpose">
+            <h2>What this document is for</h2>
+
+            <p>This briefing aims to help colleagues make informed decisions about whether and how to engage with LLM technologies. It is not advocacy for adoption. Some readers will find these tools useful for specific tasks; others will reasonably conclude they are not worth the trade-offs. Both positions are defensible. What follows is an attempt to characterise what current systems actually do&mdash;correcting misconceptions in both directions&mdash;so that decisions rest on accurate information rather than outdated impressions or inflated claims.</p>
+        </section>
+
+        <hr>
+
+        <section id="what-they-are">
+            <h2>What these systems are</h2>
+
+            <p>LLMs generate statistically probable text based on patterns in training data. When a user prompts a system, it produces sequences of words that are likely to follow from that input, given everything it encountered during training. This is genuinely remarkable engineering, but understanding the mechanism matters for assessing what these tools can and cannot do.</p>
+
+            <div class="highlight">
+                <p>They are <strong>not knowledge bases</strong>, though they can reproduce information from training data. They are <strong>not reasoning engines</strong>, though they can generate text that resembles reasoning. They <strong>do not understand arguments</strong>, though they produce text that engages with them in ways that can be useful or misleading depending on context.</p>
+            </div>
+
+            <p>These systems are capable of things one would not expect&mdash;and incapable of things one might reasonably assume they could do. Even their developers do not fully understand where the boundaries lie. The only way to discover what works for particular purposes is experimentation, and what one discovers will change as the technology develops. This is simultaneously one of the frustrations and one of the genuine interests of working with AI.</p>
+
+            <p>Current systems (late 2025) differ meaningfully from 2023 versions. Extended reasoning capabilities work through problems step-by-step before responding. Memory systems track context across conversations. Tool use allows searching, code execution, and file generation. These developments make current systems more capable&mdash;but capability and reliability are different things. Better outputs make verification-skipping more tempting, which is precisely when vigilance matters most.</p>
+
+            <p>LLMs are, however, only one form of AI among many. Computer vision systems are transforming archaeology, art history, and medical imaging. AlphaFold has revolutionised protein structure prediction. Speech recognition and synthesis underpin transcription tools and accessibility services. Recommendation algorithms shape what information reaches us. In humanities research specifically, machine learning powers handwriting recognition, spatial analysis, image classification, and network analysis&mdash;often without the "chat interface" that makes LLMs so visible. This document focuses on LLMs because they represent the most immediate point of contact for most colleagues, but they are part of a broader landscape of AI technologies reshaping research and industry.</p>
+        </section>
+
+        <hr>
+
+        <section id="misconceptions">
+            <h2>Two directions of misconception</h2>
+
+            <h3>Under-estimation</h3>
+            <p>"It just makes things up." "I tried it in 2023 and it was useless." "It is a chatbot." These impressions were partially accurate two years ago and may still apply in some contexts, but current frontier models are substantially more capable. Dismissing the technology based on early experiences means one's assessment is not tracking what now exists.</p>
+
+            <h3>Over-estimation</h3>
+            <p>"It can do research." "It understands what I am asking." "It is approaching human-level reasoning." These claims are also inaccurate. The systems generate plausible text, including plausible-looking citations that do not exist, plausible-sounding arguments with logical gaps, and confident claims that are false. There is no understanding behind the output&mdash;statistical pattern-matching can produce remarkably sophisticated text while remaining categorically different from comprehension.</p>
+        </section>
+
+        <hr>
+
+        <section id="philosophical">
+            <h2>The philosophical question worth acknowledging</h2>
+
+            <p>Some find these tools useful as "critical interlocutors"&mdash;generating counterarguments, surfacing overlooked angles, producing text that challenges their thinking. Others find this framing fundamentally confused: can pattern-matched text production constitute genuine dialectical challenge? The system generates critique-shaped text based on statistical patterns, not engagement with an argument's logic. Whether this proves useful likely depends on what one thinks critique actually <em>is</em>, and reasonable people disagree. This document takes no position on that question.</p>
+        </section>
+
+        <hr>
+
+        <section id="gains">
+            <h2>What might be gained</h2>
+
+            <p>For those who find these tools useful, value typically emerges in contexts where verification is quick relative to generation: drafting administrative text, reformatting data, generating code for visualisations, producing discussion questions to review and select from, getting a first pass at OCR transcription to verify against originals. Some find argument-testing valuable&mdash;presenting a position and asking for counterarguments&mdash;while remaining clear that outputs are prompts for their own thinking, not authoritative critique.</p>
+        </section>
+
+        <hr>
+
+        <section id="losses">
+            <h2>What might be lost</h2>
+
+            <p>Even where these tools save time, the displaced time might have been intellectually productive in ways that do not register as efficiency gains. The friction of drafting from scratch might be when one clarifies what one is actually trying to say. Slow engagement with materials is itself scholarly practice, not overhead to be optimised away. The collective effects of normalised AI use in humanities scholarship&mdash;on how we think, what we value, what skills atrophy&mdash;are genuinely uncertain. Individual modest use may be unproblematic while widespread adoption transforms the field in ways worth resisting. These are serious considerations, not obstacles to get past.</p>
+        </section>
+
+        <hr>
+
+        <section id="ethics">
+            <h2>Ongoing ethical dimensions</h2>
+
+            <p>These concerns do not get resolved by deciding to use the tools. They remain live questions that should shape how much and for what one uses these systems, if at all.</p>
+
+            <div class="ethical-section">
+                <p><em>Environmental costs:</em> Training large models requires enormous computational resources, with significant carbon emissions and water usage for cooling data centres. Inference (generating responses) is less intensive but scales with use. Estimates vary and are contested, but the environmental footprint is real. The question is not whether there is impact but whether the benefit justifies it for particular uses.</p>
+                <p class="resources"><a href="https://www.technologyreview.com/2022/11/14/1063192/were-getting-a-better-idea-of-ais-true-carbon-footprint/" target="_blank">MIT Technology Review</a> | <a href="https://www.nature.com/articles/d41586-024-00478-x" target="_blank">Nature</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>Labour and exploitation:</em> Model development relies on underpaid workers&mdash;often in the Global South&mdash;for data labelling, content moderation, and the human feedback that shapes model behaviour. These workers are exposed to harmful content and work under poor conditions. Using these tools means benefiting from that labour structure.</p>
+                <p class="resources"><a href="https://time.com/6247678/openai-chatgpt-kenya-workers/" target="_blank">Time investigation</a> | <a href="https://www.theverge.com/features/23764584/ai-artificial-intelligence-data-notation-labor-scale-surge-remotasks-openai-chatbots" target="_blank">The Verge</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>Training data and consent:</em> Models are trained on text scraped from the internet, books, and other sources&mdash;often without consent or compensation for the authors. This includes academic publications, creative works, and personal writing. One's own work may be in training data. The legal and ethical status of this practice remains contested.</p>
+                <p class="resources"><a href="https://www.theatlantic.com/technology/archive/2023/08/books3-ai-meta-llama-pirated-books/675063/" target="_blank">The Atlantic</a> | <a href="https://www.fairlytrained.org/" target="_blank">Fairly Trained</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>Intellectual property:</em> Related but distinct from training data concerns: models can reproduce substantial portions of copyrighted material, generate text in identifiable authorial styles, and produce outputs that raise questions about originality and attribution. Where the boundaries lie legally and ethically is unresolved.</p>
+                <p class="resources"><a href="https://hls.harvard.edu/today/intellectual-property-experts-discuss-fair-use-in-the-age-of-ai/" target="_blank">Harvard Law School</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>Concentration of power:</em> Frontier AI development is concentrated in a handful of well-resourced corporations, primarily in the US and China. This raises questions about whose values shape these systems, who benefits from their deployment, and what happens when critical infrastructure depends on commercial entities with their own interests.</p>
+                <p class="resources"><a href="https://ainowinstitute.org/" target="_blank">AI Now Institute</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>Epistemic concerns:</em> Widespread AI use may affect how we think, write, and engage with knowledge&mdash;homogenising prose styles, eroding research skills, changing relationships with uncertainty and authority. These effects are speculative but worth taking seriously. The individual choice to use or not use these tools sits within a collective dynamic that no individual controls.</p>
+            </div>
+
+            <div class="note">
+                <strong>Situating AI within broader technology ethics:</strong> These concerns merit attention, but they should not be evaluated in isolation. We rarely subject other technologies to equivalent scrutiny: the carbon footprint of air travel to conferences, the labour conditions behind smartphone manufacture, the environmental costs of constructing and maintaining digital infrastructure, the epistemic effects of social media. This observation cuts two ways. It might suggest that AI-specific concerns are disproportionate to similar concerns we have normalised elsewhere&mdash;or it might prompt more critical attention to technologies we have ceased to question. Either way, treating AI as uniquely requiring ethical justification, while other consequential technologies get a pass, risks distorting our assessment. The relevant question is not whether AI has costs and risks&mdash;most significant technologies do&mdash;but how those costs and risks compare to alternatives, and whether the benefits justify them in particular contexts.
+            </div>
+
+            <p>Choosing not to engage with these technologies, whether for any of these reasons or others, is a fully legitimate scholarly position&mdash;not technophobia or Luddism, but a considered response to genuine concerns.</p>
+        </section>
+
+        <hr>
+
+        <section id="awareness">
+            <h2>Why awareness matters even without using these tools</h2>
+
+            <p>One may reasonably decide that LLMs are not worth engaging with for one's own work. But understanding what they are and what they do remains important for several reasons.</p>
+
+            <div class="ethical-section">
+                <p><em>The pace and direction of change:</em> AI capabilities have developed faster than most predictions suggested, and this pace shows little sign of slowing. What these systems can and cannot do is a moving target. Decisions made now&mdash;by institutions, funders, publishers, and governments&mdash;will shape the research and teaching environment for years. Being informed enough to participate in those conversations matters, even if one never opens ChatGPT.</p>
+                <p class="resources"><a href="https://aiindex.stanford.edu/report/" target="_blank">Stanford HAI AI Index Report</a> | <a href="https://ourworldindata.org/artificial-intelligence" target="_blank">Our World in Data</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>The academic workplace:</em> Universities are developing policies on AI use in research, teaching, assessment, and administration. These policies affect everyone whether or not they use the tools&mdash;they shape what is expected of staff, what is permitted for students, how misconduct is defined, and how workloads evolve. Engaging with policy development from an informed position is more effective than abstaining from conversations one will be affected by regardless.</p>
+                <p class="resources"><a href="https://www.russellgroup.ac.uk/policy/policy-briefings/principles-use-generative-ai-tools-education" target="_blank">Russell Group principles</a> | <a href="https://www.qaa.ac.uk/sector-resources/generative-artificial-intelligence" target="_blank">QAA guidance</a> | <a href="https://www.unesco.org/en/digital-education/ai-future-learning" target="_blank">UNESCO guidance</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>Students and employability:</em> Students will encounter these tools in their studies and careers regardless of staff practices. Many already use them. Employers increasingly expect AI literacy as a baseline skill. Understanding what students are working with&mdash;and what habits, good or bad, they might be developing&mdash;helps one teach and assess effectively. This does not mean endorsing uncritical adoption, but students benefit from faculty who can discuss these tools knowledgeably, including their limitations and risks.</p>
+                <p class="resources"><a href="https://www.jisc.ac.uk/innovation/artificial-intelligence" target="_blank">JISC on AI in education</a> | <a href="https://www.timeshighereducation.com/campus/maximising-graduate-employability-through-ai-skills" target="_blank">Times Higher Education</a></p>
+            </div>
+
+            <div class="ethical-section">
+                <p><em>The computational turn beyond computer science:</em> Quantitative and computational methods are increasingly present across humanities and social sciences&mdash;not replacing traditional approaches, but augmenting them and opening new questions. Digital humanities, computational linguistics, cultural analytics, and related fields have been developing for decades; LLMs represent an acceleration and broadening of this trajectory. Understanding the landscape helps one assess what is genuinely new, what is hype, and what methodological questions are at stake.</p>
+                <p class="resources"><a href="https://dhdebates.gc.cuny.edu/" target="_blank">Debates in the Digital Humanities</a> | <a href="https://culturalanalytics.org/" target="_blank">Journal of Cultural Analytics</a></p>
+            </div>
+
+            <p><em>Informed critique requires understanding:</em> The most effective critics of any technology are those who understand it well enough to identify its actual problems rather than imagined ones. Critique based on misconceptions&mdash;whether over- or under-estimating capabilities&mdash;is easily dismissed. If one has concerns about AI in scholarship, understanding what one is critiquing strengthens the position.</p>
+        </section>
+
+        <hr>
+
+        <section id="beyond">
+            <h2>Beyond the current moment</h2>
+
+            <p>Understanding current capabilities matters, but so does anticipating trajectory. Students beginning undergraduate degrees now will enter the workforce around 2029; doctoral students may not complete until 2030 or later. The AI landscape they will encounter is unlikely to resemble what exists today. Preparing students only for current tools risks obsolescence before graduation. What seems more durable is developing critical judgment about AI capabilities and limitations, understanding when and how to verify outputs, and maintaining the disciplinary skills that allow meaningful evaluation of AI-assisted work. These meta-competencies may prove more valuable than proficiency with any particular system.</p>
+
+            <p>Similar considerations apply to research. Projects conceived now will publish results in an environment where AI capabilities have likely shifted substantially. Research questions, methodological choices, and skills development should account not only for what AI currently enables but for plausible near-term developments&mdash;while acknowledging genuine uncertainty about what those developments will be.</p>
+
+            <div class="highlight">
+                <p>The chat interface that currently dominates discussion of AI is, in some respects, a distraction. It makes AI visible, bounded, and optional&mdash;a tool one deliberately opens and closes. But AI is increasingly embedded in less visible ways: in search engine results, email composition suggestions, document editing, image processing, research databases, citation managers, plagiarism detection, and student support systems. The chat interface may prove to be a transitional form&mdash;the visible tip of a broader integration that will be harder to opt out of and harder even to identify. The assumption that one can maintain a clean separation between "using AI" and "not using AI" may become increasingly difficult to sustain as AI becomes infrastructure rather than a discrete tool.</p>
+            </div>
+
+            <p>This trajectory raises questions that go beyond individual tool adoption. How should teaching and assessment adapt to an environment where AI assistance is ambient rather than exceptional? What research skills remain essential when AI can perform tasks that previously required years of training? How do we evaluate student work&mdash;or our own&mdash;when the boundary between human and AI contribution becomes unclear? These are not problems to solve once but ongoing challenges that will require continued attention as the technology and its integration evolve.</p>
+        </section>
+
+        <hr>
+
+        <section id="engagement">
+            <h2>If one chooses to engage</h2>
+
+            <p><strong>Privacy settings:</strong> Most platforms offer options to prevent conversations from being used for training. Check these before inputting any materials. Even with such settings, data passes through commercial servers&mdash;decide what level of exposure is acceptable.</p>
+
+            <p><strong>Verification remains essential:</strong> Citations are frequently hallucinated. Factual claims can be confidently wrong. Translations are unreliable. Never treat outputs as authoritative without independent checking. If verification burden exceeds generation benefit, use different methods.</p>
+
+            <p><strong>The verification paradox:</strong> If one can verify what an LLM provides, one might not have needed it for that task. The tool's value lies where checking is faster than creating from scratch, or where outputs prompt one's own thinking rather than substituting for it.</p>
+
+            <p><strong>Iteration matters:</strong> First responses are rarely best. Specific feedback improves outputs. But if one spends more time prompting and refining than doing the task directly, that is information about whether the tool suits that task.</p>
+
+            <p><strong>Responsibility does not diminish:</strong> AI involvement does not reduce intellectual accountability for anything one produces or submits.</p>
+
+            <div class="note">
+                <strong>Practical details:</strong> For those who wish to experiment, a <a href="llm-use-cases.html">separate appendix</a> covers specific use cases, prompting approaches, and verification strategies. It is available alongside this document but deliberately separate&mdash;this briefing is for informed decision-making, not technical instruction.
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="essential">
+            <h2>The essential point</h2>
+
+            <div class="highlight">
+                <p>These are sophisticated text-generation tools with real capabilities and real limitations. They may prove useful for some work and unsuitable for other parts. They may not be worth engaging with at all given one's commitments and concerns. Any of these conclusions is reasonable. What matters is that one's position&mdash;whatever it is&mdash;rests on accurate understanding of what the technology actually does.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>This document was produced through iterative use of Generative AI (Claude Opus 4.5) by Leif Isaksen.<br>Errors remain the human author's responsibility.</p>
+            <p><a href="llm-use-cases.html">Read the practical appendix &rarr;</a></p>
+        </footer>
+    </div>
+</body>
+</html>

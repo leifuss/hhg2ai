@@ -1,13 +1,13 @@
 
 # Briefings
 
-### [Briefing](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-briefing-main.md)
+### [Briefing: Large Language Models for Humanities Scholars](https://leifuss.github.io/claudeexperiments/llm-briefing.html)
 
-An introduction to issues associated with AI for humanists. Produced December 2025. Collaboratively authored with an LLM (December 2025)
+An informed-choice briefing on issues associated with AI for humanists. Covers what LLMs are, common misconceptions, ethical considerations, and guidance for engagement. Collaboratively authored with an LLM (December 2025)
 
-### [Primer](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-use-cases-appendix-2.md) on LLMs
+### [Practical Appendix: LLM Use Cases](https://leifuss.github.io/claudeexperiments/llm-use-cases.html)
 
-a primer on how to get started using LLMs and potential use cases for experimentation. Collaboratively authored with an LLM (December 2025)
+A companion primer on how to get started using LLMs, with specific use cases for experimentation, prompting principles, verification strategies, and a glossary of AI terminology. Collaboratively authored with an LLM (December 2025)
 
 # Claude AI Experiments
 
