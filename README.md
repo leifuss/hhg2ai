@@ -1,8 +1,19 @@
+
+# Briefings
+
+### [Briefing](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-briefing-main.md)
+
+An introduction to issues associated with AI for humanists. Produced December 2025. Collaboratively authored with an LLM (December 2025)
+
+### [Primer](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-use-cases-appendix-2.md) on LLMs
+
+a primer on how to get started using LLMs and potential use cases for experimentation. Collaboratively authored with an LLM (December 2025)
+
 # Claude AI Experiments
 
-This is a collection of experiments and projects using Claude AI. Some have been used for teaching or research, others are simply a proof of concept. 
+This is a collection of experiments and small projects using Claude AI. Some have been used for teaching or research, others are simply a proof of concept. 
 
-The intention of assembling a list of links to them here is to give others an idea of some of the capabilities of working with Large Language Models and AI agents. 
+The intention of assembling a list of links to them here is to give others an idea of some of the capabilities of working with Large Language Models and AI agents. Most of these projects were developed in under one day, though some build on more extensive prior work. The prior would would likely have been drastically shortened if using AI-based approaches from the outset.
 
 ## Non-coding
 
@@ -10,13 +21,9 @@ The intention of assembling a list of links to them here is to give others an id
 
 Standard QGIS tutorials were redeveloped and adapted automatically to work with case studies relevant to ancient historians. These were written to RST format so that professional quality tutorials could be seamlessly embedded within the QGIS documentation interface
 
-### Humanist [Briefing](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-briefing-main.md) and [Primer](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/llm-use-cases-appendix-2.md) on LLMs
-
-An introduction to issues associated with AI for humanists, along with a primer on how to get started and potential use cases for experimentation. Collaboratively authored.
-
 ### [The _Lares_](https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/the_lares-2.pdf)
 
-A humourous allegory that imagines how society might have reacted if Classicists and Theologians had unexpectedly discovered a new form of intelligence.
+A comic short story that imagines the societal consequences of a Classicist and a Theologian discovering an unexpected form of intelligence. Collaboratively authored with an LLM (January 2025)
 
 
 ## Coding
