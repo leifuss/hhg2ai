@@ -23,7 +23,7 @@ A humourous allegory that imagines how society might have reacted if Classicists
 
 This repository contains various experiments exploring Claude's capabilities across different domains and use cases.
 
-### [Gnomon Shadow Demo](https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html)
+### [Gnomon Shadow Explorer](https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html)
 
 An interactive demo to show how latitude can be calculated using a gnomon. Developed in 1-2 hours in January 2026
 
