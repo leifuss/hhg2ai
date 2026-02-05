@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Use Cases: A Practical Appendix</title>
+    <style>
+        :root {
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --accent: #3d5a80;
+            --accent-light: #98c1d9;
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --border: #e0e0e0;
+            --warning-bg: #fff8e6;
+            --warning-border: #e6c84a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.75;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            min-height: 100vh;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .note {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .risk {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.8rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-light);
+        }
+
+        .risk strong {
+            color: var(--accent);
+        }
+
+        nav.toc {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        nav.toc h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        nav.toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        nav.toc li {
+            margin: 0.5rem 0;
+        }
+
+        nav.toc a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        nav.toc a:hover {
+            text-decoration: underline;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: var(--bg-primary);
+            border-left: 4px solid var(--accent);
+            font-style: italic;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background: var(--bg-primary);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        a:hover {
+            color: var(--text-primary);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .glossary-term {
+            margin-bottom: 1.5rem;
+        }
+
+        .glossary-term strong {
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--accent);
+            font-style: italic;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LLM Use Cases: A Practical Appendix</h1>
+            <p class="subtitle">December 2025 &middot; Collaboratively authored by Leif Isaksen and Claude (Anthropic)</p>
+            <a href="llm-briefing.html" class="nav-link">&larr; Read the main briefing document</a>
+        </header>
+
+        <p>This appendix accompanies the <a href="llm-briefing.html">informed-choice briefing</a>. It assumes you've decided to experiment and want practical guidance. Each use case includes risks to watch for&mdash;not because problems are inevitable, but because awareness of what to monitor produces better outcomes.</p>
+
+        <div class="note">
+            <strong>A note on discovery:</strong> These systems are capable of things you won't expect&mdash;and incapable of things you'd reasonably assume they could do. Even their developers don't fully understand where the boundaries lie. The only way to discover what works for your purposes is experimentation, and what you discover will change as the technology develops. This is simultaneously one of the frustrations and one of the genuine interests of working with AI: the landscape keeps shifting, and yesterday's limitations may not apply tomorrow (while yesterday's reliable capabilities may degrade or disappear). Approach with curiosity rather than fixed expectations.
+        </div>
+
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#administrative-teaching">Administrative and Teaching Tasks</a></li>
+                <li><a href="#writing-revision">Writing and Revision</a></li>
+                <li><a href="#research-support">Research Support</a></li>
+                <li><a href="#multi-modal">Multi-Modal Tasks</a></li>
+                <li><a href="#data-analysis">Data Analysis and Visualization</a></li>
+                <li><a href="#advanced">Advanced Use Cases</a></li>
+                <li><a href="#prompting">Prompting Principles</a></li>
+                <li><a href="#verification">Verification Strategies</a></li>
+                <li><a href="#when-not">When Not to Use These Tools</a></li>
+                <li><a href="#glossary">Glossary: AI Jargon and Acronyms</a></li>
+            </ul>
+        </nav>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+
+            <h3>Choosing a platform</h3>
+            <p>The main consumer platforms are Claude (Anthropic), ChatGPT (OpenAI), and Gemini (Google). All offer free tiers with older models and usage limits; paid subscriptions (&pound;16&ndash;25/month) provide access to more capable models and higher limits.</p>
+
+            <p>This document defaults to Claude, partly because it's what I know best and partly because Anthropic's approach to safety and transparency aligns reasonably with academic values&mdash;but that's a judgment call, not an endorsement. If you're going to experiment seriously, a paid tier is worth it: the difference between free and frontier models is substantial, and struggling with an underpowered model produces misleading impressions of what the technology can and cannot do.</p>
+
+            <p>Current frontier models (late 2025): Claude Opus 4.5, GPT-5.1, Gemini 2.5 Pro. These change; what matters is accessing whatever your chosen platform considers its most capable offering.</p>
+
+            <h3>Privacy and training settings</h3>
+            <p>By default, many platforms use your conversations to train future models. Most offer settings to opt out.</p>
+
+            <p>In Claude: Settings &rarr; Privacy &rarr; you can disable the use of your conversations for training. With this disabled, your conversations are still processed on Anthropic's servers (unavoidable), but aren't incorporated into training data.</p>
+
+            <p>This matters for several reasons. You may have principled objections to contributing unpaid labor to commercial AI development. You may work with materials&mdash;unpublished research, student work, peer review content&mdash;that shouldn't become training data. Even for routine use, opting out costs you nothing and reduces exposure.</p>
+
+            <p>What opting out doesn't do: it doesn't make your conversations private in an absolute sense. Data still passes through commercial servers. Don't input anything you'd be uncomfortable with a company storing, even temporarily. Confidential personnel matters, sensitive student information, embargoed research&mdash;these shouldn't go into any commercial LLM regardless of privacy settings.</p>
+
+            <h3>Memory settings</h3>
+            <p>Current systems can maintain memory across conversations&mdash;tracking your preferences, ongoing projects, and context over time. You can view, edit, and delete what the system remembers.</p>
+
+            <p>Whether to enable this depends on your use patterns. If you're using the tool for ongoing projects where context continuity helps, memory reduces repetitive re-prompting. If you prefer each conversation to start fresh, or if you're uncomfortable with persistent profiles being built, disable it.</p>
+
+            <p>Review memory contents periodically if enabled. Systems sometimes remember things inaccurately or retain information you'd prefer they didn't.</p>
+
+            <h3>System prompts and custom instructions</h3>
+            <p>Most platforms allow you to set persistent instructions that shape all conversations. In Claude, this is found in Settings &rarr; Profile. These instructions tell the system about your context, preferences, and expectations.</p>
+
+            <p>An example for humanities work:</p>
+
+            <blockquote>"I'm a classicist working on Latin literature. When I ask about primary sources, cite specific passages. Flag when you're uncertain rather than generating plausible-sounding guesses. Challenge my interpretations rather than agreeing reflexively. Avoid theoretical frameworks I haven't specifically requested. When I ask for counterarguments, give me the strongest versions, not strawmen."</blockquote>
+
+            <p>Tailor this to your discipline and working style. Good system prompts reduce the need to repeat context and calibrate tone in every conversation.</p>
+
+            <h3>Extended reasoning and other features</h3>
+            <p>Some platforms offer extended reasoning modes for complex problems&mdash;the system works through the problem step-by-step before responding. In Claude, this is called "extended thinking." Use it for multi-step analytical problems, not routine queries.</p>
+
+            <p>Tool use (web search, code execution, file creation) is available on most paid tiers. Web search helps with current information but introduces its own reliability questions&mdash;the system may find and summarize unreliable sources. Code execution is useful for data analysis and visualization if you can verify the outputs.</p>
+        </section>
+
+        <hr>
+
+        <section id="administrative-teaching">
+            <h2>Administrative and Teaching Tasks</h2>
+
+            <h3>Drafting routine communications</h3>
+            <p>Calls for papers, meeting announcements, module descriptions, reference letter frameworks. Prompt with specifics: purpose, audience, length, tone, key details to include. Review and edit the output&mdash;these are starting points, not finished products.</p>
+
+            <p class="risk"><strong>Risks:</strong> Generic, anodyne prose. Factual errors if you include details the system misremembers or invents. Tone mismatches. The system defaults to a kind of corporate enthusiasm that may not suit academic contexts. Always rewrite substantially rather than sending lightly-edited output.</p>
+
+            <h3>Discussion questions for teaching</h3>
+            <p>"Generate 8 discussion questions for undergraduates on [this passage/topic], ranging from comprehension to interpretation." Select and revise the useful ones; discard the rest.</p>
+
+            <p class="risk"><strong>Risks:</strong> Questions that miss disciplinary specificity&mdash;generically "literary" questions for a classics text that ignore what classicists actually care about. Surface-level interpretive questions that don't push toward genuine difficulty. The system doesn't know your students or your pedagogical goals.</p>
+
+            <h3>Reformatting and data cleaning</h3>
+            <p>Bibliography format conversion, cleaning OCR output into structured data, transforming messy spreadsheets. These are tasks where verification is trivial but manual work is tedious.</p>
+
+            <p class="risk"><strong>Risks:</strong> Subtle errors in bibliographic details (wrong page numbers, slightly mangled titles). For OCR cleaning, the system may "correct" unusual but accurate readings into common but wrong ones. Check outputs against originals, especially for names, dates, and technical terms.</p>
+        </section>
+
+        <hr>
+
+        <section id="writing-revision">
+            <h2>Writing and Revision</h2>
+
+            <h3>Draft feedback</h3>
+            <p>"This paragraph feels unclear&mdash;suggest three ways to restructure it." "This section is too jargon-heavy&mdash;rewrite for an educated non-specialist while preserving analytical precision." "What's the weakest link in this argument?"</p>
+
+            <p class="risk"><strong>Risks:</strong> The system may smooth away productive difficulty or disciplinary precision in favor of generic clarity. Its suggestions optimize for readability in ways that may flatten your argument. Treat suggestions as prompts for your own revision, not as improvements to accept.</p>
+
+            <h3>Argument testing</h3>
+            <p>Present your argument and ask: "What are the strongest counterarguments? What alternative explanations must I address? What would a scholar from [different methodological tradition] emphasize?"</p>
+
+            <p class="risk"><strong>Risks:</strong> The system generates plausible-critique-shaped text, not actual engagement with your argument's logic. Counterarguments may be superficial, miss the real vulnerabilities, or attack positions you don't actually hold. Use outputs as checklists for your own thinking&mdash;have I considered this angle?&mdash;not as authoritative critique. The absence of a counterargument from the output doesn't mean your argument lacks that vulnerability.</p>
+
+            <h3>Grant application review with personas</h3>
+            <p>Before submitting a grant application, you can use personas to simulate different reviewer perspectives. Ask the system to adopt specific roles and critique your draft from that standpoint:</p>
+
+            <blockquote>"Read this grant application as a panel member who is expert in [your methodology] and skeptical of [your theoretical framework]. What weaknesses would you identify? What questions would you raise in panel discussion?"</blockquote>
+
+            <blockquote>"Now read as a reviewer who is sympathetic to the project's aims but concerned about feasibility and value for money. Where would you push back?"</blockquote>
+
+            <blockquote>"Read as someone from an adjacent discipline who doesn't share the assumptions of [your field]. What would be unclear or unconvincing?"</blockquote>
+
+            <blockquote>"Read as a reviewer focused on impact and knowledge exchange. Where is the case weakest?"</blockquote>
+
+            <p>Run through several personas, each generating critique from a different angle. Compile the concerns raised as a checklist for revision.</p>
+
+            <p class="risk"><strong>Risks:</strong> The critiques may be generic rather than specific to your proposal's actual weaknesses. The system doesn't know what real reviewers in your field actually care about&mdash;it generates reviewer-shaped criticism based on patterns, which may miss discipline-specific concerns or fixate on issues that wouldn't actually trouble a panel. Persona-based critique can create false confidence that you've stress-tested the application when you've only received plausible-sounding feedback. The personas may also be too gentle; real reviewers operating under time pressure with many applications to assess can be more brutal and more idiosyncratic than the system's simulations.</p>
+
+            <p>Use this as one input among several. It doesn't replace feedback from colleagues who know the funding landscape, have sat on panels, or have expertise you lack. But it can surface angles you hadn't considered and help you anticipate obvious objections before others see the draft.</p>
+
+            <h3>Exploring alternative framings</h3>
+            <p>"Present three different interpretations of this evidence, from different theoretical frameworks." "How might this argument be framed for [different audience]?"</p>
+
+            <p class="risk"><strong>Risks:</strong> Theoretical frameworks may be presented superficially or conflated. The system reproduces general patterns, not the specific texture of how a particular tradition actually approaches problems. Useful for brainstorming, not for understanding those traditions.</p>
+        </section>
+
+        <hr>
+
+        <section id="research-support">
+            <h2>Research Support</h2>
+
+            <h3>Literature review scaffolding</h3>
+            <p>"Based on these sources I'm consulting, what themes and debates seem central? What potential gaps might I be missing?" Use this to structure your own reading, not to substitute for it.</p>
+
+            <p class="risk"><strong>Risks:</strong> The system may identify themes that sound plausible but don't reflect how the field actually organizes itself. It may miss what matters and emphasize what's superficially prominent. Verify thematic analysis against your actual engagement with sources. The system hasn't read these works&mdash;it's pattern-matching on titles, abstracts, and whatever fragments appear in training data.</p>
+
+            <h3>Problem-solving strategies</h3>
+            <p>"I need to approach [complex research problem]. What methodological strategies should I consider, and what are the evidentiary requirements and limitations of each?"</p>
+
+            <p class="risk"><strong>Risks:</strong> Strategies may be generic rather than fitted to your specific problem. The system may miss approaches standard in your subfield or suggest approaches that wouldn't occur to a specialist because they're not actually viable. Use as a starting point for structuring your own research plan, then consult colleagues or methodological literature.</p>
+
+            <h3>Code for digital projects</h3>
+            <p>"Write Python code to extract place names from these TEI-encoded texts and count frequency." "Create a visualization of this dataset." Systems with code execution can run and debug code directly.</p>
+
+            <p class="risk"><strong>Risks:</strong> Code may work on test cases but fail on edge cases in your actual data. Logic errors may produce plausible-looking but wrong results. If you can't read the code well enough to verify its logic, you can't verify its outputs. For anything substantive, have someone code-literate review it, or develop enough facility to check the logic yourself.</p>
+        </section>
+
+        <hr>
+
+        <section id="multi-modal">
+            <h2>Multi-Modal Tasks</h2>
+
+            <h3>OCR and transcription</h3>
+            <p>Upload images of manuscripts, inscriptions, or archival documents. "Transcribe this text and flag uncertain readings."</p>
+
+            <p class="risk"><strong>Risks:</strong> The system will produce confident transcriptions that contain errors, especially with damaged materials, non-standard scripts, or abbreviations. It may normalize unusual spellings or silently resolve ambiguities. Treat outputs as first passes requiring careful verification against originals. For anything you'll cite or publish, manual verification is essential.</p>
+
+            <h3>Image-based queries</h3>
+            <p>Upload photographs of artifacts, sites, architectural features. "What can you tell me about this object's typology?" "What parallels might exist for this decorative motif?"</p>
+
+            <p class="risk"><strong>Risks:</strong> The system generates plausible archaeological or art-historical language without actual expertise. It may confidently misidentify objects or suggest parallels that don't hold up. Useful for generating hypotheses to investigate, not for identification you can rely on.</p>
+        </section>
+
+        <hr>
+
+        <section id="data-analysis">
+            <h2>Data Analysis and Visualization</h2>
+
+            <h3>Quantitative analysis</h3>
+            <p>"I have enrollment data for 20 institutions across 10 years. Identify trends and create visualizations." Systems with code execution can generate charts directly.</p>
+
+            <p class="risk"><strong>Risks:</strong> Statistical claims may be technically correct but misleading. Visualizations may emphasize patterns that aren't significant or obscure patterns that are. If you're not comfortable interpreting quantitative analysis, the system's confident narrative may lead you astray. Know enough to interrogate what it produces, or consult someone who does.</p>
+
+            <h3>Data transformation</h3>
+            <p>Converting between formats, restructuring datasets, extracting structured information from unstructured text.</p>
+
+            <p class="risk"><strong>Risks:</strong> Subtle data corruption&mdash;fields shifted, values transformed incorrectly, edge cases handled badly. Spot-check outputs systematically, especially for large transformations where errors might hide in volume.</p>
+        </section>
+
+        <hr>
+
+        <section id="prompting">
+            <h2>Prompting Principles</h2>
+
+            <p><strong>Specificity beats generality.</strong> Not "tell me about Virgil" but "identify three passages in Aeneid 6 where Virgil engages with Lucretian material, and explain what's at stake in each engagement."</p>
+
+            <p><strong>Context constraints reshape outputs.</strong> "Without using psychoanalytic frameworks." "Focusing on material evidence rather than literary sources." "Assuming a reader skeptical of computational methods."</p>
+
+            <p><strong>Examples calibrate expectations.</strong> Show the structure, tone, or approach you want with one concrete instance.</p>
+
+            <p><strong>Ask for alternatives.</strong> "Give me three different approaches" produces more useful material than asking for "the" answer.</p>
+
+            <p><strong>Iterate with specific feedback.</strong> "This section works because X&mdash;revise the rest to match." "You're treating the corpus as uniform, but periodization matters."</p>
+        </section>
+
+        <hr>
+
+        <section id="verification">
+            <h2>Verification Strategies</h2>
+
+            <p><strong>Cross-model checking:</strong> Query multiple models (Claude, GPT, Gemini). Agreement increases confidence somewhat; disagreement definitely signals manual verification needed. But all models may share training-data errors, so agreement isn't proof.</p>
+
+            <p><strong>Citation verification:</strong> Assume all citations are potentially hallucinated until verified. Check that sources exist, that authors and titles match, that page numbers contain what's claimed. This is non-negotiable for anything you'll publish or submit.</p>
+
+            <p><strong>Translation checking:</strong> For ancient languages, compare outputs across models and against published translations. Divergences flag passages requiring expert attention. Don't trust any model's translation as authoritative.</p>
+        </section>
+
+        <hr>
+
+        <section id="advanced">
+            <h2>Advanced Use Cases</h2>
+            <p>These require more setup or technical comfort but open significant possibilities for humanities work.</p>
+
+            <h3>Document collections with NotebookLM</h3>
+            <p>Google's <a href="https://notebooklm.google.com/" target="_blank">NotebookLM</a> offers the simplest entry point for working with your own document collections. Upload PDFs, Google Docs, or web pages (up to 50 sources), and the system lets you query across them, generate summaries, and explore connections&mdash;grounded in your materials rather than general training data.</p>
+
+            <p>Practical applications: uploading a reading list for a module and generating discussion questions grounded in the actual texts; loading project documentation and grant materials to query your own prior thinking; assembling sources for a literature review and asking for thematic analysis across them.</p>
+
+            <p>The system can also generate audio "podcasts"&mdash;two AI voices discussing your materials in conversational format. This sounds gimmicky but has genuine accessibility applications, and some find audio summaries useful for initial orientation to unfamiliar material.</p>
+
+            <p class="risk"><strong>Risks:</strong> The system still generates text based on patterns, not understanding&mdash;it can misread sources, conflate distinct arguments, or produce confident synthesis that doesn't hold up on inspection. Grounding in your documents reduces hallucination but doesn't eliminate it. The audio feature can make unreliable content feel authoritative through the veneer of fluent conversation. Verify claims against your actual sources. Also note: your documents are processed on Google's servers.</p>
+
+            <h3>Building lightweight RAG systems</h3>
+            <p>RAG (Retrieval-Augmented Generation) combines search with generation: the system retrieves relevant passages from a document collection, then generates responses grounded in those passages. This allows working with corpora larger than any model's context window.</p>
+
+            <p>For humanities applications&mdash;personal archives, research collections, institutional documents&mdash;several tools offer accessible entry points without requiring programming:</p>
+
+            <p><a href="https://anythingllm.com/" target="_blank">AnythingLLM</a> provides a desktop application for creating searchable document collections with various model backends. <a href="https://khoj.dev/" target="_blank">Khoj</a> offers similar functionality with a focus on personal knowledge management. These tools handle document processing, chunking, and retrieval, letting you query your materials conversationally.</p>
+
+            <p>More technical users can build custom systems using embedding databases (Chroma, Pinecone) and frameworks like LangChain or LlamaIndex, allowing fine-grained control over how documents are processed and retrieved.</p>
+
+            <p class="risk"><strong>Risks:</strong> RAG systems can retrieve irrelevant passages, miss relevant ones, or generate responses that misrepresent retrieved content. Quality depends heavily on how documents are chunked and indexed&mdash;defaults may not suit humanities materials with complex structures. Setup requires technical investment, and maintenance isn't trivial. For most users, NotebookLM or similar managed services offer better effort-to-value ratios unless you have specific requirements they can't meet.</p>
+
+            <h3>Media transformation</h3>
+            <p>Current tools enable various transformations across media types:</p>
+
+            <p><em>Audio transcription:</em> Services like <a href="https://openai.com/research/whisper" target="_blank">Whisper</a> (OpenAI, available free through various interfaces) transcribe audio with reasonable accuracy. Useful for interviews, oral histories, lecture recordings, archival audio. <a href="https://riverside.fm/" target="_blank">Riverside</a>, <a href="https://otter.ai/" target="_blank">Otter.ai</a>, and others offer user-friendly interfaces.</p>
+
+            <p><em>Text to audio:</em> NotebookLM's podcast feature, <a href="https://elevenlabs.io/" target="_blank">ElevenLabs</a>, and other text-to-speech services can convert written materials to audio. Applications include accessibility, creating audio versions of your own writing for review, or generating listening materials for students.</p>
+
+            <p><em>Video processing:</em> Tools can transcribe video audio, generate summaries of video content, or extract key frames. YouTube's auto-generated transcripts, while imperfect, provide workable starting points for analysis of video materials.</p>
+
+            <p><em>Document conversion:</em> Models can transform content between formats&mdash;converting narrative text to structured data, extracting tables from prose descriptions, reformatting archival documents into machine-readable formats.</p>
+
+            <p class="risk"><strong>Risks:</strong> Transcription errors compound through subsequent processing&mdash;a mistranscribed name becomes a hallucinated reference. Audio generation can make unreliable content feel polished and authoritative. Automated processing at scale can introduce systematic errors you won't catch without sampling. For anything you'll publish or cite, verify against originals.</p>
+
+            <h3>Working with open-weights models</h3>
+            <p>Frontier models from Anthropic, OpenAI, and Google are proprietary&mdash;you access them through APIs or chat interfaces, and your data passes through their servers. Open-weights models (Llama, Mistral, Qwen, and others) release their parameters publicly, allowing local installation or self-hosting.</p>
+
+            <p>Why consider this: complete privacy (nothing leaves your machine), no usage costs after setup, ability to fine-tune for specific tasks, and freedom from platform policy changes. <a href="https://huggingface.co/" target="_blank">Hugging Face</a> hosts thousands of models with documentation and tools for experimentation.</p>
+
+            <p>For local use, <a href="https://ollama.ai/" target="_blank">Ollama</a> provides the simplest setup&mdash;a single application that downloads and runs models locally with a chat interface. <a href="https://lmstudio.ai/" target="_blank">LM Studio</a> offers a more visual interface. Both run on consumer hardware, though larger models require substantial RAM and benefit from GPU acceleration.</p>
+
+            <p class="risk"><strong>Risks:</strong> Open-weights models are generally less capable than frontier proprietary models&mdash;often significantly so. Local hardware constraints limit model size. Setup requires more technical comfort than using Claude or ChatGPT. Fine-tuning (training models on your own data) requires substantial technical expertise and computational resources. For most humanities users, the privacy benefits rarely outweigh the capability gap and setup costs&mdash;but for specific applications involving sensitive materials, or for experimentation and learning, local models offer valuable options.</p>
+
+            <h3>Structured extraction at scale</h3>
+            <p>Models can extract structured information from unstructured sources&mdash;named entities, dates, relationships, events&mdash;and output machine-readable formats (JSON, CSV, XML). Combined with batch processing, this enables working with document collections at scales impossible manually.</p>
+
+            <p>Applications: extracting person-place-date triples from historical correspondence; identifying and categorising marginalia across manuscript collections; building prosopographical databases from narrative sources; converting archival inventories into structured datasets.</p>
+
+            <p>This typically requires API access rather than chat interfaces, plus scripting to process documents in batches. Python libraries like <a href="https://python.useinstructor.com/" target="_blank">Instructor</a> simplify structured extraction. Costs scale with volume&mdash;budget accordingly.</p>
+
+            <p class="risk"><strong>Risks:</strong> Extraction errors multiply across large collections. Models may confidently extract "information" that isn't there, impose anachronistic categories, or miss domain-specific entities. Quality control requires systematic sampling and validation against manual extraction. This is a power tool&mdash;powerful enough to produce large quantities of unreliable data if used carelessly. Start with small samples, validate thoroughly, and build in human review.</p>
+
+            <h3>Custom assistants for projects</h3>
+            <p>Most platforms allow creating specialised assistants with persistent instructions and uploaded reference materials. Claude offers "Projects" for this; ChatGPT has "Custom GPTs."</p>
+
+            <p>You can create project-specific assistants preloaded with your research context, methodological preferences, key sources, and standing instructions. A "Roman epigraphy assistant" might include your transcription conventions, standard reference works, and instructions to flag dating uncertainties. A "thesis writing assistant" might include your chapter outlines, style preferences, and instructions to challenge weak arguments.</p>
+
+            <p class="risk"><strong>Risks:</strong> The assistant doesn't actually understand your project&mdash;it generates contextually appropriate text based on your materials and instructions. Over-reliance on a well-configured assistant can create false confidence. The assistant may subtly reinforce your existing framing rather than challenging it, since it's optimised to be helpful within your specified parameters. Use these as conveniences, not as substitutes for external feedback.</p>
+
+            <h3>Voice capture and thought processing</h3>
+            <p>Mobile apps for Claude, ChatGPT, and others accept voice input, enabling a workflow that separates idea generation from refinement: capture thoughts verbally, then use AI to process the raw material.</p>
+
+            <p>Two modes prove useful:</p>
+
+            <p><em>Quick capture:</em> When an idea strikes&mdash;walking, commuting, between meetings&mdash;speak it into your phone. The app transcribes and you can later ask the system to extract key points, identify connections to ongoing work, or flag questions worth pursuing. This catches thinking that would otherwise evaporate.</p>
+
+            <p><em>Extended thinking aloud:</em> Some find it productive to talk through a problem at length&mdash;fifteen minutes, half an hour&mdash;without worrying about structure or coherence. Rambling, backtracking, and contradiction are fine. Afterwards, ask the system to summarise the main threads, identify the core argument struggling to emerge, note tensions or unresolved questions, or restructure the content into an outline.</p>
+
+            <p>The voice-to-text-to-summary pipeline can feed into drafting, grant applications, lecture preparation, or simply clarifying your own thinking. Walking seems particularly conducive&mdash;the combination of movement, low-stakes verbal processing, and subsequent AI structuring works well for many people.</p>
+
+            <p class="risk"><strong>Risks:</strong> The summary is only as good as the raw material&mdash;if your rambling didn't contain a coherent argument, the system will impose false coherence or surface something you didn't actually mean. The system may emphasise what's clearly articulated over what's tentatively gestured at, when the tentative gesture might be the important part. Treat summaries as starting points for your own structuring, not as authoritative accounts of what you were thinking. Also consider privacy: if you're speaking in public spaces, you're potentially exposing research ideas; voice data passes through commercial servers like any other input.</p>
+        </section>
+
+        <hr>
+
+        <section id="when-not">
+            <h2>When Not to Use These Tools</h2>
+
+            <p>When verification would take longer than doing the task yourself. When you can't verify the output's accuracy. When the task requires genuine expertise you don't have (the system's confident output may mislead you). When the material is confidential and shouldn't pass through commercial servers. When slow, careful engagement with materials is itself the point.</p>
+
+            <p>The question isn't whether these tools can produce output for a given task, but whether using them actually improves your work. Often the answer is no, and that's fine.</p>
+        </section>
+
+        <hr>
+
+        <section id="glossary">
+            <h2>Glossary: AI Jargon and Acronyms</h2>
+
+            <div class="glossary-term">
+                <p><strong>AGI (Artificial General Intelligence):</strong> Hypothetical AI that matches or exceeds human cognitive abilities across all domains. Does not currently exist; timelines for its development are contested. Often invoked in hype cycles. <a href="https://www.technologyreview.com/2020/10/15/1010461/artificial-general-intelligence-robots-ai-agi-deepmind-google-openai/" target="_blank">MIT Technology Review explainer</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Alignment:</strong> The problem of ensuring AI systems do what their designers intend and behave in accordance with human values. An active research area, not a solved problem. <a href="https://www.anthropic.com/research" target="_blank">Anthropic's perspective</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>API (Application Programming Interface):</strong> A way for software to communicate with other software. In AI contexts, this is how developers access models programmatically rather than through chat interfaces. Relevant if you're building tools; otherwise you'll use consumer interfaces.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Chatbot:</strong> Conversational interface to an AI system. ChatGPT, Claude, and Gemini are chatbots built on top of LLMs. The term predates modern AI&mdash;earlier chatbots used simpler rule-based systems.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Context window:</strong> The amount of text a model can process in a single conversation&mdash;both what you input and what it outputs. Measured in tokens. Current frontier models handle 100,000&ndash;200,000 tokens (roughly 75,000&ndash;150,000 words). Longer contexts allow working with entire documents but don't guarantee the model attends equally to all parts.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Embedding:</strong> A mathematical representation of text (or images) as coordinates in high-dimensional space, where similar meanings cluster together. Used for search and retrieval systems. <a href="https://vickiboykis.com/what_are_embeddings/" target="_blank">Vicki Boykis's accessible explanation</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Fine-tuning:</strong> Additional training of a foundation model on specific data to adapt it for particular tasks or domains. Creates specialized versions of general-purpose models.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Foundation model:</strong> A large model trained on broad data that serves as the base for many applications. GPT-4, Claude, and Gemini are foundation models. The term emphasizes that these are general-purpose starting points. <a href="https://hai.stanford.edu/news/reflections-foundation-models" target="_blank">Stanford HAI overview</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Frontier model:</strong> Industry term for the most capable currently available models. What counts as "frontier" shifts as new models release.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Generative AI:</strong> AI systems that produce new content (text, images, audio, video) rather than classifying or analysing existing content. LLMs are generative AI for text.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>GPT (Generative Pre-trained Transformer):</strong> OpenAI's series of language models (GPT-3, GPT-4, etc.). Often used loosely to mean any LLM, though technically it's a specific product line. The architecture (transformer) is shared across most current LLMs.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Guardrails:</strong> Restrictions built into AI systems to prevent harmful outputs. These include content filters, refusal behaviours, and output constraints. Effectiveness varies; determined users can often circumvent them.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Hallucination:</strong> When a model generates false information presented as fact&mdash;invented citations, incorrect dates, fictional events described confidently. A fundamental limitation of how these systems work, not a bug being fixed. <a href="https://www.ibm.com/topics/ai-hallucinations" target="_blank">IBM explainer</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Inference:</strong> The process of a trained model generating outputs from inputs. When you prompt a model and it responds, that's inference. Distinct from training, which is how the model learned its patterns.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>LLM (Large Language Model):</strong> AI systems trained on vast text corpora to predict and generate language. "Large" refers to the number of parameters (billions to trillions). Claude, GPT-4, and Gemini are LLMs. <a href="https://arstechnica.com/science/2023/07/a-jargon-free-explanation-of-how-ai-large-language-models-work/" target="_blank">Ars Technica accessible overview</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Multimodal:</strong> Models that process multiple types of input&mdash;text, images, audio, video&mdash;rather than text alone. Current frontier models are multimodal, accepting images and documents alongside text.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Neural network:</strong> Computing systems loosely inspired by biological brains, consisting of interconnected nodes that process information in layers. LLMs are a type of neural network. The "neural" metaphor is loose&mdash;these are mathematical functions, not simulated neurons.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Open source / Open weights:</strong> Models whose underlying parameters are publicly released, allowing others to run, modify, and build on them. Llama (Meta) and Mistral are prominent examples. "Open source" in AI is contested&mdash;releasing weights isn't the same as releasing training data or methods. <a href="https://thegradient.pub/open-source-ai/" target="_blank">The Gradient on open source AI</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Parameters:</strong> The numerical values a model learns during training that determine its behaviour. Model size is often described by parameter count: GPT-4 reportedly has over a trillion parameters. More parameters generally means more capability but also more computational cost.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Prompt:</strong> The input you give to a model&mdash;your question, instruction, or the text you want it to work with. "Prompting" is the practice of crafting inputs to get useful outputs.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>RAG (Retrieval-Augmented Generation):</strong> A technique combining LLMs with search systems. The model retrieves relevant documents from a database, then generates responses grounded in those documents. Reduces hallucination for domain-specific applications. <a href="https://www.ibm.com/topics/retrieval-augmented-generation" target="_blank">IBM explainer</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> A training technique where human evaluators rate model outputs, and the model is trained to produce responses humans prefer. Used to make models more helpful and less harmful. <a href="https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback" target="_blank">Anthropic explanation</a> | <a href="https://huyenchip.com/2023/05/02/rlhf.html" target="_blank">Chip Huyen's accessible overview</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>System prompt:</strong> Persistent instructions that shape how a model behaves across a conversation. Set by the platform or user to establish context, persona, or constraints. Distinct from individual prompts within a conversation.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Temperature:</strong> A setting controlling randomness in outputs. Lower temperature produces more predictable, focused responses; higher temperature produces more varied, creative ones. Default settings work for most uses.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Token:</strong> The unit models use to process text&mdash;roughly a word or word-piece. "Tokenization" breaks text into these units. Token counts matter for context windows and pricing. Roughly 1 token &asymp; 0.75 words in English, though this varies.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Training data:</strong> The text (and images, for multimodal models) used to train a model. For LLMs, this includes large portions of the internet, books, code, and other text sources. What's included in training data affects what models know and how they behave&mdash;and raises significant copyright and consent questions.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Transformer:</strong> The neural network architecture underlying most current LLMs, introduced in 2017. Enables models to process relationships between all parts of an input simultaneously rather than sequentially. <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a> (visual explanation, somewhat technical)</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>This document was developed collaboratively by Leif Isaksen and Claude (Anthropic).</p>
+            <p><a href="llm-briefing.html">Read the main briefing document &rarr;</a></p>
+        </footer>
+    </div>
+</body>
+</html>
