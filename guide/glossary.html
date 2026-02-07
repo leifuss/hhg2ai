@@ -50,7 +50,7 @@
             </div>
 
             <div class="glossary-term">
-                <p><strong>Context window:</strong> The amount of text a model can process in a single conversation&mdash;both what you input and what it outputs. Measured in tokens. Current frontier models handle 100,000&ndash;200,000 tokens (roughly 75,000&ndash;150,000 words). Longer contexts allow working with entire documents but don't guarantee the model attends equally to all parts.</p>
+                <p><strong>Context window:</strong> The amount of text a model can process in a single conversation&mdash;both what you input and what it outputs. Measured in tokens. Context windows vary significantly by model and tier&mdash;from around 100,000 tokens for smaller models to 1,000,000 or more for frontier offerings (roughly 75,000 to 750,000 words). Longer contexts allow working with entire documents or small corpora, but models don&rsquo;t attend equally to all parts of a long context. Check current specifications for your chosen platform, as these change frequently.</p>
             </div>
 
             <div class="glossary-term">
@@ -82,7 +82,7 @@
             </div>
 
             <div class="glossary-term">
-                <p><strong>Hallucination:</strong> When a model generates false information presented as fact&mdash;invented citations, incorrect dates, fictional events described confidently. A fundamental limitation of how these systems work, not a bug being fixed. <a href="https://www.ibm.com/topics/ai-hallucinations" target="_blank">IBM explainer</a></p>
+                <p><strong>Hallucination:</strong> When a model generates false information presented as fact&mdash;invented citations, incorrect dates, fictional events described confidently. A persistent tendency of language models arising from how they generate text. Retrieval systems, citation grounding, and other techniques can reduce hallucination rates but not eliminate them. Treat confident-sounding claims as requiring verification regardless of which model or tool produces them. <a href="https://www.ibm.com/topics/ai-hallucinations" target="_blank">IBM explainer</a></p>
             </div>
 
             <div class="glossary-term">
@@ -106,7 +106,7 @@
             </div>
 
             <div class="glossary-term">
-                <p><strong>Parameters:</strong> The numerical values a model learns during training that determine its behaviour. Model size is often described by parameter count: GPT-4 reportedly has over a trillion parameters. More parameters generally means more capability but also more computational cost.</p>
+                <p><strong>Parameters:</strong> The numerical values a model learns during training that determine its behaviour. Model size is often described by parameter count (billions to trillions). Vendors often don&rsquo;t disclose exact parameter counts; treat size claims as rough indicators rather than meaningful metrics. What matters for practical purposes is task performance, not parameter count.</p>
             </div>
 
             <div class="glossary-term">
