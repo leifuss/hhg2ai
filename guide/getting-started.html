@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started — LLM Guide for Humanities Scholars</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="index.html">Guide Home</a>
+            <span class="nav-sep">|</span>
+            <a href="briefing.html">Briefing</a>
+            <span class="nav-sep">|</span>
+            <a href="getting-started.html" class="current">Getting Started</a>
+            <span class="nav-sep">|</span>
+            <a href="use-cases.html">Use Cases</a>
+            <span class="nav-sep">|</span>
+            <a href="ancient-languages.html">Ancient Languages</a>
+            <span class="nav-sep">|</span>
+            <a href="faq.html">FAQ</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
+        </nav>
+
+        <header>
+            <h1>Getting Started</h1>
+            <p class="subtitle">February 2026 &middot; Part of the LLM Guide for Humanities Scholars</p>
+            <p class="last-updated">Last updated: February 2026</p>
+        </header>
+
+        <section id="try-it-yourself">
+            <h2>Try It Yourself</h2>
+
+            <p>This exercise takes about fifteen minutes. Its purpose is not to produce something useful but to calibrate your own sense of what these tools do well and where they fall short. You are the expert here. The point is to test the system against material you know, so you can form a grounded judgement rather than relying on other people&rsquo;s impressions.</p>
+
+            <h3>Primary exercise: translation</h3>
+
+            <p>This exercise works best if you have some Latin, but the principle applies to any ancient language you read. We use a passage from Tacitus because its compressed, syntactically demanding prose exposes both the strengths and the limitations of machine translation in ways that simpler Latin does not.</p>
+
+            <ol>
+                <li><strong>Open an LLM.</strong> Go to <a href="https://claude.ai">claude.ai</a> (or <a href="https://chatgpt.com">chatgpt.com</a> if you prefer). A free account is fine for this exercise.</li>
+
+                <li><strong>Paste this passage</strong>&mdash;the opening of Tacitus, <em>Agricola</em> 1:
+                    <blockquote>&ldquo;Clarorum virorum facta moresque posteris tradere, antiquitus usitatum, ne nostris quidem temporibus quamquam incuriosa suorum aetas omisit, quotiens magna aliquave virtus vicit ac supergressa est vitium parvis magnisque civitatibus commune, ignorantiam recti et invidiam.&rdquo;</blockquote>
+                </li>
+
+                <li><strong>Ask:</strong> &ldquo;Please translate this passage from Latin into English.&rdquo;</li>
+
+                <li><strong>Read the translation carefully.</strong> Note what works and what doesn&rsquo;t. Consider: Does it capture Tacitus&rsquo;s compressed style, or does it over-expand into paraphrase? How does it handle the ablative absolute? Does it render <em>ignorantiam recti et invidiam</em> accurately&mdash;and does the English convey the same rhetorical weight?</li>
+
+                <li><strong>Now try:</strong> &ldquo;What alternative renderings are possible for <em>ignorantiam recti et invidiam</em>?&rdquo; See whether the system can articulate the interpretive choices involved, or whether it simply offers synonyms.</li>
+
+                <li><strong>Ask:</strong> &ldquo;What is the rhetorical function of this opening sentence in the context of the <em>Agricola</em> as a whole?&rdquo;</li>
+
+                <li><strong>Assess the response against what you know about the text.</strong> Does the system understand how this sentence positions Tacitus&rsquo;s project? Does it recognise the political undertones? Where does its analysis feel generic, and where does it show genuine purchase on the passage?</li>
+            </ol>
+
+            <p>The value of this exercise lies in the assessment, not the output. You already know this text, or texts like it. What you are discovering is how the tool handles material where you can judge quality&mdash;which is the only reliable way to estimate how it will perform on material where you cannot.</p>
+
+            <h3>Alternative exercise: discussion questions</h3>
+
+            <p>If you do not work with ancient languages, try this instead. Pick a topic from your current teaching&mdash;a seminar theme, a set text, a problem you regularly ask students to grapple with. Ask the system: &ldquo;Generate six discussion questions for a postgraduate seminar on [your topic].&rdquo; Then evaluate the results. Which questions would actually provoke useful discussion with your students? Which ones miss the point of why the topic matters in your discipline? What do the gaps tell you about how the system understands&mdash;or fails to understand&mdash;your field?</p>
+
+            <div class="note">
+                <p><strong>Note:</strong> Either exercise takes about fifteen minutes. The goal is not to produce something useful&mdash;it is to calibrate your own sense of what these tools do well and where they fall short. That calibration is worth more than any single output.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="setting-up">
+            <h2>Setting Up</h2>
+
+            <h3>Choosing a platform</h3>
+
+            <p>The main consumer platforms are Claude (Anthropic), ChatGPT (OpenAI), and Gemini (Google). All offer free tiers with older models and usage limits; paid subscriptions (&pound;16&ndash;25/month) provide access to more capable models and higher limits.</p>
+
+            <p>This guide defaults to Claude, partly because it is what we know best and partly because Anthropic&rsquo;s approach to safety and transparency aligns reasonably with academic values&mdash;but that is a judgement call, not an endorsement. If you are going to experiment seriously, a paid tier is worth it: the difference between free and frontier models is substantial, and struggling with an underpowered model produces misleading impressions of what the technology can and cannot do.</p>
+
+            <p>Current frontier models (early 2026): Claude Opus 4.6, GPT-5.1, Gemini 2.5 Pro. These change; what matters is accessing whatever your chosen platform considers its most capable offering.</p>
+
+            <h3>Privacy and training settings</h3>
+
+            <p>By default, many platforms use your conversations to train future models. Most offer settings to opt out.</p>
+
+            <p>In Claude: Settings &rarr; Privacy &rarr; you can disable the use of your conversations for training. With this disabled, your conversations are still processed on Anthropic&rsquo;s servers (unavoidable), but are not incorporated into training data.</p>
+
+            <p>This matters for several reasons. You may have principled objections to contributing unpaid labour to commercial AI development. You may work with materials&mdash;unpublished research, student work, peer review content&mdash;that should not become training data. Even for routine use, opting out costs you nothing and reduces exposure.</p>
+
+            <p>What opting out does not do: it does not make your conversations private in an absolute sense. Data still passes through commercial servers. Do not input anything you would be uncomfortable with a company storing, even temporarily. Confidential personnel matters, sensitive student information, embargoed research&mdash;these should not go into any commercial LLM regardless of privacy settings.</p>
+
+            <h3>Memory settings</h3>
+
+            <p>Current systems can maintain memory across conversations&mdash;tracking your preferences, ongoing projects, and context over time. You can view, edit, and delete what the system remembers.</p>
+
+            <p>Whether to enable this depends on your use patterns. If you are using the tool for ongoing projects where context continuity helps, memory reduces repetitive re-prompting. If you prefer each conversation to start fresh, or if you are uncomfortable with persistent profiles being built, disable it.</p>
+
+            <p>Review memory contents periodically if enabled. Systems sometimes remember things inaccurately or retain information you would prefer they did not.</p>
+        </section>
+
+        <hr>
+
+        <section id="prompting-principles">
+            <h2>Prompting Principles</h2>
+
+            <p>How you phrase a request shapes what you get back. This is not about memorising formulae or mastering a technical skill&mdash;it is about communicating clearly with a system that responds to specificity, context, and structure. The following principles will improve your results immediately.</p>
+
+            <p><strong>Specificity beats generality.</strong> Not &ldquo;tell me about Virgil&rdquo; but &ldquo;identify three passages in <em>Aeneid</em> 6 where Virgil engages with Lucretian material, and explain what is at stake in each engagement.&rdquo; The more precisely you define what you want, the less work you do filtering generic output. Vague prompts produce vague responses; pointed prompts produce responses you can actually evaluate.</p>
+
+            <p><strong>Context constraints reshape outputs.</strong> Tell the system what to exclude or what lens to adopt: &ldquo;Without using psychoanalytic frameworks.&rdquo; &ldquo;Focusing on material evidence rather than literary sources.&rdquo; &ldquo;Assuming a reader sceptical of computational methods.&rdquo; These constraints do not guarantee the system will honour them perfectly, but they substantially narrow the output toward what you need.</p>
+
+            <p><strong>Examples calibrate expectations.</strong> If you want a particular structure, tone, or approach, show the system one concrete instance of what you mean. A single example does more to shape output than several paragraphs of abstract instruction. This is especially useful for formatting tasks, stylistic preferences, and disciplinary conventions the system may not infer from description alone.</p>
+
+            <p><strong>Ask for alternatives.</strong> &ldquo;Give me three different approaches&rdquo; produces more useful material than asking for &ldquo;the&rdquo; answer. Multiple options let you compare, combine, and select&mdash;which is a better use of both the system&rsquo;s generative capacity and your own judgement. A single response invites acceptance or rejection; several responses invite critical evaluation.</p>
+
+            <p><strong>Iterate with specific feedback.</strong> &ldquo;This section works because X&mdash;revise the rest to match.&rdquo; &ldquo;You are treating the corpus as uniform, but periodisation matters.&rdquo; Do not start a new conversation when the current one is going in the wrong direction&mdash;correct course. The system responds well to specific critique. Tell it what went wrong and why, and the next attempt will usually be closer to what you need.</p>
+
+            <p>None of this requires technical expertise. It requires the same skills you already use when briefing a research assistant, writing examination questions, or structuring a seminar: clarity about what you want, awareness of what you are likely to get, and willingness to push back when the first attempt falls short.</p>
+        </section>
+
+        <footer>
+            <p>
+                <a href="briefing.html" class="nav-link">&larr; Read the briefing</a>
+                &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+                <a href="use-cases.html" class="nav-link">Explore use cases &rarr;</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
