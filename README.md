@@ -1,13 +1,11 @@
 
-# Briefings
+# LLM Guide for Humanities Scholars
 
-### [Briefing: Large Language Models for Humanities Scholars](https://leifuss.github.io/claudeexperiments/llm-briefing.html)
+### [Guide: Large Language Models for Humanities Scholars](https://leifuss.github.io/claudeexperiments/guide/)
 
-An informed-choice briefing on issues associated with AI for humanists. Covers what LLMs are, common misconceptions, ethical considerations, and guidance for engagement. Collaboratively authored with an LLM (December 2025)
+A multi-page guide to help colleagues in Classics, Ancient History, and Theology & Religion make informed decisions about AI. Includes a briefing on what LLMs are and aren't, practical use cases, worked translation examples in Latin, Greek, and Hebrew, a FAQ, and a glossary. Collaboratively authored with an LLM (February 2026)
 
-### [Practical Appendix: LLM Use Cases](https://leifuss.github.io/claudeexperiments/llm-use-cases.html)
-
-A companion primer on how to get started using LLMs, with specific use cases for experimentation, prompting principles, verification strategies, and a glossary of AI terminology. Collaboratively authored with an LLM (December 2025)
+Individual pages: [Briefing](https://leifuss.github.io/claudeexperiments/guide/briefing.html) · [Getting Started](https://leifuss.github.io/claudeexperiments/guide/getting-started.html) · [Use Cases](https://leifuss.github.io/claudeexperiments/guide/use-cases.html) · [Ancient Languages](https://leifuss.github.io/claudeexperiments/guide/ancient-languages.html) · [FAQ](https://leifuss.github.io/claudeexperiments/guide/faq.html) · [Glossary](https://leifuss.github.io/claudeexperiments/guide/glossary.html)
 
 # Claude AI Experiments
 

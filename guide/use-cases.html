@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Cases by Time Investment — LLM Guide for Humanities Scholars</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="index.html">Guide Home</a>
+            <span class="nav-sep">|</span>
+            <a href="briefing.html">Briefing</a>
+            <span class="nav-sep">|</span>
+            <a href="getting-started.html">Getting Started</a>
+            <span class="nav-sep">|</span>
+            <a href="use-cases.html" class="current">Use Cases</a>
+            <span class="nav-sep">|</span>
+            <a href="ancient-languages.html">Ancient Languages</a>
+            <span class="nav-sep">|</span>
+            <a href="faq.html">FAQ</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
+        </nav>
+
+        <header>
+            <h1>Use Cases by Time Investment</h1>
+            <p class="subtitle">February 2026 &middot; Part of the LLM Guide for Humanities Scholars</p>
+            <p class="last-updated">Last updated: February 2026</p>
+        </header>
+
+        <p>This page organises practical use cases by how much time they require&mdash;from quick experiments to deeper investments. Each includes risks to watch for. For prompting fundamentals, see <a href="getting-started.html#prompting-principles">Getting Started</a>.</p>
+
+        <div class="note">
+            <strong>A note on discovery:</strong> These systems are capable of things you won&rsquo;t expect&mdash;and incapable of things you&rsquo;d reasonably assume they could do. Even their developers don&rsquo;t fully understand where the boundaries lie. The only way to discover what works for your purposes is experimentation, and what you discover will change as the technology develops. Approach with curiosity rather than fixed expectations.
+        </div>
+
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#15-minutes">If You Have 15 Minutes</a></li>
+                <li><a href="#afternoon">If You Have an Afternoon</a></li>
+                <li><a href="#deeper">If You Want to Go Deeper</a></li>
+                <li><a href="#verification">Verification Strategies</a></li>
+                <li><a href="#when-not">When Not to Use These Tools</a></li>
+            </ul>
+        </nav>
+
+        <!-- Section 1: Quick wins -->
+        <section id="15-minutes">
+            <h2>If You Have 15 Minutes</h2>
+
+            <p>These are quick wins where verification is fast relative to generation. They make good starting points for getting a feel for the tools.</p>
+
+            <h3>Drafting routine communications</h3>
+            <p>Calls for papers, meeting announcements, module descriptions, reference letter frameworks. Prompt with specifics: purpose, audience, length, tone, key details to include. Review and edit the output&mdash;these are starting points, not finished products.</p>
+
+            <p class="risk"><strong>Risks:</strong> Generic, anodyne prose. Factual errors if you include details the system misremembers or invents. Tone mismatches. The system defaults to a kind of corporate enthusiasm that may not suit academic contexts. Always rewrite substantially rather than sending lightly-edited output.</p>
+
+            <h3>Discussion questions for teaching</h3>
+            <p>&ldquo;Generate 8 discussion questions for undergraduates on [this passage/topic], ranging from comprehension to interpretation.&rdquo; Select and revise the useful ones; discard the rest.</p>
+
+            <p class="risk"><strong>Risks:</strong> Questions that miss disciplinary specificity&mdash;generically &ldquo;literary&rdquo; questions for a classics text that ignore what classicists actually care about. Surface-level interpretive questions that don&rsquo;t push toward genuine difficulty. The system doesn&rsquo;t know your students or your pedagogical goals.</p>
+
+            <h3>Reformatting and data cleaning</h3>
+            <p>Bibliography format conversion, cleaning OCR output into structured data, transforming messy spreadsheets. These are tasks where verification is trivial but manual work is tedious.</p>
+
+            <p class="risk"><strong>Risks:</strong> Subtle errors in bibliographic details (wrong page numbers, slightly mangled titles). For OCR cleaning, the system may &ldquo;correct&rdquo; unusual but accurate readings into common but wrong ones. Check outputs against originals, especially for names, dates, and technical terms.</p>
+
+            <h3>Draft feedback</h3>
+            <p>&ldquo;This paragraph feels unclear&mdash;suggest three ways to restructure it.&rdquo; &ldquo;This section is too jargon-heavy&mdash;rewrite for an educated non-specialist while preserving analytical precision.&rdquo; &ldquo;What&rsquo;s the weakest link in this argument?&rdquo;</p>
+
+            <p class="risk"><strong>Risks:</strong> The system may smooth away productive difficulty or disciplinary precision in favour of generic clarity. Its suggestions optimise for readability in ways that may flatten your argument. Treat suggestions as prompts for your own revision, not as improvements to accept.</p>
+        </section>
+
+        <hr>
+
+        <!-- Section 2: Sustained work -->
+        <section id="afternoon">
+            <h2>If You Have an Afternoon</h2>
+
+            <p>These tasks require more iteration and engagement. They reward sustained conversation with the system, where you refine prompts, push back on outputs, and build on earlier exchanges.</p>
+
+            <h3>Argument testing</h3>
+            <p>Present your argument and ask: &ldquo;What are the strongest counterarguments? What alternative explanations must I address? What would a scholar from [different methodological tradition] emphasise?&rdquo;</p>
+
+            <p class="risk"><strong>Risks:</strong> The system generates plausible-critique-shaped text, not actual engagement with your argument&rsquo;s logic. Counterarguments may be superficial, miss the real vulnerabilities, or attack positions you don&rsquo;t actually hold. Use outputs as checklists for your own thinking&mdash;have I considered this angle?&mdash;not as authoritative critique. The absence of a counterargument from the output doesn&rsquo;t mean your argument lacks that vulnerability.</p>
+
+            <h3>Grant application review with personas</h3>
+            <p>Before submitting a grant application, you can use personas to simulate different reviewer perspectives. Ask the system to adopt specific roles and critique your draft from that standpoint:</p>
+
+            <blockquote>&ldquo;Read this grant application as a panel member who is expert in [your methodology] and sceptical of [your theoretical framework]. What weaknesses would you identify? What questions would you raise in panel discussion?&rdquo;</blockquote>
+
+            <blockquote>&ldquo;Now read as a reviewer who is sympathetic to the project&rsquo;s aims but concerned about feasibility and value for money. Where would you push back?&rdquo;</blockquote>
+
+            <blockquote>&ldquo;Read as someone from an adjacent discipline who doesn&rsquo;t share the assumptions of [your field]. What would be unclear or unconvincing?&rdquo;</blockquote>
+
+            <blockquote>&ldquo;Read as a reviewer focused on impact and knowledge exchange. Where is the case weakest?&rdquo;</blockquote>
+
+            <p>Run through several personas, each generating critique from a different angle. Compile the concerns raised as a checklist for revision.</p>
+
+            <p class="risk"><strong>Risks:</strong> The critiques may be generic rather than specific to your proposal&rsquo;s actual weaknesses. The system doesn&rsquo;t know what real reviewers in your field actually care about&mdash;it generates reviewer-shaped criticism based on patterns, which may miss discipline-specific concerns or fixate on issues that wouldn&rsquo;t actually trouble a panel. Persona-based critique can create false confidence that you&rsquo;ve stress-tested the application when you&rsquo;ve only received plausible-sounding feedback. The personas may also be too gentle; real reviewers operating under time pressure with many applications to assess can be more brutal and more idiosyncratic than the system&rsquo;s simulations.</p>
+
+            <p>Use this as one input among several. It doesn&rsquo;t replace feedback from colleagues who know the funding landscape, have sat on panels, or have expertise you lack. But it can surface angles you hadn&rsquo;t considered and help you anticipate obvious objections before others see the draft.</p>
+
+            <h3>Exploring alternative framings</h3>
+            <p>&ldquo;Present three different interpretations of this evidence, from different theoretical frameworks.&rdquo; &ldquo;How might this argument be framed for [different audience]?&rdquo;</p>
+
+            <p class="risk"><strong>Risks:</strong> Theoretical frameworks may be presented superficially or conflated. The system reproduces general patterns, not the specific texture of how a particular tradition actually approaches problems. Useful for brainstorming, not for understanding those traditions.</p>
+
+            <h3>Literature review scaffolding</h3>
+            <p>&ldquo;Based on these sources I&rsquo;m consulting, what themes and debates seem central? What potential gaps might I be missing?&rdquo; Use this to structure your own reading, not to substitute for it.</p>
+
+            <p class="risk"><strong>Risks:</strong> The system may identify themes that sound plausible but don&rsquo;t reflect how the field actually organises itself. It may miss what matters and emphasise what&rsquo;s superficially prominent. Verify thematic analysis against your actual engagement with sources. The system hasn&rsquo;t read these works&mdash;it&rsquo;s pattern-matching on titles, abstracts, and whatever fragments appear in training data.</p>
+
+            <h3>Problem-solving strategies</h3>
+            <p>&ldquo;I need to approach [complex research problem]. What methodological strategies should I consider, and what are the evidentiary requirements and limitations of each?&rdquo;</p>
+
+            <p class="risk"><strong>Risks:</strong> Strategies may be generic rather than fitted to your specific problem. The system may miss approaches standard in your subfield or suggest approaches that wouldn&rsquo;t occur to a specialist because they&rsquo;re not actually viable. Use as a starting point for structuring your own research plan, then consult colleagues or methodological literature.</p>
+
+            <h3>Code for digital projects</h3>
+            <p>&ldquo;Write Python code to extract place names from these TEI-encoded texts and count frequency.&rdquo; &ldquo;Create a visualisation of this dataset.&rdquo; Systems with code execution can run and debug code directly.</p>
+
+            <p class="risk"><strong>Risks:</strong> Code may work on test cases but fail on edge cases in your actual data. Logic errors may produce plausible-looking but wrong results. If you can&rsquo;t read the code well enough to verify its logic, you can&rsquo;t verify its outputs. For anything substantive, have someone code-literate review it, or develop enough facility to check the logic yourself.</p>
+
+            <h3>OCR and transcription</h3>
+            <p>Upload images of manuscripts, inscriptions, or archival documents. &ldquo;Transcribe this text and flag uncertain readings.&rdquo;</p>
+
+            <p class="risk"><strong>Risks:</strong> The system will produce confident transcriptions that contain errors, especially with damaged materials, non-standard scripts, or abbreviations. It may normalise unusual spellings or silently resolve ambiguities. Treat outputs as first passes requiring careful verification against originals. For anything you&rsquo;ll cite or publish, manual verification is essential.</p>
+
+            <h3>Image-based queries</h3>
+            <p>Upload photographs of artefacts, sites, architectural features. &ldquo;What can you tell me about this object&rsquo;s typology?&rdquo; &ldquo;What parallels might exist for this decorative motif?&rdquo;</p>
+
+            <p class="risk"><strong>Risks:</strong> The system generates plausible archaeological or art-historical language without actual expertise. It may confidently misidentify objects or suggest parallels that don&rsquo;t hold up. Useful for generating hypotheses to investigate, not for identification you can rely on.</p>
+
+            <h3>Quantitative analysis</h3>
+            <p>&ldquo;I have enrolment data for 20 institutions across 10 years. Identify trends and create visualisations.&rdquo; Systems with code execution can generate charts directly.</p>
+
+            <p class="risk"><strong>Risks:</strong> Statistical claims may be technically correct but misleading. Visualisations may emphasise patterns that aren&rsquo;t significant or obscure patterns that are. If you&rsquo;re not comfortable interpreting quantitative analysis, the system&rsquo;s confident narrative may lead you astray. Know enough to interrogate what it produces, or consult someone who does.</p>
+
+            <h3>Data transformation</h3>
+            <p>Converting between formats, restructuring datasets, extracting structured information from unstructured text.</p>
+
+            <p class="risk"><strong>Risks:</strong> Subtle data corruption&mdash;fields shifted, values transformed incorrectly, edge cases handled badly. Spot-check outputs systematically, especially for large transformations where errors might hide in volume.</p>
+
+            <h3>System prompts and custom instructions</h3>
+            <p>Most platforms allow you to set persistent instructions that shape all conversations. In Claude, this is found in Settings &rarr; Profile. These instructions tell the system about your context, preferences, and expectations.</p>
+
+            <p>An example for humanities work:</p>
+
+            <blockquote>&ldquo;I&rsquo;m a classicist working on Latin literature. When I ask about primary sources, cite specific passages. Flag when you&rsquo;re uncertain rather than generating plausible-sounding guesses. Challenge my interpretations rather than agreeing reflexively. Avoid theoretical frameworks I haven&rsquo;t specifically requested. When I ask for counterarguments, give me the strongest versions, not strawmen.&rdquo;</blockquote>
+
+            <p>Tailor this to your discipline and working style. Good system prompts reduce the need to repeat context and calibrate tone in every conversation.</p>
+
+            <h3>Extended reasoning and other features</h3>
+            <p>Some platforms offer extended reasoning modes for complex problems&mdash;the system works through the problem step-by-step before responding. In Claude, this is called &ldquo;extended thinking.&rdquo; Use it for multi-step analytical problems, not routine queries.</p>
+
+            <p>Tool use (web search, code execution, file creation) is available on most paid tiers. Web search helps with current information but introduces its own reliability questions&mdash;the system may find and summarise unreliable sources. Code execution is useful for data analysis and visualisation if you can verify the outputs.</p>
+        </section>
+
+        <hr>
+
+        <!-- Section 3: Advanced / deeper -->
+        <section id="deeper">
+            <h2>If You Want to Go Deeper</h2>
+
+            <p>These require more setup or technical comfort but open significant possibilities for humanities work. They&rsquo;re signposted here for exploration rather than presented as things everyone should try.</p>
+
+            <h3>Document collections with NotebookLM</h3>
+            <p>Google&rsquo;s <a href="https://notebooklm.google.com/" target="_blank">NotebookLM</a> offers the simplest entry point for working with your own document collections. Upload PDFs, Google Docs, or web pages (up to 50 sources), and the system lets you query across them, generate summaries, and explore connections&mdash;grounded in your materials rather than general training data.</p>
+
+            <p>Practical applications: uploading a reading list for a module and generating discussion questions grounded in the actual texts; loading project documentation and grant materials to query your own prior thinking; assembling sources for a literature review and asking for thematic analysis across them.</p>
+
+            <p>The system can also generate audio &ldquo;podcasts&rdquo;&mdash;two AI voices discussing your materials in conversational format. This sounds gimmicky but has genuine accessibility applications, and some find audio summaries useful for initial orientation to unfamiliar material.</p>
+
+            <p class="risk"><strong>Risks:</strong> The system still generates text based on patterns, not understanding&mdash;it can misread sources, conflate distinct arguments, or produce confident synthesis that doesn&rsquo;t hold up on inspection. Grounding in your documents reduces hallucination but doesn&rsquo;t eliminate it. The audio feature can make unreliable content feel authoritative through the veneer of fluent conversation. Verify claims against your actual sources. Also note: your documents are processed on Google&rsquo;s servers.</p>
+
+            <h3>Building lightweight RAG systems</h3>
+            <p>RAG (Retrieval-Augmented Generation) combines search with generation: the system retrieves relevant passages from a document collection, then generates responses grounded in those passages. This allows working with corpora larger than any model&rsquo;s context window.</p>
+
+            <p>For humanities applications&mdash;personal archives, research collections, institutional documents&mdash;several tools offer accessible entry points without requiring programming:</p>
+
+            <p><a href="https://anythingllm.com/" target="_blank">AnythingLLM</a> provides a desktop application for creating searchable document collections with various model backends. <a href="https://khoj.dev/" target="_blank">Khoj</a> offers similar functionality with a focus on personal knowledge management. These tools handle document processing, chunking, and retrieval, letting you query your materials conversationally.</p>
+
+            <p>More technical users can build custom systems using embedding databases (Chroma, Pinecone) and frameworks like LangChain or LlamaIndex, allowing fine-grained control over how documents are processed and retrieved.</p>
+
+            <p class="risk"><strong>Risks:</strong> RAG systems can retrieve irrelevant passages, miss relevant ones, or generate responses that misrepresent retrieved content. Quality depends heavily on how documents are chunked and indexed&mdash;defaults may not suit humanities materials with complex structures. Setup requires technical investment, and maintenance isn&rsquo;t trivial. For most users, NotebookLM or similar managed services offer better effort-to-value ratios unless you have specific requirements they can&rsquo;t meet.</p>
+
+            <h3>Media transformation</h3>
+            <p>Current tools enable various transformations across media types:</p>
+
+            <p><em>Audio transcription:</em> Services like <a href="https://openai.com/research/whisper" target="_blank">Whisper</a> (OpenAI, available free through various interfaces) transcribe audio with reasonable accuracy. Useful for interviews, oral histories, lecture recordings, archival audio. <a href="https://riverside.fm/" target="_blank">Riverside</a>, <a href="https://otter.ai/" target="_blank">Otter.ai</a>, and others offer user-friendly interfaces.</p>
+
+            <p><em>Text to audio:</em> NotebookLM&rsquo;s podcast feature, <a href="https://elevenlabs.io/" target="_blank">ElevenLabs</a>, and other text-to-speech services can convert written materials to audio. Applications include accessibility, creating audio versions of your own writing for review, or generating listening materials for students.</p>
+
+            <p><em>Video processing:</em> Tools can transcribe video audio, generate summaries of video content, or extract key frames. YouTube&rsquo;s auto-generated transcripts, while imperfect, provide workable starting points for analysis of video materials.</p>
+
+            <p><em>Document conversion:</em> Models can transform content between formats&mdash;converting narrative text to structured data, extracting tables from prose descriptions, reformatting archival documents into machine-readable formats.</p>
+
+            <p class="risk"><strong>Risks:</strong> Transcription errors compound through subsequent processing&mdash;a mistranscribed name becomes a hallucinated reference. Audio generation can make unreliable content feel polished and authoritative. Automated processing at scale can introduce systematic errors you won&rsquo;t catch without sampling. For anything you&rsquo;ll publish or cite, verify against originals.</p>
+
+            <h3>Working with open-weights models</h3>
+            <p>Frontier models from Anthropic, OpenAI, and Google are proprietary&mdash;you access them through APIs or chat interfaces, and your data passes through their servers. Open-weights models (Llama, Mistral, Qwen, and others) release their parameters publicly, allowing local installation or self-hosting.</p>
+
+            <p>Why consider this: complete privacy (nothing leaves your machine), no usage costs after setup, ability to fine-tune for specific tasks, and freedom from platform policy changes. <a href="https://huggingface.co/" target="_blank">Hugging Face</a> hosts thousands of models with documentation and tools for experimentation.</p>
+
+            <p>For local use, <a href="https://ollama.ai/" target="_blank">Ollama</a> provides the simplest setup&mdash;a single application that downloads and runs models locally with a chat interface. <a href="https://lmstudio.ai/" target="_blank">LM Studio</a> offers a more visual interface. Both run on consumer hardware, though larger models require substantial RAM and benefit from GPU acceleration.</p>
+
+            <p class="risk"><strong>Risks:</strong> Open-weights models are generally less capable than frontier proprietary models&mdash;often significantly so. Local hardware constraints limit model size. Setup requires more technical comfort than using Claude or ChatGPT. Fine-tuning (training models on your own data) requires substantial technical expertise and computational resources. For most humanities users, the privacy benefits rarely outweigh the capability gap and setup costs&mdash;but for specific applications involving sensitive materials, or for experimentation and learning, local models offer valuable options.</p>
+
+            <h3>Structured extraction at scale</h3>
+            <p>Models can extract structured information from unstructured sources&mdash;named entities, dates, relationships, events&mdash;and output machine-readable formats (JSON, CSV, XML). Combined with batch processing, this enables working with document collections at scales impossible manually.</p>
+
+            <p>Applications: extracting person-place-date triples from historical correspondence; identifying and categorising marginalia across manuscript collections; building prosopographical databases from narrative sources; converting archival inventories into structured datasets.</p>
+
+            <p>This typically requires API access rather than chat interfaces, plus scripting to process documents in batches. Python libraries like <a href="https://python.useinstructor.com/" target="_blank">Instructor</a> simplify structured extraction. Costs scale with volume&mdash;budget accordingly.</p>
+
+            <p class="risk"><strong>Risks:</strong> Extraction errors multiply across large collections. Models may confidently extract &ldquo;information&rdquo; that isn&rsquo;t there, impose anachronistic categories, or miss domain-specific entities. Quality control requires systematic sampling and validation against manual extraction. This is a power tool&mdash;powerful enough to produce large quantities of unreliable data if used carelessly. Start with small samples, validate thoroughly, and build in human review.</p>
+
+            <h3>Custom assistants for projects</h3>
+            <p>Most platforms allow creating specialised assistants with persistent instructions and uploaded reference materials. Claude offers &ldquo;Projects&rdquo; for this; ChatGPT has &ldquo;Custom GPTs.&rdquo;</p>
+
+            <p>You can create project-specific assistants preloaded with your research context, methodological preferences, key sources, and standing instructions. A &ldquo;Roman epigraphy assistant&rdquo; might include your transcription conventions, standard reference works, and instructions to flag dating uncertainties. A &ldquo;thesis writing assistant&rdquo; might include your chapter outlines, style preferences, and instructions to challenge weak arguments.</p>
+
+            <p class="risk"><strong>Risks:</strong> The assistant doesn&rsquo;t actually understand your project&mdash;it generates contextually appropriate text based on your materials and instructions. Over-reliance on a well-configured assistant can create false confidence. The assistant may subtly reinforce your existing framing rather than challenging it, since it&rsquo;s optimised to be helpful within your specified parameters. Use these as conveniences, not as substitutes for external feedback.</p>
+
+            <h3>Voice capture and thought processing</h3>
+            <p>Mobile apps for Claude, ChatGPT, and others accept voice input, enabling a workflow that separates idea generation from refinement: capture thoughts verbally, then use AI to process the raw material.</p>
+
+            <p>Two modes prove useful:</p>
+
+            <p><em>Quick capture:</em> When an idea strikes&mdash;walking, commuting, between meetings&mdash;speak it into your phone. The app transcribes and you can later ask the system to extract key points, identify connections to ongoing work, or flag questions worth pursuing. This catches thinking that would otherwise evaporate.</p>
+
+            <p><em>Extended thinking aloud:</em> Some find it productive to talk through a problem at length&mdash;fifteen minutes, half an hour&mdash;without worrying about structure or coherence. Rambling, backtracking, and contradiction are fine. Afterwards, ask the system to summarise the main threads, identify the core argument struggling to emerge, note tensions or unresolved questions, or restructure the content into an outline.</p>
+
+            <p>The voice-to-text-to-summary pipeline can feed into drafting, grant applications, lecture preparation, or simply clarifying your own thinking. Walking seems particularly conducive&mdash;the combination of movement, low-stakes verbal processing, and subsequent AI structuring works well for many people.</p>
+
+            <p class="risk"><strong>Risks:</strong> The summary is only as good as the raw material&mdash;if your rambling didn&rsquo;t contain a coherent argument, the system will impose false coherence or surface something you didn&rsquo;t actually mean. The system may emphasise what&rsquo;s clearly articulated over what&rsquo;s tentatively gestured at, when the tentative gesture might be the important part. Treat summaries as starting points for your own structuring, not as authoritative accounts of what you were thinking. Also consider privacy: if you&rsquo;re speaking in public spaces, you&rsquo;re potentially exposing research ideas; voice data passes through commercial servers like any other input.</p>
+        </section>
+
+        <hr>
+
+        <!-- Section 4: Verification -->
+        <section id="verification">
+            <h2>Verification Strategies</h2>
+
+            <p><strong>Cross-model checking:</strong> Query multiple models (Claude, GPT, Gemini). Agreement increases confidence somewhat; disagreement definitely signals manual verification needed. But all models may share training-data errors, so agreement isn&rsquo;t proof.</p>
+
+            <p><strong>Citation verification:</strong> Assume all citations are potentially hallucinated until verified. Check that sources exist, that authors and titles match, that page numbers contain what&rsquo;s claimed. This is non-negotiable for anything you&rsquo;ll publish or submit.</p>
+
+            <p><strong>Translation checking:</strong> For ancient languages, compare outputs across models and against published translations. Divergences flag passages requiring expert attention. Don&rsquo;t trust any model&rsquo;s translation as authoritative.</p>
+        </section>
+
+        <hr>
+
+        <!-- Section 5: When not to use -->
+        <section id="when-not">
+            <h2>When Not to Use These Tools</h2>
+
+            <p>When verification would take longer than doing the task yourself. When you can&rsquo;t verify the output&rsquo;s accuracy. When the task requires genuine expertise you don&rsquo;t have (the system&rsquo;s confident output may mislead you). When the material is confidential and shouldn&rsquo;t pass through commercial servers. When slow, careful engagement with materials is itself the point.</p>
+
+            <p>The question isn&rsquo;t whether these tools can produce output for a given task, but whether using them actually improves your work. Often the answer is no, and that&rsquo;s fine.</p>
+        </section>
+
+        <footer>
+            <p>
+                <a href="getting-started.html" class="nav-link">&larr; Getting Started</a>
+                &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+                <a href="ancient-languages.html" class="nav-link">Ancient Languages and Texts &rarr;</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
