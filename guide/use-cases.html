@@ -122,12 +122,12 @@
             <h3>Code for digital projects</h3>
             <p>&ldquo;Write Python code to extract place names from these TEI-encoded texts and count frequency.&rdquo; &ldquo;Create a visualisation of this dataset.&rdquo; Systems with code execution can run and debug code directly.</p>
 
-            <p class="risk"><strong>Risks:</strong> Code may work on test cases but fail on edge cases in your actual data. Logic errors may produce plausible-looking but wrong results. If you can&rsquo;t read the code well enough to verify its logic, you can&rsquo;t verify its outputs. For anything substantive, have someone code-literate review it, or develop enough facility to check the logic yourself.</p>
+            <p class="risk"><strong>Risks:</strong> Code may work on test cases but fail on edge cases in your actual data. Logic errors may produce plausible-looking but wrong results. If you can&rsquo;t read the code well enough to verify its logic, you can&rsquo;t verify its outputs. That said, verification by testing is often more accessible than line-by-line code review. If you can define what correct output looks like for known inputs, you can run test cases and check results without understanding every line. For data transformations, compare a sample of outputs against manual processing. For visualisations, check that axis labels, scales, and data points match your source data. This kind of empirical verification is a learnable skill that doesn&rsquo;t require programming expertise. For anything substantive, have someone code-literate review it, or develop enough facility to check the logic yourself.</p>
 
             <h3>OCR and transcription</h3>
-            <p>Upload images of manuscripts, inscriptions, or archival documents. &ldquo;Transcribe this text and flag uncertain readings.&rdquo;</p>
+            <p>Current frontier models can process images directly&mdash;upload photographs of manuscripts, inscriptions, printed pages, or archival documents and ask for transcription. This is genuinely useful as a first pass, especially for clearly legible printed or typeset materials.</p>
 
-            <p class="risk"><strong>Risks:</strong> The system will produce confident transcriptions that contain errors, especially with damaged materials, non-standard scripts, or abbreviations. It may normalise unusual spellings or silently resolve ambiguities. Treat outputs as first passes requiring careful verification against originals. For anything you&rsquo;ll cite or publish, manual verification is essential.</p>
+            <p class="risk"><strong>Risks:</strong> The system will produce confident transcriptions that contain errors, especially with damaged materials, non-standard scripts, or abbreviations. It may silently normalise unusual spellings, expand abbreviations without flagging them, or resolve ambiguous readings. For many humanities tasks, silent normalisation isn&rsquo;t a minor error&mdash;it changes the object of study. A transcription that regularises medieval spelling or expands scribal abbreviations without marking these interventions is not a neutral tool but an interpretive act. Treat outputs as first passes requiring careful verification against originals. For anything you&rsquo;ll cite or publish, character-by-character verification against the original is essential.</p>
 
             <h3>Image-based queries</h3>
             <p>Upload photographs of artefacts, sites, architectural features. &ldquo;What can you tell me about this object&rsquo;s typology?&rdquo; &ldquo;What parallels might exist for this decorative motif?&rdquo;</p>
@@ -245,7 +245,15 @@
         <section id="verification">
             <h2>Verification Strategies</h2>
 
-            <p><strong>Cross-model checking:</strong> Query multiple models (Claude, GPT, Gemini). Agreement increases confidence somewhat; disagreement definitely signals manual verification needed. But all models may share training-data errors, so agreement isn&rsquo;t proof.</p>
+            <p><strong>Graduated verification (fast to thorough):</strong></p>
+
+            <p>For quick checks: ask the model to flag its own uncertainty and provide alternatives. This costs nothing and occasionally surfaces genuine problems, though it is not reliable.</p>
+
+            <p>For moderate-stakes work: require structured outputs&mdash;claim, evidence, source, confidence level&mdash;and spot-check the sources against primary materials.</p>
+
+            <p>For anything you will publish or submit: verify all citations exist and say what is claimed. Cross-check factual claims against authoritative sources. For translations, compare against published scholarship. Do not treat AI output as a draft to polish; treat it as a hypothesis to test.</p>
+
+            <p><strong>Cross-model checking:</strong> Query multiple models (Claude, GPT, Gemini). Agreement increases confidence somewhat; disagreement definitely signals manual verification needed. But cross-model agreement is not validation&mdash;it is correlated plausibility. Models trained on overlapping data make overlapping errors. If all three major models confidently assert the same false claim, that tells you the claim is well-represented in training data, not that it is true. Agreement is most informative for factual claims that can be independently verified; for interpretive or analytical claims, agreement means very little.</p>
 
             <p><strong>Citation verification:</strong> Assume all citations are potentially hallucinated until verified. Check that sources exist, that authors and titles match, that page numbers contain what&rsquo;s claimed. This is non-negotiable for anything you&rsquo;ll publish or submit.</p>
 
