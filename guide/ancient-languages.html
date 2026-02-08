@@ -48,7 +48,7 @@
 
         <p>Large language models can translate ancient languages. The question for scholars is not whether they can do so, but how well, where they fail, and what you can productively do with imperfect translations. The capacity exists; what matters is understanding its shape. The examples below show actual LLM output &mdash; presented without editorial judgement so that you can assess quality against your own expertise. If you read Latin, Greek, or Hebrew, you will notice things that a non-specialist would miss. That is precisely the point: these tools demand the kind of critical reading that your training has equipped you to do.</p>
 
-        <p>Each example presents the original text alongside an LLM-generated translation and a published human translation for comparison, followed by a brief note on what the LLM output gets right and where it falls short. These are not cherry-picked failures or successes. They are representative of what you will encounter if you paste ancient language material into a current model.</p>
+        <p>Each example presents the original text, followed by an LLM-generated translation and a published human translation side by side for comparison, with a brief note on what the LLM output gets right and where it falls short. These are not cherry-picked failures or successes. They are representative of what you will encounter if you paste ancient language material into a current model.</p>
 
         <div class="note">
             <p><strong>A note on this page&rsquo;s own method:</strong> The commentary below each translation is itself AI-generated (Claude Opus 4.6, February 2026) and therefore subject to the same limitations discussed throughout this guide. It may overstate or mischaracterise particular interpretive points. You are invited to evaluate not only the translations but also the analysis of them&mdash;a useful exercise in its own right.</p>
@@ -60,24 +60,20 @@
 
         <div class="translation-example">
             <h4>Tacitus, <em>Agricola</em> 1.1</h4>
-            <div class="translation-pair">
-                <div>
-                    <p class="label">Original Latin</p>
-                    <p>Clarorum virorum facta moresque posteris tradere, antiquitus usitatum, ne nostris quidem temporibus quamquam incuriosa suorum aetas omisit, quotiens magna aliquave virtus vicit ac supergressa est vitium parvis magnisque civitatibus commune, ignorantiam recti et invidiam.</p>
-                </div>
-                <div>
-                    <p class="label">LLM Translation (Claude Opus 4.6, February 2026)</p>
-                    <p>To hand down to future generations the deeds and character of distinguished men has been a long-established custom, and even our own age, though indifferent to its own people, has not failed to do so whenever some great or notable virtue has triumphed over and risen above the vice common to small and great states alike &mdash; namely, ignorance of what is right and envy.</p>
-                </div>
+            <div class="original-text">
+                <p class="translation-label">Original Latin</p>
+                <p>Clarorum virorum facta moresque posteris tradere, antiquitus usitatum, ne nostris quidem temporibus quamquam incuriosa suorum aetas omisit, quotiens magna aliquave virtus vicit ac supergressa est vitium parvis magnisque civitatibus commune, ignorantiam recti et invidiam.</p>
             </div>
             <div class="translation-pair">
                 <div>
-                    <p class="label">Published Translation</p>
-                    <p>It was the custom in past times to relate famous men&rsquo;s deeds and characters for posterity. Even our present age, though indifferent to its own affairs, has not abandoned it, at least whenever some great and noble virtue has overcome and surmounted the vice that is common to small and great states alike: ignorance of what is right and jealousy.</p>
+                    <p class="translation-label">LLM Translation</p>
+                    <p>To hand down to future generations the deeds and character of distinguished men has been a long-established custom, and even our own age, though indifferent to its own people, has not failed to do so whenever some great or notable virtue has triumphed over and risen above the vice common to small and great states alike &mdash; namely, ignorance of what is right and envy.</p>
+                    <p class="translation-source">Claude Opus 4.6, February 2026</p>
                 </div>
                 <div>
-                    <p class="label">Source</p>
-                    <p>Anthony R. Birley, <em>Agricola and Germany</em>, Oxford World&rsquo;s Classics, 2009</p>
+                    <p class="translation-label">Published Translation</p>
+                    <p>It was the custom in past times to relate famous men&rsquo;s deeds and characters for posterity. Even our present age, though indifferent to its own affairs, has not abandoned it, at least whenever some great and noble virtue has overcome and surmounted the vice that is common to small and great states alike: ignorance of what is right and jealousy.</p>
+                    <p class="translation-source">Anthony R. Birley, <em>Agricola and Germany</em>, Oxford World&rsquo;s Classics, 2009</p>
                 </div>
             </div>
             <p class="translation-note">This translation is readable and broadly accurate, but notice how the compressed Latin becomes looser English. The final phrase <em>ignorantiam recti et invidiam</em> carries specific weight &mdash; 'ignorance of what is right and resentment' &mdash; that the translation may dilute. The rhetorical structure of the periodic sentence is largely lost. Tacitus builds suspense by withholding the main verb and piling up subordinate clauses; the English rendering, by smoothing the syntax into a more natural word order, sacrifices the deliberate difficulty of Tacitean prose. The phrase <em>incuriosa suorum aetas</em> &mdash; an age careless of its own people &mdash; is quietly devastating in context, and the translation captures its sense without its sting.</p>
@@ -89,24 +85,20 @@
 
         <div class="translation-example">
             <h4>Thucydides, <em>History</em> 1.22.4 &mdash; the methodology statement</h4>
-            <div class="translation-pair">
-                <div>
-                    <p class="label">Original Greek</p>
-                    <p lang="grc">κτῆμά τε ἐς αἰεὶ μᾶλλον ἢ ἀγώνισμα ἐς τὸ παραχρῆμα ἀκούειν ξύγκειται.</p>
-                </div>
-                <div>
-                    <p class="label">LLM Translation (Claude Opus 4.6, February 2026)</p>
-                    <p>It has been composed as a possession for all time rather than as a competition piece to be heard for the moment.</p>
-                </div>
+            <div class="original-text">
+                <p class="translation-label">Original Greek</p>
+                <p lang="grc">κτῆμά τε ἐς αἰεὶ μᾶλλον ἢ ἀγώνισμα ἐς τὸ παραχρῆμα ἀκούειν ξύγκειται.</p>
             </div>
             <div class="translation-pair">
                 <div>
-                    <p class="label">Published Translation</p>
-                    <p>It was composed as a permanent legacy, not a showpiece for a single hearing.</p>
+                    <p class="translation-label">LLM Translation</p>
+                    <p>It has been composed as a possession for all time rather than as a competition piece to be heard for the moment.</p>
+                    <p class="translation-source">Claude Opus 4.6, February 2026</p>
                 </div>
                 <div>
-                    <p class="label">Source</p>
-                    <p>Martin Hammond, <em>The Peloponnesian War</em>, Oxford World&rsquo;s Classics, 2009</p>
+                    <p class="translation-label">Published Translation</p>
+                    <p>It was composed as a permanent legacy, not a showpiece for a single hearing.</p>
+                    <p class="translation-source">Martin Hammond, <em>The Peloponnesian War</em>, Oxford World&rsquo;s Classics, 2009</p>
                 </div>
             </div>
             <p class="translation-note">The phrase <em>κτῆμά τε ἐς αἰεὶ</em> ('a possession for all time') is among the most discussed in ancient historiography. Any translation involves interpretive choices about what Thucydides means by his work being a 'possession' versus a 'competition piece' &mdash; choices that reflect broader debates about his historiographic programme. Does <em>κτῆμα</em> imply practical utility or enduring value? Is the contrast with <em>ἀγώνισμα</em> a reference to epideictic oratory, to Herodotus, or to the broader culture of rhetorical performance? The LLM produces a serviceable rendering but doesn't signal that this is contested ground. A student encountering this translation might reasonably assume the meaning is settled, when in fact generations of scholars have argued over what precisely Thucydides is claiming about the nature and purpose of historical writing.</p>
@@ -118,24 +110,20 @@
 
         <div class="translation-example">
             <h4>Genesis 1:1&ndash;2 (Biblia Hebraica)</h4>
-            <div class="translation-pair">
-                <div>
-                    <p class="label">Original Hebrew</p>
-                    <p lang="he" dir="rtl">בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ׃ וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם׃</p>
-                </div>
-                <div>
-                    <p class="label">LLM Translation (Claude Opus 4.6, February 2026)</p>
-                    <p>In the beginning God created the heavens and the earth. And the earth was formless and void, and darkness was over the face of the deep, and the Spirit of God was hovering over the face of the waters.</p>
-                </div>
+            <div class="original-text">
+                <p class="translation-label">Original Hebrew</p>
+                <p lang="he" dir="rtl">בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ׃ וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם׃</p>
             </div>
             <div class="translation-pair">
                 <div>
-                    <p class="label">Published Translation</p>
-                    <p>In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.</p>
+                    <p class="translation-label">LLM Translation</p>
+                    <p>In the beginning God created the heavens and the earth. And the earth was formless and void, and darkness was over the face of the deep, and the Spirit of God was hovering over the face of the waters.</p>
+                    <p class="translation-source">Claude Opus 4.6, February 2026</p>
                 </div>
                 <div>
-                    <p class="label">Source</p>
-                    <p>Authorized (King James) Version, 1611</p>
+                    <p class="translation-label">Published Translation</p>
+                    <p>In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.</p>
+                    <p class="translation-source">Authorized (King James) Version, 1611</p>
                 </div>
             </div>
             <p class="translation-note">This is perhaps the most translated passage in human history, and every word carries theological weight. The LLM defaults to familiar renderings &mdash; but <em>בְּרֵאשִׁית</em> could begin a temporal clause ('When God began to create&hellip;') rather than an absolute statement. The syntactic ambiguity has implications for the doctrine of <em>creatio ex nihilo</em>: does the text describe an absolute beginning, or does it presuppose pre-existing material? <em>רוּחַ אֱלֹהִים</em> carries at least three defensible readings: 'the spirit of God', 'a wind from God', or 'a mighty wind' (taking <em>אֱלֹהִים</em> as a superlative rather than a divine name). <em>תֹהוּ וָבֹהוּ</em> resists easy translation &mdash; 'formless and void' is a convention, not a transparent rendering, and the Hebrew carries connotations of waste, chaos, and desolation that no single English phrase captures. The confident fluency of the LLM output obscures the genuine interpretive complexity that scholars and translators have wrestled with for millennia.</p>
