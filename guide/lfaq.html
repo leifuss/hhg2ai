@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Less Frequently Asked Questions — LLM Guide for Humanities Scholars</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Model selector */
+        .model-selector {
+            background: var(--bg-primary);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .model-selector p {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .model-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .model-btn {
+            padding: 0.4rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .model-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .model-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .model-btn.active:hover {
+            background: var(--text-primary);
+            border-color: var(--text-primary);
+        }
+
+        .model-count {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        /* Response grid */
+        .lfaq-item {
+            margin-bottom: 3rem;
+        }
+
+        .lfaq-item h3 {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .lfaq-question {
+            background: var(--bg-primary);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .lfaq-question p {
+            margin-bottom: 0;
+        }
+
+        .response-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .response-grid.cols-1 { grid-template-columns: 1fr; }
+        .response-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+        .response-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+        .model-response {
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 4px;
+            border-top: 3px solid var(--accent);
+            display: none;
+        }
+
+        .model-response.visible {
+            display: block;
+        }
+
+        .model-response .response-header {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .model-response .response-body {
+            font-size: 0.95rem;
+        }
+
+        .model-response .response-body p {
+            text-align: left;
+        }
+
+        .model-response .response-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
+        /* Colour-code model borders */
+        .model-response[data-model="claude-api"]  { border-top-color: #d97706; }
+        .model-response[data-model="claude-chat"] { border-top-color: #b45309; }
+        .model-response[data-model="chatgpt"]     { border-top-color: #10a37f; }
+        .model-response[data-model="gemini"]      { border-top-color: #4285f4; }
+        .model-response[data-model="grok"]        { border-top-color: #1d9bf0; }
+        .model-response[data-model="kimi"]        { border-top-color: #7c3aed; }
+        .model-response[data-model="qwen"]        { border-top-color: #dc2626; }
+
+        .model-btn[data-model="claude-api"]  { border-left: 3px solid #d97706; }
+        .model-btn[data-model="claude-chat"] { border-left: 3px solid #b45309; }
+        .model-btn[data-model="chatgpt"]     { border-left: 3px solid #10a37f; }
+        .model-btn[data-model="gemini"]      { border-left: 3px solid #4285f4; }
+        .model-btn[data-model="grok"]        { border-left: 3px solid #1d9bf0; }
+        .model-btn[data-model="kimi"]        { border-left: 3px solid #7c3aed; }
+        .model-btn[data-model="qwen"]        { border-left: 3px solid #dc2626; }
+
+        @media (max-width: 600px) {
+            .response-grid.cols-2,
+            .response-grid.cols-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="index.html">Guide Home</a>
+            <span class="nav-sep">|</span>
+            <a href="briefing.html">Briefing</a>
+            <span class="nav-sep">|</span>
+            <a href="getting-started.html">Getting Started</a>
+            <span class="nav-sep">|</span>
+            <a href="use-cases.html">Use Cases</a>
+            <span class="nav-sep">|</span>
+            <a href="ancient-languages.html">Ancient Languages</a>
+            <span class="nav-sep">|</span>
+            <a href="faq.html">FAQ</a>
+            <span class="nav-sep">|</span>
+            <a href="lfaq.html" class="current">LFAQ</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
+        </nav>
+
+        <header>
+            <h1>Less Frequently Asked Questions</h1>
+            <p class="subtitle">February 2026 &middot; Part of the LLM Guide for Humanities Scholars</p>
+            <p class="last-updated">Last updated: February 2026</p>
+        </header>
+
+        <main>
+            <p>The <a href="faq.html">FAQ</a> addresses the questions colleagues raise most often. This page tackles questions that are less common but no less important&mdash;questions that probe deeper into what these systems are, how they work, and what they mean for scholarly practice.</p>
+
+            <p>Each question was put to several leading AI models, using the same wording, and responses are presented side by side. This allows you to compare not only what the models say but <em>how</em> they say it&mdash;what they emphasise, what they omit, and where they agree or diverge. The differences are often as instructive as the answers.</p>
+
+            <div class="note">
+                <p><strong>About these responses:</strong> Each model was given the same question with no additional context or system prompt beyond the platform defaults. Responses were collected on the dates shown and have not been edited. Models may give different answers if asked again; these are snapshots, not definitive statements.</p>
+            </div>
+
+            <!-- Model selector -->
+            <div class="model-selector" id="model-selector">
+                <p><strong>Select models to compare</strong> (choose up to 3):</p>
+                <div class="model-buttons">
+                    <button class="model-btn active" data-model="claude-chat" onclick="toggleModel(this)">Claude (chat)</button>
+                    <button class="model-btn active" data-model="claude-api" onclick="toggleModel(this)">Claude (API)</button>
+                    <button class="model-btn" data-model="chatgpt" onclick="toggleModel(this)">ChatGPT</button>
+                    <button class="model-btn" data-model="gemini" onclick="toggleModel(this)">Gemini</button>
+                    <button class="model-btn" data-model="grok" onclick="toggleModel(this)">Grok</button>
+                    <button class="model-btn" data-model="kimi" onclick="toggleModel(this)">Kimi</button>
+                    <button class="model-btn" data-model="qwen" onclick="toggleModel(this)">Qwen</button>
+                </div>
+                <p class="model-count" id="model-count">2 of 3 selected</p>
+            </div>
+
+            <!-- LFAQ 1 -->
+            <div class="lfaq-item" id="lfaq-1">
+                <h3>1. &ldquo;Placeholder question&rdquo;</h3>
+                <p class="lfaq-question-note">Questions to be populated from the shared Claude conversation.</p>
+                <div class="response-grid cols-2">
+                    <div class="model-response visible" data-model="claude-chat">
+                        <div class="response-header">Claude (chat)</div>
+                        <div class="response-body">
+                            <p><em>[Response pending &mdash; to be extracted from shared conversation]</em></p>
+                        </div>
+                        <p class="response-meta">Claude Opus 4.6 &middot; claude.ai chat &middot; [date]</p>
+                    </div>
+                    <div class="model-response visible" data-model="claude-api">
+                        <div class="response-header">Claude (API)</div>
+                        <div class="response-body">
+                            <p><em>[Response pending &mdash; to be generated via API]</em></p>
+                        </div>
+                        <p class="response-meta">Claude Opus 4.6 &middot; API &middot; [date]</p>
+                    </div>
+                    <div class="model-response" data-model="chatgpt">
+                        <div class="response-header">ChatGPT</div>
+                        <div class="response-body">
+                            <p><em>[Response pending &mdash; to be generated via API]</em></p>
+                        </div>
+                        <p class="response-meta">[model] &middot; API &middot; [date]</p>
+                    </div>
+                    <div class="model-response" data-model="gemini">
+                        <div class="response-header">Gemini</div>
+                        <div class="response-body">
+                            <p><em>[Response pending &mdash; to be generated via API]</em></p>
+                        </div>
+                        <p class="response-meta">[model] &middot; API &middot; [date]</p>
+                    </div>
+                    <div class="model-response" data-model="grok">
+                        <div class="response-header">Grok</div>
+                        <div class="response-body">
+                            <p><em>[Response pending &mdash; to be generated via API]</em></p>
+                        </div>
+                        <p class="response-meta">[model] &middot; API &middot; [date]</p>
+                    </div>
+                    <div class="model-response" data-model="kimi">
+                        <div class="response-header">Kimi</div>
+                        <div class="response-body">
+                            <p><em>[Response pending &mdash; to be generated via API]</em></p>
+                        </div>
+                        <p class="response-meta">[model] &middot; API &middot; [date]</p>
+                    </div>
+                    <div class="model-response" data-model="qwen">
+                        <div class="response-header">Qwen</div>
+                        <div class="response-body">
+                            <p><em>[Response pending &mdash; to be generated via API]</em></p>
+                        </div>
+                        <p class="response-meta">[model] &middot; API &middot; [date]</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <p><a href="faq.html" class="nav-link">&larr; FAQ</a></p>
+            <p><a href="glossary.html" class="nav-link">Glossary &rarr;</a></p>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        var MAX_SELECTED = 3;
+        var selectedModels = ['claude-chat', 'claude-api'];
+
+        function updateDisplay() {
+            // Update button states
+            document.querySelectorAll('.model-btn').forEach(function (btn) {
+                var model = btn.getAttribute('data-model');
+                if (selectedModels.indexOf(model) !== -1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update count
+            var countEl = document.getElementById('model-count');
+            countEl.textContent = selectedModels.length + ' of ' + MAX_SELECTED + ' selected';
+
+            // Determine grid columns
+            var colClass = 'cols-' + Math.min(selectedModels.length, 3);
+
+            // Update all response grids
+            document.querySelectorAll('.response-grid').forEach(function (grid) {
+                grid.className = 'response-grid ' + colClass;
+
+                // Show/hide responses
+                grid.querySelectorAll('.model-response').forEach(function (resp) {
+                    var model = resp.getAttribute('data-model');
+                    if (selectedModels.indexOf(model) !== -1) {
+                        resp.classList.add('visible');
+                    } else {
+                        resp.classList.remove('visible');
+                    }
+                });
+            });
+        }
+
+        window.toggleModel = function (btn) {
+            var model = btn.getAttribute('data-model');
+            var idx = selectedModels.indexOf(model);
+
+            if (idx !== -1) {
+                // Deselect — but require at least 1
+                if (selectedModels.length > 1) {
+                    selectedModels.splice(idx, 1);
+                }
+            } else {
+                // Select — but cap at MAX_SELECTED
+                if (selectedModels.length < MAX_SELECTED) {
+                    selectedModels.push(model);
+                }
+            }
+
+            updateDisplay();
+        };
+
+        // Initial render
+        updateDisplay();
+    })();
+    </script>
+</body>
+</html>

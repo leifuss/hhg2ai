@@ -21,6 +21,8 @@
             <span class="nav-sep">|</span>
             <a href="faq.html">FAQ</a>
             <span class="nav-sep">|</span>
+            <a href="lfaq.html">LFAQ</a>
+            <span class="nav-sep">|</span>
             <a href="glossary.html" class="current">Glossary</a>
         </nav>
 
@@ -38,6 +40,10 @@
             </div>
 
             <div class="glossary-term">
+                <p><strong>Agentic AI:</strong> AI systems that can autonomously plan, use tools, and take multi-step actions to accomplish goals&mdash;rather than simply responding to a single prompt. An &lsquo;agent&rsquo; might browse the web, write and run code, read files, and decide its own next steps. This represents a shift from AI as a conversational partner to AI as a semi-autonomous worker. The capabilities are real but the autonomy raises questions about oversight, accountability, and the appropriate scope of delegation.</p>
+            </div>
+
+            <div class="glossary-term">
                 <p><strong>Alignment:</strong> The problem of ensuring AI systems do what their designers intend and behave in accordance with human values. An active research area, not a solved problem. <a href="https://www.anthropic.com/research" target="_blank">Anthropic's perspective</a></p>
             </div>
 
@@ -47,6 +53,14 @@
 
             <div class="glossary-term">
                 <p><strong>Chatbot:</strong> Conversational interface to an AI system. ChatGPT, Claude, and Gemini are chatbots built on top of LLMs. The term predates modern AI&mdash;earlier chatbots used simpler rule-based systems.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Chain of thought / Reasoning models:</strong> A prompting technique (and, increasingly, a built-in model capability) where the AI works through a problem step by step before giving a final answer, rather than jumping straight to a conclusion. Some recent models&mdash;such as OpenAI&rsquo;s o-series and Anthropic&rsquo;s Claude with &lsquo;extended thinking&rsquo;&mdash;perform this reasoning internally and automatically. The visible &lsquo;thinking&rsquo; process can make outputs easier to evaluate, but adds to response time and cost.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Computer use:</strong> The ability of an AI model to interact with a computer as a human would&mdash;moving a cursor, clicking buttons, reading screens, and navigating software. Distinct from API-based tool use, which connects to software programmatically. Still an emerging capability with significant limitations.</p>
             </div>
 
             <div class="glossary-term">
@@ -90,7 +104,19 @@
             </div>
 
             <div class="glossary-term">
+                <p><strong>Knowledge cutoff:</strong> The date beyond which a model has no training data. A model with a cutoff of April 2025 has no direct knowledge of events after that date. Models may be supplemented with web search or retrieval tools to access newer information, but their &lsquo;native&rsquo; knowledge ends at the cutoff. Always worth checking when relying on a model for recent information.</p>
+            </div>
+
+            <div class="glossary-term">
                 <p><strong>LLM (Large Language Model):</strong> AI systems trained on vast text corpora to predict and generate language. "Large" refers to the number of parameters (billions to trillions). Claude, GPT-4, and Gemini are LLMs. <a href="https://arstechnica.com/science/2023/07/a-jargon-free-explanation-of-how-ai-large-language-models-work/" target="_blank">Ars Technica accessible overview</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>MCP (Model Context Protocol):</strong> An open standard (developed by Anthropic) that allows AI models to connect to external tools and data sources in a standardised way&mdash;databases, file systems, APIs, and other services. Analogous to how USB standardised hardware connections: rather than each AI tool needing a custom integration, MCP provides a common interface. Primarily relevant to developers building AI-powered tools.</p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Mixture of Experts (MoE):</strong> An architecture where a large model is divided into specialised sub-networks (&lsquo;experts&rsquo;), and only a subset is activated for any given input. This allows models to be very large in total capacity while remaining efficient at inference time, since most parameters are dormant for any particular query. Several frontier models use this approach.</p>
             </div>
 
             <div class="glossary-term">
@@ -119,6 +145,10 @@
 
             <div class="glossary-term">
                 <p><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> A training technique where human evaluators rate model outputs, and the model is trained to produce responses humans prefer. Used to make models more helpful and less harmful. <a href="https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback" target="_blank">Anthropic explanation</a> | <a href="https://huyenchip.com/2023/05/02/rlhf.html" target="_blank">Chip Huyen's accessible overview</a></p>
+            </div>
+
+            <div class="glossary-term">
+                <p><strong>Synthetic data:</strong> Training data generated by AI models rather than collected from human sources. Increasingly used to augment training datasets, particularly for specialised domains. Raises questions about feedback loops: models trained on their own outputs may amplify biases or converge on narrow patterns. Relevant to scholars because it means that the training data for future models will increasingly contain AI-generated text, with implications for how these systems represent human knowledge and culture.</p>
             </div>
 
             <div class="glossary-term">
