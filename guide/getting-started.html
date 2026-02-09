@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,8 @@
             <a href="getting-started.html" class="current">Getting Started</a>
             <span class="nav-sep">|</span>
             <a href="mindset.html">Mindset</a>
+            <span class="nav-sep">|</span>
+            <a href="rules.html">Rules</a>
             <span class="nav-sep">|</span>
             <a href="use-cases.html">Use Cases</a>
             <span class="nav-sep">|</span>
@@ -65,6 +67,12 @@
                 <li><strong>Assess the response against what you know about the text.</strong> Does the system understand how this sentence positions Tacitus&rsquo;s project? Does it recognise the political undertones? Where does its analysis feel generic, and where does it show genuine purchase on the passage?</li>
             </ol>
 
+            <div class="highlight" style="font-size: 0.9rem;">
+                <p><strong>What you&rsquo;ll produce:</strong> A calibrated judgement of how the tool handles material in your domain &mdash; where it performs well, where it falls short, and what the failure modes look like.</p>
+                <p><strong>How to check it:</strong> Compare the translation against a published rendering (Birley, Hammond, or your own preferred edition). Identify at least one place where the LLM missed nuance that matters.</p>
+                <p style="margin-bottom: 0;"><strong>Common pitfalls:</strong> Accepting a fluent translation as adequate without checking the interpretive choices. Concluding the tool is &ldquo;good enough&rdquo; based on a passage you know well &mdash; the real test is material at the edge of your expertise, where errors are harder to spot.</p>
+            </div>
+
             <p>The value of this exercise lies in the assessment, not the output. You already know this text, or texts like it. What you are discovering is how the tool handles material where you can judge quality&mdash;which is the only reliable way to estimate how it will perform on material where you cannot.</p>
 
             <h3>Alternative exercise: discussion questions</h3>
@@ -72,7 +80,7 @@
             <p>If you do not work with ancient languages, try this instead. Pick a topic from your current teaching&mdash;a seminar theme, a set text, a problem you regularly ask students to grapple with. Ask the system: &ldquo;Generate six discussion questions for a postgraduate seminar on [your topic].&rdquo; Then evaluate the results. Which questions would actually provoke useful discussion with your students? Which ones miss the point of why the topic matters in your discipline? What do the gaps tell you about how the system understands&mdash;or fails to understand&mdash;your field?</p>
 
             <div class="note">
-                <p><strong>Note:</strong> Either exercise takes about fifteen minutes. The goal is not to produce something useful&mdash;it is to calibrate your own sense of what these tools do well and where they fall short. That calibration is worth more than any single output.</p>
+                <p><strong>Bring your own material:</strong> For either exercise, you can substitute material from your own work &mdash; a tricky passage from a primary source, a dense paragraph from a secondary text, or a section of your own writing that needs restructuring. The same principle applies: test the tool against material where you can judge quality.</p>
             </div>
         </section>
 
@@ -91,17 +99,11 @@
 
             <h3>Privacy and training settings</h3>
 
-            <p>By default, many platforms use your conversations to train future models. Most offer settings to opt out.</p>
+            <p>By default, many platforms use your conversations to train future models. Most offer settings to opt out. In Claude: Settings &rarr; Privacy &rarr; disable the use of your conversations for training. This prevents your inputs being incorporated into training data, though they still pass through commercial servers.</p>
 
-            <p>In Claude: Settings &rarr; Privacy &rarr; you can disable the use of your conversations for training. With this disabled, your conversations are still processed on Anthropic&rsquo;s servers (unavoidable), but are not incorporated into training data.</p>
+            <p>The key principle: do not input anything you would be uncomfortable with a company storing, even temporarily. If your university provides institutional access (through Microsoft Copilot or a managed LLM account), the data protection provisions are typically stronger than consumer accounts. Check with your IT services.</p>
 
-            <p>This matters for several reasons. You may have principled objections to contributing unpaid labour to commercial AI development. You may work with materials&mdash;unpublished research, student work, peer review content&mdash;that should not become training data. Even for routine use, opting out costs you nothing and reduces exposure.</p>
-
-            <p>What opting out does not do: it does not make your conversations private in an absolute sense. Data still passes through commercial servers. Do not input anything you would be uncomfortable with a company storing, even temporarily. Confidential personnel matters, sensitive student information, embargoed research&mdash;these should not go into any commercial LLM regardless of privacy settings.</p>
-
-            <p><strong>Institutional accounts:</strong> If your university provides access to an LLM through a procurement agreement (increasingly common in UK HE), the privacy terms may differ significantly from consumer accounts. Institutional agreements typically include stronger data protection provisions, GDPR compliance commitments, and guarantees that data won&rsquo;t be used for training. Check with your IT services or data protection officer. If your institution doesn&rsquo;t yet provide access, consumer accounts with training disabled are a reasonable interim, but avoid inputting student data, unpublished research by others, or anything covered by data protection obligations.</p>
-
-            <p>Note that disabling training use does not mean your data is immediately deleted. Platforms retain conversation data for varying periods for safety monitoring, abuse prevention, and service improvement&mdash;even when it is excluded from model training. Retention policies differ by platform and change over time. Treat any commercial LLM as you would any cloud service: assume the provider can access your inputs.</p>
+            <p>For the full picture on data boundaries &mdash; what to avoid inputting, institutional vs consumer accounts, and the practical test to apply &mdash; see <a href="rules.html#data-boundaries">Rules, Risks &amp; Verification</a>.</p>
 
             <h3>Memory settings</h3>
 

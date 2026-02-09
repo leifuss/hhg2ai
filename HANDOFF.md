@@ -48,21 +48,45 @@ The guide accompanies a workshop but is designed to be useful independently.
 | `1b79383` | Add screenshot, revise Copilot for restricted institutional access |
 | `57d610e` | Add per-page feedback links to all guide pages |
 
+### Subsequent sessions
+
+6. **Mindset page** (mindset.html — new file)
+   Adapted from Anthropic podcast advice for a humanist audience. Covers foundational mindset shifts (exploratory thinking, pushing back, using AI as intellectual mirror) and practical techniques (handoff documents, voice input, sharing exact content). Explains unfamiliar concepts like rubber-duck debugging.
+
+7. **Resources page** (resources.html — new file)
+   Curated reading list rendered from briefing documents, with "At Exeter" section in a highlighted callout. Covers teaching guidance, publishing integrity, source-facing AI, pedagogy, books, and critical literacy.
+
+8. **Guide revision based on ChatGPT and Gemini reviews** (multiple files)
+   Structural overhaul responding to CPD pedagogical review:
+
+   - **New canonical Rules, Risks & Verification page** (rules.html): Consolidates data boundaries, verification ladder (3 tiers), provenance/disclosure, and "when not to use" guidance. Includes copy-paste templates: system prompts (teaching/research/admin), citation verification checklist, AI use disclosure statements, and agent audit record.
+   - **Learning paths on homepage** (index.html): Three directed paths — "I teach next term" (30–45 min), "I'm writing or researching" (45–60 min), "I need to use institutional tools" (20–30 min) — replacing the generic "start wherever" advice.
+   - **Redundancy reduction**: Privacy/data sections shortened in getting-started, briefing, copilot, faq, agentic — all now link to canonical Rules page instead of repeating content.
+   - **Exercise upgrade pass**: Added "What you'll produce", "How to check it", "Common pitfalls" metadata to exercises in getting-started, agentic. Added "Bring your own material" prompts.
+   - **Skip-logic callouts**: Ancient Languages, Agentic AI, and Copilot pages now have callouts at the top telling readers when to skip or skim.
+   - **Glossary tiering**: Split into "Core terms" (12 behaviour-changing terms) and "Further depth" (collapsible section with 21 conceptual/technical terms).
+   - **Briefing/FAQ boundary**: Tightened to avoid re-explanation — Briefing covers mechanism and ethics, FAQ covers practical concerns, both link to Rules for specifics.
+   - **Navigation**: Updated across all pages with Mindset, Rules, and Resources links.
+   - **Fixed**: getting-started.html `lang="en"` → `lang="en-GB"`.
+
 ---
 
 ## Current site structure
 
 ```
 guide/
-├── index.html              — Guide home with routing cards
+├── index.html              — Guide home with learning paths and guide cards
 ├── briefing.html           — What LLMs are, how they work, ethical context
 ├── getting-started.html    — Try-it-yourself exercises, setup, prompting
+├── mindset.html            — AI interaction mindset for scholars
+├── rules.html              — Canonical rules, verification ladder, templates
 ├── use-cases.html          — Use cases by time investment, verification
 ├── ancient-languages.html  — Translation comparisons (Latin, Greek, Hebrew)
 ├── agentic.html            — Agentic AI: levels, tools, audit, cross-model review
-├── copilot.html            — Microsoft Copilot best practice (NEW)
+├── copilot.html            — Microsoft Copilot best practice
 ├── faq.html                — Frequently asked questions
-├── glossary.html           — AI terminology definitions
+├── glossary.html           — AI terminology (core terms + collapsible depth)
+├── resources.html          — Curated reading list and Exeter-specific links
 ├── quickstart.html         — Print-friendly workshop handout
 ├── lfaq.html               — Less Frequently Asked Questions (hidden from nav)
 ├── css/
@@ -76,6 +100,9 @@ Root level:
 experiments.html            — Portfolio of Claude AI experiments
 README.md                   — Repository overview
 PLAN.md                     — Original implementation plan
+HANDOFF.md                  — This document
+ai-resources-humanities.md  — Source content for resources page
+claude-code-brief-resources-tab.md — Brief for resources page
 ```
 
 ---
@@ -94,7 +121,7 @@ PLAN.md                     — Original implementation plan
 - The Google Sheet CSV feed (`pub?output=csv`) cannot be accessed from this development environment due to network restrictions. For future sessions, the author should periodically export the Sheet as CSV and commit it as `guide/feedback.csv` so it can be read directly from the filesystem.
 
 ### Getting Started page — `lang` attribute
-- This page uses `lang="en"` rather than `lang="en-GB"` like all other pages. Minor inconsistency worth fixing.
+- ~~This page uses `lang="en"` rather than `lang="en-GB"` like all other pages. Minor inconsistency worth fixing.~~ **Fixed** in the guide revision session.
 
 ---
 

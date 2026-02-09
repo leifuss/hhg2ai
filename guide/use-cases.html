@@ -17,6 +17,8 @@
             <span class="nav-sep">|</span>
             <a href="mindset.html">Mindset</a>
             <span class="nav-sep">|</span>
+            <a href="rules.html">Rules</a>
+            <span class="nav-sep">|</span>
             <a href="use-cases.html" class="current">Use Cases</a>
             <span class="nav-sep">|</span>
             <a href="ancient-languages.html">Ancient Languages</a>
@@ -253,19 +255,15 @@
         <section id="verification">
             <h2>Verification Strategies</h2>
 
-            <p><strong>Graduated verification (fast to thorough):</strong></p>
+            <p>All LLM output requires verification. The <a href="rules.html#verification-ladder">verification ladder</a> on the Rules page provides the full framework &mdash; three tiers matching effort to stakes, plus checklists for citation verification, cross-model checking, and translation checking. Apply the appropriate tier to each use case above:</p>
 
-            <p>For quick checks: ask the model to flag its own uncertainty and provide alternatives. This costs nothing and occasionally surfaces genuine problems, though it is not reliable.</p>
+            <ul>
+                <li><strong>15-minute tasks:</strong> Tier 1 (quick check) is usually sufficient &mdash; scan for obvious errors, ask the model to flag its own uncertainty.</li>
+                <li><strong>Afternoon tasks:</strong> Tier 2 (moderate verification) &mdash; spot-check sources, cross-check key claims, require structured outputs.</li>
+                <li><strong>Deeper work:</strong> Tier 3 (publication-grade) for anything you will publish or submit &mdash; verify all citations, cross-check all factual claims, treat output as a hypothesis to test.</li>
+            </ul>
 
-            <p>For moderate-stakes work: require structured outputs&mdash;claim, evidence, source, confidence level&mdash;and spot-check the sources against primary materials.</p>
-
-            <p>For anything you will publish or submit: verify all citations exist and say what is claimed. Cross-check factual claims against authoritative sources. For translations, compare against published scholarship. Do not treat AI output as a draft to polish; treat it as a hypothesis to test.</p>
-
-            <p><strong>Cross-model checking:</strong> Query multiple models (Claude, GPT, Gemini). Agreement increases confidence somewhat; disagreement definitely signals manual verification needed. But cross-model agreement is not validation&mdash;it is correlated plausibility. Models trained on overlapping data make overlapping errors. If all three major models confidently assert the same false claim, that tells you the claim is well-represented in training data, not that it is true. Agreement is most informative for factual claims that can be independently verified; for interpretive or analytical claims, agreement means very little.</p>
-
-            <p><strong>Citation verification:</strong> Assume all citations are potentially hallucinated until verified. Check that sources exist, that authors and titles match, that page numbers contain what&rsquo;s claimed. This is non-negotiable for anything you&rsquo;ll publish or submit.</p>
-
-            <p><strong>Translation checking:</strong> For ancient languages, compare outputs across models and against published translations. Divergences flag passages requiring expert attention. Don&rsquo;t trust any model&rsquo;s translation as authoritative.</p>
+            <p>The key principle: do not treat AI output as a draft to polish. Treat it as a hypothesis to test. The <a href="rules.html#templates">citation verification checklist</a> provides a step-by-step process.</p>
         </section>
 
         <hr>
@@ -274,9 +272,7 @@
         <section id="when-not">
             <h2>When Not to Use These Tools</h2>
 
-            <p>When verification would take longer than doing the task yourself. When you can&rsquo;t verify the output&rsquo;s accuracy. When the task requires genuine expertise you don&rsquo;t have (the system&rsquo;s confident output may mislead you). When the material is confidential and shouldn&rsquo;t pass through commercial servers. When slow, careful engagement with materials is itself the point.</p>
-
-            <p>The question isn&rsquo;t whether these tools can produce output for a given task, but whether using them actually improves your work. Often the answer is no, and that&rsquo;s fine.</p>
+            <p>Not every task benefits from AI assistance. See <a href="rules.html#when-not">the full list of when to avoid these tools</a>, but the core principle is simple: the question is not whether these tools <em>can</em> produce output for a given task, but whether using them actually improves your work. Often the answer is no, and that is fine.</p>
         </section>
 
         <footer>
