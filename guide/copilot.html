@@ -42,7 +42,7 @@
                 <li><a href="#what-it-does">3. What Copilot can do</a></li>
                 <li><a href="#strengths">4. Strengths</a></li>
                 <li><a href="#limitations">5. Limitations</a></li>
-                <li><a href="#getting-most">6. Getting the most out of Copilot</a></li>
+                <li><a href="#getting-most">6. Getting the most out of Copilot</a> (including <a href="#restricted">restricted configurations</a>)</li>
                 <li><a href="#when-other-tools">7. When to use other tools instead</a></li>
             </ul>
         </nav>
@@ -50,6 +50,10 @@
         <p>Many UK universities provide Microsoft Copilot as their default AI tool. If your institution is among them, you may already have access through your university Microsoft 365 account&mdash;and it may be the only AI tool approved for use with certain categories of data. This page explains what Copilot is, what it does well, where it falls short, and how to get useful results from it.</p>
 
         <p>This is not an endorsement of Copilot over other tools. For many academic tasks, dedicated LLMs like Claude, ChatGPT, or Gemini produce better results. But if Copilot is what your institution provides&mdash;and particularly if institutional policy restricts you to it for certain work&mdash;it is worth understanding how to use it effectively rather than dismissing it after a disappointing first encounter.</p>
+
+        <div class="note">
+            <p><strong>A note on institutional variation:</strong> How Copilot works at your university depends on decisions made by your IT administration. The technology can search across emails, files, and meeting transcripts&mdash;but many institutions restrict these permissions, sometimes significantly. At Exeter, for example, Copilot can only access the specific file or email you are currently working with, not your broader Microsoft 365 data. This is a deliberate policy choice reflecting cautious data governance, not a limitation of the technology itself. The guidance below covers both full-access and restricted configurations, and includes specific strategies for getting the most out of Copilot even when access is tightly scoped.</p>
+        </div>
 
         <!-- Section 1: What is Microsoft Copilot? -->
         <section id="what-is">
@@ -98,28 +102,28 @@
         <section id="what-it-does">
             <h2>3. What Copilot can do</h2>
 
-            <p>Copilot&rsquo;s distinctive feature is integration with Microsoft 365 applications. Rather than switching to a separate tool and pasting text back and forth, you work within the applications you already use.</p>
+            <p>Copilot&rsquo;s distinctive feature is integration with Microsoft 365 applications. Rather than switching to a separate tool and pasting text back and forth, you work within the applications you already use. What exactly is available depends on your institution&rsquo;s configuration&mdash;some features described below may be restricted at your university.</p>
 
             <h3>In Word</h3>
-            <p>Draft text from prompts, rewrite or restructure selected passages, summarise long documents, change tone or register, generate text based on other documents in your OneDrive. You can ask it to draft with reference to a specific file: &ldquo;Summarise the key findings from [uploaded report] in 300 words.&rdquo;</p>
+            <p>Draft text from prompts, rewrite or restructure selected passages, summarise long documents, change tone or register. These capabilities work on the document you have open, regardless of your institution&rsquo;s broader data access settings. Where permissions allow, you can also generate text based on other documents in your OneDrive by referencing them explicitly.</p>
 
             <h3>In Outlook</h3>
-            <p>Summarise long email threads, draft replies, adjust tone (more formal, more concise, etc.), catch up on emails you missed during a meeting. Particularly useful for administrative correspondence where speed matters more than nuance.</p>
+            <p>Summarise the email thread you&rsquo;re reading, draft replies, adjust tone (more formal, more concise, etc.). These per-email features work even in restricted configurations. Some institutions also allow Copilot to search across your inbox more broadly&mdash;check what&rsquo;s available at yours.</p>
 
             <h3>In Teams</h3>
-            <p>Summarise meetings you missed or joined late, generate action items from meeting transcripts, catch up on chat threads. This is one of Copilot&rsquo;s strongest use cases&mdash;meeting summarisation is genuinely time-saving and relatively easy to verify.</p>
+            <p>Summarise meetings you missed or joined late, generate action items from meeting transcripts, catch up on chat threads. Meeting summarisation is one of Copilot&rsquo;s strongest use cases&mdash;genuinely time-saving and relatively easy to verify. Availability depends on whether your institution has enabled Copilot in Teams and whether meeting transcription is turned on.</p>
 
             <h3>In PowerPoint</h3>
-            <p>Generate slide decks from prompts or from existing documents, suggest design improvements, add speaker notes. The quality varies considerably&mdash;generated slides often need substantial reworking.</p>
+            <p>Generate slide decks from prompts or from the current document, suggest design improvements, add speaker notes. The quality varies considerably&mdash;generated slides often need substantial reworking.</p>
 
             <h3>In Excel</h3>
-            <p>Analyse data using natural language queries, generate formulae, create charts, identify patterns. Ask &ldquo;What are the trends in column B over time?&rdquo; rather than writing formulae yourself. Useful for straightforward analysis; limited for complex or specialised data work.</p>
+            <p>Analyse data using natural language queries, generate formulae, create charts, identify patterns. Ask &ldquo;What are the trends in column B over time?&rdquo; rather than writing formulae yourself. Useful for straightforward analysis of the spreadsheet you have open; limited for complex or specialised data work.</p>
 
             <h3>Copilot Chat</h3>
-            <p>Query across your Microsoft 365 data: &ldquo;Find all emails from [colleague] about [project] in the last month.&rdquo; &ldquo;What did we decide about [topic] in last Tuesday&rsquo;s meeting?&rdquo; This cross-application search is Copilot&rsquo;s most distinctive capability&mdash;no other AI tool can search your institutional email, files, and meeting transcripts in a single query.</p>
+            <p>Where institutional permissions allow, Copilot Chat can query across your Microsoft 365 data: &ldquo;Find all emails from [colleague] about [project] in the last month.&rdquo; &ldquo;What did we decide about [topic] in last Tuesday&rsquo;s meeting?&rdquo; This cross-application search is Copilot&rsquo;s most distinctive capability. However, many institutions&mdash;including Exeter&mdash;restrict this broad data access. If yours does, Copilot Chat functions as a general-purpose chatbot within the Microsoft environment rather than a personalised data search tool.</p>
 
             <h3>Copilot agents</h3>
-            <p>More recent additions include specialised agents: <em>Researcher</em> (for web-based deep research) and <em>Analyst</em> (for data analysis). These extend Copilot beyond document assistance toward more autonomous task completion, though they remain less capable than dedicated research tools.</p>
+            <p>More recent additions include specialised agents: <em>Researcher</em> (for web-based deep research) and <em>Analyst</em> (for data analysis). These extend Copilot beyond document assistance toward more autonomous task completion, though they remain less capable than dedicated research tools. Availability varies by institution and licence type.</p>
         </section>
 
         <hr>
@@ -128,13 +132,15 @@
         <section id="strengths">
             <h2>4. Strengths</h2>
 
-            <p><strong>Integration with your existing workflow.</strong> The single biggest advantage. You do not need to leave Word to get AI assistance, copy text between applications, or manage a separate subscription. For people who live in Microsoft 365&mdash;which describes most UK academics whether they like it or not&mdash;this reduces friction considerably.</p>
+            <p><strong>Integration with your existing workflow.</strong> The single biggest advantage, and one that holds regardless of your institution&rsquo;s permission settings. You do not need to leave Word to get AI assistance, copy text between applications, or manage a separate subscription. For people who live in Microsoft 365&mdash;which describes most UK academics whether they like it or not&mdash;this reduces friction considerably.</p>
 
-            <p><strong>Institutional data access.</strong> Copilot can draw on your emails, documents, meeting transcripts, and shared files within your institutional tenancy. This means it can answer questions about your actual work context: &ldquo;What was the deadline we agreed for the grant submission?&rdquo; &ldquo;Summarise the feedback from last week&rsquo;s board meeting.&rdquo; No other AI tool can do this without you manually providing the information.</p>
+            <p><strong>It works on the document in front of you.</strong> Even in the most restricted institutional configurations, Copilot can help with the file or email you currently have open: rewrite a paragraph, change tone, summarise a long document, draft a reply. This per-document assistance is available everywhere Copilot is enabled, and it is where the tool is most consistently useful.</p>
+
+            <p><strong>Institutional data access (where enabled).</strong> Where institutional permissions allow it, Copilot can draw on your emails, documents, meeting transcripts, and shared files within your tenancy. This means it can answer questions about your actual work context: &ldquo;What was the deadline we agreed for the grant submission?&rdquo; &ldquo;Summarise the feedback from last week&rsquo;s board meeting.&rdquo; No other AI tool can do this without you manually providing the information. Note that many institutions restrict this capability&mdash;if yours does, see the <a href="#restricted">strategies for restricted configurations</a> below.</p>
 
             <p><strong>Data protection by default.</strong> When using institutional Copilot, your data stays within your institution&rsquo;s Microsoft tenancy. You do not need to think about privacy settings, opt out of training data collection, or worry about which server processes your request. For work involving student data, personnel matters, or other sensitive institutional information, this is a meaningful advantage over consumer AI tools where you must actively manage privacy settings.</p>
 
-            <p><strong>Meeting and email management.</strong> Copilot&rsquo;s Teams summarisation and Outlook capabilities are genuinely useful for the administrative side of academic life. Catching up on a missed meeting, triaging a full inbox after a conference, or extracting action items from a long email thread&mdash;these are tasks where Copilot performs well and the verification burden is low.</p>
+            <p><strong>Meeting and email management.</strong> Copilot&rsquo;s Teams summarisation and Outlook capabilities are genuinely useful for the administrative side of academic life. Catching up on a missed meeting, triaging a full inbox after a conference, or extracting action items from a long email thread&mdash;these are tasks where Copilot performs well and the verification burden is low. (Teams features require transcription to be enabled by your institution.)</p>
 
             <p><strong>No separate account or cost.</strong> If your institution provides it, you already have access through your university login. There is no personal subscription to manage or justify, no account to create, and no question about whether claiming the cost is appropriate.</p>
         </section>
@@ -189,11 +195,31 @@
             <h3>Iterate within the conversation</h3>
             <p>If the first result is not quite right, refine rather than starting over: &ldquo;That&rsquo;s too long&mdash;cut it to half the length.&rdquo; &ldquo;Make the tone more formal.&rdquo; &ldquo;The third point is wrong&mdash;replace it with [specific content].&rdquo; Copilot responds to correction, though less fluently than dedicated chatbots.</p>
 
+            <h3 id="restricted">Making the most of restricted configurations</h3>
+
+            <p>If your institution limits Copilot to the document or email you&rsquo;re currently working with&mdash;as Exeter does&mdash;you lose the cross-application search features but retain a capable AI assistant embedded in your everyday tools. Here are strategies for getting genuine value from this configuration:</p>
+
+            <p><strong>Personalise your Copilot settings.</strong> In Microsoft 365, you can set preferences that shape how Copilot responds. Go to your Copilot settings (accessible via the Copilot icon in any 365 app) and configure your role, writing preferences, and tone. Tell it you are an academic, that you prefer formal but clear prose, and that you want concise outputs. These persistent preferences improve every subsequent interaction without you needing to repeat them.</p>
+
+            <p><strong>Use it as a writing assistant in Word.</strong> This is where restricted Copilot shines. Ask it to rewrite a paragraph for clarity, restructure a section, change register from informal notes to formal prose, summarise a long document, or suggest alternative phrasings. None of this requires access to other files&mdash;it works entirely within the document you have open. For administrative writing especially (reports, committee papers, module descriptions), this can save meaningful time.</p>
+
+            <p><strong>Draft and refine emails in Outlook.</strong> Copilot can draft replies to the email you&rsquo;re reading, adjust tone, shorten a rambling message, or make a response more diplomatic. This is per-email functionality that works regardless of broader access restrictions. It is particularly useful for routine correspondence where getting the tone right matters but composing from scratch is tedious.</p>
+
+            <p><strong>Feed context manually.</strong> If Copilot cannot pull in other files automatically, you can still paste relevant text into your prompt. Working on a grant application in Word? Copy a key paragraph from the call for proposals into your Copilot prompt: &ldquo;The funder&rsquo;s priorities are [pasted text]. Revise my impact statement to better address these priorities.&rdquo; This is less seamless than automatic data access, but it works.</p>
+
+            <p><strong>Use it for general-knowledge tasks.</strong> Even without access to your institutional data, Copilot has the same underlying language model as ChatGPT. You can ask it general questions, request explanations of concepts, brainstorm ideas, or get help with formatting&mdash;all within the Microsoft 365 interface without switching to a separate tool.</p>
+
+            <p><strong>Combine with dedicated LLMs strategically.</strong> Use Copilot for the &lsquo;last mile&rsquo; tasks within Microsoft 365&mdash;polishing a draft in Word, formatting a reply in Outlook&mdash;and use a dedicated LLM (Claude, ChatGPT, Gemini) for the substantive intellectual work that precedes it. The two complement each other well: the dedicated LLM helps you think; Copilot helps you format and send.</p>
+
+            <div class="note">
+                <p><strong>Why institutions restrict access:</strong> Broad data access means Copilot can surface information from across your institution&rsquo;s Microsoft 365 environment. Universities are rightly cautious about this&mdash;it raises questions about who can see what, whether sensitive information might be surfaced inappropriately, and how access controls are managed at scale. Restricting Copilot to the current document is a proportionate response while institutions develop their governance frameworks. These policies may evolve as institutions gain confidence and experience.</p>
+            </div>
+
             <h3>Know when to switch tools</h3>
             <p>The most effective approach is to use Copilot for what it does well and switch to a dedicated LLM for everything else. A practical division:</p>
 
             <div class="highlight">
-                <p><strong>Use Copilot for:</strong> meeting summaries, email drafting, document restructuring, finding information in your institutional data, quick formatting tasks, catching up on missed discussions.</p>
+                <p><strong>Use Copilot for:</strong> rewriting and restructuring within Word, drafting and refining emails in Outlook, formatting tasks, meeting summaries (if Teams transcription is enabled), general-knowledge questions within the Microsoft 365 interface.</p>
                 <p style="margin-bottom: 0;"><strong>Use a dedicated LLM for:</strong> sustained intellectual work, translation, argument testing, research exploration, code generation, extended writing projects, anything requiring deep domain knowledge or multiple rounds of iteration.</p>
             </div>
 
