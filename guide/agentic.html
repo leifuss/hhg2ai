@@ -17,6 +17,8 @@
             <span class="nav-sep">|</span>
             <a href="mindset.html">Mindset</a>
             <span class="nav-sep">|</span>
+            <a href="rules.html">Rules</a>
+            <span class="nav-sep">|</span>
             <a href="use-cases.html">Use Cases</a>
             <span class="nav-sep">|</span>
             <a href="ancient-languages.html">Ancient Languages</a>
@@ -37,6 +39,10 @@
             <p class="subtitle">February 2026 &middot; Part of the LLM Guide for Humanities Scholars</p>
             <p class="last-updated">Last updated: February 2026</p>
         </header>
+
+        <div class="note">
+            <p><strong>If you only use chat-based tools:</strong> Read <a href="#what-is">What is agentic AI?</a> for the concept, then skip to <a href="#risks">Risks and limitations</a> &mdash; the rest covers tools you may not need yet.</p>
+        </div>
 
         <nav class="toc">
             <h2>Contents</h2>
@@ -149,6 +155,12 @@
             </div>
 
             <p>The agent will ask to read your files (approve this), then create the CSV. Check the result against a manual word count for one or two files. You&rsquo;ll see the basic pattern: you describe the goal, the agent proposes actions, you approve, it executes, and you verify. The whole thing should take under five minutes and gives you a feel for the interaction model before you commit to anything more ambitious.</p>
+
+            <div class="highlight" style="font-size: 0.9rem;">
+                <p><strong>What you&rsquo;ll produce:</strong> A CSV file with filenames and word counts &mdash; a tangible artefact you can verify.</p>
+                <p><strong>How to check it:</strong> Open the CSV. Manually count the words in one or two of the files. Do the numbers match? Are all files accounted for?</p>
+                <p style="margin-bottom: 0;"><strong>Common pitfalls:</strong> Approving actions without reading what the agent proposes to do. Not saving a snapshot of your folder before starting. Assuming one correct file means all files are correct &mdash; check at least two.</p>
+            </div>
 
             <h3>An audit recipe</h3>
 
@@ -280,17 +292,7 @@
             <p>Agentic workflows consume significantly more resources than simple chat, because the agent reads files, makes many internal calls, and iterates. Costs scale with three things: the number of files the agent reads, the number of iterations it takes, and whether it searches the web. A simple chat query might cost pence; an agentic task that seems straightforward can cost several pounds. Budget accordingly for large or iterative tasks.</p>
 
             <h3>Data governance and sensitive materials</h3>
-            <p>Humanities research often involves material that requires care: embargoed fieldwork, unpublished editions, personal data in oral histories, institutionally restricted archives. Before giving an agent access to your working directory, ask yourself:</p>
-
-            <ul>
-                <li>Is any of this data confidential, embargoed, or subject to access restrictions?</li>
-                <li>Does the tool send files off your device? If so, where, and under what terms?</li>
-                <li>Are there credentials, passwords, or access tokens in the working directory?</li>
-                <li>Have you set the agent to read-only where write access isn&rsquo;t needed?</li>
-                <li>Is there a risk of accidental deletion or overwriting?</li>
-            </ul>
-
-            <p>If any answer gives you pause, restrict the agent&rsquo;s access or work on a copy of the data rather than the original.</p>
+            <p>Before giving an agent access to your working directory, apply the <a href="rules.html#data-boundaries">data boundary rules</a>: no confidential, embargoed, or personally identifiable material. Check whether the tool sends files off your device. Remove credentials or access tokens from the working directory. Set the agent to read-only where write access is not needed. If any of these gives you pause, restrict the agent&rsquo;s access or work on a copy of the data rather than the original.</p>
 
             <h3>The automation paradox</h3>
             <p>The more an agent does autonomously, the harder it is to maintain the oversight that makes the output trustworthy. This tension doesn&rsquo;t have a clean resolution. A fully autonomous run might finish in minutes; a step-by-step supervised run might take hours but catch errors the autonomous version wouldn&rsquo;t. Choose based on the stakes: for low-risk tasks, speed is reasonable; for anything you&rsquo;ll publish or share, invest in oversight.</p>

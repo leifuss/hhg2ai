@@ -17,6 +17,8 @@
             <span class="nav-sep">|</span>
             <a href="mindset.html">Mindset</a>
             <span class="nav-sep">|</span>
+            <a href="rules.html">Rules</a>
+            <span class="nav-sep">|</span>
             <a href="use-cases.html">Use Cases</a>
             <span class="nav-sep">|</span>
             <a href="ancient-languages.html">Ancient Languages</a>
@@ -39,34 +41,14 @@
         </header>
 
         <main>
-            <p>A reference guide to common AI terminology. These definitions aim for accuracy without unnecessary technicality. Terms are listed alphabetically.</p>
+            <p>A reference guide to common AI terminology. These definitions aim for accuracy without unnecessary technicality. <strong>Core terms</strong> are the ones most likely to change how you use these tools; <strong>further depth</strong> terms provide conceptual context for those who want it.</p>
 
-            <div class="glossary-term">
-                <p><strong>AGI (Artificial General Intelligence):</strong> Hypothetical AI that matches or exceeds human cognitive abilities across all domains. Does not currently exist; timelines for its development are contested. Often invoked in hype cycles. <a href="https://www.technologyreview.com/2020/10/15/1010461/artificial-general-intelligence-robots-ai-agi-deepmind-google-openai/" target="_blank">MIT Technology Review explainer</a></p>
-            </div>
+            <h2>Core terms</h2>
+
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">These terms will come up in practice. Understanding them changes how you use the tools.</p>
 
             <div class="glossary-term">
                 <p><strong>Agentic AI:</strong> AI systems that can autonomously plan, use tools, and take multi-step actions to accomplish goals&mdash;rather than simply responding to a single prompt. An &lsquo;agent&rsquo; might browse the web, write and run code, read files, and decide its own next steps. This represents a shift from AI as a conversational partner to AI as a semi-autonomous worker. The capabilities are real but the autonomy raises questions about oversight, accountability, and the appropriate scope of delegation.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Alignment:</strong> The problem of ensuring AI systems do what their designers intend and behave in accordance with human values. An active research area, not a solved problem. <a href="https://www.anthropic.com/research" target="_blank">Anthropic's perspective</a></p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>API (Application Programming Interface):</strong> A way for software to communicate with other software. In AI contexts, this is how developers access models programmatically rather than through chat interfaces. Relevant if you're building tools; otherwise you'll use consumer interfaces.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Chatbot:</strong> Conversational interface to an AI system. ChatGPT, Claude, and Gemini are chatbots built on top of LLMs. The term predates modern AI&mdash;earlier chatbots used simpler rule-based systems.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Chain of thought / Reasoning models:</strong> A prompting technique (and, increasingly, a built-in model capability) where the AI works through a problem step by step before giving a final answer, rather than jumping straight to a conclusion. Some recent models&mdash;such as OpenAI&rsquo;s o-series and Anthropic&rsquo;s Claude with &lsquo;extended thinking&rsquo;&mdash;perform this reasoning internally and automatically. The visible &lsquo;thinking&rsquo; process can make outputs easier to evaluate, but adds to response time and cost.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Computer use:</strong> The ability of an AI model to interact with a computer as a human would&mdash;moving a cursor, clicking buttons, reading screens, and navigating software. Distinct from API-based tool use, which connects to software programmatically. Still an emerging capability with significant limitations.</p>
             </div>
 
             <div class="glossary-term">
@@ -74,19 +56,7 @@
             </div>
 
             <div class="glossary-term">
-                <p><strong>Embedding:</strong> A mathematical representation of text (or images) as coordinates in high-dimensional space, where similar meanings cluster together. Used for search and retrieval systems. <a href="https://vickiboykis.com/what_are_embeddings/" target="_blank">Vicki Boykis's accessible explanation</a></p>
-            </div>
-
-            <div class="glossary-term">
                 <p><strong>Fine-tuning:</strong> Additional training of a foundation model on specific data to adapt it for particular tasks or domains. Creates specialized versions of general-purpose models.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Foundation model:</strong> A large model trained on broad data that serves as the base for many applications. GPT-4, Claude, and Gemini are foundation models. The term emphasizes that these are general-purpose starting points. <a href="https://hai.stanford.edu/news/reflections-foundation-models" target="_blank">Stanford HAI overview</a></p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Frontier model:</strong> Industry term for the most capable currently available models. What counts as "frontier" shifts as new models release.</p>
             </div>
 
             <div class="glossary-term">
@@ -94,19 +64,7 @@
             </div>
 
             <div class="glossary-term">
-                <p><strong>GPT (Generative Pre-trained Transformer):</strong> OpenAI's series of language models (GPT-3, GPT-4, etc.). Often used loosely to mean any LLM, though technically it's a specific product line. The architecture (transformer) is shared across most current LLMs.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Guardrails:</strong> Restrictions built into AI systems to prevent harmful outputs. These include content filters, refusal behaviours, and output constraints. Effectiveness varies; determined users can often circumvent them.</p>
-            </div>
-
-            <div class="glossary-term">
                 <p><strong>Hallucination:</strong> When a model generates false information presented as fact&mdash;invented citations, incorrect dates, fictional events described confidently. A persistent tendency of language models arising from how they generate text. Retrieval systems, citation grounding, and other techniques can reduce hallucination rates but not eliminate them. Treat confident-sounding claims as requiring verification regardless of which model or tool produces them. <a href="https://www.ibm.com/topics/ai-hallucinations" target="_blank">IBM explainer</a></p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Inference:</strong> The process of a trained model generating outputs from inputs. When you prompt a model and it responds, that's inference. Distinct from training, which is how the model learned its patterns.</p>
             </div>
 
             <div class="glossary-term">
@@ -118,30 +76,6 @@
             </div>
 
             <div class="glossary-term">
-                <p><strong>MCP (Model Context Protocol):</strong> An open standard (developed by Anthropic) that allows AI models to connect to external tools and data sources in a standardised way&mdash;databases, file systems, APIs, and other services. Analogous to how USB standardised hardware connections: rather than each AI tool needing a custom integration, MCP provides a common interface. Primarily relevant to developers building AI-powered tools.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Mixture of Experts (MoE):</strong> An architecture where a large model is divided into specialised sub-networks (&lsquo;experts&rsquo;), and only a subset is activated for any given input. This allows models to be very large in total capacity while remaining efficient at inference time, since most parameters are dormant for any particular query. Several frontier models use this approach.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Multimodal:</strong> Models that process multiple types of input&mdash;text, images, audio, video&mdash;rather than text alone. Current frontier models are multimodal, accepting images and documents alongside text.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Neural network:</strong> Computing systems loosely inspired by biological brains, consisting of interconnected nodes that process information in layers. LLMs are a type of neural network. The "neural" metaphor is loose&mdash;these are mathematical functions, not simulated neurons.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Open source / Open weights:</strong> Models whose underlying parameters are publicly released, allowing others to run, modify, and build on them. Llama (Meta) and Mistral are prominent examples. "Open source" in AI is contested&mdash;releasing weights isn't the same as releasing training data or methods. <a href="https://thegradient.pub/open-source-ai/" target="_blank">The Gradient on open source AI</a></p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Parameters:</strong> The numerical values a model learns during training that determine its behaviour. Model size is often described by parameter count (billions to trillions). Vendors often don&rsquo;t disclose exact parameter counts; treat size claims as rough indicators rather than meaningful metrics. What matters for practical purposes is task performance, not parameter count.</p>
-            </div>
-
-            <div class="glossary-term">
                 <p><strong>Prompt:</strong> The input you give to a model&mdash;your question, instruction, or the text you want it to work with. "Prompting" is the practice of crafting inputs to get useful outputs.</p>
             </div>
 
@@ -150,19 +84,7 @@
             </div>
 
             <div class="glossary-term">
-                <p><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> A training technique where human evaluators rate model outputs, and the model is trained to produce responses humans prefer. Used to make models more helpful and less harmful. <a href="https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback" target="_blank">Anthropic explanation</a> | <a href="https://huyenchip.com/2023/05/02/rlhf.html" target="_blank">Chip Huyen's accessible overview</a></p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Synthetic data:</strong> Training data generated by AI models rather than collected from human sources. Increasingly used to augment training datasets, particularly for specialised domains. Raises questions about feedback loops: models trained on their own outputs may amplify biases or converge on narrow patterns. Relevant to scholars because it means that the training data for future models will increasingly contain AI-generated text, with implications for how these systems represent human knowledge and culture.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>System prompt:</strong> Persistent instructions that shape how a model behaves across a conversation. Set by the platform or user to establish context, persona, or constraints. Distinct from individual prompts within a conversation.</p>
-            </div>
-
-            <div class="glossary-term">
-                <p><strong>Temperature:</strong> A setting controlling randomness in outputs. Lower temperature produces more predictable, focused responses; higher temperature produces more varied, creative ones. Default settings work for most uses.</p>
+                <p><strong>System prompt:</strong> Persistent instructions that shape how a model behaves across a conversation. Set by the platform or user to establish context, persona, or constraints. Distinct from individual prompts within a conversation. See <a href="rules.html#templates">system prompt templates</a> on the Rules page.</p>
             </div>
 
             <div class="glossary-term">
@@ -173,9 +95,101 @@
                 <p><strong>Training data:</strong> The text (and images, for multimodal models) used to train a model. For LLMs, this includes large portions of the internet, books, code, and other text sources. What's included in training data affects what models know and how they behave&mdash;and raises significant copyright and consent questions.</p>
             </div>
 
-            <div class="glossary-term">
-                <p><strong>Transformer:</strong> The neural network architecture underlying most current LLMs, introduced in 2017. Enables models to process relationships between all parts of an input simultaneously rather than sequentially. <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a> (visual explanation, somewhat technical)</p>
-            </div>
+            <hr>
+
+            <details>
+                <summary><h2 style="display: inline; cursor: pointer;">Further depth</h2></summary>
+
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem;">Conceptual and technical terms. Useful for understanding the landscape; less likely to change your day-to-day practice.</p>
+
+                <div class="glossary-term">
+                    <p><strong>AGI (Artificial General Intelligence):</strong> Hypothetical AI that matches or exceeds human cognitive abilities across all domains. Does not currently exist; timelines for its development are contested. Often invoked in hype cycles. <a href="https://www.technologyreview.com/2020/10/15/1010461/artificial-general-intelligence-robots-ai-agi-deepmind-google-openai/" target="_blank">MIT Technology Review explainer</a></p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Alignment:</strong> The problem of ensuring AI systems do what their designers intend and behave in accordance with human values. An active research area, not a solved problem. <a href="https://www.anthropic.com/research" target="_blank">Anthropic's perspective</a></p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>API (Application Programming Interface):</strong> A way for software to communicate with other software. In AI contexts, this is how developers access models programmatically rather than through chat interfaces. Relevant if you're building tools; otherwise you'll use consumer interfaces.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Chain of thought / Reasoning models:</strong> A prompting technique (and, increasingly, a built-in model capability) where the AI works through a problem step by step before giving a final answer, rather than jumping straight to a conclusion. Some recent models&mdash;such as OpenAI&rsquo;s o-series and Anthropic&rsquo;s Claude with &lsquo;extended thinking&rsquo;&mdash;perform this reasoning internally and automatically. The visible &lsquo;thinking&rsquo; process can make outputs easier to evaluate, but adds to response time and cost.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Chatbot:</strong> Conversational interface to an AI system. ChatGPT, Claude, and Gemini are chatbots built on top of LLMs. The term predates modern AI&mdash;earlier chatbots used simpler rule-based systems.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Computer use:</strong> The ability of an AI model to interact with a computer as a human would&mdash;moving a cursor, clicking buttons, reading screens, and navigating software. Distinct from API-based tool use, which connects to software programmatically. Still an emerging capability with significant limitations.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Embedding:</strong> A mathematical representation of text (or images) as coordinates in high-dimensional space, where similar meanings cluster together. Used for search and retrieval systems. <a href="https://vickiboykis.com/what_are_embeddings/" target="_blank">Vicki Boykis's accessible explanation</a></p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Foundation model:</strong> A large model trained on broad data that serves as the base for many applications. GPT-4, Claude, and Gemini are foundation models. The term emphasizes that these are general-purpose starting points. <a href="https://hai.stanford.edu/news/reflections-foundation-models" target="_blank">Stanford HAI overview</a></p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Frontier model:</strong> Industry term for the most capable currently available models. What counts as "frontier" shifts as new models release.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>GPT (Generative Pre-trained Transformer):</strong> OpenAI's series of language models (GPT-3, GPT-4, etc.). Often used loosely to mean any LLM, though technically it's a specific product line. The architecture (transformer) is shared across most current LLMs.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Guardrails:</strong> Restrictions built into AI systems to prevent harmful outputs. These include content filters, refusal behaviours, and output constraints. Effectiveness varies; determined users can often circumvent them.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Inference:</strong> The process of a trained model generating outputs from inputs. When you prompt a model and it responds, that's inference. Distinct from training, which is how the model learned its patterns.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>MCP (Model Context Protocol):</strong> An open standard (developed by Anthropic) that allows AI models to connect to external tools and data sources in a standardised way&mdash;databases, file systems, APIs, and other services. Analogous to how USB standardised hardware connections: rather than each AI tool needing a custom integration, MCP provides a common interface. Primarily relevant to developers building AI-powered tools.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Mixture of Experts (MoE):</strong> An architecture where a large model is divided into specialised sub-networks (&lsquo;experts&rsquo;), and only a subset is activated for any given input. This allows models to be very large in total capacity while remaining efficient at inference time, since most parameters are dormant for any particular query. Several frontier models use this approach.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Multimodal:</strong> Models that process multiple types of input&mdash;text, images, audio, video&mdash;rather than text alone. Current frontier models are multimodal, accepting images and documents alongside text.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Neural network:</strong> Computing systems loosely inspired by biological brains, consisting of interconnected nodes that process information in layers. LLMs are a type of neural network. The "neural" metaphor is loose&mdash;these are mathematical functions, not simulated neurons.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Open source / Open weights:</strong> Models whose underlying parameters are publicly released, allowing others to run, modify, and build on them. Llama (Meta) and Mistral are prominent examples. "Open source" in AI is contested&mdash;releasing weights isn't the same as releasing training data or methods. <a href="https://thegradient.pub/open-source-ai/" target="_blank">The Gradient on open source AI</a></p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Parameters:</strong> The numerical values a model learns during training that determine its behaviour. Model size is often described by parameter count (billions to trillions). Vendors often don&rsquo;t disclose exact parameter counts; treat size claims as rough indicators rather than meaningful metrics. What matters for practical purposes is task performance, not parameter count.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> A training technique where human evaluators rate model outputs, and the model is trained to produce responses humans prefer. Used to make models more helpful and less harmful. <a href="https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback" target="_blank">Anthropic explanation</a> | <a href="https://huyenchip.com/2023/05/02/rlhf.html" target="_blank">Chip Huyen's accessible overview</a></p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Synthetic data:</strong> Training data generated by AI models rather than collected from human sources. Increasingly used to augment training datasets, particularly for specialised domains. Raises questions about feedback loops: models trained on their own outputs may amplify biases or converge on narrow patterns. Relevant to scholars because it means that the training data for future models will increasingly contain AI-generated text, with implications for how these systems represent human knowledge and culture.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Temperature:</strong> A setting controlling randomness in outputs. Lower temperature produces more predictable, focused responses; higher temperature produces more varied, creative ones. Default settings work for most uses.</p>
+                </div>
+
+                <div class="glossary-term">
+                    <p><strong>Transformer:</strong> The neural network architecture underlying most current LLMs, introduced in 2017. Enables models to process relationships between all parts of an input simultaneously rather than sequentially. <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a> (visual explanation, somewhat technical)</p>
+                </div>
+            </details>
         </main>
 
         <footer>
