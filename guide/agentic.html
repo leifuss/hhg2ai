@@ -35,188 +35,217 @@
         <nav class="toc">
             <h2>Contents</h2>
             <ul>
-                <li><a href="#what-is">What is agentic AI?</a></li>
-                <li><a href="#tools-practice">Agentic tools in practice</a></li>
-                <li><a href="#getting-started">Getting started with agentic tools</a></li>
-                <li><a href="#what-can-be-built">What can be built? &mdash; Examples</a></li>
-                <li><a href="#risks-limitations">Risks and limitations specific to agentic AI</a></li>
+                <li><a href="#what-is">1. What is agentic AI?</a></li>
+                <li><a href="#levels">2. Levels of agency</a></li>
+                <li><a href="#tools">3. Tools available now</a></li>
+                <li><a href="#working-with">4. Working with agentic tools</a></li>
+                <li><a href="#examples">5. What can be built?</a></li>
+                <li><a href="#risks">6. Risks and limitations</a></li>
             </ul>
         </nav>
 
         <!-- Section 1: What is agentic AI? -->
         <section id="what-is">
-            <h2>What is agentic AI?</h2>
+            <h2>1. What is agentic AI?</h2>
 
-            <p>Most of what you&rsquo;ve probably experienced with LLMs is chat-based: you write a prompt, the system responds, the conversation ends. You are fundamentally in control. You direct each exchange.</p>
+            <p>Many LLM interactions are conversational and iterative&mdash;you ask a question, read the answer, refine your question, and go back and forth. But these exchanges are still essentially <em>talking only</em>. The AI reads what you write and produces text in response. It doesn&rsquo;t touch your files, change your data, or act on anything beyond the conversation window.</p>
 
-            <p>Agentic systems work differently. You describe a goal or task in natural language&mdash;&ldquo;find all mentions of magistrates in this database, translate them, produce a summary table&rdquo;&mdash;and the agent plans and executes a series of steps to achieve it. It reads files, writes files, runs code, searches the web, evaluates the results, and decides what to do next, all without waiting for you to intervene between each step. The agent has a loop: it takes an action, observes the outcome, and determines the next action based on what happened.</p>
+            <p>Agentic systems add the ability to <strong>take actions in the world of your project</strong>: reading and rewriting files, running commands, searching the web, and iterating until a goal is met. You describe what you want in plain language&mdash;&ldquo;find all mentions of magistrates in this dataset, translate them, and produce a summary table&rdquo;&mdash;and the agent plans a series of steps, carries them out, checks the results, and adjusts its approach based on what happened. It has a loop, not just a single response.</p>
 
-            <p>This is a qualitative shift, not merely a quantitative one. A chat response is atomic: you ask, you receive, you evaluate. An agentic workflow is procedural: the system maintains context across multiple steps, modifies your files, accumulates results, and iterates toward completion. The agent isn&rsquo;t just answering your question; it&rsquo;s trying to solve a problem.</p>
+            <p>This is a qualitative shift. A chat answer is self-contained: you read it and decide whether it&rsquo;s useful. An agentic workflow produces <em>side-effects</em>&mdash;files modified, new files created, data transformed, commands executed. The agent isn&rsquo;t just answering your question; it&rsquo;s trying to solve a problem, and the evidence of its work is scattered across your project, not neatly contained in a single response.</p>
 
-            <p>The capabilities are real. A chat LLM can translate a Latin inscription if you give it the text. An agentic system can search a directory of photographs for inscriptions matching criteria, extract text from images, translate them, cross-reference with a database, and compile results&mdash;all in one workflow. The ability to loop, use tools, and modify files fundamentally expands what&rsquo;s possible.</p>
+            <p>To take a concrete example: a chat LLM can translate a Latin inscription if you paste in the text. An agentic system can, in principle, search a directory of photographs for inscriptions matching criteria, extract text from images, translate them, cross-reference with a database, and compile results&mdash;all in one workflow. But &lsquo;in principle&rsquo; deserves emphasis. This works best when your images are well-organised (clear filenames, consistent folders, legible text); otherwise the agent often needs you to supply a small set of worked examples and accept that not everything will be found. The potential is real, but so are the prerequisites.</p>
 
-            <p>But this expansion comes with new challenges. When you review a chat response, you can quickly check whether it&rsquo;s correct. When an agent has modified twenty files, you can&rsquo;t as easily review every change. The autonomy that makes the tool powerful also makes it harder to maintain the oversight that makes the output trustworthy. There is a tension between speed and verification that doesn&rsquo;t have a clean resolution.</p>
-
-            <p>See the glossary definition of <a href="glossary.html">Agentic AI</a> for precise terminology.</p>
+            <p>The rest of this page explains how to approach these tools with the right mix of ambition and caution.</p>
         </section>
 
         <hr>
 
-        <!-- Section 2: Agentic tools in practice -->
-        <section id="tools-practice">
-            <h2>Agentic tools in practice</h2>
+        <!-- Section 2: Levels of agency -->
+        <section id="levels">
+            <h2>2. Levels of agency</h2>
 
-            <p>Several agentic systems are currently available or emerging. Here are the most relevant for humanities scholars (as of February 2026):</p>
-
-            <h3>Claude Code (Anthropic)</h3>
-            <p><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank">Claude Code</a> is Anthropic&rsquo;s command-line tool that gives Claude direct access to your file system, terminal, and development environment. You describe what you want in natural language; it reads your files, writes code, runs tests, iterates, and modifies your workspace. Designed for software development, but increasingly used for data processing, document generation, and research workflows. You maintain full control of your files (they stay on your machine unless you explicitly share them), and you can undo changes via version control. Requires an Anthropic API key or subscription.</p>
-
-            <h3>Claude Code on the web (Cowork)</h3>
-            <p>The same agentic capabilities are available through a web interface without needing to install command-line tools or configure local environments. This is suitable for users who want to experiment with agentic workflows from a browser without the overhead of local setup. Still requires an API key or subscription.</p>
-
-            <h3>Other agentic tools (brief landscape)</h3>
-            <p>The agentic AI landscape is evolving rapidly. Other tools worth noting:</p>
-
-            <ul>
-                <li><strong>GitHub Copilot</strong> (Microsoft/GitHub) &mdash; AI coding assistant integrated into development environments, focused primarily on code completion and generation.</li>
-                <li><strong>Cursor</strong> &mdash; An AI-native code editor combining agentic capabilities with a native development environment.</li>
-                <li><strong>Devin</strong> (Cognition) &mdash; Autonomous software engineering agent designed to handle end-to-end development tasks.</li>
-            </ul>
-
-            <p>This field is moving quickly. Tools and capabilities available in early 2026 will likely differ from what&rsquo;s current by the time you read this. What matters less than any specific tool is understanding the underlying pattern: agents that combine language models with tool access and iteration loops, grounded in your own files and data rather than general knowledge.</p>
-        </section>
-
-        <hr>
-
-        <!-- Section 3: Getting started with agentic tools -->
-        <section id="getting-started">
-            <h2>Getting started with agentic tools</h2>
-
-            <p>If you&rsquo;re not a programmer, don&rsquo;t think of agentic tools as programming aids. Think of them as workers who can manipulate files, run code, and search the web under your direction. You don&rsquo;t need to understand what they&rsquo;re doing under the hood any more than you need to understand how a spreadsheet calculates a formula. You need to understand what they can do, how to direct them, and how to verify the output.</p>
-
-            <h3>What you need</h3>
-            <p>For Claude Code, you need an API key or subscription through Anthropic, and terminal access to your computer. For Cowork (web-based), you need a browser and a subscription. Either way, you need to be comfortable giving the tool access to your file system.</p>
-
-            <h3>The basic interaction model</h3>
-            <p>You describe a task in natural language. The agent reads relevant files, plans an approach, executes steps, checks results, and iterates. You watch the process unfold and can interrupt if something looks wrong. Once complete, you review the output and either accept it, ask for revisions, or start over.</p>
-
-            <p>The process is conversational, but with a difference: the agent is actually doing things, not just talking about them.</p>
-
-            <h3>Key principles for working with agents</h3>
-
-            <p><strong>1. Start small.</strong> Give the agent a contained, well-defined task before attempting something complex. &ldquo;Convert this bibliography from Chicago style to Harvard&rdquo; before &ldquo;restructure my entire project directory and update all references.&rdquo; Small tasks let you calibrate how the agent works, understand its failure modes, and build confidence before investing in larger efforts.</p>
-
-            <p><strong>2. Use version control.</strong> Agents modify files. If the agent makes mistakes&mdash;and it will&mdash;you need a way to review what changed and undo it. Git (or another version control system) is essential. Commit before giving the agent significant tasks, so you have clean checkpoints. Review diffs after the agent finishes to understand what changed.</p>
-
-            <p><strong>3. Review everything.</strong> Don&rsquo;t assume the agent got it right just because the process completed without errors. An agent can produce syntactically valid code, run successfully, and still produce wrong results. Check the output, spot-check results against source data, and verify that the agent didn&rsquo;t make unintended changes elsewhere. If you&rsquo;re trusting the tool with important work, spend time on verification.</p>
-
-            <p><strong>4. Be specific about constraints.</strong> The clearer your instructions, the better the results. &ldquo;Use only the sources in this folder,&rdquo; &ldquo;don&rsquo;t modify files outside this directory,&rdquo; &ldquo;check with me before deleting anything.&rdquo; Explicit constraints reduce unpleasant surprises.</p>
-
-            <p><strong>5. Treat the agent as a collaborator, not an oracle.</strong> The best results come from iterative dialogue. You describe what you want, the agent produces output, you refine your request based on what you see, and you iterate. This is not fire-and-forget. It&rsquo;s working with the tool to produce what you actually need.</p>
-
-            <h3>Notes on scope and applicability</h3>
-            <p>Most agentic tools were built for software development, and they excel at tasks like writing code, debugging, building tools, and automating technical workflows. But the underlying capabilities&mdash;file manipulation, code execution, structured output, web search&mdash;are applicable to research tasks as well. You might use an agent to</p>
-
-            <ul>
-                <li>Extract structured data from a collection of documents or images</li>
-                <li>Convert data between formats or restructure datasets</li>
-                <li>Generate interactive visualisations from raw data</li>
-                <li>Build searchable databases or interfaces for your research materials</li>
-                <li>Process and clean large collections of text or metadata</li>
-                <li>Create interactive teaching tools or demonstrations</li>
-            </ul>
-
-            <p>The technology is general-purpose enough to be useful across disciplines, but most current interfaces assume programming knowledge that humanities scholars may lack. The field is working toward more accessible interfaces; what seems like a programmer&rsquo;s tool today may be routine for non-technical users within a few years.</p>
-        </section>
-
-        <hr>
-
-        <!-- Section 4: What can be built? -->
-        <section id="what-can-be-built">
-            <h2>What can be built? &mdash; Examples</h2>
-
-            <p>These projects were created using Claude Code or related agentic tools, with varying degrees of human involvement. They illustrate the range of what&rsquo;s possible and the mix of agent and human labour involved. See the <a href="../experiments.html">full portfolio</a> for more examples and details.</p>
+            <p>Agentic AI is not a binary category&mdash;either chat or full autonomy. In practice there is a spectrum, and choosing where you sit on that spectrum for any given task is one of the most important decisions you&rsquo;ll make. Most people should start near the cautious end and move toward more autonomy only as they gain experience and confidence in the tool.</p>
 
             <div class="highlight">
-                <p><strong><a href="https://scotchbon.net/qgis/html/en/docs/exeter_training_manual/index.html" target="_blank">CLA3131 QGIS Tutorials</a></strong></p>
-                <p>Standard QGIS tutorials automatically redeveloped for ancient history case studies and written to RST format for embedding in the QGIS documentation interface. The agent handled the technical adaptation and formatting; the human provided the pedagogical brief, ancient history context, and reviewed the output for accuracy and disciplinary appropriateness.</p>
+                <p><strong>Chat only</strong> (no side-effects)<br>
+                The AI reads your input and responds with text. Nothing on your computer changes. This is what you&rsquo;re already familiar with from ChatGPT or Claude.</p>
+
+                <p><strong>Tool use with confirmation</strong><br>
+                The agent proposes an action&mdash;&ldquo;I&rsquo;d like to read the file <em>inscriptions.csv</em>&rdquo;&mdash;and waits for you to approve before proceeding. You stay in the loop at every step. Slow but safe.</p>
+
+                <p><strong>Batched tool use</strong><br>
+                The agent plans a small sequence of steps, carries them out, and then reports back before starting the next batch. You review periodically rather than at every step.</p>
+
+                <p><strong>Autonomous with guardrails</strong><br>
+                The agent works through a task independently, but within constraints you&rsquo;ve set: only files in a specific folder, no deletions, no internet access, and so on. You review the results when it&rsquo;s finished.</p>
+
+                <p style="margin-bottom: 0;"><strong>Fully autonomous</strong><br>
+                The agent has broad access and makes its own decisions. Appropriate for low-stakes tasks where you can easily undo the results. Rarely appropriate for anything involving research data, sensitive materials, or work you&rsquo;ll need to defend.</p>
+            </div>
+
+            <p>The right level depends on the stakes. Reformatting a bibliography? Autonomous with guardrails is probably fine. Processing unpublished fieldwork data? Tool use with confirmation, and careful review of what the agent reads and writes. There is no &lsquo;correct&rsquo; default; the point is to choose deliberately rather than accepting whatever the tool offers.</p>
+        </section>
+
+        <hr>
+
+        <!-- Section 3: Tools available now -->
+        <section id="tools">
+            <h2>3. Tools available now</h2>
+
+            <p>Several agentic tools exist as of early 2026. The landscape is changing quickly, so the specific products matter less than understanding the general pattern: language models combined with tool access and iteration loops, grounded in your own files rather than general knowledge.</p>
+
+            <div class="note">
+                <p><strong>A note on terminology:</strong> This section necessarily uses some technical language. If terms like &lsquo;command line&rsquo;, &lsquo;API&rsquo;, or &lsquo;IDE&rsquo; are unfamiliar, the <a href="glossary.html">glossary</a> provides definitions. You do not need to master this vocabulary to understand what these tools do; it helps mainly if you want to try them yourself.</p>
+            </div>
+
+            <h3>Claude Code (Anthropic)</h3>
+            <p><a href="https://code.claude.com/docs/en/overview" target="_blank">Claude Code</a> is Anthropic&rsquo;s agentic tool, available through the command line (a text-based interface on your computer), through code editors, and on the web. You describe what you want in plain language; it reads your files, writes and runs code, and iterates. Your files stay on your machine (or in your browser session) unless you explicitly share them, and you can undo changes. Requires an Anthropic API key or Max subscription.</p>
+
+            <h3>Cowork (research preview)</h3>
+            <p>Cowork is a research-preview interface in <a href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork" target="_blank">Claude Desktop</a> (currently macOS) that brings agentic workflows to non-coding tasks&mdash;document analysis, research, and structured writing. It is designed for people who want agentic capabilities without working in a development environment.</p>
+
+            <h3>Other tools</h3>
+            <p>The broader landscape includes IDE-integrated agents (like <a href="https://www.cursor.com/" target="_blank">Cursor</a>), platform-integrated assistants (like GitHub Copilot, which now spans code completion, chat, and increasingly agent-like workflows within GitHub), and hosted autonomous agents (like <a href="https://devin.ai/" target="_blank">Devin</a> from Cognition). These are primarily aimed at software developers, but the underlying capabilities&mdash;file manipulation, structured output, iterative problem-solving&mdash;are the same capabilities that make agentic tools useful for research.</p>
+        </section>
+
+        <hr>
+
+        <!-- Section 4: Working with agentic tools -->
+        <section id="working-with">
+            <h2>4. Working with agentic tools</h2>
+
+            <p>You don&rsquo;t need to be a programmer to use agentic tools. But you do need a basic mental model of what the agent can touch&mdash;files, folders, the web, and in some cases your credentials or accounts&mdash;and how you&rsquo;ll check what it changed. Think of it less like using a spreadsheet and more like delegating to a research assistant who works at great speed but has no common sense about what matters to you and cannot be held accountable for mistakes.</p>
+
+            <h3>Principles</h3>
+
+            <p><strong>1. Start small.</strong> Give the agent a contained, well-defined task before attempting something complex. &ldquo;Convert this bibliography from Chicago style to Harvard&rdquo; before &ldquo;restructure my entire project directory and update all references.&rdquo; Small tasks let you calibrate the tool&rsquo;s strengths and failure modes.</p>
+
+            <p><strong>2. Use version control.</strong> Agents modify files. If the agent makes mistakes&mdash;and it will&mdash;you need a way to see what changed and undo it. &lsquo;Version control&rsquo; means a system (most commonly <a href="https://git-scm.com/" target="_blank">Git</a>) that records every change to your files, so you can compare the state before and after the agent ran and roll back if needed. Save a checkpoint before giving the agent significant tasks.</p>
+
+            <p><strong>3. Review everything.</strong> Don&rsquo;t assume the agent got it right because the process completed without errors. An agent can produce work that looks correct, runs without problems, and still contains substantive mistakes. Spot-check results against source data. If you can&rsquo;t verify it, you can&rsquo;t trust it.</p>
+
+            <p><strong>4. Be specific about constraints.</strong> &ldquo;Use only the sources in this folder.&rdquo; &ldquo;Don&rsquo;t modify files outside this directory.&rdquo; &ldquo;Check with me before deleting anything.&rdquo; The clearer your boundaries, the fewer surprises.</p>
+
+            <p><strong>5. Iterate, don&rsquo;t fire and forget.</strong> The best results come from working with the agent: describe what you want, review the output, refine your instructions, and repeat. A single pass rarely produces exactly what you need.</p>
+
+            <h3>An audit recipe</h3>
+
+            <p>Reviewing agent work is a skill, and it helps to have a repeatable method rather than just an admonition to &lsquo;check everything&rsquo;. The following pattern works for most tasks&mdash;whether the agent is cleaning data, transforming files, building a tool, or producing structured output:</p>
+
+            <div class="highlight">
+                <p><strong>Before:</strong> Save a snapshot or commit. Know the state of your files before the agent touches them.</p>
+                <p><strong>Constrain:</strong> Limit what the agent can access&mdash;a specific folder, specific file types, a defined scope. Ask it to tell you its plan and success criteria before it begins.</p>
+                <p><strong>Sample first:</strong> Run on a small subset (1&ndash;5 items). Check the results by hand against your sources. Fix problems before scaling up.</p>
+                <p><strong>Run:</strong> Let the agent work on the full task.</p>
+                <p><strong>Review:</strong> Compare the before and after states. Spot-check a defined sample (not just the ones that look right). For data work, check edge cases and items the agent might have found ambiguous.</p>
+                <p style="margin-bottom: 0;"><strong>Record:</strong> Save the instructions you gave, the agent&rsquo;s log of actions, and the exact state of your files before and after. This is your provenance record&mdash;the equivalent of a methods section for agent-assisted work.</p>
+            </div>
+
+            <p>This may seem laborious, but it&rsquo;s the difference between &lsquo;I used an AI tool&rsquo; and &lsquo;I can account for what the AI tool did and verify its output&rsquo;. For anything you intend to publish, present, or share, the second is the minimum standard.</p>
+        </section>
+
+        <hr>
+
+        <!-- Section 5: What can be built? -->
+        <section id="examples">
+            <h2>5. What can be built?</h2>
+
+            <p>The following projects were created using Claude Code, with varying degrees of human involvement. For each, note the mix of agent and human labour: the agent handles technical execution, but the intellectual direction, quality judgement, and domain knowledge come from the human. See the <a href="../experiments.html">full portfolio</a> for more detail.</p>
+
+            <div class="highlight">
+                <p><strong><a href="https://scotchbon.net/qgis/html/en/docs/exeter_training_manual/index.html" target="_blank">QGIS Tutorials for Ancient History</a></strong></p>
+                <p>Standard GIS tutorials redeveloped for ancient history case studies. The agent handled technical adaptation and formatting; the human provided the pedagogical brief, disciplinary context, and quality review.</p>
             </div>
 
             <div class="highlight">
                 <p><strong><a href="https://github.com/leifuss/claudeexperiments/blob/claude/create-draft-readme-WtIgb/the_lares-2.pdf" target="_blank">The Lares</a></strong></p>
-                <p>A comic short story collaboratively authored with an LLM (January 2025), imagining the consequences of a Classicist and a Theologian discovering an unexpected form of intelligence. This illustrates not a typical research application but the creative possibilities when human narrative direction meets agentic text generation.</p>
+                <p>A comic short story collaboratively authored with an LLM (January 2025), imagining the consequences of a Classicist and a Theologian discovering an unexpected form of intelligence.</p>
             </div>
 
             <div class="highlight">
                 <p><strong><a href="https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html" target="_blank">Gnomon Shadow Explorer</a></strong></p>
-                <p>Interactive demonstration of latitude calculation using a gnomon. Developed in 1&ndash;2 hours in January 2026. The agent wrote the code from a concept description; the human specified what to build, tested outputs, and iterated on functionality. Time investment was primarily in human direction and verification, not in manual coding.</p>
+                <p>Interactive demonstration of latitude calculation using a gnomon. Developed in 1&ndash;2 hours. The human described the concept; the agent wrote the code; the human tested and iterated.</p>
             </div>
 
             <div class="highlight">
                 <p><strong><a href="https://leifuss.github.io/claudertidemo/" target="_blank">Online RTI Viewer</a></strong></p>
-                <p>A usable online viewer for Reflectance Transformation Imaging (RTI) files, allowing interactive exploration of artefact surfaces without specialised software. Demonstrates how agentic tools can make research materials more accessible to broader audiences.</p>
+                <p>A web-based viewer for Reflectance Transformation Imaging files, allowing interactive exploration of artefact surfaces without specialist software.</p>
             </div>
 
             <div class="highlight">
                 <p><strong><a href="https://leifuss.github.io/grammarcrammer/" target="_blank">Grammar Crammer</a></strong></p>
-                <p>Experimental Latin grammar practice platform with diagnostic testing, targeted exercises, exit quiz, and progress tracking. A more substantial project illustrating how agents can build interactive educational tools with multiple interconnected features.</p>
+                <p>Latin grammar practice platform with diagnostic testing, targeted exercises, progress tracking, and improvement reports. A more substantial project showing how agents can build interactive educational tools.</p>
             </div>
 
             <div class="highlight">
                 <p><strong><a href="https://leifuss.github.io/ravenclaw/" target="_blank">RavenC:LAW</a></strong></p>
-                <p>Interactive map comparing place references across the Ravenna Cosmography and Peutinger Map. The underlying data and principal coding were done manually over three months. The codebase was subsequently improved in September 2025 with AI-assisted bugfixes and interface improvements. This illustrates how agentic tools can augment existing manual work rather than replacing it from scratch.</p>
+                <p>Interactive map comparing place references across the Ravenna Cosmography and Peutinger Map. The data and principal coding were done manually over three months; AI-assisted improvements (bugfixes, interface work) followed in September 2025. An example of agentic tools augmenting existing manual work rather than replacing it.</p>
             </div>
 
             <div class="highlight">
                 <p><strong><a href="https://scotchbon.net/globes/" target="_blank">Interactive Ancient Globes</a></strong></p>
-                <p>Ancient Greek and Islamic globes with adjustable orientation. Original coding took several weeks in summer 2024. Consolidated into a single app in September 2025 using agentic assistance, with celestial and solar rotation features added. Another example of AI augmenting prior manual work and enabling rapid feature development.</p>
+                <p>Ancient Greek and Islamic globes with adjustable orientation. Original coding took several weeks (summer 2024); consolidated into a single framework with new features added using AI in September 2025.</p>
             </div>
 
             <div class="highlight">
                 <p><strong><a href="https://leifuss.github.io/hestiavizredux/" target="_blank">HestiaViz Redux</a></strong></p>
-                <p>Revamped version of the HestiaVis tool for visualising place references in Herodotus&rsquo;s <em>Histories</em>. Demonstrates interface redesign and feature improvement using agentic tools.</p>
+                <p>Revamped version of a tool for visualising place references in Herodotus&rsquo;s <em>Histories</em>.</p>
             </div>
 
             <div class="highlight">
                 <p><strong>This guide itself</strong></p>
-                <p>The LLM Guide for Humanities Scholars was developed using Claude Code, from initial planning through implementation. The human author provided the brief, editorial direction, and all factual and scholarly judgements. The agent handled page structure, HTML and CSS, drafting prose to specification, and iteration on design and content. The guide is a concrete example of agentic assistance applied to creating technical documentation and educational materials.</p>
+                <p>The LLM Guide for Humanities Scholars was developed using Claude Code. The human author provided the brief, editorial direction, and all scholarly judgements. The agent handled page structure, code, drafting prose to specification, and iterating on design. A concrete example of agentic assistance applied to creating educational materials.</p>
             </div>
         </section>
 
         <hr>
 
-        <!-- Section 5: Risks and limitations -->
-        <section id="risks-limitations">
-            <h2>Risks and limitations specific to agentic AI</h2>
+        <!-- Section 6: Risks and limitations -->
+        <section id="risks">
+            <h2>6. Risks and limitations</h2>
 
-            <p>Chat-based LLM output is straightforward to evaluate: you read it and decide if it&rsquo;s good. Agentic systems are harder to validate because the output isn&rsquo;t a single text but a series of file modifications, computations, and decisions. This introduces new categories of risk.</p>
+            <p>Chat output is straightforward to evaluate: you read it and decide if it&rsquo;s good. Agentic systems are harder to validate because the output isn&rsquo;t a single text but a trail of file changes, computations, and decisions. This introduces risks that don&rsquo;t apply to chat.</p>
 
-            <h3>Harder to verify than chat output</h3>
-            <p>When an agent modifies twenty files, you can&rsquo;t easily review each change the way you&rsquo;d read and evaluate a chat response. Version control and diff tools become essential&mdash;not optional. You need to understand what changed, why, and whether the changes are correct. For large modifications, this verification work can be substantial. In some cases, you may find that verification would have taken less time than writing the agent instructions in the first place.</p>
+            <h3>Verification is harder</h3>
+            <p>When an agent modifies twenty files, you can&rsquo;t review each change as easily as reading a single response. Version control and comparison tools become essential, not optional. For large modifications, the verification work can be substantial&mdash;sometimes more than the time you saved by using the agent in the first place.</p>
 
             <h3>Scope creep</h3>
-            <p>Agents can be overzealous. An agent told to &ldquo;improve code quality&rdquo; may refactor entire files you didn&rsquo;t ask it to touch. An agent fixing a bug may add &ldquo;helpful&rdquo; features you didn&rsquo;t request. An agent optimising performance may make changes that break something else. The autonomy that makes the tool powerful also enables it to make well-intentioned changes that produce unintended consequences. Clear constraints help, but they can&rsquo;t eliminate the risk entirely.</p>
+            <p>Agents can be overzealous. An agent asked to fix one problem may &lsquo;helpfully&rsquo; refactor things you didn&rsquo;t ask it to touch, add features you didn&rsquo;t request, or make well-intentioned changes that break something else. The simplest guardrails: work in a fresh copy of your data, restrict the agent to specific folders and file types, and require it to check with you before making changes beyond the original brief.</p>
+
+            <h3>Provenance and citation</h3>
+            <p>If the agent searches the web or literature as part of its work, it will confidently merge sources, sometimes misattribute claims, and silently smooth over uncertainty in its prose. This is a scholarly credibility risk. Require the agent to produce a sources list (URLs, references, DOIs where applicable), quote small excerpts where relevant, and separate &lsquo;what the source says&rsquo; from &lsquo;my inference&rsquo;. Otherwise you will get plausible synthesis with weak provenance&mdash;exactly the kind of output that looks authoritative until someone checks.</p>
 
             <h3>Cost</h3>
-            <p>Agentic workflows consume significantly more API tokens than simple chat, because the agent makes many internal calls, reads files repeatedly, and iterates. A straightforward chat query might cost pence. An agentic task that seems simple&mdash;&ldquo;extract data from these documents and produce a summary&rdquo;&mdash;might cost several pounds in API usage as the agent reads, processes, backtracks, and refines. Budget accordingly, particularly for large or iterative tasks. The financial barrier, while not prohibitive, is real.</p>
+            <p>Agentic workflows consume significantly more resources than simple chat, because the agent reads files, makes many internal calls, and iterates. Costs scale with three things: the number of files the agent reads, the number of iterations it takes, and whether it searches the web. A simple chat query might cost pence; an agentic task that seems straightforward can cost several pounds. Budget accordingly for large or iterative tasks.</p>
 
-            <h3>Security and trust</h3>
-            <p>Giving an AI agent access to your file system, terminal, or credentials requires trust in both the tool and the platform. You need to understand what permissions you&rsquo;re granting. Can the agent read files outside a designated directory? Can it execute arbitrary commands? What happens to the data it processes? For work with sensitive materials&mdash;personal information, unpublished research, institutional data&mdash;these questions matter. If using cloud-based tools, your data passes through commercial servers. If using local tools, you maintain more privacy but sacrifice some convenience. There is no solution without tradeoffs.</p>
+            <h3>Data governance and sensitive materials</h3>
+            <p>Humanities research often involves material that requires care: embargoed fieldwork, unpublished editions, personal data in oral histories, institutionally restricted archives. Before giving an agent access to your working directory, ask yourself:</p>
+
+            <ul>
+                <li>Is any of this data confidential, embargoed, or subject to access restrictions?</li>
+                <li>Does the tool send files off your device? If so, where, and under what terms?</li>
+                <li>Are there credentials, passwords, or access tokens in the working directory?</li>
+                <li>Have you set the agent to read-only where write access isn&rsquo;t needed?</li>
+                <li>Is there a risk of accidental deletion or overwriting?</li>
+            </ul>
+
+            <p>If any answer gives you pause, restrict the agent&rsquo;s access or work on a copy of the data rather than the original.</p>
 
             <h3>The automation paradox</h3>
-            <p>The more an agent does autonomously, the harder it is to maintain the critical oversight that makes the output trustworthy. There is a fundamental tension: speed and autonomy increase when you let the agent make decisions without constant oversight, but verification becomes harder. A task you give full autonomy to the agent might complete in minutes; a task you oversee step-by-step might take hours. But the step-by-step task may produce more reliable output because you&rsquo;ve caught and corrected errors along the way. There is no clean resolution to this tension. You must choose based on the stakes: how critical is verification, and how much time can you invest?</p>
+            <p>The more an agent does autonomously, the harder it is to maintain the oversight that makes the output trustworthy. This tension doesn&rsquo;t have a clean resolution. A fully autonomous run might finish in minutes; a step-by-step supervised run might take hours but catch errors the autonomous version wouldn&rsquo;t. Choose based on the stakes: for low-risk tasks, speed is reasonable; for anything you&rsquo;ll publish or share, invest in oversight.</p>
 
             <h3>Reproducibility</h3>
-            <p>Agentic outputs may not be reproducible. Running the same task twice can produce different results because the agent&rsquo;s decision-making process isn&rsquo;t fully deterministic&mdash;even with the same input data and instructions, different intermediate steps might be taken. For research work that you&rsquo;ll need to defend or reproduce, this is problematic. You can mitigate this by constraining the agent&rsquo;s choices (more specific instructions) or by documenting exactly what happened (saving logs of the agent&rsquo;s actions). But perfect reproducibility remains elusive.</p>
+            <p>Running the same agentic task twice can produce different results, because the agent&rsquo;s decisions aren&rsquo;t fully deterministic. For research work you&rsquo;ll need to defend, this matters. Practical mitigation: save the exact instructions you gave, the agent&rsquo;s log of actions, and the state of your files before and after (as a version-control commit or snapshot). Treat the agent run like a recorded method&mdash;someone else should be able to see what you did, even if they can&rsquo;t reproduce it identically.</p>
 
-            <h3>The opacity problem</h3>
-            <p>You can observe what an agent does&mdash;read the files it accesses, see the commands it runs, review the output it produces. But understanding <em>why</em> it made those specific choices is harder. The agent doesn&rsquo;t have a fully transparent decision-making process you can inspect. It might make a sensible choice for inscrutable reasons, or a poor choice that seems reasonable until you see the results. This opacity isn&rsquo;t unique to agentic systems&mdash;it&rsquo;s inherent to how LLMs work&mdash;but it becomes more consequential when the agent is modifying your files and making decisions without explicit human approval at each step.</p>
+            <h3>Opacity</h3>
+            <p>You can observe what an agent does&mdash;the files it reads, the commands it runs, the output it produces. But understanding <em>why</em> it made specific choices is harder. It might make a sensible decision for inscrutable reasons, or a poor one that seems reasonable until you see the consequences. This is inherent to how language models work, but it becomes more consequential when the agent is modifying your files rather than just generating text you can read and discard.</p>
 
-            <p>These limitations don&rsquo;t make agentic tools useless. They make them tools that require care, attention to verification, and honest assessment of when they&rsquo;re appropriate to use. For well-defined tasks where verification is manageable and stakes are modest, agentic tools can save significant time and effort. For open-ended tasks or high-stakes work, the oversight burden may outweigh the benefits.</p>
+            <p>These limitations don&rsquo;t make agentic tools useless. They make them tools that require care, a method for verification, and honest assessment of when the oversight burden outweighs the benefits.</p>
         </section>
 
         <footer>
-            <p><a href="use-cases.html" class="nav-link">&larr; Use Cases</a></p>
+            <p><a href="ancient-languages.html" class="nav-link">&larr; Ancient Languages</a></p>
             <p><a href="faq.html" class="nav-link">FAQ &rarr;</a></p>
         </footer>
     </div>
