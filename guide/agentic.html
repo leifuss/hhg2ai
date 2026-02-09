@@ -21,6 +21,8 @@
             <span class="nav-sep">|</span>
             <a href="agentic.html" class="current">Agentic AI</a>
             <span class="nav-sep">|</span>
+            <a href="copilot.html">Copilot</a>
+            <span class="nav-sep">|</span>
             <a href="faq.html">FAQ</a>
             <span class="nav-sep">|</span>
             <a href="glossary.html">Glossary</a>
@@ -153,6 +155,32 @@
             </div>
 
             <p>This may seem laborious, but it&rsquo;s the difference between &lsquo;I used an AI tool&rsquo; and &lsquo;I can account for what the AI tool did and verify its output&rsquo;. For anything you intend to publish, present, or share, the second is the minimum standard. For formal publications, consider depositing the agent log and your instructions in a data repository (such as <a href="https://zenodo.org/" target="_blank">Zenodo</a>) as part of a technical appendix, much as you might share a script or dataset.</p>
+
+            <h3>Cross-checking with multiple models</h3>
+
+            <p>One of the most effective ways to improve the quality of AI-assisted work is to use more than one model. If you develop a piece of writing, a translation, a data transformation, or any other output with one LLM, passing it to a different model for review can catch problems that neither you nor your primary tool noticed.</p>
+
+            <p>This is not because any single model is reliably &lsquo;better&rsquo;&mdash;it is because different models have different strengths, different training data, and different failure modes. Where one model makes a confident error, another may flag it as uncertain. Where one model defaults to a particular framing, another may suggest an alternative you hadn&rsquo;t considered.</p>
+
+            <p>There are several reasons to build this into your workflow:</p>
+
+            <ul>
+                <li><strong>It improves quality.</strong> A second model reviewing output from the first will often catch errors, inconsistencies, and unclear passages. This is analogous to having a second pair of eyes on a draft&mdash;not because the second reader is smarter, but because they bring a different perspective.</li>
+                <li><strong>It catches issues you might miss.</strong> When you&rsquo;ve been working closely with one model on a task, you develop a kind of conversational momentum&mdash;you and the model converge on shared assumptions. A fresh model doesn&rsquo;t share that context, and its questions or objections can surface blind spots.</li>
+                <li><strong>It reduces the corrections you need to make.</strong> Problems caught by a second model are problems you don&rsquo;t need to find and fix yourself. The more issues resolved before your own review, the more your attention can focus on matters of substance and judgement rather than surface errors.</li>
+                <li><strong>It injects fresh perspectives.</strong> Extended iteration between the same human and the same model tends, over time, toward consensus. This is natural and often productive&mdash;you&rsquo;re converging on a shared understanding of what you want. But consensus can also mean that unconsidered alternatives have been silently excluded. A different model, with different training and different tendencies, can reintroduce perspectives that neither you nor your primary model thought to raise.</li>
+                <li><strong>It reduces the burden on human reviewers.</strong> You should still have colleagues review work you intend to publish or present&mdash;human peer review is not replaceable. But you want to make the best possible use of their time and attention. Passing work through multi-model review before it reaches human reviewers means those reviewers encounter cleaner, more considered output, and can focus their expertise on the substantive questions that only humans can evaluate.</li>
+            </ul>
+
+            <p><strong>How to do it in practice.</strong> The simplest approach: complete your work with your preferred model, then open a new conversation with a different model (Claude, ChatGPT, Gemini, or others) and paste in the output with a prompt like &ldquo;Please review this critically. Identify errors, unclear passages, unsupported claims, and anything that could be improved.&rdquo; For more structured review, you can ask the second model to adopt a specific role: &ldquo;Review this as a specialist in [your field] who is sceptical of AI-generated content.&rdquo;</p>
+
+            <p>For agentic work specifically&mdash;where the output is code, transformed data, or a set of file changes rather than prose&mdash;you can ask the reviewing model to check the logic, look for edge cases, or verify that the output matches the specification you gave the original agent.</p>
+
+            <div class="note">
+                <p><strong>A note on consensus vs. corroboration:</strong> If two models agree, that increases confidence somewhat, but it is not validation. Models trained on overlapping data make overlapping errors. Agreement on a factual claim means it is well-represented in training data, not that it is true. Cross-model review is most valuable when models <em>disagree</em>&mdash;that disagreement tells you exactly where to focus your own expert attention. See the <a href="use-cases.html#verification">verification strategies</a> on the Use Cases page for more on this point.</p>
+            </div>
+
+            <p>This guide was itself developed using this approach: drafts produced with one model were reviewed by others (ChatGPT and Gemini), and the feedback was used to identify weaknesses, missing perspectives, and passages that would confuse the intended audience. The multi-model review caught problems&mdash;developer jargon that would lose humanities readers, over-promises about tool capabilities, factual errors about specific products&mdash;that neither the author nor the primary model had noticed.</p>
         </section>
 
         <hr>
@@ -269,7 +297,7 @@
 
         <footer>
             <p><a href="ancient-languages.html" class="nav-link">&larr; Ancient Languages</a></p>
-            <p><a href="faq.html" class="nav-link">FAQ &rarr;</a></p>
+            <p><a href="copilot.html" class="nav-link">Microsoft Copilot &rarr;</a></p>
         </footer>
     </div>
 </body>
