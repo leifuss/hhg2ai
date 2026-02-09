@@ -40,7 +40,7 @@
                 <li><a href="#tools">3. Tools available now</a></li>
                 <li><a href="#working-with">4. Working with agentic tools</a></li>
                 <li><a href="#examples">5. What can be built?</a></li>
-                <li><a href="#risks">6. Risks and limitations</a></li>
+                <li><a href="#risks">6. Risks, limitations, and when not to use an agent</a></li>
             </ul>
         </nav>
 
@@ -96,14 +96,14 @@
             <p>Several agentic tools exist as of early 2026. The landscape is changing quickly, so the specific products matter less than understanding the general pattern: language models combined with tool access and iteration loops, grounded in your own files rather than general knowledge.</p>
 
             <div class="note">
-                <p><strong>A note on terminology:</strong> This section necessarily uses some technical language. If terms like &lsquo;command line&rsquo;, &lsquo;API&rsquo;, or &lsquo;IDE&rsquo; are unfamiliar, the <a href="glossary.html">glossary</a> provides definitions. You do not need to master this vocabulary to understand what these tools do; it helps mainly if you want to try them yourself.</p>
+                <p><strong>A note on terminology:</strong> This section uses some technical language. A &lsquo;command line&rsquo; (or CLI) is a text-based way of giving instructions to your computer by typing commands rather than clicking icons. An &lsquo;API key&rsquo; is a password-like code that lets software access a service on your behalf. An &lsquo;IDE&rsquo; (integrated development environment) is a specialised text editor designed for writing code. You do not need to master this vocabulary to understand what these tools do; it helps mainly if you want to try them yourself.</p>
             </div>
 
             <h3>Claude Code (Anthropic)</h3>
             <p><a href="https://code.claude.com/docs/en/overview" target="_blank">Claude Code</a> is Anthropic&rsquo;s agentic tool, available through the command line (a text-based interface on your computer), through code editors, and on the web. You describe what you want in plain language; it reads your files, writes and runs code, and iterates. Your files stay on your machine (or in your browser session) unless you explicitly share them, and you can undo changes. Requires an Anthropic API key or Max subscription.</p>
 
             <h3>Cowork (research preview)</h3>
-            <p>Cowork is a research-preview interface in <a href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork" target="_blank">Claude Desktop</a> (currently macOS) that brings agentic workflows to non-coding tasks&mdash;document analysis, research, and structured writing. It is designed for people who want agentic capabilities without working in a development environment.</p>
+            <p>Cowork is a research-preview interface in <a href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork" target="_blank">Claude Desktop</a> (currently macOS only) that brings agentic workflows to non-coding tasks&mdash;document analysis, research, and structured writing. It is designed for people who want agentic capabilities without working in a development environment. If you&rsquo;re on Windows or Linux, the closest equivalent is Claude Code on the web (which runs in a browser) or an AI-native editor like Cursor.</p>
 
             <h3>Other tools</h3>
             <p>The broader landscape includes IDE-integrated agents (like <a href="https://www.cursor.com/" target="_blank">Cursor</a>), platform-integrated assistants (like GitHub Copilot, which now spans code completion, chat, and increasingly agent-like workflows within GitHub), and hosted autonomous agents (like <a href="https://devin.ai/" target="_blank">Devin</a> from Cognition). These are primarily aimed at software developers, but the underlying capabilities&mdash;file manipulation, structured output, iterative problem-solving&mdash;are the same capabilities that make agentic tools useful for research.</p>
@@ -121,13 +121,23 @@
 
             <p><strong>1. Start small.</strong> Give the agent a contained, well-defined task before attempting something complex. &ldquo;Convert this bibliography from Chicago style to Harvard&rdquo; before &ldquo;restructure my entire project directory and update all references.&rdquo; Small tasks let you calibrate the tool&rsquo;s strengths and failure modes.</p>
 
-            <p><strong>2. Use version control.</strong> Agents modify files. If the agent makes mistakes&mdash;and it will&mdash;you need a way to see what changed and undo it. &lsquo;Version control&rsquo; means a system (most commonly <a href="https://git-scm.com/" target="_blank">Git</a>) that records every change to your files, so you can compare the state before and after the agent ran and roll back if needed. Save a checkpoint before giving the agent significant tasks.</p>
+            <p><strong>2. Keep a safety net.</strong> Agents modify files. If the agent makes mistakes&mdash;and it will&mdash;you need a way to see what changed and undo it. The gold standard is <em>version control</em>: a system (most commonly <a href="https://git-scm.com/" target="_blank">Git</a>) that records every change to your files, so you can compare the state before and after and roll back if needed. If Git feels like a bridge too far for now, a simpler starting point is to <strong>duplicate your entire project folder</strong> before letting the agent work. It&rsquo;s not as elegant, but it means you always have a clean copy to fall back on. Save a checkpoint before giving the agent significant tasks, whichever method you use.</p>
 
             <p><strong>3. Review everything.</strong> Don&rsquo;t assume the agent got it right because the process completed without errors. An agent can produce work that looks correct, runs without problems, and still contains substantive mistakes. Spot-check results against source data. If you can&rsquo;t verify it, you can&rsquo;t trust it.</p>
 
             <p><strong>4. Be specific about constraints.</strong> &ldquo;Use only the sources in this folder.&rdquo; &ldquo;Don&rsquo;t modify files outside this directory.&rdquo; &ldquo;Check with me before deleting anything.&rdquo; The clearer your boundaries, the fewer surprises.</p>
 
             <p><strong>5. Iterate, don&rsquo;t fire and forget.</strong> The best results come from working with the agent: describe what you want, review the output, refine your instructions, and repeat. A single pass rarely produces exactly what you need.</p>
+
+            <h3>Your first run</h3>
+
+            <p>If you&rsquo;ve never used an agentic tool before, here is a low-stakes task to try. Open Claude Code (on the web, or in a terminal) and point it at a folder containing a few text files&mdash;notes, drafts, anything you don&rsquo;t mind it reading. Then type something like:</p>
+
+            <div class="highlight">
+                <p style="margin-bottom: 0;">&ldquo;List all the .txt files in this folder. For each one, count the number of words and produce a summary table as a new file called word-counts.csv.&rdquo;</p>
+            </div>
+
+            <p>The agent will ask to read your files (approve this), then create the CSV. Check the result against a manual word count for one or two files. You&rsquo;ll see the basic pattern: you describe the goal, the agent proposes actions, you approve, it executes, and you verify. The whole thing should take under five minutes and gives you a feel for the interaction model before you commit to anything more ambitious.</p>
 
             <h3>An audit recipe</h3>
 
@@ -142,7 +152,7 @@
                 <p style="margin-bottom: 0;"><strong>Record:</strong> Save the instructions you gave, the agent&rsquo;s log of actions, and the exact state of your files before and after. This is your provenance record&mdash;the equivalent of a methods section for agent-assisted work.</p>
             </div>
 
-            <p>This may seem laborious, but it&rsquo;s the difference between &lsquo;I used an AI tool&rsquo; and &lsquo;I can account for what the AI tool did and verify its output&rsquo;. For anything you intend to publish, present, or share, the second is the minimum standard.</p>
+            <p>This may seem laborious, but it&rsquo;s the difference between &lsquo;I used an AI tool&rsquo; and &lsquo;I can account for what the AI tool did and verify its output&rsquo;. For anything you intend to publish, present, or share, the second is the minimum standard. For formal publications, consider depositing the agent log and your instructions in a data repository (such as <a href="https://zenodo.org/" target="_blank">Zenodo</a>) as part of a technical appendix, much as you might share a script or dataset.</p>
         </section>
 
         <hr>
@@ -165,7 +175,7 @@
 
             <div class="highlight">
                 <p><strong><a href="https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html" target="_blank">Gnomon Shadow Explorer</a></strong></p>
-                <p>Interactive demonstration of latitude calculation using a gnomon. Developed in 1&ndash;2 hours. The human described the concept; the agent wrote the code; the human tested and iterated.</p>
+                <p>Interactive demonstration of latitude calculation using a gnomon. Developed in 1&ndash;2 hours at an API cost of roughly &pound;2&ndash;3. The human described the concept; the agent wrote the code; the human tested and iterated.</p>
             </div>
 
             <div class="highlight">
@@ -175,7 +185,7 @@
 
             <div class="highlight">
                 <p><strong><a href="https://leifuss.github.io/grammarcrammer/" target="_blank">Grammar Crammer</a></strong></p>
-                <p>Latin grammar practice platform with diagnostic testing, targeted exercises, progress tracking, and improvement reports. A more substantial project showing how agents can build interactive educational tools.</p>
+                <p>Latin grammar practice platform with diagnostic testing, targeted exercises, progress tracking, and improvement reports. A more substantial project (several sessions, roughly &pound;10&ndash;15 in API costs) showing how agents can build interactive educational tools.</p>
             </div>
 
             <div class="highlight">
@@ -203,9 +213,22 @@
 
         <!-- Section 6: Risks and limitations -->
         <section id="risks">
-            <h2>6. Risks and limitations</h2>
+            <h2>6. Risks, limitations, and when not to use an agent</h2>
 
             <p>Chat output is straightforward to evaluate: you read it and decide if it&rsquo;s good. Agentic systems are harder to validate because the output isn&rsquo;t a single text but a trail of file changes, computations, and decisions. This introduces risks that don&rsquo;t apply to chat.</p>
+
+            <h3>When not to use an agent</h3>
+            <p>Not every task benefits from agentic tools. Prefer ordinary chat&mdash;or manual work&mdash;when:</p>
+            <ul>
+                <li>The verification time would exceed the generation time. If it takes longer to check 50 agent-modified files than to make the changes by hand, the agent isn&rsquo;t saving you anything.</li>
+                <li>You&rsquo;re working with highly sensitive, un-versioned data that you cannot afford to have modified incorrectly or sent to an external server.</li>
+                <li>The task requires interpretive judgement at every step (close reading, editorial decisions, source evaluation). An agent can help with the mechanical parts, but if the task <em>is</em> the judgement, delegation doesn&rsquo;t work.</li>
+                <li>You don&rsquo;t have time to review the output carefully. An unchecked agentic run is worse than no run at all, because it creates the <em>appearance</em> of completed work.</li>
+            </ul>
+
+            <h3>What failure looks like</h3>
+            <p>It helps to see a concrete example. In the course of building this guide, an agent was asked to add a navigation link to all pages. It correctly identified the eight files that needed updating, but the method it used (a text-replacement command) also matched a line inside the page <em>content</em> of the index page, inserting a raw HTML link into the middle of a paragraph. The result looked like this in the browser: a stray &lsquo;Agentic AI&rsquo; hyperlink floating between two sentences of the introductory text. The agent reported success; the error only became apparent on visual review.</p>
+            <p>This is typical of how agentic failures occur: the agent completes its task, reports no errors, and the problem is subtle enough to slip past a cursory check. It&rsquo;s why the audit recipe exists&mdash;and why &lsquo;review everything&rsquo; means looking at the actual output, not just the agent&rsquo;s summary of what it did.</p>
 
             <h3>Verification is harder</h3>
             <p>When an agent modifies twenty files, you can&rsquo;t review each change as easily as reading a single response. Version control and comparison tools become essential, not optional. For large modifications, the verification work can be substantial&mdash;sometimes more than the time you saved by using the agent in the first place.</p>
