@@ -98,6 +98,46 @@ window.defined_disciplines.theology = {
                     '</div>' +
                 '</div>' +
                 '<p class="translation-note">This verse has been at the centre of Reformation theology. Luther famously added <em>allein</em> (\'alone\') to his German translation &mdash; a word not in the Greek. The key interpretive question revolves around <em>\u03C0\u03AF\u03C3\u03C4\u03B5\u03B9</em>: does it mean \'faith\' as personal trust, \'faithfulness\', or the \'faith of Christ\' (a subjective genitive reading of the related phrase <em>\u03C0\u03AF\u03C3\u03C4\u03B9\u03C2 \u03A7\u03C1\u03B9\u03C3\u03C4\u03BF\u1FE6</em> elsewhere in Paul)? Similarly, <em>\u1F14\u03C1\u03B3\u03C9\u03BD \u03BD\u03CC\u03BC\u03BF\u03C5</em> &mdash; \'works of the law\' &mdash; has been read as referring to the entire Mosaic law, to Jewish identity markers specifically, or to human effort generally. The LLM produces a standard modern rendering without signalling the centuries of theological controversy embedded in every word choice.</p>' +
-            '</div>'
+            '</div>',
+
+        /* resources.html — discipline intro line */
+        'resources-discipline-intro': '<em>Especially theology, religion, and biblical studies</em>',
+
+        /* resources.html — source-facing AI tools for theology/religion */
+        'resources-discipline-tools':
+            '<h2>3. Source-facing AI in theology and religion</h2>' +
+            '<p>Several AI and digital tools are directly relevant to scholars working with sacred texts, manuscripts, and religious corpora. These extend what is legible, searchable, and comparable &mdash; distinct from general-purpose LLMs.</p>' +
+            '<h3>Manuscripts and handwritten text recognition</h3>' +
+            '<ul>' +
+                '<li><strong>Transkribus</strong> &mdash; The most widely used handwritten text recognition (HTR) platform. Useful for medieval manuscripts, early printed books, and archival material across religious traditions. Free tier available.<br>' +
+                '<a href="https://www.transkribus.org/" target="_blank">transkribus.org</a></li>' +
+                '<li><strong>eScriptorium</strong> &mdash; Open-source HTR/OCR environment, often paired with the kraken engine. Good for bespoke model training on particular scripts and hands.<br>' +
+                '<a href="https://escriptorium.inria.fr/" target="_blank">escriptorium.inria.fr</a></li>' +
+            '</ul>' +
+            '<h3>Digital text corpora and archives</h3>' +
+            '<ul>' +
+                '<li><strong>The Leon Levy Dead Sea Scrolls Digital Library</strong> &mdash; High-resolution images of the Dead Sea Scrolls with search and browsing tools. Essential for Qumran studies and Second Temple Judaism.<br>' +
+                '<a href="https://www.deadseascrolls.org.il/" target="_blank">deadseascrolls.org.il</a></li>' +
+                '<li><strong>STEP Bible</strong> (Scripture Tools for Every Person) &mdash; Tyndale House, Cambridge. Interlinear texts, lexicons, and parallel translations for biblical scholarship. Free and scholarly.<br>' +
+                '<a href="https://www.stepbible.org/" target="_blank">stepbible.org</a></li>' +
+                '<li><strong>Thesaurus Linguae Graecae (TLG)</strong> &mdash; Digital library of Greek literature from antiquity to the present. Indispensable for patristic and New Testament research. Subscription required.<br>' +
+                '<a href="http://stephanus.tlg.uci.edu/" target="_blank">stephanus.tlg.uci.edu</a></li>' +
+            '</ul>',
+
+        /* resources.html — discipline-specific reading list */
+        'resources-discipline-reading':
+            '<h3>Theology &amp; religion</h3>' +
+            '<ul>' +
+                '<li><strong>A. G. Elrod, &ldquo;Uncovering Theological and Ethical Biases in LLMs: An Integrated Hermeneutical Approach Employing Texts from the Hebrew Bible,&rdquo;</strong> <em>HIPHIL Novum</em> 9, no. 1, pp. 2&ndash;45 &mdash; Uses creative text generation tasks based on the Ten Commandments and the Book of Jonah to probe how LLMs handle theological and ethical content. Tests multiple models. Directly relevant to biblical scholars.<br>' +
+                '<a href="https://tidsskrift.dk/hiphilnovum/article/view/143407" target="_blank">tidsskrift.dk/hiphilnovum/article/view/143407</a></li>' +
+                '<li><strong>Mark Graves, &ldquo;Generative AI and Theology: A Three-Year Retrospective,&rdquo;</strong> <em>Theology and Science</em> (December 2025) &mdash; Examines what generative AI means for theology, tracing developments over three years. Good overview of the emerging field.<br>' +
+                '<a href="https://www.tandfonline.com/doi/full/10.1080/14746700.2025.2592326" target="_blank">tandfonline.com/doi/&hellip;/14746700.2025.2592326</a></li>' +
+                '<li><strong>Marius Dorobantu, &ldquo;Artificial Intelligence as a Testing Ground for Key Theological Questions,&rdquo;</strong> <em>Zygon</em> (2022) &mdash; Explores how AI serves as a lens for fundamental theological questions about mind, agency, and creation.<br>' +
+                '<a href="https://onlinelibrary.wiley.com/doi/10.1111/zygo.12831" target="_blank">onlinelibrary.wiley.com/doi/10.1111/zygo.12831</a></li>' +
+                '<li><strong>AAR Artificial Intelligence and Religion Unit</strong> &mdash; The American Academy of Religion&rsquo;s dedicated forum for critical and interdisciplinary discussion of AI and religion. Meets annually at the AAR conference.<br>' +
+                '<a href="https://papers.aarweb.org/group/15083" target="_blank">papers.aarweb.org/group/15083</a></li>' +
+                '<li><strong>OCTAI</strong> (Oxford Collaboration on Theology and Artificial Intelligence) &mdash; University of Oxford initiative bringing together theologians, ethicists, and AI researchers to address the ethical and vocational dimensions of AI.<br>' +
+                '<a href="https://www.theology.ox.ac.uk/article/launch-oxford-collaboration-theology-and-artificial-intelligence-octai" target="_blank">theology.ox.ac.uk/&hellip;/octai</a></li>' +
+            '</ul>'
     }
 };
