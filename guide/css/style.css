@@ -552,3 +552,90 @@ details.collapsible .collapsible-body {
 [data-ctx-slot].ctx-active {
     display: block;
 }
+
+/* Context chooser popout */
+
+.ctx-chooser-wrap {
+    position: relative;
+    margin-left: auto;
+}
+
+.ctx-chooser-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+    font-family: inherit;
+    color: var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.ctx-chooser-btn:hover {
+    background: var(--bg-primary);
+    border-color: var(--accent-light);
+}
+
+.ctx-chooser-btn .ctx-caret {
+    font-size: 0.6em;
+    transition: transform 0.2s ease;
+}
+
+.ctx-chooser-btn[aria-expanded="true"] .ctx-caret {
+    transform: rotate(180deg);
+}
+
+.ctx-chooser-panel {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.3rem);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
+    font-size: 0.85rem;
+}
+
+.ctx-chooser-panel.open {
+    display: block;
+}
+
+.ctx-chooser-panel label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.ctx-chooser-panel select {
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    cursor: pointer;
+}
+
+.ctx-chooser-panel select:focus {
+    outline: 2px solid var(--accent-light);
+    outline-offset: 1px;
+}
+
+@media print {
+    .ctx-chooser-wrap {
+        display: none;
+    }
+}
