@@ -434,37 +434,33 @@ details.collapsible > summary {
     cursor: pointer;
     list-style: none;
     padding: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
 }
 
 details.collapsible > summary::-webkit-details-marker {
     display: none;
 }
 
+details.collapsible > summary::before {
+    content: '\25B8';
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+details.collapsible[open] > summary::before {
+    transform: rotate(90deg);
+}
+
 details.collapsible > summary h2,
 details.collapsible > summary h3 {
-    position: relative;
-    padding-right: 1.5rem;
     margin-top: 0;
     border-bottom: none;
     padding-bottom: 0.3rem;
     margin-bottom: 0.5rem;
-}
-
-details.collapsible > summary h2::after,
-details.collapsible > summary h3::after {
-    content: '\25B8';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.8em;
-    color: var(--text-secondary);
-    transition: transform 0.2s ease;
-}
-
-details.collapsible[open] > summary h2::after,
-details.collapsible[open] > summary h3::after {
-    transform: translateY(-50%) rotate(90deg);
 }
 
 details.collapsible[open] > summary h2,
@@ -542,8 +538,7 @@ details.collapsible .collapsible-body {
         list-style: none;
     }
 
-    details.collapsible > summary h2::after,
-    details.collapsible > summary h3::after {
+    details.collapsible > summary::before {
         display: none;
     }
 }
