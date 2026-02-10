@@ -1,13 +1,13 @@
-/* Discipline content: Classics, Ancient History & Theology
+/* Discipline content: Classics & Ancient History
  * Loaded when ?discipline=classics is present in the URL.
  */
 window.defined_disciplines = window.defined_disciplines || {};
 window.defined_disciplines.classics = {
-    label: 'Classics, Ancient History & Theology',
+    label: 'Classics & Ancient History',
     slots: {
 
         /* index.html — subtitle */
-        'index-subtitle': 'For colleagues in Classics, Ancient History, and Theology &amp; Religion',
+        'index-subtitle': 'For colleagues in Classics and Ancient History',
 
         /* index.html — ancient languages card description */
         'index-ancient-langs-card': 'Worked translation examples in Latin, Greek, and Hebrew. How LLMs handle textual criticism, fragmentary evidence, and sacred texts. Written for specialists.',
