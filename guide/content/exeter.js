@@ -10,7 +10,7 @@ window.defined_institutions.exeter = {
         'resources-institution':
             '<h2>At Exeter</h2>' +
             '<div class="highlight">' +
-                '<p>These are your institutional starting points. Bookmark them; they change.</p>' +
+                '<p>These are your institutional starting points. Bookmark them.</p>' +
 
                 '<h3>Enabling AI at Exeter</h3>' +
                 '<ul>' +
