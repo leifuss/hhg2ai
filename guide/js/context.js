@@ -64,7 +64,7 @@
         btn.setAttribute('aria-expanded', 'false');
         btn.setAttribute('aria-haspopup', 'true');
         btn.innerHTML = (discipline ? findLabel(discipline) : 'Choose discipline') +
-            ' <span class="ctx-caret">&#9662;</span>';
+            ' <span class="ctx-caret">&#9660;</span>';
 
         var panel = document.createElement('div');
         panel.className = 'ctx-chooser-panel';
