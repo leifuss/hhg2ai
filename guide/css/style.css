@@ -542,3 +542,13 @@ details.collapsible .collapsible-body {
         display: none;
     }
 }
+
+/* Context switcher — discipline/institution parameterisation */
+
+[data-ctx-slot] {
+    display: none;
+}
+
+[data-ctx-slot].ctx-active {
+    display: block;
+}

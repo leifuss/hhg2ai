@@ -162,7 +162,10 @@
 
             <p>An example for humanities work:</p>
 
-            <blockquote>&ldquo;I&rsquo;m a classicist working on Latin literature. When I ask about primary sources, cite specific passages. Flag when you&rsquo;re uncertain rather than generating plausible-sounding guesses. Challenge my interpretations rather than agreeing reflexively. Avoid theoretical frameworks I haven&rsquo;t specifically requested. When I ask for counterarguments, give me the strongest versions, not strawmen.&rdquo;</blockquote>
+            <div data-ctx-generic="use-cases-system-prompt">
+            <blockquote>&ldquo;I&rsquo;m a humanities scholar working on [your primary source type or field]. When I ask about primary sources, cite specific passages. Flag when you&rsquo;re uncertain rather than generating plausible-sounding guesses. Challenge my interpretations rather than agreeing reflexively. Avoid theoretical frameworks I haven&rsquo;t specifically requested. When I ask for counterarguments, give me the strongest versions, not strawmen.&rdquo;</blockquote>
+            </div>
+            <div data-ctx-slot="use-cases-system-prompt"></div>
 
             <p>Tailor this to your discipline and working style. Good system prompts reduce the need to repeat context and calibrate tone in every conversation.</p>
 
@@ -234,7 +237,10 @@
             <h3>Custom assistants for projects</h3>
             <p>Most platforms allow creating specialised assistants with persistent instructions and uploaded reference materials. Claude offers &ldquo;Projects&rdquo; for this; ChatGPT has &ldquo;Custom GPTs.&rdquo;</p>
 
-            <p>You can create project-specific assistants preloaded with your research context, methodological preferences, key sources, and standing instructions. A &ldquo;Roman epigraphy assistant&rdquo; might include your transcription conventions, standard reference works, and instructions to flag dating uncertainties. A &ldquo;thesis writing assistant&rdquo; might include your chapter outlines, style preferences, and instructions to challenge weak arguments.</p>
+            <div data-ctx-generic="use-cases-custom-project">
+            <p>You can create project-specific assistants preloaded with your research context, methodological preferences, key sources, and standing instructions. An assistant for a specialised source corpus might include your transcription conventions, standard reference works, and instructions to flag dating uncertainties. A &ldquo;thesis writing assistant&rdquo; might include your chapter outlines, style preferences, and instructions to challenge weak arguments.</p>
+            </div>
+            <div data-ctx-slot="use-cases-custom-project"></div>
 
             <p class="risk"><strong>Risks:</strong> The assistant doesn&rsquo;t actually understand your project&mdash;it generates contextually appropriate text based on your materials and instructions. Over-reliance on a well-configured assistant can create false confidence. The assistant may subtly reinforce your existing framing rather than challenging it, since it&rsquo;s optimised to be helpful within your specified parameters. Use these as conveniences, not as substitutes for external feedback.</p>
 
@@ -289,6 +295,7 @@
         </footer>
     </div>
 
+    <script src="js/context.js"></script>
     <script>
     (function() {
         function openTarget() {
