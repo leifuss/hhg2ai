@@ -427,7 +427,7 @@ li {
 details.collapsible {
     border-bottom: 1px solid var(--border);
     margin: 0;
-    padding: 0;
+    padding: 1.5rem 0 0 0;
 }
 
 details.collapsible > summary {
@@ -444,6 +444,10 @@ details.collapsible > summary h2,
 details.collapsible > summary h3 {
     position: relative;
     padding-right: 1.5rem;
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
 }
 
 details.collapsible > summary h2::after,
@@ -461,13 +465,6 @@ details.collapsible > summary h3::after {
 details.collapsible[open] > summary h2::after,
 details.collapsible[open] > summary h3::after {
     transform: translateY(-50%) rotate(90deg);
-}
-
-details.collapsible > summary h2,
-details.collapsible > summary h3 {
-    border-bottom: none;
-    padding-bottom: 0.3rem;
-    margin-bottom: 0.5rem;
 }
 
 details.collapsible[open] > summary h2,
