@@ -60,8 +60,9 @@
         </nav>
 
         <!-- Section 1: Quick wins -->
-        <section id="15-minutes">
-            <h2>If You Have 15 Minutes</h2>
+        <details class="collapsible" id="15-minutes">
+            <summary><h2>If You Have 15 Minutes</h2></summary>
+            <div class="collapsible-body">
 
             <p>These are quick wins where verification is fast relative to generation. They make good starting points for getting a feel for the tools.</p>
 
@@ -84,13 +85,13 @@
             <p>&ldquo;This paragraph feels unclear&mdash;suggest three ways to restructure it.&rdquo; &ldquo;This section is too jargon-heavy&mdash;rewrite for an educated non-specialist while preserving analytical precision.&rdquo; &ldquo;What&rsquo;s the weakest link in this argument?&rdquo;</p>
 
             <p class="risk"><strong>Risks:</strong> The system may smooth away productive difficulty or disciplinary precision in favour of generic clarity. Its suggestions optimise for readability in ways that may flatten your argument. Treat suggestions as prompts for your own revision, not as improvements to accept.</p>
-        </section>
-
-        <hr>
+            </div>
+        </details>
 
         <!-- Section 2: Sustained work -->
-        <section id="afternoon">
-            <h2>If You Have an Afternoon</h2>
+        <details class="collapsible" id="afternoon">
+            <summary><h2>If You Have an Afternoon</h2></summary>
+            <div class="collapsible-body">
 
             <p>These tasks require more iteration and engagement. They reward sustained conversation with the system, where you refine prompts, push back on outputs, and build on earlier exchanges.</p>
 
@@ -169,13 +170,13 @@
             <p>Some platforms offer extended reasoning modes for complex problems&mdash;the system works through the problem step-by-step before responding. In Claude, this is called &ldquo;extended thinking.&rdquo; Use it for multi-step analytical problems, not routine queries.</p>
 
             <p>Tool use (web search, code execution, file creation) is available on most paid tiers. Web search helps with current information but introduces its own reliability questions&mdash;the system may find and summarise unreliable sources. Code execution is useful for data analysis and visualisation if you can verify the outputs.</p>
-        </section>
-
-        <hr>
+            </div>
+        </details>
 
         <!-- Section 3: Advanced / deeper -->
-        <section id="deeper">
-            <h2>If You Want to Go Deeper</h2>
+        <details class="collapsible" id="deeper">
+            <summary><h2>If You Want to Go Deeper</h2></summary>
+            <div class="collapsible-body">
 
             <p>These require more setup or technical comfort but open significant possibilities for humanities work. They&rsquo;re signposted here for exploration rather than presented as things everyone should try.</p>
 
@@ -249,7 +250,8 @@
             <p>The voice-to-text-to-summary pipeline can feed into drafting, grant applications, lecture preparation, or simply clarifying your own thinking. Walking seems particularly conducive&mdash;the combination of movement, low-stakes verbal processing, and subsequent AI structuring works well for many people.</p>
 
             <p class="risk"><strong>Risks:</strong> The summary is only as good as the raw material&mdash;if your rambling didn&rsquo;t contain a coherent argument, the system will impose false coherence or surface something you didn&rsquo;t actually mean. The system may emphasise what&rsquo;s clearly articulated over what&rsquo;s tentatively gestured at, when the tentative gesture might be the important part. Treat summaries as starting points for your own structuring, not as authoritative accounts of what you were thinking. Also consider privacy: if you&rsquo;re speaking in public spaces, you&rsquo;re potentially exposing research ideas; voice data passes through commercial servers like any other input.</p>
-        </section>
+            </div>
+        </details>
 
         <hr>
 
@@ -286,5 +288,23 @@
             <p style="margin-top: 1rem; font-size: 0.85rem;">This guide is actively maintained. If something was useful, unclear, or missing &mdash; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&amp;entry.1470426217=Use+Cases" target="_blank">let us know</a>.</p>
         </footer>
     </div>
+
+    <script>
+    (function() {
+        function openTarget() {
+            var hash = location.hash;
+            if (!hash) return;
+            var el = document.querySelector(hash);
+            if (!el) return;
+            if (el.tagName === 'DETAILS') { el.open = true; }
+            else {
+                var d = el.closest('details');
+                if (d) d.open = true;
+            }
+        }
+        openTarget();
+        window.addEventListener('hashchange', openTarget);
+    })();
+    </script>
 </body>
 </html>
