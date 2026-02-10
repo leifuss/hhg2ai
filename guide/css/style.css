@@ -581,7 +581,7 @@ details.collapsible .collapsible-body {
 }
 
 .ctx-chooser-btn .ctx-caret {
-    font-size: 0.6em;
+    font-size: 0.85em;
     transition: transform 0.2s ease;
 }
 
