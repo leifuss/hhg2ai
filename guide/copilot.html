@@ -64,7 +64,10 @@
         <p>This is not an endorsement of Copilot over other tools. For many academic tasks, dedicated LLMs like Claude, ChatGPT, or Gemini produce better results. But if Copilot is what your institution provides&mdash;and particularly if institutional policy restricts you to it for certain work&mdash;it is worth understanding how to use it effectively rather than dismissing it after a disappointing first encounter.</p>
 
         <div class="note">
-            <p><strong>A note on institutional variation:</strong> How Copilot works at your university depends on decisions made by your IT administration. The technology can search across emails, files, and meeting transcripts&mdash;but many institutions restrict these permissions, sometimes significantly. At Exeter, for example, Copilot can only access the specific file or email you are currently working with, not your broader Microsoft 365 data. This is a deliberate policy choice reflecting cautious data governance, not a limitation of the technology itself. The guidance below covers both full-access and restricted configurations, and includes specific strategies for getting the most out of Copilot even when access is tightly scoped.</p>
+            <div data-ctx-generic="copilot-institution-policy">
+            <p><strong>A note on institutional variation:</strong> How Copilot works at your university depends on decisions made by your IT administration. The technology can search across emails, files, and meeting transcripts&mdash;but many institutions restrict these permissions, sometimes significantly. Check with your IT services about what data Copilot can access &mdash; policies vary and are evolving. The guidance below covers both full-access and restricted configurations, and includes specific strategies for getting the most out of Copilot even when access is tightly scoped.</p>
+            </div>
+            <div data-ctx-slot="copilot-institution-policy"></div>
         </div>
 
         <!-- Section 1: What is Microsoft Copilot? -->
@@ -209,7 +212,10 @@
 
             <h3 id="restricted">Making the most of restricted configurations</h3>
 
-            <p>If your institution limits Copilot to the document or email you&rsquo;re currently working with&mdash;as Exeter does&mdash;you lose the cross-application search features but retain a capable AI assistant embedded in your everyday tools. Here are strategies for getting genuine value from this configuration:</p>
+            <div data-ctx-generic="copilot-institution-restricted">
+            <p>If your institution limits Copilot to the document or email you&rsquo;re currently working with, you lose the cross-application search features but retain a capable AI assistant embedded in your everyday tools. Here are strategies for getting genuine value from this configuration:</p>
+            </div>
+            <div data-ctx-slot="copilot-institution-restricted"></div>
 
             <p><strong>Personalise your Copilot settings.</strong> In Microsoft 365, you can set preferences that shape how Copilot responds. Go to your Copilot settings (accessible via the Copilot icon in any 365 app) and configure your role, writing preferences, and tone. Tell it you are an academic, that you prefer formal but clear prose, and that you want concise outputs. These persistent preferences improve every subsequent interaction without you needing to repeat them.</p>
 
@@ -265,5 +271,6 @@
             <p style="margin-top: 1rem; font-size: 0.85rem;">This guide is actively maintained. If something was useful, unclear, or missing &mdash; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&amp;entry.1470426217=Microsoft+Copilot" target="_blank">let us know</a>.</p>
         </footer>
     </div>
+    <script src="js/context.js"></script>
 </body>
 </html>
