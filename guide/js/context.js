@@ -63,13 +63,13 @@
         btn.className = 'ctx-chooser-btn';
         btn.setAttribute('aria-expanded', 'false');
         btn.setAttribute('aria-haspopup', 'true');
-        btn.innerHTML = (discipline ? findLabel(discipline) : 'Choose discipline') +
+        btn.innerHTML = (discipline ? findLabel(discipline) : 'Discipline') +
             ' <span class="ctx-caret">&#9660;</span>';
 
         var panel = document.createElement('div');
         panel.className = 'ctx-chooser-panel';
         panel.setAttribute('role', 'dialog');
-        panel.setAttribute('aria-label', 'Choose discipline');
+        panel.setAttribute('aria-label', 'Discipline');
 
         var lbl = document.createElement('label');
         lbl.setAttribute('for', 'ctx-discipline-select');
