@@ -12,9 +12,8 @@ window.defined_disciplines.classics = {
         /* index.html — ancient languages card description */
         'index-ancient-langs-card': 'Worked translation examples in Latin, Greek, and Hebrew. How LLMs handle textual criticism, fragmentary evidence, and sacred texts. Written for specialists.',
 
-        /* getting-started.html — primary exercise */
+        /* getting-started.html — translation exercise (Classics-specific) */
         'getting-started-exercise':
-            '<h3>Primary exercise: translation</h3>' +
             '<p>This exercise works best if you have some Latin, but the principle applies to any ancient language you read. We use a passage from Tacitus because its compressed, syntactically demanding prose exposes both the strengths and the limitations of machine translation in ways that simpler Latin does not.</p>' +
             '<ol>' +
                 '<li><strong>Open an LLM.</strong> Go to <a href="https://claude.ai" target="_blank">claude.ai</a> (or <a href="https://chatgpt.com" target="_blank">chatgpt.com</a> if you prefer). A free account is fine for this exercise.</li>' +
@@ -33,11 +32,9 @@ window.defined_disciplines.classics = {
                 '<p style="margin-bottom: 0;"><strong>Common pitfalls:</strong> Accepting a fluent translation as adequate without checking the interpretive choices. Concluding the tool is &ldquo;good enough&rdquo; based on a passage you know well &mdash; the real test is material at the edge of your expertise, where errors are harder to spot.</p>' +
             '</div>',
 
-        /* quickstart.html — Option A exercise */
+        /* quickstart.html — translation exercise (Classics-specific) */
         'quickstart-exercise':
-            '<h3>Option A: Translation (if you have Latin, Greek, or Hebrew)</h3>' +
             '<ol>' +
-                '<li><strong>Go to <span style="color: var(--accent);">claude.ai</span></strong> (or chatgpt.com). A free account is fine.</li>' +
                 '<li><strong>Paste this passage</strong> &mdash; Tacitus, <em>Agricola</em> 1:' +
                     '<blockquote style="font-size: 0.95rem;">&ldquo;Clarorum virorum facta moresque posteris tradere, antiquitus usitatum, ne nostris quidem temporibus quamquam incuriosa suorum aetas omisit, quotiens magna aliquave virtus vicit ac supergressa est vitium parvis magnisque civitatibus commune, ignorantiam recti et invidiam.&rdquo;</blockquote>' +
                     '<p style="font-size: 0.85rem; color: var(--text-secondary);">(Or substitute a passage in Greek or Hebrew that you know well.)</p>' +

@@ -10,9 +10,8 @@ window.defined_disciplines.theology = {
         /* index.html — subtitle */
         'index-subtitle': 'For colleagues in Theology &amp; Religion',
 
-        /* getting-started.html — primary exercise */
+        /* getting-started.html — translation exercise (Theology-specific) */
         'getting-started-exercise':
-            '<h3>Primary exercise: translation</h3>' +
             '<p>This exercise works best if you have some Hebrew or Greek, but the principle applies to any language central to your scholarly work. We use a passage from Genesis because its interpretive complexity &mdash; grammatical, theological, and translational &mdash; exposes both the strengths and the limitations of machine translation in ways that more straightforward passages do not.</p>' +
             '<ol>' +
                 '<li><strong>Open an LLM.</strong> Go to <a href="https://claude.ai" target="_blank">claude.ai</a> (or <a href="https://chatgpt.com" target="_blank">chatgpt.com</a> if you prefer). A free account is fine for this exercise.</li>' +
@@ -31,11 +30,9 @@ window.defined_disciplines.theology = {
                 '<p style="margin-bottom: 0;"><strong>Common pitfalls:</strong> Accepting a familiar-sounding translation as adequate without examining the interpretive choices. Defaulting to the reading you already prefer rather than testing whether the LLM can articulate the alternatives.</p>' +
             '</div>',
 
-        /* quickstart.html — Option A exercise */
+        /* quickstart.html — translation exercise (Theology-specific) */
         'quickstart-exercise':
-            '<h3>Option A: Translation (if you have Hebrew or Greek)</h3>' +
             '<ol>' +
-                '<li><strong>Go to <span style="color: var(--accent);">claude.ai</span></strong> (or chatgpt.com). A free account is fine.</li>' +
                 '<li><strong>Paste this passage</strong> &mdash; Genesis 1:1&ndash;2 (Biblia Hebraica):' +
                     '<blockquote style="font-size: 0.95rem;" lang="he" dir="rtl">\u05D1\u05B0\u05BC\u05E8\u05B5\u05D0\u05E9\u05C1\u05B4\u05D9\u05EA \u05D1\u05B8\u05BC\u05E8\u05B8\u05D0 \u05D0\u05B1\u05DC\u05B9\u05D4\u05B4\u05D9\u05DD \u05D0\u05B5\u05EA \u05D4\u05B7\u05E9\u05C1\u05B8\u05BC\u05DE\u05B7\u05D9\u05B4\u05DD \u05D5\u05B0\u05D0\u05B5\u05EA \u05D4\u05B8\u05D0\u05B8\u05E8\u05B6\u05E5\u05F3 \u05D5\u05B0\u05D4\u05B8\u05D0\u05B8\u05E8\u05B6\u05E5 \u05D4\u05B8\u05D9\u05B0\u05EA\u05B8\u05D4 \u05EA\u05B9\u05D4\u05D5\u05BC \u05D5\u05B8\u05D1\u05B9\u05D4\u05D5\u05BC \u05D5\u05B0\u05D7\u05B9\u05E9\u05C1\u05B6\u05DA\u05B0 \u05E2\u05B7\u05DC\u05BE\u05E4\u05B0\u05BC\u05E0\u05B5\u05D9 \u05EA\u05B0\u05D4\u05D5\u05B9\u05DD \u05D5\u05B0\u05E8\u05D5\u05BC\u05D7\u05B7 \u05D0\u05B1\u05DC\u05B9\u05D4\u05B4\u05D9\u05DD \u05DE\u05B0\u05E8\u05B7\u05D7\u05B6\u05E4\u05B6\u05EA \u05E2\u05B7\u05DC\u05BE\u05E4\u05B0\u05BC\u05E0\u05B5\u05D9 \u05D4\u05B7\u05DE\u05B8\u05BC\u05D9\u05B4\u05DD\u05F3</blockquote>' +
                     '<p style="font-size: 0.85rem; color: var(--text-secondary);">(Or substitute a passage in Greek that you know well.)</p>' +
