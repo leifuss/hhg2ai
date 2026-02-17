@@ -474,6 +474,37 @@ details.collapsible .collapsible-body {
     padding-bottom: 1rem;
 }
 
+/* Landing page — side-by-side columns */
+
+.landing-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    align-items: start;
+}
+
+.landing-columns h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.landing-toc {
+    padding: 1rem 1.2rem;
+    margin-bottom: 0;
+}
+
+.landing-toc ul {
+    margin: 0;
+}
+
+.landing-toc li {
+    font-size: 0.9rem;
+    margin: 0.4rem 0;
+    line-height: 1.5;
+}
+
 /* Responsive */
 
 @media (max-width: 600px) {
@@ -494,6 +525,10 @@ details.collapsible .collapsible-body {
     }
 
     .translation-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-columns {
         grid-template-columns: 1fr;
     }
 }
