@@ -6,7 +6,8 @@ window.defined_disciplines.classics = {
     label: 'Classics & Ancient History',
     slots: {
 
-        /* index.html — subtitle */
+        /* index.html — title and subtitle */
+        'index-title': 'Large Language Models: A Guide for Classics and Ancient History',
         'index-subtitle': 'For colleagues in Classics and Ancient History',
 
         /* index.html — ancient languages card description */
