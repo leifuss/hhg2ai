@@ -7,7 +7,8 @@ window.defined_disciplines.theology = {
     label: 'Theology & Religion',
     slots: {
 
-        /* index.html — subtitle */
+        /* index.html — title and subtitle */
+        'index-title': 'Large Language Models: A Guide for Theology &amp; Religion',
         'index-subtitle': 'For colleagues in Theology &amp; Religion',
 
         /* getting-started.html — translation exercise (Theology-specific) */

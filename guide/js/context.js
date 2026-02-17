@@ -81,7 +81,7 @@
 
         var defaultOpt = document.createElement('option');
         defaultOpt.value = '';
-        defaultOpt.textContent = 'Generic (all humanities)';
+        defaultOpt.textContent = 'Generic (all disciplines)';
         if (!discipline) defaultOpt.selected = true;
         sel.appendChild(defaultOpt);
 
