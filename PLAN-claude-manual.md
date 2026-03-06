@@ -1,6 +1,6 @@
 # Plan: Best Practice Manual for Digital Humanists Using Claude
 
-**Date:** March 2026
+**Date:** March 2026 (revised)
 **Status:** Draft for review
 
 ---
@@ -18,7 +18,7 @@ The existing site (`guide/`) already covers:
 - Use cases by time investment
 - Ancient languages, FAQ, glossary, resources
 
-**This manual is a new page (or set of pages)** that goes deep on Claude specifically — the tool this guide was built with and the one the author knows best. It complements rather than duplicates the existing agentic.html page (which covers agentic *concepts*; this covers Claude *practice*).
+**This manual is a new page** that goes deep on Claude specifically — the tool this guide was built with and the one the author knows best. It complements rather than duplicates the existing agentic.html page (which covers agentic *concepts*; this covers Claude *practice*).
 
 ### What the GPT 5.4 brief gets right
 - The LLM systems stack framing (infrastructure → runtime → prompt → tool → agent → human)
@@ -33,16 +33,29 @@ The existing site (`guide/`) already covers:
 - **The multi-model orchestration framing** is the wrong lens for this manual — we're writing about Claude specifically, not multi-model architecture
 - **Missing entirely**: Claude Projects, artifacts, custom styles, memory, conversation management — the features humanities scholars actually interact with daily
 
+### Key additional source: TheDecipherist's Claude Code Mastery Guide (V4/V5)
+
+The guide at [thedecipherist.com](https://thedecipherist.com/articles/claude-code-guide-v4/) and its [GitHub companion](https://github.com/TheDecipherist/claude-code-mastery) is the best single resource on Claude Code configuration. Key insights to incorporate:
+
+- **CLAUDE.md is suggestion; hooks are enforcement.** CLAUDE.md instructions can be "forgotten" under context pressure. Hooks fire deterministically. This distinction matters for the guide — we should teach it clearly.
+- **Two-level CLAUDE.md**: Global (`~/.claude/CLAUDE.md`) for organisation-wide rules, project-level (`./CLAUDE.md`) for project-specific conventions. The global file is a security gatekeeper.
+- **Security finding**: Claude Code reads `.env` files without explicit permission. The guide should warn about this.
+- **Single-purpose chats**: Research shows 39% performance degradation when mixing topics in a single conversation. One task per session.
+- **Exit code semantics for hooks**: 0 = allow, 1 = error (user-visible), 2 = block and feed stderr to Claude.
+- **Starter kit** with templates for CLAUDE.md, hooks, skills, and settings.json.
+
+We should cite this resource and adapt its advice for a non-developer audience. Some of the developer-oriented detail (CI/CD hooks, language-specific toolchains) isn't relevant, but the architectural principles absolutely are.
+
 ---
 
 ## Proposed structure
 
 ### Format decision
 
-**Single long page** (`guide/claude-best-practice.html`) rather than splitting across multiple pages. Reasons:
-- The existing site already has 12+ pages; adding 3-4 more fragments navigation
+**Single long page** (`guide/claude-best-practice.html`) with thorough anchor-linked table of contents. All section headings will be linkable (`id` attributes). Reasons:
+- The existing site already has 12+ pages; adding 3–4 more fragments navigation
 - A single reference page is searchable (Ctrl+F) and printable
-- Internal anchor links and a table of contents provide navigation
+- Internal anchor links provide navigation; readers can bookmark/share specific sections
 - The existing copilot.html follows this single-page pattern successfully
 
 ### Proposed sections
@@ -53,14 +66,17 @@ The existing site (`guide/`) already covers:
 
 A decision matrix right at the top. Before going deep on any tool, help the reader choose.
 
-| If you want to... | Use | You'll need |
-|---|---|---|
-| Ask questions, get writing help, analyse documents | **Chat** (claude.ai) | Free account or Pro subscription |
-| Work on a research project with persistent context | **Chat Projects** | Pro/Team subscription |
-| Build tools, process data, work with code or files | **Code** | Max subscription or API key |
-| Research across documents, desktop-based workflow | **Cowork** | Pro or Max subscription + macOS |
+| If you want to... | Use | You'll need | Skills required |
+|---|---|---|---|
+| Ask questions, get writing help, analyse documents | **Chat** (claude.ai) | Free account or Pro subscription | None — just a browser |
+| Work on a research project with persistent context | **Chat Projects** | Pro/Team subscription | None |
+| Build tools, process data, work with code or files at scale | **Code** (web) | Max subscription | Basic comfort with a text interface (see Part 6) |
+| Build tools with full local control, version control, automation | **Code** (CLI) | Max subscription or API key | Terminal basics, ideally git (see Part 6) |
+| Research across documents, desktop-based workflow | **Cowork** | Pro or Max subscription + **macOS only** | None — GUI-based |
 
 Brief note: these aren't competing tools but points on a spectrum from conversational to agentic. Many tasks start in chat and graduate to code when they need file access or iteration.
+
+**An important framing for Code**: The output of Claude Code need not depend on LLMs at all. It can produce entirely "traditional" digital outputs — static web pages, Python scripts, cleaned datasets, formatted bibliographies, visualisations — that work independently of any AI system. Claude Code is the builder; the thing it builds can be conventional software, a conventional website, or a conventional data pipeline. This is a strength: you get AI assistance in the construction process without creating AI dependency in the result.
 
 ---
 
@@ -72,17 +88,17 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - The starting point for most humanities scholars
 
 **1.2 Setting up**
-- Account tiers: Free, Pro ($20/month), Team, Enterprise
+- Account tiers: Free, Pro, Team, Enterprise — link to pricing page rather than quoting prices that will date
 - What Pro adds: more usage, Claude Projects, priority access to newer models
 - Model selection: when to use Opus vs Sonnet vs Haiku (and what the names mean)
-- Custom styles: creating a style that matches your discipline's voice and expectations
+- Custom styles: creating a style that matches your discipline's voice and expectations. Two methods: descriptive (write a plain-language explanation) or example-based (paste samples of your writing)
 
 **1.3 Core features and how to use them well**
 
-- **Conversations**: Each conversation has its own context. Starting fresh vs continuing.
+- **Conversations**: Each conversation has its own context. Starting fresh vs continuing. Evidence-based rule: one topic per conversation — mixing topics degrades performance by up to 39%.
 - **File uploads**: PDFs, images, spreadsheets, code. Limits and what works well. Uploading primary sources.
 - **Web search**: When Claude searches the web. How to use it, how to verify what it finds.
-- **Artifacts**: Standalone outputs in a side panel — documents, code, live-rendering HTML/React apps, SVG diagrams, structured data. Can iterate with follow-up prompts. AI-powered artifacts can themselves call Claude's API. Publishable: share via link, free to recipients (usage counts against their own subscription). Available on all plans.
+- **Artifacts**: Standalone outputs in a side panel — documents, code, live-rendering HTML/React apps, SVG diagrams, structured data. Can iterate with follow-up prompts ("make the buttons bigger", "add a timeline"). AI-powered artifacts can themselves call Claude's API. Publishable: share via link, free to recipients (usage counts against their own subscription). Available on all plans.
 - **Projects**: The three-part system: (1) knowledge base — upload PDFs, texts, spreadsheets up to 200K tokens (~500 pages); (2) custom instructions — role, tone, rules for that project; (3) memory across sessions within the project. The killer feature for ongoing research. How to set up a project for a research topic, a module, or a writing task. Rule of thumb: if you paste the same context more than twice, it belongs in a Project.
 - **Memory**: What Claude remembers across conversations (and what it doesn't). Memory within Projects vs no memory between separate conversations outside Projects.
 - **Integrations**: MCP integration for artifacts (Pro+), Google Drive, etc. — what connects and what doesn't.
@@ -96,6 +112,7 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Use Projects for any work spanning more than one session
 - Set a custom style for your discipline
 - Ask for sources and then verify them independently
+- Keep conversations focused: one task, one conversation
 
 *Don't:*
 - Trust citations without checking (Claude can fabricate references)
@@ -103,6 +120,7 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Assume one good answer means all answers are good
 - Use Chat when you need file-system access or code execution (use Code instead)
 - Treat a single conversation as a persistent workspace (it has limits; use Projects)
+- Mix multiple unrelated topics in a single conversation
 
 **1.5 Best working practices for humanities scholars**
 - The iterative refinement pattern: draft → critique → revise → verify
@@ -110,6 +128,7 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Building a "research assistant" project with your key texts and methodological preferences
 - When to start a new conversation vs continue an existing one
 - Managing context window limits on long documents
+- Exporting conversations for provenance records
 
 **1.6 Combining with other tools**
 - Chat → Code pipeline: prototype in chat, build in Code
@@ -122,53 +141,77 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 #### Part 2: Claude Code
 
 **2.1 What it is and what it's for**
-- An agentic coding tool that runs in your terminal, in VS Code, or on the web
+- An agentic tool that runs in your terminal, in VS Code, or on the web
 - It reads files, writes code, runs commands, and iterates — not just conversation
 - Best for: building tools, processing datasets, transforming files, creating visualisations, working with repositories
-- This guide was built with Claude Code (concrete example of humanities use)
+- **Crucially**: the outputs are conventional digital artefacts — web pages, scripts, datasets, formatted documents — that don't require AI to use. Claude Code is the means of production, not a dependency of the product.
+- This guide was built with Claude Code (concrete example). Other examples: the [Gnomon Shadow Explorer](https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html), the [Grammar Crammer](https://leifuss.github.io/grammarcrammer/), and the [Online RTI Viewer](https://leifuss.github.io/claudertidemo/) — all standard web applications built with AI assistance.
 
-**2.2 Setting up**
-- **Access**: Max subscription (includes web access), or API key for CLI
-- **CLI installation**: `npm install -g @anthropic-ai/claude-code` (requires Node.js)
-- **Web access**: code.claude.ai — no installation needed, runs in browser
-- **VS Code extension**: for those already using VS Code
-- **CLAUDE.md**: The most important configuration file. What it is, what to put in it. Examples for humanities projects (e.g., "This project contains Latin texts in UTF-8. Use British English. Do not modify files in /sources/. Commit messages should reference the relevant text or section.")
-- **Permission modes**: Understand what you're authorising. The spectrum from "ask me everything" to "do what you think best" and when each is appropriate.
+**2.2 Where it runs: web, local, cloud, and remote**
 
-**2.3 Commands and functionality**
+This is a key decision. Claude Code runs in several environments, each with different trade-offs:
+
+| Environment | What it means | Best for | You'll need |
+|---|---|---|---|
+| **Web** (code.claude.ai) | Runs in your browser in a cloud sandbox linked to a GitHub repo | Quick tasks, no local setup, parallel sessions | Max subscription, GitHub account |
+| **Local CLI** | Runs in your terminal, directly on your files | Full control, privacy, complex workflows | Max sub or API key, Node.js, terminal comfort |
+| **VS Code extension** | Integrated into the VS Code editor | If you already use VS Code | Max sub or API key, VS Code installed |
+| **Remote server (VPS)** | Runs on a dedicated cloud server you SSH into | Persistent sessions, heavy workloads, device independence | VPS (from ~€5/month), SSH access, API key |
+| **Remote Control** | Start a session on one machine, transfer it to another | Mobility between laptop/desktop/server | Supported on web ↔ CLI |
+
+**Key distinction: web vs local CLI**
+- **Web**: No installation. Connects to GitHub repos. Runs in an isolated sandbox — safe, but you can't access local files or run arbitrary tools. Good for: trying Claude Code for the first time, working on GitHub-hosted projects, running tasks in parallel.
+- **Local CLI**: Full access to your filesystem, your tools, your environment. More powerful but requires more setup. Good for: working with local files, using custom tools (pandoc, Python, R), complex multi-step workflows.
+- **Remote/VPS**: Your agent runs on a server that stays on even when your laptop is closed. You SSH in from any device. Good for: long-running tasks, working from multiple devices, separating development from your personal machine.
+
+For most humanities scholars starting out: **begin with the web interface**. Graduate to local CLI when you need local file access or custom tools. Consider a VPS only if you're running regular, long-running tasks.
+
+**2.3 Setting up**
+- **CLAUDE.md**: The most important configuration file. Claude Code loads it automatically at session start — it's the agent's persistent memory for your project. Two levels:
+  - **Global** (`~/.claude/CLAUDE.md`): Rules that apply to every project — your security baseline. Example: "Never read or display .env files. Use British English. Always ask before deleting files."
+  - **Project** (`./CLAUDE.md` in your project folder): Project-specific conventions. Example for a humanities project: "This project contains Latin texts in UTF-8. Do not modify files in /sources/. Commit messages should reference the relevant text or section. Output files go in /output/."
+  - Important: CLAUDE.md is a *suggestion* — Claude reads it and usually follows it, but under context pressure it can be forgotten. For hard constraints, use hooks (see 2.5).
+- **Permission modes**: Understand what you're authorising. The spectrum from "ask me everything" to "do what you think best" and when each is appropriate. Default to cautious; relax as you gain confidence.
+- **Security**: Claude Code can read `.env` files and other sensitive files without explicit permission. Keep credentials out of your project directory, or use hooks to block access to sensitive file patterns.
+
+**2.4 Commands and functionality**
 - **Slash commands**: /help, /clear, /compact, /model, /cost, /permissions, etc. Also custom slash commands you define.
-- **Skills**: Markdown files (SKILL.md) that teach Claude Code domain-specific workflows. Skills can be auto-invoked when relevant, or triggered manually as slash commands. Example for humanities: a skill that knows how to process TEI-XML files according to your project's conventions.
+- **Skills**: Markdown files (`SKILL.md`) that teach Claude Code domain-specific workflows. Skills can be auto-invoked when relevant, or triggered manually as slash commands. Example for humanities: a skill that knows how to process TEI-XML files according to your project's conventions, or a skill that formats bibliographic entries in a specific citation style.
 - **Thinking mode**: Extended thinking for complex problems. When to use it.
 - **File operations**: Reading, writing, editing files. How Claude Code navigates your project.
-- **Shell commands**: Running scripts, installing packages, building projects.
+- **Shell commands**: Running scripts, installing packages, building projects — Claude Code can use any tool installed on your system.
 - **Git integration**: Commits, branches, diffs. Claude Code as a git-aware assistant.
 - **Web search**: Searching documentation and references during a task.
 - **Sub-agents**: How Claude Code delegates to specialised sub-processes (Explore, Plan, general-purpose) for parallel work. Keeps the main context focused while sub-agents handle research or planning tasks.
 
-**2.4 Hooks**
-- What hooks are: shell commands, HTTP endpoints, or LLM prompts that execute automatically at specific points in Claude Code's lifecycle
-- **PreToolUse** hooks: run before Claude acts — can allow, deny, or ask permission. More reliable than instructions alone: "A CLAUDE.md instruction saying 'never use rm -rf' can be forgotten by context pressure; a PreToolUse hook that blocks it fires every time." Important caveat: guardrails, not walls — not a security boundary.
-- **PostToolUse** hooks: actions after Claude completes a step (validation, logging)
-- **SessionStart** hooks: load context at startup (existing issues, recent changes, environment variables)
+**2.5 Hooks**
+- What hooks are: shell commands, HTTP endpoints, or LLM prompts that execute automatically at specific points in Claude Code's lifecycle. They are *deterministic* — unlike CLAUDE.md instructions, they cannot be ignored or forgotten.
+- **PreToolUse** hooks: run before Claude acts — can allow, deny, or ask permission. Example: a hook that blocks `rm -rf` fires every single time, regardless of context pressure. Exit code 2 = block the action and explain why to Claude.
+- **PostToolUse** hooks: actions after Claude completes a step — validation, logging, auto-formatting.
+- **SessionStart** hooks: load context at startup — existing issues, recent changes, environment variables.
 - Practical examples for humanities work:
   - A hook that backs up files before editing
   - A hook that validates XML/TEI after modification
   - A hook that runs a spell-checker on modified text files
   - A hook that blocks deletion of source files
+  - A hook that prevents access to `.env` and credential files
+- **The key distinction**: CLAUDE.md = suggestion; hooks = enforcement. Use CLAUDE.md for preferences and context; use hooks for hard rules you never want broken.
 
-**2.5 MCP (Model Context Protocol) in Claude Code**
-- What MCP is: a standard protocol for connecting AI tools to data sources
-- How it works in Claude Code: adding MCP servers to your configuration
+**2.6 MCP (Model Context Protocol) in Claude Code**
+- What MCP is: a standard protocol for connecting AI tools to external data sources and services
+- How it works in Claude Code: adding MCP servers via `.mcp.json` in your project root (shareable with collaborators via git)
+- MCP Tool Search: lazy loading that reduces context usage by up to 95% — you can run many MCP servers without hitting context limits
 - Useful MCP servers for humanities work:
   - Filesystem (already built in)
   - Database connectors (PostgreSQL, SQLite — for structured data, gazetteers, prosopographies)
   - Web fetch (retrieving and processing web content)
   - GitHub (for repository operations)
   - Google Drive / Sheets (for collaborative data)
-- Setting up an MCP server: configuration in settings, testing the connection
-- Security considerations: what data MCP servers can access, how to limit scope
+  - Context7 (live documentation access)
+- Setting up an MCP server: configuration in `.mcp.json`, testing the connection
+- Security considerations: use environment variables for credentials, never commit tokens to git. "As soon as Claude can call the tool, it represents some kind of identity within your system."
 
-**2.6 Dos and don'ts**
+**2.7 Dos and don'ts**
 
 *Do:*
 - Use version control (git) before letting Claude Code modify files — this is your safety net
@@ -177,6 +220,8 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Review diffs (what changed) before accepting modifications
 - Use the web interface if you're not comfortable with the terminal
 - Set clear constraints: "Only modify files in /output/", "Do not delete anything"
+- Keep one task per session — don't mix unrelated topics
+- Use hooks for hard constraints, CLAUDE.md for preferences
 
 *Don't:*
 - Point Claude Code at a directory containing sensitive data, credentials, or API keys
@@ -184,16 +229,19 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Give it fully autonomous permissions on important projects
 - Assume that a working result means a correct result — test and verify
 - Ignore cost: agentic workflows consume significantly more tokens than chat
+- Assume CLAUDE.md rules will always be followed — use hooks for critical constraints
 
-**2.7 Best working practices**
+**2.8 Best working practices**
 - The CLAUDE.md as institutional memory: encoding your project's conventions
 - Working in branches: let Claude Code work on a branch, review before merging
+- The Explore → Plan → Execute → Commit workflow: understand first, plan second, build third
 - The audit recipe (link to agentic.html for the full version)
 - Cost management: monitoring with /cost, choosing appropriate models for sub-tasks
 - When to use Code vs Chat: the file-access and iteration thresholds
 - Session management: handoff documents for continuity between sessions
+- For large projects: plan locally (`--plan` mode), execute remotely (`--remote`), review locally
 
-**2.8 Combining with other tools**
+**2.9 Combining with other tools**
 - Code + git + GitHub: the full development workflow
 - Code + MCP + databases: querying structured humanities data
 - Code + pandoc/LaTeX: document preparation pipelines
@@ -204,8 +252,10 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 
 #### Part 3: Cowork (Research Preview)
 
+**Prerequisites and platform note**: Cowork is currently available only on **macOS** via the Claude Desktop app. It requires a **Pro or Max subscription**. Windows support has been announced but has no confirmed timeline. If you're on Windows or Linux, the closest equivalents are Claude Code on the web (for file-processing tasks) or Claude Chat with file uploads (for document analysis).
+
 **3.1 What it is and what it's for**
-- A feature in Claude Desktop (macOS; now available to Pro subscribers, not just Max) that brings agentic capabilities to non-coding workflows
+- A feature in Claude Desktop that brings agentic capabilities to non-coding workflows
 - Origin: Anthropic built Claude Code for developers, but found people using it for everything else — Cowork repackages those capabilities for non-technical tasks
 - You give Claude access to a folder on your computer; it can read, edit, and create files in that folder
 - It makes a plan, works through it step by step, and loops you in on progress — more agent-like than a conversation
@@ -213,12 +263,10 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Current status: research preview (launched January 2026) — expect changes
 
 **3.2 Setting up**
-- Requires: Claude Desktop app on macOS + Pro or Max subscription (US availability; waitlist for other tiers)
+- Requires: Claude Desktop app on macOS + Pro or Max subscription
 - Granting folder access: you choose which folder Claude can work in — it cannot access files outside this
-- Windows support: announced as a priority but no timeline yet
 - **Connectors and plugins**: Cowork supports connectors (Google Drive, Gmail, DocuSign, etc.), skills, and a Chrome add-on to extend what it can do across apps and the web
 - Plugin ecosystem: users can install plugins from Cowork, upload custom ones, or build new ones using Plugin Create (launched Jan 30 2026)
-- Enterprise plugins: stock plugins for finance, legal, HR departments (launched Feb 2026)
 
 **3.3 What it can do**
 - Read, edit, and create files within its designated folder
@@ -274,16 +322,16 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Summary of what applies to each tool:
   - Chat: data sent to Anthropic servers; check data retention policies
   - Code (CLI): files stay local but prompts/responses transit Anthropic servers
-  - Code (web): files are in browser session
-  - Cowork: screen content visible to the model
+  - Code (web): code runs in a cloud sandbox; files are in the session
+  - Cowork: file content from your designated folder is sent to Anthropic servers
 - Institutional considerations: what your university's policy likely says
 
 **4.3 Cost awareness**
-- Chat: included in subscription (with usage limits)
+- Chat: included in subscription (with usage limits that reset every 5 hours)
 - Code: consumed from Max subscription or billed per API token
-- Cowork: consumed from Max subscription
+- Cowork: consumed from subscription
 - Rough cost comparisons for typical tasks
-- How to monitor and manage costs
+- How to monitor and manage costs (/cost command in Code)
 
 **4.4 Verification and provenance**
 - Link to verification ladder on rules.html
@@ -297,25 +345,80 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 
 ---
 
-#### Part 5: Humanities-specific workflows (worked examples)
+#### Part 5: Where to run Claude Code — Laptop, cloud, desktop, or server?
 
-**5.1 Building a research project in Chat**
+A dedicated comparison section addressing the practical question of computing environment.
+
+| Factor | Laptop (local CLI) | Web (code.claude.ai) | Desktop app | Dedicated server (VPS) |
+|---|---|---|---|---|
+| **Setup effort** | Medium (install Node.js, npm) | None | Low (download app) | High (provision server, SSH) |
+| **File access** | Full local filesystem | GitHub repos only | Designated folders | Full server filesystem |
+| **Privacy** | Files stay local; prompts sent to API | Code runs in Anthropic's cloud | Files stay local; prompts sent to API | Files on your server; prompts sent to API |
+| **Persistence** | Session ends when terminal closes | Sessions persist in cloud | Session ends when app closes | Sessions persist (via tmux/screen) |
+| **Cost** | Subscription/API only | Subscription only | Subscription only | Subscription/API + VPS (~€5–15/month) |
+| **Parallel work** | One session per terminal | Multiple parallel sessions | One session | Multiple parallel sessions |
+| **Best for** | Power users, local files, custom tools | Getting started, GitHub projects, parallel tasks | Cowork, casual use | Long-running tasks, teams, heavy workloads |
+| **Platform** | macOS, Linux, Windows (WSL2) | Any (browser) | macOS (Cowork); macOS/Windows (chat) | Any (SSH from any device) |
+
+**Recommendation for most humanities scholars**: Start with the web interface or desktop app. Move to local CLI when you need local file access. Consider a VPS only if you're running regular long tasks or want device independence.
+
+---
+
+#### Part 6: Skills you may need — and how to prioritise learning them
+
+Claude Code is usable without deep technical knowledge, but certain skills dramatically increase what you can accomplish. This section is honest about what helps and what you can skip.
+
+**Tier 1: Essential (learn these to get real value from Code)**
+
+- **Terminal/CLI basics**: Opening a terminal, navigating directories (`cd`, `ls`), understanding file paths. ~30 minutes to learn enough. Claude Code's own [terminal guide for new users](https://code.claude.com/docs/en/terminal-guide) is a good starting point. Note: if you only use the web interface, you can skip this entirely.
+- **Git fundamentals**: `git init`, `git add`, `git commit`, `git diff`, `git log`. Git is your safety net — it lets you see what changed and undo mistakes. ~1–2 hours for the basics. You don't need to master branching or rebasing; Claude Code handles the complex git operations for you. Start with [Git for Humanists](https://github.com/drjwbaker/git-for-humanists) or the [Programming Historian tutorial](https://programminghistorian.org/en/lessons/getting-started-with-github-desktop).
+
+**Tier 2: Valuable (learn when you hit a ceiling)**
+
+- **Markdown**: The format for CLAUDE.md, skills, and much documentation. If you've ever written a README on GitHub, you already know it. 15 minutes to learn.
+- **Basic file formats**: Understanding CSV, JSON, XML/TEI. You don't need to write them by hand — Claude Code does that — but understanding what they are helps you specify what you want and verify what you get.
+- **Python basics**: Not for writing code yourself, but for understanding what Claude Code produces and being able to run scripts. Useful for data processing workflows. The [Programming Historian](https://programminghistorian.org/) has excellent tutorials aimed at humanities scholars.
+
+**Tier 3: Advanced (only if your work demands it)**
+
+- **Bash scripting**: For writing hooks and automating workflows.
+- **SQL basics**: For querying databases via MCP.
+- **HTML/CSS**: For customising web-based outputs.
+- **Regular expressions**: For complex text search and transformation.
+
+**Can you skip all of this?** Yes, if you stick to Chat and Cowork, or use only the web interface for Code. But the local CLI + git combination is where Claude Code becomes most powerful for sustained research work, and the Tier 1 skills are a genuine investment that pays off quickly.
+
+**A note on learning these skills with AI assistance**: There's a productive bootstrapping loop here. You can use Claude Chat to learn the terminal and git basics you need to use Claude Code effectively. Ask it to explain commands, walk you through a git workflow, or create a practice exercise. The AI can teach you the skills you need to use it more effectively — just verify what it teaches you against a trusted source (the Programming Historian, official documentation, etc.).
+
+---
+
+#### Part 7: Humanities-specific workflows (worked examples)
+
+Examples drawn from the existing guide portfolio and from plausible generic scenarios. Where examples from the introductory guide are appropriate, we'll link to them; where different examples would serve better, we'll create new ones or point to external resources.
+
+**7.1 Building a research project in Chat**
 - Setting up a Project for a monograph chapter or article
 - Uploading key sources and setting instructions
 - Iterative drafting and critique workflow
+- Example: a Project configured for reviewing secondary literature on a specific topic, with instructions for citation style, critical stance, and domain expertise
 
-**5.2 Processing a text corpus with Code**
-- Example: batch-processing a folder of transcribed inscriptions
+**7.2 Processing a text corpus with Code**
+- Example: batch-processing a folder of transcribed texts (e.g., normalising spelling, extracting named entities, producing a concordance)
 - Setting up CLAUDE.md, running the task, reviewing results
+- The output: a clean dataset or index — a conventional digital artefact, not an AI-dependent one
 
-**5.3 Literature review workflow (Chat + Code)**
-- Using Chat to explore a field
-- Using Code to organise and format findings
-- Verification steps throughout
+**7.3 Building a web-based tool with Code**
+- Example: creating an interactive visualisation or teaching tool
+- The [Gnomon Shadow Explorer](https://leifuss.github.io/gnomondemo/gnomon_shadow_explorer.html) and [Grammar Crammer](https://leifuss.github.io/grammarcrammer/) as case studies — built with Claude Code, but the result is standard HTML/JavaScript that runs anywhere
+- For external examples: link to [Claude Artifacts Gallery](https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code) and community showcases
 
-**5.4 Building a teaching tool with Code**
-- Example: creating an interactive web tool for student use
-- The Grammar Crammer and Gnomon Explorer as case studies (link to existing portfolio)
+**7.4 Document preparation pipeline (Code + other tools)**
+- Using Claude Code to orchestrate pandoc, LaTeX, or other document tools
+- Example: converting a set of markdown notes into a formatted PDF with bibliography
+
+**7.5 Data cleaning and transformation**
+- Example: taking a messy CSV export from a historical database, cleaning it, and producing a structured dataset suitable for analysis
+- Emphasis on verification: spot-checking the transformed data against the original
 
 ---
 
@@ -324,8 +427,8 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 ### File format
 - Single HTML file: `guide/claude-best-practice.html`
 - Following the existing site's conventions: `lang="en-GB"`, shared CSS, site nav, feedback footer
-- Table of contents with anchor links
-- Collapsible sections for detailed/technical content (using existing JS pattern if available, otherwise progressive enhancement)
+- Table of contents with anchor links (every `<h2>` and `<h3>` gets an `id`)
+- Skip-logic callouts at the top of each major part ("If you only use Chat, read Parts 0, 1, 4, and skip the rest")
 
 ### Navigation integration
 - Add to site nav across all existing pages
@@ -336,15 +439,18 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - Anthropic documentation: https://docs.anthropic.com
 - Claude Code docs: https://code.claude.com/docs/en/overview
 - Claude Code hooks: https://code.claude.com/docs/en/hooks
-- Claude Code skills: https://code.claude.com/docs/en/skills
-- Cowork introduction: https://claude.com/blog/cowork-research-preview
+- Claude Code terminal guide: https://code.claude.com/docs/en/terminal-guide
 - Cowork help: https://support.claude.com/en/articles/13345190-getting-started-with-cowork
 - Artifacts help: https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them
 - MCP specification: https://modelcontextprotocol.io
-- Anthropic cookbook: https://github.com/anthropics/anthropic-cookbook
-- Trail of Bits claude-code-config (opinionated defaults): https://github.com/trailofbits/claude-code-config
-- Simon Willison's blog (independent technical commentary): https://simonwillison.net
-- Ethan Mollick's writing (practical AI adoption patterns): https://www.oneusefulthing.org
+- TheDecipherist Claude Code Mastery: https://thedecipherist.com/articles/claude-code-guide-v4/
+- TheDecipherist starter kit: https://github.com/TheDecipherist/claude-code-mastery-project-starter-kit
+- Trail of Bits claude-code-config: https://github.com/trailofbits/claude-code-config
+- Programming Historian: https://programminghistorian.org/
+- Simon Willison's blog: https://simonwillison.net
+- Ethan Mollick: https://www.oneusefulthing.org
+- "Claude Code isn't just for developers" (XDA): https://www.xda-developers.com/claude-code-isnt-just-for-developers/
+- "Claude Code for the Rest of Us" (WhyTryAI): https://www.whytryai.com/p/claude-code-beginner-guide
 
 ### What NOT to include
 - Detailed API documentation (this is for end users, not developers)
@@ -357,32 +463,41 @@ Brief note: these aren't competing tools but points on a spectrum from conversat
 - British English throughout
 - Assume the reader is an intelligent non-technical scholar, not a developer
 - Technical terms explained on first use or linked to glossary
+- Honest about what requires technical skills and what doesn't
 
 ---
 
-## Open questions for the author
+## Resolved questions (from author feedback)
 
-1. **Single page or multiple pages?** I recommend one long page with good navigation, but this could be split into three pages (chat/code/cowork) if you prefer.
+1. **Single page**: Confirmed. One long page with thorough anchor-linked headings. All sections linkable.
 
-2. **Depth on Code?** The hooks and MCP sections could go very deep. Should we cover enough for a humanities scholar to set these up, or just explain what they are and point to documentation?
+2. **Depth on Code**: Cover enough for a humanities scholar to understand what hooks, skills, and MCP are, why they matter, and how to set up basic examples. Link to TheDecipherist guide and official docs for deeper configuration. Don't try to replicate the full technical documentation.
 
-3. **Cowork coverage**: Given it's macOS-only and a research preview, how much space should it get? I've proposed moderate coverage — enough to understand it, not a full tutorial for a feature that may change significantly.
+3. **Cowork coverage**: Moderate but with a clear upfront statement about platform requirements (macOS only, research preview status). Enough to understand it and decide whether to try it.
 
-4. **Worked examples**: Should Part 5 use real examples from your own work (the guide itself, the gnomon tool, etc.) or generic examples? Real examples are more credible but may need your input to write accurately.
+4. **Worked examples**: Mix of real examples from the existing portfolio (Gnomon, Grammar Crammer, this guide itself) and new generic examples where the existing ones aren't appropriate. Link to existing guide examples where relevant; create new ones or point to external resources where not.
 
-5. **Relationship to bootcamp.html**: Several of the worked examples overlap with bootcamp experiments. Cross-link, or keep independent?
+5. **Relationship to bootcamp.html**: Cross-link where relevant. The bootcamp is structured exercises; this manual is reference material. They complement rather than duplicate.
+
+6. **Prerequisites/skills section**: Added as Part 6. Three tiers of skills, honest about what you need and what you can skip, with pointers to good learning resources (especially Programming Historian for the humanities audience). Includes the bootstrapping loop: use Chat to learn the skills you need for Code.
+
+7. **Web vs local vs cloud vs server**: Added as Part 5 with comparison table. Clear recommendation: start with web, graduate to CLI, consider VPS only for heavy use.
+
+8. **Output independence from LLMs**: Emphasised in Part 0 and Part 2.1. Claude Code builds conventional digital outputs — the products don't depend on AI.
 
 ---
 
 ## Estimated length
 
-- Part 0 (orientation): ~500 words
+- Part 0 (orientation): ~600 words
 - Part 1 (Chat): ~3,000 words
-- Part 2 (Code): ~4,000 words
+- Part 2 (Code): ~5,000 words
 - Part 3 (Cowork): ~1,500 words
 - Part 4 (Shared principles): ~1,500 words
-- Part 5 (Worked examples): ~2,000 words
+- Part 5 (Where to run): ~800 words
+- Part 6 (Skills): ~1,200 words
+- Part 7 (Worked examples): ~2,000 words
 
-**Total: ~12,500 words**
+**Total: ~15,600 words**
 
-This is longer than most existing guide pages (~3,000-5,000 words each) but appropriate for a comprehensive reference manual. The table of contents and skip-logic callouts will help readers navigate to what they need.
+This is long for a single page but manageable with good navigation. The table of contents, skip-logic callouts, and linkable headings mean most readers will read selectively rather than end-to-end. For comparison, the TheDecipherist guide is similarly long and works well as a single reference.
