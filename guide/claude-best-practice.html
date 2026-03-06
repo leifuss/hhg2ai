@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Best Practice — LLM Guide for the Humanities &amp; Social Sciences</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="index.html">Guide Home</a>
+            <span class="nav-sep">|</span>
+            <a href="briefing.html">Briefing</a>
+            <span class="nav-sep">|</span>
+            <a href="getting-started.html">Getting Started</a>
+            <span class="nav-sep">|</span>
+            <a href="mindset.html">Mindset</a>
+            <span class="nav-sep">|</span>
+            <a href="rules.html">Rules</a>
+            <span class="nav-sep">|</span>
+            <a href="use-cases.html">Use Cases</a>
+            <span class="nav-sep">|</span>
+            <a href="ancient-languages.html">Ancient Languages</a>
+            <span class="nav-sep">|</span>
+            <a href="agentic.html">Agentic AI</a>
+            <span class="nav-sep">|</span>
+            <a href="copilot.html">Copilot</a>
+            <span class="nav-sep">|</span>
+            <a href="claude-best-practice.html" class="current">Claude</a>
+            <span class="nav-sep">|</span>
+            <a href="bootcamp.html">AI Bootcamp</a>
+            <span class="nav-sep">|</span>
+            <a href="faq.html">FAQ</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
+            <span class="nav-sep">|</span>
+            <a href="resources.html">Resources</a>
+            <span class="nav-sep">|</span>
+            <a href="about.html">About</a>
+        </nav>
+
+        <header>
+            <h1>Claude Best Practice for Humanities Scholars</h1>
+            <p class="subtitle">March 2026 &middot; Part of the LLM Guide for the Humanities &amp; Social Sciences</p>
+            <p class="last-updated">Last updated: March 2026</p>
+        </header>
+
+        <div class="note">
+            <p><strong>Skip to what you need:</strong> If you only use Claude&rsquo;s conversational interface, read <a href="#orientation">Part 0</a> and <a href="#chat">Part 1</a>, then skip to <a href="#shared-principles">Part 4</a>. If you&rsquo;re interested in building tools or processing data, read <a href="#code">Part 2</a>. If you&rsquo;re on macOS and want file-based research workflows, see <a href="#cowork">Part 3</a>.</p>
+        </div>
+
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li>
+                    <a href="#orientation">Part 0: Which Claude tool do I need?</a>
+                </li>
+                <li>
+                    <a href="#chat">Part 1: Claude Chat (claude.ai)</a>
+                    <ul>
+                        <li><a href="#chat-what">1.1 What it is and what it&rsquo;s for</a></li>
+                        <li><a href="#chat-setup">1.2 Setting up</a></li>
+                        <li><a href="#chat-features">1.3 Core features</a></li>
+                        <li><a href="#chat-dos-donts">1.4 Dos and don&rsquo;ts</a></li>
+                        <li><a href="#chat-practices">1.5 Best working practices</a></li>
+                        <li><a href="#chat-combining">1.6 Combining with other tools</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#code">Part 2: Claude Code</a>
+                    <ul>
+                        <li><a href="#code-what">2.1 What it is and what it&rsquo;s for</a></li>
+                        <li><a href="#code-where">2.2 Where it runs</a></li>
+                        <li><a href="#code-setup">2.3 Setting up</a></li>
+                        <li><a href="#code-commands">2.4 Commands and functionality</a></li>
+                        <li><a href="#code-hooks">2.5 Hooks</a></li>
+                        <li><a href="#code-mcp">2.6 MCP (Model Context Protocol)</a></li>
+                        <li><a href="#code-dos-donts">2.7 Dos and don&rsquo;ts</a></li>
+                        <li><a href="#code-practices">2.8 Best working practices</a></li>
+                        <li><a href="#code-combining">2.9 Combining with other tools</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#cowork">Part 3: Cowork (Research Preview)</a>
+                    <ul>
+                        <li><a href="#cowork-what">3.1 What it is and what it&rsquo;s for</a></li>
+                        <li><a href="#cowork-setup">3.2 Setting up</a></li>
+                        <li><a href="#cowork-capabilities">3.3 What it can do</a></li>
+                        <li><a href="#cowork-dos-donts">3.4 Dos and don&rsquo;ts</a></li>
+                        <li><a href="#cowork-practices">3.5 Best working practices</a></li>
+                        <li><a href="#cowork-combining">3.6 Combining with other tools</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#shared-principles">Part 4: Shared principles across all three tools</a>
+                    <ul>
+                        <li><a href="#prompting">4.1 Prompting principles</a></li>
+                        <li><a href="#data-governance">4.2 Data governance</a></li>
+                        <li><a href="#cost-awareness">4.3 Cost awareness</a></li>
+                        <li><a href="#verification">4.4 Verification and provenance</a></li>
+                        <li><a href="#multi-model">4.5 When to use multiple models</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#where-to-run">Part 5: Where to run Claude Code</a>
+                </li>
+                <li>
+                    <a href="#skills">Part 6: Skills you may need</a>
+                </li>
+                <li>
+                    <a href="#workflows">Part 7: Humanities-specific workflows</a>
+                    <ul>
+                        <li><a href="#workflow-research">7.1 Building a research project in Chat</a></li>
+                        <li><a href="#workflow-corpus">7.2 Processing a text corpus with Code</a></li>
+                        <li><a href="#workflow-web-tool">7.3 Building a web-based tool with Code</a></li>
+                        <li><a href="#workflow-documents">7.4 Document preparation pipeline</a></li>
+                        <li><a href="#workflow-data">7.5 Data cleaning and transformation</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- PART 0: ORIENTATION                                          -->
+        <!-- ============================================================ -->
+
+        <section id="orientation">
+            <h2>Part 0: Which Claude tool do I need?</h2>
+
+            <p>Anthropic offers Claude through several interfaces. They are not competing products but points on a spectrum from conversational to agentic. Before going deep on any one tool, this table will help you choose where to start.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>If you want to&hellip;</th>
+                        <th>Use</th>
+                        <th>You&rsquo;ll need</th>
+                        <th>Skills required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ask questions, get writing help, analyse documents</td>
+                        <td><strong>Chat</strong> (claude.ai)</td>
+                        <td>Free account or Pro subscription</td>
+                        <td>None &mdash; just a browser</td>
+                    </tr>
+                    <tr>
+                        <td>Work on a research project with persistent context</td>
+                        <td><strong>Chat Projects</strong></td>
+                        <td>Pro or Team subscription</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Build tools, process data, work with code or files at scale</td>
+                        <td><strong>Code</strong> (web)</td>
+                        <td>Max subscription</td>
+                        <td>Basic comfort with a text interface (<a href="#skills">see Part 6</a>)</td>
+                    </tr>
+                    <tr>
+                        <td>Build tools with full local control, version control, automation</td>
+                        <td><strong>Code</strong> (CLI)</td>
+                        <td>Max subscription or API key</td>
+                        <td>Terminal basics, ideally git (<a href="#skills">see Part 6</a>)</td>
+                    </tr>
+                    <tr>
+                        <td>Research across documents, desktop-based workflow</td>
+                        <td><strong>Cowork</strong></td>
+                        <td>Pro or Max subscription + <strong>macOS only</strong></td>
+                        <td>None &mdash; GUI-based</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Many tasks start in Chat and graduate to Code when they need file access or iteration. There is no wrong door &mdash; the tools overlap, and you can move between them as your needs evolve.</p>
+
+            <div class="highlight">
+                <p><strong>An important framing for Code:</strong> The output of Claude Code need not depend on LLMs at all. It can produce entirely &ldquo;traditional&rdquo; digital outputs &mdash; static web pages, Python scripts, cleaned datasets, formatted bibliographies, visualisations &mdash; that work independently of any AI system. Claude Code is the builder; the thing it builds can be conventional software, a conventional website, or a conventional data pipeline. This is a strength: you get AI assistance in the construction process without creating AI dependency in the result.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- PART 1: CLAUDE CHAT                                          -->
+        <!-- ============================================================ -->
+
+        <section id="chat">
+            <h2>Part 1: Claude Chat (claude.ai)</h2>
+
+            <h3 id="chat-what">1.1 What it is and what it&rsquo;s for</h3>
+
+            <p>Claude Chat is the conversational interface at <a href="https://claude.ai" target="_blank">claude.ai</a>, also available as a mobile app (iOS/Android) and a desktop app (macOS, Windows). You type a message, Claude responds. You can upload files, ask follow-up questions, and refine outputs through conversation.</p>
+
+            <p>It is the starting point for most humanities scholars and the right tool for:</p>
+            <ul>
+                <li>Exploratory questions and brainstorming</li>
+                <li>Writing assistance &mdash; drafting, editing, feedback on your prose</li>
+                <li>Document analysis &mdash; summarising, comparing, extracting information from uploaded files</li>
+                <li>Translation and language work</li>
+                <li>Literature review assistance (with careful verification &mdash; see <a href="#chat-dos-donts">1.4</a>)</li>
+                <li>Explaining technical concepts in accessible language</li>
+            </ul>
+
+            <p>If your work involves reading, writing, and thinking about texts, Chat is where you will spend most of your time with Claude.</p>
+
+            <h3 id="chat-setup">1.2 Setting up</h3>
+
+            <h4>Account tiers</h4>
+
+            <p>Claude is available at several subscription levels. Rather than quoting prices that will date, see <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic&rsquo;s pricing page</a> for current details. The key distinctions:</p>
+
+            <ul>
+                <li><strong>Free:</strong> Access to Claude with usage limits. Enough to try it out and do occasional work.</li>
+                <li><strong>Pro:</strong> Higher usage limits, access to all models, Claude Projects, priority access to new features. The recommended tier for regular academic use.</li>
+                <li><strong>Team:</strong> Pro features plus collaboration, shared Projects, and administrative controls. Relevant if your department or research group adopts Claude together.</li>
+                <li><strong>Max:</strong> The highest tier. Includes Claude Code (web and CLI) and significantly higher usage limits. Relevant if you plan to use Code for building tools or processing data.</li>
+            </ul>
+
+            <h4>Model selection</h4>
+
+            <p>Anthropic offers several models, and you can switch between them within a conversation. The names follow a musical metaphor:</p>
+
+            <ul>
+                <li><strong>Opus:</strong> The most capable model &mdash; best reasoning, most nuanced writing, highest quality analysis. Use it for your most demanding work: complex arguments, careful close reading, tasks where quality matters more than speed.</li>
+                <li><strong>Sonnet:</strong> A strong balance of capability and speed. Good for everyday tasks: drafting, summarising, answering questions, working through research problems. This is a sensible default for most work.</li>
+                <li><strong>Haiku:</strong> The fastest and lightest model. Good for simple, quick tasks: reformatting text, straightforward translations, quick factual lookups. Less suited to nuanced analysis or complex reasoning.</li>
+            </ul>
+
+            <p>When in doubt, start with Sonnet. Switch to Opus when you need deeper reasoning or more careful prose. Use Haiku for bulk, repetitive tasks where speed matters more than depth.</p>
+
+            <h4>Custom styles</h4>
+
+            <p>Claude can adapt its writing style to match your preferences. Under Settings &rarr; Profile, you can create custom styles in two ways:</p>
+
+            <ul>
+                <li><strong>Descriptive:</strong> Write a plain-language explanation of how you want Claude to write. For example: &ldquo;Write in a formal academic register appropriate for a peer-reviewed history journal. Use British English. Avoid bullet points in favour of connected prose. Cite specific evidence rather than making general claims.&rdquo;</li>
+                <li><strong>Example-based:</strong> Paste samples of your own writing. Claude will analyse the style and match it. This is often more effective than description, especially for capturing disciplinary voice.</li>
+            </ul>
+
+            <p>Custom styles apply across all your conversations unless you override them in a specific Project&rsquo;s instructions.</p>
+
+            <h3 id="chat-features">1.3 Core features and how to use them well</h3>
+
+            <h4 id="chat-conversations">Conversations</h4>
+
+            <p>Each conversation with Claude has its own context. Claude remembers everything said within a conversation but starts fresh in a new one (unless you use Projects &mdash; see below).</p>
+
+            <div class="highlight">
+                <p><strong>One topic per conversation.</strong> Research suggests that mixing unrelated topics in a single conversation degrades Claude&rsquo;s performance by up to 39%. If you are reviewing a journal article and then want to brainstorm lecture ideas, start a new conversation for the second task. Think of conversations like focused working sessions, not an ongoing relationship.</p>
+            </div>
+
+            <p>When to continue an existing conversation: when you are iterating on the same task &mdash; refining a draft, following up on an analysis, asking clarifying questions about the same material. When to start fresh: when you are switching tasks, topics, or source materials.</p>
+
+            <h4 id="chat-uploads">File uploads</h4>
+
+            <p>You can upload files directly into a conversation: PDFs, images, spreadsheets, code files, and plain text. This is one of Claude&rsquo;s most useful features for humanities work &mdash; you can upload a primary source and discuss it directly rather than trying to describe or paste it.</p>
+
+            <p>What works well:</p>
+            <ul>
+                <li>PDFs of journal articles, book chapters, and archival documents</li>
+                <li>Images of manuscripts, inscriptions, maps, and visual sources</li>
+                <li>Spreadsheets of structured data (CSV or Excel)</li>
+                <li>Plain text files and code</li>
+            </ul>
+
+            <p>Practical limits: there is a per-file size limit and a total context limit for each conversation. Very long documents (entire monographs) may need to be split into chapters. If you regularly work with the same documents, upload them to a Project&rsquo;s knowledge base instead (see below).</p>
+
+            <h4 id="chat-web-search">Web search</h4>
+
+            <p>Claude can search the web during a conversation to find current information. This is useful for checking recent publications, finding URLs, or looking up factual details. However, treat web search results the same way you would treat any AI-generated content: verify independently before relying on them in your work. Claude will indicate when it has searched the web, so you can see what it found and check the sources.</p>
+
+            <h4 id="chat-artifacts">Artifacts</h4>
+
+            <p>Artifacts are standalone outputs that appear in a side panel next to your conversation. They are one of Claude&rsquo;s most distinctive features. An artifact can be:</p>
+
+            <ul>
+                <li>A document (essay, report, structured text)</li>
+                <li>A piece of code</li>
+                <li>A live-rendering HTML page or interactive application</li>
+                <li>An SVG diagram or visualisation</li>
+                <li>Structured data (tables, JSON)</li>
+            </ul>
+
+            <p>What makes artifacts particularly useful is that you can iterate on them through conversation: &ldquo;make the timeline start from 500 BCE&rdquo;, &ldquo;add a column for the original Greek&rdquo;, &ldquo;change the colour scheme to something more print-friendly&rdquo;. Each revision updates the artifact in place.</p>
+
+            <p>Artifacts can be published and shared via a link. Recipients do not need a Claude account to view them (though interactive artifacts that call Claude&rsquo;s API will use the recipient&rsquo;s own subscription). This makes them a practical way to create and share lightweight tools, visualisations, and formatted documents. For more detail, see <a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank">Anthropic&rsquo;s artifacts documentation</a>.</p>
+
+            <h4 id="chat-projects">Projects</h4>
+
+            <p>Projects are the feature most likely to transform how you use Claude for sustained academic work. A Project combines three things:</p>
+
+            <ol>
+                <li><strong>A knowledge base:</strong> Upload PDFs, texts, spreadsheets, and other documents &mdash; up to around 500 pages of material. Claude can draw on this material in every conversation within the Project.</li>
+                <li><strong>Custom instructions:</strong> A system prompt that defines Claude&rsquo;s role, tone, rules, and focus for this Project. For example: &ldquo;You are assisting with a monograph on late-antique North Africa. Use formal academic English. When discussing primary sources, always cite by standard abbreviation. Flag any claims you are uncertain about.&rdquo;</li>
+                <li><strong>Memory across conversations:</strong> Within a Project, Claude retains context across multiple conversations. It remembers previous discussions, decisions, and materials you have shared.</li>
+            </ol>
+
+            <div class="highlight">
+                <p><strong>Rule of thumb:</strong> If you paste the same context more than twice, it belongs in a Project. Setting up a Project takes five minutes; the time saved on repeated context-setting pays for itself within a day.</p>
+            </div>
+
+            <p>How to set up a Project for research:</p>
+            <ol>
+                <li>Create a new Project and give it a descriptive name (&ldquo;Chapter 3 &mdash; Trade Networks&rdquo;, &ldquo;Grant Application 2026&rdquo;, &ldquo;Latin Epigraphy Module&rdquo;).</li>
+                <li>Upload your key sources: the texts you are working with, relevant secondary literature, your own notes or drafts.</li>
+                <li>Write custom instructions that set the disciplinary context: your field, your standards for evidence, your preferred citation style, any terminology conventions.</li>
+                <li>Start a conversation within the Project. Claude now has your context from the beginning &mdash; no need to re-explain your topic, your sources, or your expectations.</li>
+            </ol>
+
+            <p>Projects require a Pro subscription or above.</p>
+
+            <h4 id="chat-memory">Memory</h4>
+
+            <p>Claude&rsquo;s memory works differently depending on context:</p>
+
+            <ul>
+                <li><strong>Within a conversation:</strong> Claude remembers everything said so far. This is automatic and reliable, up to the context window limit.</li>
+                <li><strong>Within a Project:</strong> Claude has access to the Project&rsquo;s knowledge base and instructions in every conversation, and retains memory across conversations within that Project.</li>
+                <li><strong>Between separate conversations (outside Projects):</strong> Claude has a general memory feature that can recall facts and preferences you have shared in previous conversations. This is less reliable than Project memory &mdash; think of it as a general impression rather than a precise record.</li>
+            </ul>
+
+            <p>For any sustained piece of work, use a Project rather than relying on Claude&rsquo;s general memory across separate conversations.</p>
+
+            <h4 id="chat-integrations">Integrations</h4>
+
+            <p>Claude Chat supports integrations with external services, including Google Drive and various MCP (Model Context Protocol) servers for Pro subscribers and above. These integrations allow Claude to access data from other tools &mdash; for example, pulling documents from Google Drive directly into a conversation. The available integrations are evolving; check <a href="https://docs.anthropic.com" target="_blank">Anthropic&rsquo;s documentation</a> for the current list.</p>
+
+            <h3 id="chat-dos-donts">1.4 Dos and don&rsquo;ts</h3>
+
+            <h4>Do:</h4>
+            <ul>
+                <li><strong>Be specific</strong> about what you want &mdash; audience, format, length, level of detail, disciplinary register.</li>
+                <li><strong>Upload relevant documents</strong> rather than describing them. Claude works much better with the actual text in front of it.</li>
+                <li><strong>Ask Claude to critique its own output.</strong> &ldquo;What are the weaknesses of this argument?&rdquo; or &ldquo;What have I missed?&rdquo; often surfaces useful insights.</li>
+                <li><strong>Use Projects</strong> for any work spanning more than one session.</li>
+                <li><strong>Set a custom style</strong> for your discipline &mdash; it saves repeating stylistic instructions in every conversation.</li>
+                <li><strong>Ask for sources and then verify them independently.</strong> Claude can point you in the right direction, but its citations need checking.</li>
+                <li><strong>Keep conversations focused:</strong> one task, one conversation.</li>
+            </ul>
+
+            <h4>Don&rsquo;t:</h4>
+            <ul>
+                <li><strong>Trust citations without checking.</strong> Claude can fabricate references &mdash; plausible author names, plausible titles, plausible journals, entirely fictional. Always verify.</li>
+                <li><strong>Upload sensitive, personal, or embargoed data</strong> without checking your institution&rsquo;s policy on third-party AI services.</li>
+                <li><strong>Assume one good answer means all answers are good.</strong> Quality varies between tasks, topics, and even between turns in the same conversation.</li>
+                <li><strong>Use Chat when you need file-system access or code execution.</strong> Use Code instead.</li>
+                <li><strong>Treat a single conversation as a persistent workspace.</strong> Conversations have context limits. For ongoing work, use Projects.</li>
+                <li><strong>Mix multiple unrelated topics</strong> in a single conversation.</li>
+            </ul>
+
+            <h3 id="chat-practices">1.5 Best working practices for humanities scholars</h3>
+
+            <h4>The iterative refinement pattern</h4>
+
+            <p>The most productive way to work with Claude on writing or analysis is not to ask for a finished product in one go. Instead, iterate:</p>
+
+            <ol>
+                <li><strong>Draft:</strong> Ask Claude to produce a first attempt, giving clear instructions about scope, audience, and format.</li>
+                <li><strong>Critique:</strong> Ask Claude to identify weaknesses, gaps, or unsupported claims in its own draft. Or provide your own critique.</li>
+                <li><strong>Revise:</strong> Ask Claude to address the identified problems, incorporating your feedback and its own self-critique.</li>
+                <li><strong>Verify:</strong> Check factual claims, citations, and reasoning against your own knowledge and trusted sources.</li>
+            </ol>
+
+            <p>This pattern works for drafting prose, building arguments, preparing teaching materials, and analysing sources. It treats Claude as a capable but fallible collaborator rather than an oracle.</p>
+
+            <h4>Using system prompts via Projects</h4>
+
+            <p>The custom instructions in a Project function as a system prompt &mdash; they shape Claude&rsquo;s behaviour before the conversation begins. Use them to set disciplinary context: your field&rsquo;s conventions, your standards for evidence, the register you expect, and any rules Claude should follow. A well-written system prompt can turn a general-purpose AI into something much closer to a knowledgeable research assistant in your specific area.</p>
+
+            <h4>Building a &ldquo;research assistant&rdquo; Project</h4>
+
+            <p>For a sustained research topic &mdash; a dissertation chapter, a monograph, a module you teach regularly &mdash; create a dedicated Project. Upload your key primary sources, your most important secondary literature, your own notes and outlines. Write instructions that encode your methodological preferences. Over time, this Project becomes a persistent, context-rich workspace that understands your work far better than a fresh conversation ever could.</p>
+
+            <h4>When to start a new conversation</h4>
+
+            <p>Start a new conversation when you switch tasks, when the current conversation has become long and unfocused, or when Claude seems to be losing track of earlier context (repeating itself, contradicting earlier statements, forgetting constraints you set). Within a Project, starting a new conversation is low-cost &mdash; the Project&rsquo;s knowledge base and instructions carry over automatically.</p>
+
+            <h4>Managing context window limits</h4>
+
+            <p>Every conversation has a context window &mdash; a limit on how much text Claude can hold in working memory at once. When you upload very long documents or have extended conversations, you may approach this limit. Signs include Claude forgetting earlier parts of the conversation or failing to reference material you uploaded. When this happens: start a new conversation (within the same Project, if applicable), re-upload the most relevant materials, and summarise what has been decided so far.</p>
+
+            <h4>Exporting for provenance</h4>
+
+            <p>If you use Claude&rsquo;s output in your research or teaching, keep a record. You can export conversations from claude.ai. Good practice includes noting: the date, the model used (Opus, Sonnet, etc.), what you asked, and what you used from the response. This is both good academic practice and increasingly expected by journals and institutions. See <a href="rules.html">Rules</a> for more on provenance and disclosure.</p>
+
+            <h3 id="chat-combining">1.6 Combining with other tools</h3>
+
+            <h4>Chat &rarr; Code pipeline</h4>
+
+            <p>A common pattern: prototype an idea in Chat &mdash; explore the concept, draft a specification, work out what you want &mdash; then move to Claude Code to build it. Chat is good for thinking; Code is good for making. For example, you might use Chat to design the structure of an interactive teaching tool, then use Code to actually build it as a working web page.</p>
+
+            <h4>Chat &rarr; multi-model review</h4>
+
+            <p>Draft with Claude, then review the output with a different model (GPT, Gemini, or another). This is covered in detail in the <a href="agentic.html">Agentic AI</a> page. The principle: when two independent models agree, you can be more confident; when they disagree, that disagreement is informative and worth investigating.</p>
+
+            <h4>Chat + reference managers</h4>
+
+            <p>Claude Chat does not integrate directly with Zotero, Mendeley, or other reference managers. The practical workflow: use Claude to find and discuss literature, then manually verify and add confirmed references to your reference manager. Do not rely on Claude-generated bibliographic entries without checking them against the actual sources.</p>
+
+            <h4>Chat + institutional tools</h4>
+
+            <p>If your institution provides Microsoft Copilot, you may have access to both Claude and Copilot. They serve different purposes: Copilot is embedded in your Microsoft 365 workflow (Word, Outlook, Teams); Claude is a standalone tool for deeper intellectual work. See <a href="copilot.html">the Copilot page</a> for a detailed comparison. In general, use Copilot for quick document tasks within Microsoft apps and Claude for sustained analytical or creative work.</p>
+        </section>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- PART 2: CLAUDE CODE (placeholder)                            -->
+        <!-- ============================================================ -->
+
+        <section id="code">
+            <h2>Part 2: Claude Code</h2>
+
+            <!-- Task 2 and 3 will replace this placeholder -->
+            <p><em>This section is under construction. It will cover Claude Code in detail: what it is, where it runs, setting up, commands, hooks, MCP, and best practices.</em></p>
+        </section>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- PART 3: COWORK (placeholder)                                 -->
+        <!-- ============================================================ -->
+
+        <section id="cowork">
+            <h2>Part 3: Cowork (Research Preview)</h2>
+
+            <!-- Task 4 will replace this placeholder -->
+            <p><em>This section is under construction. It will cover Cowork: what it is, setting up, capabilities, and best practices.</em></p>
+        </section>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- PART 4: SHARED PRINCIPLES (placeholder)                      -->
+        <!-- ============================================================ -->
+
+        <section id="shared-principles">
+            <h2>Part 4: Shared principles across all three tools</h2>
+
+            <!-- Task 4 will replace this placeholder -->
+            <p><em>This section is under construction. It will cover prompting, data governance, cost, verification, and multi-model use.</em></p>
+        </section>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- PART 5: WHERE TO RUN (placeholder)                           -->
+        <!-- ============================================================ -->
+
+        <section id="where-to-run">
+            <h2>Part 5: Where to run Claude Code &mdash; Laptop, cloud, desktop, or server?</h2>
+
+            <!-- Task 5 will replace this placeholder -->
+            <p><em>This section is under construction. It will compare environments for running Claude Code.</em></p>
+        </section>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- PART 6: SKILLS (placeholder)                                 -->
+        <!-- ============================================================ -->
+
+        <section id="skills">
+            <h2>Part 6: Skills you may need &mdash; and how to prioritise learning them</h2>
+
+            <!-- Task 5 will replace this placeholder -->
+            <p><em>This section is under construction. It will cover the technical skills that help you get the most from Claude Code.</em></p>
+        </section>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- PART 7: WORKFLOWS (placeholder)                              -->
+        <!-- ============================================================ -->
+
+        <section id="workflows">
+            <h2>Part 7: Humanities-specific workflows</h2>
+
+            <!-- Task 6 will replace this placeholder -->
+            <p><em>This section is under construction. It will provide worked examples of humanities research workflows using Claude.</em></p>
+        </section>
+
+        <footer>
+            <p><a href="copilot.html" class="nav-link">&larr; Microsoft Copilot</a></p>
+            <p><a href="bootcamp.html" class="nav-link">AI Bootcamp &rarr;</a></p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">This guide is actively maintained. If something was useful, unclear, or missing &mdash; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&amp;entry.1470426217=Claude+Best+Practice" target="_blank">let us know</a>. (Please do not include personal, confidential, or sensitive information in your feedback.)</p>
+        </footer>
+    </div>
+    <script src="js/context.js"></script>
+</body>
+</html>
