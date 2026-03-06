@@ -959,8 +959,176 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <section id="cowork">
             <h2>Part 3: Cowork (Research Preview)</h2>
 
-            <!-- Task 4 will replace this placeholder -->
-            <p><em>This section is under construction. It will cover Cowork: what it is, setting up, capabilities, and best practices.</em></p>
+            <div class="note">
+                <p><strong>Research preview:</strong> Cowork is currently in research preview and available only on macOS. Features, availability, and pricing may change. This section describes Cowork as it exists at the time of writing (early 2026).</p>
+            </div>
+
+            <h3 id="cowork-what">3.1 What it is and what it&rsquo;s for</h3>
+
+            <p>Cowork is a desktop feature within the Claude macOS app that can see your screen, read your files, and work alongside you in real time. Where Chat is conversational and Code is agentic, Cowork is <em>ambient</em>: it observes what you are doing and offers help in context, or you can ask it to perform tasks while you continue other work.</p>
+
+            <p>Think of it as a research assistant who can see the document on your screen, understand what you are working on, and either answer questions about it or go away and do something useful while you carry on reading.</p>
+
+            <p>Cowork is particularly useful for:</p>
+
+            <ul>
+                <li><strong>Research across multiple documents</strong> &mdash; Cowork can read files on your desktop, compare them, and synthesise findings while you focus on one document at a time</li>
+                <li><strong>Contextual assistance</strong> &mdash; ask questions about what is on your screen without needing to copy-paste or upload anything</li>
+                <li><strong>Background tasks</strong> &mdash; ask Cowork to draft something, search for information, or organise notes while you continue your primary work</li>
+                <li><strong>Writing support</strong> &mdash; Cowork can see your draft in progress and offer feedback, suggest references, or help with specific passages</li>
+            </ul>
+
+            <h3 id="cowork-setup">3.2 Setting up</h3>
+
+            <p>Cowork requires:</p>
+
+            <ul>
+                <li>A Mac running macOS</li>
+                <li>The Claude desktop app (download from <a href="https://claude.ai/download" target="_blank">claude.ai/download</a>)</li>
+                <li>A Pro or Max subscription</li>
+            </ul>
+
+            <p>Once installed, Cowork is available as a mode within the Claude desktop app. You will need to grant screen-reading and file-access permissions when prompted &mdash; these are standard macOS accessibility permissions that allow Claude to see what is on your screen and read files you point it to.</p>
+
+            <h4>Privacy considerations</h4>
+
+            <p>Because Cowork can see your screen, be mindful of what is visible when you activate it. If you have sensitive information open in another window &mdash; email, banking, personal messages &mdash; Cowork may see it. You can control what Cowork has access to, and it will tell you what it can see. But good practice is to be aware of your screen contents before engaging Cowork, just as you would before sharing your screen on a video call.</p>
+
+            <h3 id="cowork-capabilities">3.3 What it can do</h3>
+
+            <h4>Screen awareness</h4>
+
+            <p>Cowork can see and understand what is displayed on your screen. This means you can:</p>
+
+            <ul>
+                <li>Point to a passage in a PDF and ask &ldquo;What does this argument assume?&rdquo;</li>
+                <li>Have a spreadsheet open and ask &ldquo;Are there any inconsistencies in the date column?&rdquo;</li>
+                <li>Show it a manuscript image and ask &ldquo;Can you read the text in the margin?&rdquo;</li>
+                <li>Display a web page and ask &ldquo;Summarise this article&rdquo;</li>
+            </ul>
+
+            <p>This removes the upload step that Chat requires. You work in your normal applications; Cowork sees what you see.</p>
+
+            <h4>File access</h4>
+
+            <p>Cowork can read files on your computer (with your permission). You can ask it to:</p>
+
+            <ul>
+                <li>Read and summarise a document in your Downloads folder</li>
+                <li>Compare two versions of a file</li>
+                <li>Search through a folder of PDFs for specific content</li>
+                <li>Read your notes and help you organise them</li>
+            </ul>
+
+            <h4>Background work</h4>
+
+            <p>One of Cowork&rsquo;s distinctive features is that it can work in the background while you do something else. You might ask Cowork to:</p>
+
+            <ul>
+                <li>&ldquo;Read through these five articles and prepare a summary of their main arguments&rdquo;</li>
+                <li>&ldquo;Draft a response to reviewer 2&rsquo;s comments based on the paper on my screen&rdquo;</li>
+                <li>&ldquo;Go through my notes folder and create a bibliography of all the sources I&rsquo;ve mentioned&rdquo;</li>
+            </ul>
+
+            <p>While Cowork works on these tasks, you can continue reading, writing, or doing other work. Cowork will notify you when it finishes.</p>
+
+            <h4>Writing to files</h4>
+
+            <p>Cowork can create and edit files on your computer. It can save its outputs &mdash; summaries, drafts, organised notes &mdash; directly to your file system rather than only displaying them in the chat interface. This makes it practical for tasks where the output needs to become part of your working files.</p>
+
+            <h3 id="cowork-dos-donts">3.4 Dos and don&rsquo;ts</h3>
+
+            <h4>Do:</h4>
+            <ul>
+                <li><strong>Use Cowork for document-heavy research workflows</strong> where you are reading, comparing, and synthesising across multiple sources.</li>
+                <li><strong>Take advantage of screen awareness</strong> &mdash; it is faster to say &ldquo;look at this&rdquo; than to upload a file or paste text.</li>
+                <li><strong>Set background tasks</strong> while you focus on close reading or writing. Cowork is most valuable when it works in parallel with you, not sequentially.</li>
+                <li><strong>Be specific about where to save outputs</strong> &mdash; tell Cowork which folder to use and what to name files.</li>
+                <li><strong>Review Cowork&rsquo;s outputs</strong> with the same critical eye you would apply to any AI-generated content.</li>
+            </ul>
+
+            <h4>Don&rsquo;t:</h4>
+            <ul>
+                <li><strong>Forget what is on your screen.</strong> Cowork sees everything visible. Close or minimise windows containing information you do not want processed.</li>
+                <li><strong>Use Cowork for tasks that need code execution.</strong> Cowork reads and writes files but does not run programs. Use Code for that.</li>
+                <li><strong>Treat file outputs as final without review.</strong> Cowork may save files to your system &mdash; check them before sharing or submitting.</li>
+                <li><strong>Rely on Cowork for tasks requiring precise citation.</strong> The same hallucination risks apply as with Chat &mdash; verify all references.</li>
+            </ul>
+
+            <h3 id="cowork-practices">3.5 Best working practices</h3>
+
+            <h4>The parallel research pattern</h4>
+
+            <p>The most productive Cowork workflow leverages its ability to work alongside you:</p>
+
+            <ol>
+                <li>Open your primary source or document in your normal reading application</li>
+                <li>Ask Cowork to read related materials in the background &mdash; secondary literature, your own earlier notes, comparative sources</li>
+                <li>As you read, ask Cowork contextual questions: &ldquo;Does Smith 2019 agree with the argument on my screen?&rdquo; or &ldquo;What does my notes file say about this topic?&rdquo;</li>
+                <li>When you are ready to write, ask Cowork to draft sections based on what it has read and your instructions</li>
+            </ol>
+
+            <h4>Organising research materials</h4>
+
+            <p>Cowork can help impose structure on unstructured research materials. Ask it to read through a folder of notes or downloaded articles and create:</p>
+
+            <ul>
+                <li>A thematic index of your materials</li>
+                <li>A chronological summary of key arguments in the literature</li>
+                <li>A comparison table of different scholars&rsquo; positions on a question</li>
+                <li>An annotated bibliography from your reading notes</li>
+            </ul>
+
+            <h4>When to use Cowork vs Chat vs Code</h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Best tool</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Quick question, no files needed</td>
+                        <td>Chat</td>
+                    </tr>
+                    <tr>
+                        <td>Discuss a document you can upload</td>
+                        <td>Chat (with upload)</td>
+                    </tr>
+                    <tr>
+                        <td>Work across many local files simultaneously</td>
+                        <td>Cowork</td>
+                    </tr>
+                    <tr>
+                        <td>Ask about what is on your screen right now</td>
+                        <td>Cowork</td>
+                    </tr>
+                    <tr>
+                        <td>Build a tool, process data, write code</td>
+                        <td>Code</td>
+                    </tr>
+                    <tr>
+                        <td>Sustained project with version control</td>
+                        <td>Code</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 id="cowork-combining">3.6 Combining with other tools</h3>
+
+            <h4>Cowork &rarr; Chat</h4>
+
+            <p>Use Cowork to gather and synthesise information from your local files, then take the key findings into a Chat Project for deeper analysis or writing. Cowork is good at breadth (reading many files quickly); Chat Projects are good at depth (sustained, focused conversation about a specific topic).</p>
+
+            <h4>Cowork &rarr; Code</h4>
+
+            <p>If Cowork identifies a data problem or a need for systematic processing &mdash; &ldquo;these 50 XML files have inconsistent date formats&rdquo; &mdash; switch to Code to build a solution. Cowork can diagnose; Code can fix at scale.</p>
+
+            <h4>Cowork + your normal tools</h4>
+
+            <p>Cowork is designed to complement, not replace, your existing workflow. Continue using your preferred PDF reader, word processor, reference manager, and note-taking app. Cowork adds a layer of AI assistance on top of whatever you already do, without requiring you to change your tools or habits.</p>
         </section>
 
         <hr>
@@ -972,8 +1140,229 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <section id="shared-principles">
             <h2>Part 4: Shared principles across all three tools</h2>
 
-            <!-- Task 4 will replace this placeholder -->
-            <p><em>This section is under construction. It will cover prompting, data governance, cost, verification, and multi-model use.</em></p>
+            <p>Whether you use Chat, Code, or Cowork, the following principles apply. They are not specific to any one interface but shape how you get the best results from Claude in any context.</p>
+
+            <h3 id="prompting">4.1 Prompting principles</h3>
+
+            <p>A &ldquo;prompt&rdquo; is what you say to Claude &mdash; your instructions, questions, or requests. The quality of Claude&rsquo;s output depends heavily on the quality of your prompt. This is not about memorising tricks; it is about communicating clearly.</p>
+
+            <h4>Be specific about what you want</h4>
+
+            <p>Vague prompts get vague results. Compare:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Weak prompt</th>
+                        <th>Stronger prompt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&ldquo;Tell me about Roman trade.&rdquo;</td>
+                        <td>&ldquo;Summarise the main scholarly positions on the scale of Roman long-distance trade in the 2nd century CE, focusing on the debate between primitivists and modernists. Write for an audience of postgraduate students in ancient history. 500 words.&rdquo;</td>
+                    </tr>
+                    <tr>
+                        <td>&ldquo;Help me with my essay.&rdquo;</td>
+                        <td>&ldquo;Read the attached draft of my essay on Thucydides&rsquo; account of the plague. Identify the three weakest points in my argument and suggest how I could strengthen each one, with reference to specific passages in the text.&rdquo;</td>
+                    </tr>
+                    <tr>
+                        <td>&ldquo;Make a website.&rdquo;</td>
+                        <td>&ldquo;Create a static HTML page that displays the 47 inscriptions in data.csv as a searchable, filterable table. Include columns for ID, Latin text, English translation, date range, and findspot. Use clean, accessible design. No external dependencies.&rdquo;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The key dimensions to specify: <strong>audience</strong> (who is this for?), <strong>format</strong> (prose, table, list, code?), <strong>length</strong> (how much?), <strong>register</strong> (formal, informal, technical?), <strong>scope</strong> (what to include, what to leave out), and <strong>purpose</strong> (why do you need this?).</p>
+
+            <h4>Provide context</h4>
+
+            <p>Claude does not know your project, your field&rsquo;s conventions, or your institutional context unless you tell it. When starting a new conversation or task:</p>
+
+            <ul>
+                <li>State your discipline and the specific topic</li>
+                <li>Mention the level of expertise you have (and expect in the response)</li>
+                <li>Upload or reference the specific texts you are working with</li>
+                <li>Explain any constraints (word limits, citation styles, institutional requirements)</li>
+            </ul>
+
+            <p>In Chat, Projects handle this automatically through custom instructions and the knowledge base. In Code, the <code>CLAUDE.md</code> file serves the same purpose. But for one-off conversations, you need to provide context explicitly.</p>
+
+            <h4>Give Claude a role</h4>
+
+            <p>Claude responds well to role-framing: &ldquo;You are an expert in Byzantine Greek palaeography&rdquo; or &ldquo;Act as a critical reviewer for a journal in medieval history.&rdquo; This is not a magic formula &mdash; it works because it implicitly sets expectations about register, depth, and the kind of knowledge to draw on.</p>
+
+            <h4>Use structured prompts for complex tasks</h4>
+
+            <p>For anything beyond a simple question, structure your prompt with clear sections:</p>
+
+            <pre><code>## Task
+Analyse the rhetorical structure of the attached speech.
+
+## Context
+This is Cicero's Pro Archia, and I am writing a commentary for
+an undergraduate Latin reader.
+
+## Requirements
+- Identify the main sections of the speech and their rhetorical function
+- Note any departures from standard forensic oratory structure
+- Keep technical terminology to a minimum, but include Latin terms
+  for rhetorical figures with English glosses
+- Approximately 1,000 words
+
+## Output format
+A structured analysis with numbered sections, each containing:
+the Latin text reference, the rhetorical function, and your commentary.</code></pre>
+
+            <p>This kind of structured prompt is especially effective in Code, where Claude needs to understand both what to build and how it should work.</p>
+
+            <h4>Iterate, do not restart</h4>
+
+            <p>If Claude&rsquo;s first response is not quite right, refine it through follow-up instructions rather than rewriting your prompt from scratch. &ldquo;Good, but make the tone more formal&rdquo; or &ldquo;This misses the economic dimension &mdash; add a paragraph on trade implications&rdquo; is efficient and effective. Claude learns from your corrections within a conversation.</p>
+
+            <h4>Ask Claude to think step by step</h4>
+
+            <p>For complex reasoning tasks &mdash; analysing an argument, evaluating evidence, comparing interpretations &mdash; ask Claude to work through its reasoning explicitly: &ldquo;Think through this step by step&rdquo; or &ldquo;Show your reasoning.&rdquo; This tends to produce more careful, accurate analysis than asking for a direct answer.</p>
+
+            <h3 id="data-governance">4.2 Data governance</h3>
+
+            <p>Before using any Claude tool with research data, understand what happens to your data and what your institution requires.</p>
+
+            <h4>What Anthropic does with your data</h4>
+
+            <p>Anthropic&rsquo;s data policies distinguish between different contexts. The key points as of early 2026:</p>
+
+            <ul>
+                <li><strong>Pro and Max subscriptions:</strong> Conversations are not used to train models by default. Anthropic retains conversations for safety monitoring and abuse prevention, with a limited retention period. Check <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic&rsquo;s privacy policy</a> for current details.</li>
+                <li><strong>Team and Enterprise:</strong> Stronger data isolation guarantees, no training on your data, and compliance features suitable for institutional use.</li>
+                <li><strong>API usage:</strong> Data sent via the API is not used for training. Retention is minimal and governed by the API terms of service.</li>
+                <li><strong>Free tier:</strong> Anthropic may use free-tier conversations to improve its models. Do not use the free tier for sensitive research data.</li>
+            </ul>
+
+            <h4>What to check with your institution</h4>
+
+            <p>Most universities and research institutions now have AI policies. Before using Claude with research data, check:</p>
+
+            <ul>
+                <li>Does your institution allow the use of third-party AI services for research data?</li>
+                <li>Are there data classification rules that restrict what can be shared with external services? (Often personal data, health data, and data under NDA are restricted.)</li>
+                <li>Does your ethics approval (if applicable) cover AI-assisted analysis?</li>
+                <li>Does your institution have a preferred or approved AI service? Some have institutional agreements with specific providers that offer better data governance terms.</li>
+            </ul>
+
+            <h4>Practical guidelines</h4>
+
+            <ul>
+                <li><strong>Published and public domain material:</strong> Generally safe to use with Claude. Published texts, out-of-copyright sources, publicly available datasets.</li>
+                <li><strong>Your own unpublished work:</strong> Generally safe on Pro/Max/Team/Enterprise tiers, though check whether your institution has specific policies about sharing unpublished research with third parties.</li>
+                <li><strong>Personal or sensitive data:</strong> Exercise caution. Anonymise where possible. Check institutional policy. Consider whether an on-premises or institutional deployment would be more appropriate.</li>
+                <li><strong>Data under embargo, NDA, or contractual restriction:</strong> Do not use with cloud-based AI services unless your contract explicitly permits it.</li>
+                <li><strong>Student data:</strong> Subject to specific regulations (GDPR, FERPA, etc.) that generally prohibit sharing with third-party services without consent.</li>
+            </ul>
+
+            <h3 id="cost-awareness">4.3 Cost awareness</h3>
+
+            <p>Understanding cost helps you choose the right tool and the right model for each task.</p>
+
+            <h4>Subscription tiers</h4>
+
+            <p>Most humanities scholars will use Claude through a subscription rather than the API. Subscriptions provide a fixed monthly cost with usage limits. Rather than quoting specific prices (which change), see <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic&rsquo;s pricing page</a>. The key distinction:</p>
+
+            <ul>
+                <li><strong>Pro</strong> gives you Chat, Projects, and Cowork with generous usage limits. Sufficient for most conversational and research workflows.</li>
+                <li><strong>Max</strong> adds Claude Code and significantly higher usage limits. Necessary if you want to build tools, process data, or work with Code.</li>
+            </ul>
+
+            <h4>API pricing (for Code CLI users)</h4>
+
+            <p>If you use Claude Code with an API key rather than a Max subscription, you pay per token (roughly per word). Costs vary by model:</p>
+
+            <ul>
+                <li><strong>Opus</strong> is the most expensive &mdash; use it for tasks where quality justifies the cost</li>
+                <li><strong>Sonnet</strong> is moderately priced &mdash; good for everyday development work</li>
+                <li><strong>Haiku</strong> is the cheapest &mdash; appropriate for bulk processing and simple tasks</li>
+            </ul>
+
+            <p>A typical Claude Code session for building a small web tool might cost a few dollars with Sonnet or considerably more with Opus. The <code>/cost</code> command shows your running total. For current per-token rates, see <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic&rsquo;s pricing page</a>.</p>
+
+            <h4>Cost-saving strategies</h4>
+
+            <ul>
+                <li><strong>Choose the right model for the task.</strong> Use Haiku for simple formatting, Sonnet for general work, Opus for complex reasoning. Do not use Opus to rename variables.</li>
+                <li><strong>Keep <code>CLAUDE.md</code> concise.</strong> It is read every session &mdash; 500 words of context costs the same as 500 words of actual work.</li>
+                <li><strong>Use <code>/compact</code></strong> to compress long conversations rather than starting over (which re-reads all files).</li>
+                <li><strong>Be specific in your prompts.</strong> A clear, detailed prompt typically resolves in one round; a vague prompt may take several back-and-forth iterations, each consuming tokens.</li>
+                <li><strong>Batch similar tasks.</strong> Processing 100 files in one session is more efficient than 100 separate sessions, because the setup context is amortised.</li>
+            </ul>
+
+            <h3 id="verification">4.4 Verification and provenance</h3>
+
+            <p>Claude is a powerful tool, but it is not an authority. Every output requires the same critical evaluation you would apply to any secondary source &mdash; more, in fact, because Claude can present fabricated information with complete confidence.</p>
+
+            <h4>What Claude gets wrong</h4>
+
+            <p>The most important failure modes for humanities scholars:</p>
+
+            <ul>
+                <li><strong>Fabricated references.</strong> Claude can generate entirely fictional citations &mdash; plausible author names, plausible titles, plausible journals, plausible page numbers. These &ldquo;hallucinated&rdquo; references are particularly dangerous because they look real. <em>Always</em> verify citations against library catalogues or the original publications.</li>
+                <li><strong>Confident errors of fact.</strong> Claude may state incorrect dates, misattribute texts, confuse similar-sounding scholars, or get details of historical events wrong &mdash; all while sounding entirely certain. Cross-check factual claims against authoritative sources.</li>
+                <li><strong>Anachronistic reasoning.</strong> Claude may apply modern categories or assumptions to historical contexts where they do not fit. Be alert to anachronism in its analysis of primary sources.</li>
+                <li><strong>Smoothing over complexity.</strong> Claude tends to present clean narratives. If a scholarly debate is genuinely unresolved, Claude may still present one position as the consensus view. Ask explicitly: &ldquo;Is there scholarly disagreement on this?&rdquo;</li>
+                <li><strong>Translation errors.</strong> Claude handles major languages well but can make errors with ancient or less-resourced languages, especially with unusual vocabulary, dialect forms, or damaged text. Always have a domain expert check critical translations.</li>
+            </ul>
+
+            <h4>Verification practices</h4>
+
+            <ul>
+                <li><strong>Check every citation</strong> before using it in your work. Look up the reference in a catalogue or database. If you cannot find it, it may not exist.</li>
+                <li><strong>Cross-reference factual claims</strong> against at least one authoritative source.</li>
+                <li><strong>For translations, compare with published translations</strong> or check against the original text yourself.</li>
+                <li><strong>For code outputs, test them.</strong> Run the script, open the web page, check the data. Claude Code&rsquo;s iteration loop helps here, but you remain responsible for the final product.</li>
+                <li><strong>Ask Claude to flag uncertainty.</strong> &ldquo;Tell me how confident you are in each claim&rdquo; or &ldquo;Flag anything you are not sure about&rdquo; can surface potential errors, though Claude may still be overconfident.</li>
+            </ul>
+
+            <h4>Recording provenance</h4>
+
+            <p>If you use Claude&rsquo;s output in published research or teaching, document how it was used. Good provenance records include:</p>
+
+            <ul>
+                <li>The date of the interaction</li>
+                <li>The model used (Opus, Sonnet, Haiku) and the tool (Chat, Code, Cowork)</li>
+                <li>The prompt you gave</li>
+                <li>What you used from the response and how you verified it</li>
+            </ul>
+
+            <p>Some journals and institutions now require disclosure of AI use. Even where it is not required, transparency about your methods strengthens your work. See <a href="rules.html">Rules</a> for more on institutional policies and disclosure requirements.</p>
+
+            <h3 id="multi-model">4.5 When to use multiple models</h3>
+
+            <p>Using more than one AI model is not about finding &ldquo;the best&rdquo; model &mdash; it is about using disagreement as a signal. When two independent models produce the same answer, your confidence should increase. When they disagree, the disagreement itself is informative and worth investigating.</p>
+
+            <h4>Within Claude&rsquo;s model family</h4>
+
+            <p>You can switch between Opus, Sonnet, and Haiku within the same session. Practical uses:</p>
+
+            <ul>
+                <li><strong>Draft with Sonnet, refine with Opus.</strong> Get a fast first draft, then switch to the more capable model for nuanced revision.</li>
+                <li><strong>Bulk process with Haiku, spot-check with Opus.</strong> If you are processing 200 files, use Haiku for the batch and then have Opus review a sample of the results.</li>
+                <li><strong>Use Opus for analysis, Sonnet for implementation.</strong> In Code, use Opus to plan the architecture, then switch to Sonnet for the routine coding work.</li>
+            </ul>
+
+            <h4>Across different providers</h4>
+
+            <p>For high-stakes work, consider running the same task through Claude and a different model (GPT, Gemini, Llama, etc.). This is especially valuable for:</p>
+
+            <ul>
+                <li><strong>Translation:</strong> Compare Claude&rsquo;s translation with another model&rsquo;s. Where they agree, you can be more confident. Where they differ, investigate the original text more carefully.</li>
+                <li><strong>Factual claims:</strong> If both models independently state the same fact, it is more likely correct (though both could be drawing from the same flawed source).</li>
+                <li><strong>Analysis and interpretation:</strong> Different models may surface different aspects of a text or argument. The combination gives you a richer picture.</li>
+            </ul>
+
+            <p>This &ldquo;multi-model review&rdquo; pattern is discussed in more detail on the <a href="agentic.html">Agentic AI</a> page.</p>
+
+            <h4>When a single model suffices</h4>
+
+            <p>Multi-model review is not always necessary. For routine tasks &mdash; formatting, simple translations of well-known texts, data conversion, building straightforward tools &mdash; a single model is usually sufficient, especially when you can verify the output directly (by running the code, checking the formatted output, or comparing with the original text).</p>
         </section>
 
         <hr>
