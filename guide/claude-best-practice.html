@@ -1374,8 +1374,77 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
         <section id="where-to-run">
             <h2>Part 5: Where to run Claude Code &mdash; Laptop, cloud, desktop, or server?</h2>
 
-            <!-- Task 5 will replace this placeholder -->
-            <p><em>This section is under construction. It will compare environments for running Claude Code.</em></p>
+            <p>Claude Code can run in several environments. Each has trade-offs in terms of setup difficulty, cost, and capability. This section helps you choose.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Environment</th>
+                        <th>Setup difficulty</th>
+                        <th>Cost</th>
+                        <th>Best for</th>
+                        <th>Limitations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Claude Code on the web</strong></td>
+                        <td>None</td>
+                        <td>Max subscription</td>
+                        <td>Getting started, one-off tasks, self-contained projects</td>
+                        <td>No persistent file system; must upload/download files; no access to local tools</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Your own laptop/desktop</strong></td>
+                        <td>Low &mdash; install Node.js + Claude Code</td>
+                        <td>Max subscription or API key</td>
+                        <td>Most users. Full control, local files, your own tools</td>
+                        <td>Relies on your machine&rsquo;s hardware; you manage your own software</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GitHub Codespaces</strong></td>
+                        <td>Medium &mdash; create a codespace from a repo</td>
+                        <td>GitHub free tier (60 hrs/month) or paid; plus Claude API key or Max subscription</td>
+                        <td>Collaborative projects, consistent environments, working from any device</td>
+                        <td>Requires GitHub familiarity; free tier has time limits</td>
+                    </tr>
+                    <tr>
+                        <td><strong>University/institutional server</strong></td>
+                        <td>Medium to high &mdash; depends on IT support</td>
+                        <td>Usually free (institutional infrastructure); plus Claude API key</td>
+                        <td>Large datasets, shared projects, data governance compliance</td>
+                        <td>May need IT approval; institutional firewalls may block API calls</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cloud VM (AWS, GCP, Azure)</strong></td>
+                        <td>High &mdash; cloud account setup, VM management</td>
+                        <td>Cloud compute costs + Claude API key</td>
+                        <td>Heavy compute tasks, long-running batch processing, team projects</td>
+                        <td>Requires cloud infrastructure knowledge; ongoing costs</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Recommendations by situation</h3>
+
+            <h4>I&rsquo;m just starting out</h4>
+            <p>Use <strong>Claude Code on the web</strong>. No installation, no configuration, no risk to your local files. Try a small project &mdash; build a simple web page, process a sample dataset &mdash; and see whether Code is useful for your work before investing in a more complex setup.</p>
+
+            <h4>I want to use Code regularly for my research</h4>
+            <p>Install <strong>Claude Code on your laptop or desktop</strong>. This gives you full access to your files, your reference managers, your LaTeX installation, and any other tools you use. It is the most natural environment for sustained work.</p>
+
+            <h4>I&rsquo;m working with collaborators on a shared project</h4>
+            <p>Consider <strong>GitHub Codespaces</strong>. Everyone gets the same environment, the project lives in a shared repository, and you can work from any machine with a browser. This is especially useful for digital edition projects or collaborative tool-building where consistency matters.</p>
+
+            <h4>I need to process sensitive or restricted data</h4>
+            <p>Talk to your <strong>institutional IT team</strong> about running Claude Code on an institutional server. This keeps data within your institution&rsquo;s infrastructure. You will still need an API key for Claude, and you should confirm that API calls to Anthropic&rsquo;s servers are permitted under your data governance policy. Note that the data is still sent to Anthropic for processing &mdash; the institutional server controls where files are stored, not where the AI processing happens.</p>
+
+            <h4>I have very large datasets or long-running tasks</h4>
+            <p>A <strong>cloud VM</strong> may be appropriate, but only if you (or someone on your team) is comfortable managing cloud infrastructure. For most humanities projects, the web version or a local installation will be sufficient.</p>
+
+            <h3>A note on IDE integration</h3>
+
+            <p>Claude Code can also run inside code editors like VS Code and JetBrains IDEs as an extension. If you already use one of these editors for other work (LaTeX editing, Python scripting, web development), the integrated experience can be convenient &mdash; you get Claude&rsquo;s assistance directly alongside your files and terminal. But an IDE is not required; the standalone CLI works perfectly well.</p>
         </section>
 
         <hr>
@@ -1387,8 +1456,135 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
         <section id="skills">
             <h2>Part 6: Skills you may need &mdash; and how to prioritise learning them</h2>
 
-            <!-- Task 5 will replace this placeholder -->
-            <p><em>This section is under construction. It will cover the technical skills that help you get the most from Claude Code.</em></p>
+            <p>Claude Code reduces the barrier to technical work, but it does not eliminate it entirely. You do not need to become a software engineer, but some foundational knowledge makes the difference between productive use and frustration. This section lists the skills roughly in order of priority.</p>
+
+            <h3>Essential: skills you need before starting with Claude Code CLI</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>What it means</th>
+                        <th>How much you need</th>
+                        <th>How to learn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Terminal basics</strong></td>
+                        <td>Navigating directories, running commands, reading output</td>
+                        <td>Know <code>cd</code>, <code>ls</code>, <code>pwd</code>, <code>mkdir</code>, and how to run a command. You do not need to be fluent &mdash; Claude will write the complex commands for you.</td>
+                        <td>Any &ldquo;command line for beginners&rdquo; tutorial (30&ndash;60 minutes). The Programming Historian has good introductions for humanities scholars.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Git basics</strong></td>
+                        <td>Version control &mdash; tracking changes to files over time</td>
+                        <td>Know <code>git init</code>, <code>git add</code>, <code>git commit</code>, <code>git status</code>, <code>git log</code>, and <code>git checkout</code> (to revert). Understand what a commit is and why it matters.</td>
+                        <td>GitHub&rsquo;s &ldquo;Git Handbook&rdquo; or the Software Carpentry git lesson (2&ndash;3 hours).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plain text files</strong></td>
+                        <td>Understanding that code, data, and configuration are just text files with specific formats</td>
+                        <td>Know the difference between a .txt, .csv, .html, .py, and .json file. Understand that you can open any of them in a text editor.</td>
+                        <td>Comes naturally with terminal and git practice. Use a proper text editor (VS Code is free and widely used).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight">
+                <p><strong>If you use only Claude Code on the web</strong>, you can skip terminal and git entirely. The web interface handles file management through its GUI. These skills become essential only for the CLI version.</p>
+            </div>
+
+            <h3>Very useful: skills that significantly improve your experience</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>What it means</th>
+                        <th>How much you need</th>
+                        <th>How to learn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Reading code</strong></td>
+                        <td>Understanding what a piece of Python, JavaScript, or HTML does at a high level</td>
+                        <td>You do not need to <em>write</em> code, but being able to read Claude&rsquo;s output and understand its structure helps enormously. Can you look at an HTML file and see where the headings, paragraphs, and links are? Can you read a Python script and follow the logic, even if you could not write it yourself?</td>
+                        <td>Comes with practice. Ask Claude to explain any code it writes: &ldquo;Explain this script to me line by line.&rdquo;</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HTML/CSS basics</strong></td>
+                        <td>The languages of web pages &mdash; structure (HTML) and appearance (CSS)</td>
+                        <td>Knowing what a <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;table&gt;</code>, and <code>&lt;a&gt;</code> tag do lets you direct Claude much more precisely when building web-based tools. &ldquo;Put the search box in a <code>&lt;header&gt;</code> element&rdquo; is much more effective than &ldquo;put the search box at the top.&rdquo;</td>
+                        <td>MDN Web Docs &ldquo;Getting started with HTML&rdquo; (1&ndash;2 hours for the basics).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>File formats</strong></td>
+                        <td>Understanding CSV, JSON, XML/TEI, and how structured data works</td>
+                        <td>Know what these formats look like, when each is appropriate, and how to open them. If you work with TEI-encoded texts, understanding the XML structure helps you direct Claude&rsquo;s transformations.</td>
+                        <td>Depends on your field. The TEI Guidelines are the reference for XML/TEI. For CSV and JSON, any data science introduction covers these.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GitHub</strong></td>
+                        <td>The platform for hosting git repositories, collaborating, and sharing code</td>
+                        <td>Know how to create a repository, push to it, and navigate the web interface. Useful for backing up projects, collaborating, and deploying web-based tools via GitHub Pages.</td>
+                        <td>GitHub&rsquo;s own tutorials. Start by putting one project on GitHub; the rest follows.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Helpful: skills that open up advanced workflows</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>What it means</th>
+                        <th>When you need it</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Python basics</strong></td>
+                        <td>The most common scripting language for data processing and academic computing</td>
+                        <td>When you want to understand or customise the scripts Claude writes, or when you want to build more complex data pipelines. Even a little Python knowledge helps you review Claude&rsquo;s work.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regular expressions</strong></td>
+                        <td>Patterns for finding and replacing text &mdash; far more powerful than simple find-and-replace</td>
+                        <td>When you work with text processing at scale. Claude writes regex for you, but understanding the basics helps you verify its patterns and describe what you want.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SQL</strong></td>
+                        <td>The language for querying databases</td>
+                        <td>When you work with structured data in databases (prosopography, epigraphy, archaeological finds). Claude can write SQL, but knowing the basics helps you formulate questions and check results.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XSLT / XPath</strong></td>
+                        <td>Languages for transforming and querying XML documents</td>
+                        <td>When you work extensively with TEI/XML. Claude can write XSLT transformations, but knowing the concepts helps you specify what you want.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LaTeX</strong></td>
+                        <td>A typesetting system widely used in academia</td>
+                        <td>When you want Claude to help with document preparation, especially for publications with complex formatting, mathematical notation, or critical apparatus.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>The key insight</h3>
+
+            <p>Claude Code shifts the balance from <em>writing</em> code to <em>reading and directing</em> it. You do not need to memorise syntax or write programs from scratch. But you do need enough understanding to:</p>
+
+            <ul>
+                <li><strong>Describe what you want</strong> in terms Claude can act on</li>
+                <li><strong>Read what Claude produces</strong> well enough to spot obvious problems</li>
+                <li><strong>Understand error messages</strong> well enough to describe them, even if you cannot fix them yourself</li>
+                <li><strong>Make informed decisions</strong> when Claude offers alternatives (&ldquo;Shall I use SQLite or JSON for the data store?&rdquo;)</li>
+            </ul>
+
+            <p>This is a lower bar than traditional programming, but it is not zero. Investing a few hours in the &ldquo;essential&rdquo; skills above will make your experience with Claude Code dramatically more productive. And Claude itself is an excellent teacher &mdash; you can ask it to explain anything it does, in as much or as little detail as you want.</p>
         </section>
 
         <hr>
