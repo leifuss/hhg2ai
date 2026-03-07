@@ -13,9 +13,9 @@
             <span class="nav-sep">|</span>
             <a href="chat.html">Chat</a>
             <span class="nav-sep">|</span>
-            <a href="code.html">Code</a>
-            <span class="nav-sep">|</span>
             <a href="cowork.html">Cowork</a>
+            <span class="nav-sep">|</span>
+            <a href="code.html">Code</a>
             <span class="nav-sep">|</span>
             <a href="shared-principles.html">Shared Principles</a>
             <span class="nav-sep">|</span>
@@ -24,6 +24,8 @@
             <a href="skills.html">Skills</a>
             <span class="nav-sep">|</span>
             <a href="workflows.html">Workflows</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
         </nav>
 
         <header>
@@ -33,7 +35,7 @@
         </header>
 
         <div class="note">
-            <p><strong>Skip to what you need:</strong> If you only use Claude&rsquo;s conversational interface, read the orientation below and <a href="chat.html">Chat</a>, then skip to <a href="shared-principles.html">Shared Principles</a>. If you&rsquo;re interested in building tools or processing data, read <a href="code.html">Code</a>. If you&rsquo;re on macOS and want file-based research workflows, see <a href="cowork.html">Cowork</a>.</p>
+            <p><strong>Skip to what you need:</strong> If you only use Claude&rsquo;s conversational interface, read the orientation below and <a href="chat.html">Chat</a>, then skip to <a href="shared-principles.html">Shared Principles</a>. If you want Claude to work with your local files without learning the terminal, see <a href="cowork.html">Cowork</a>. If you&rsquo;re interested in building tools or processing data at scale, read <a href="code.html">Code</a>.</p>
         </div>
 
         <nav class="toc">
@@ -41,12 +43,13 @@
             <ul>
                 <li><a href="#orientation">Which Claude tool do I need?</a> &mdash; Choosing the right interface for your work</li>
                 <li><a href="chat.html">Part 1: Claude Chat (claude.ai)</a> &mdash; Conversations, Projects, uploads, and writing assistance</li>
-                <li><a href="code.html">Part 2: Claude Code</a> &mdash; Building tools, processing data, and working with files at scale</li>
-                <li><a href="cowork.html">Part 3: Cowork</a> &mdash; Desktop-based research with screen awareness (macOS)</li>
+                <li><a href="cowork.html">Part 2: Cowork</a> &mdash; Desktop-based research with screen and file awareness</li>
+                <li><a href="code.html">Part 3: Claude Code</a> &mdash; Building tools, processing data, and working with files at scale</li>
                 <li><a href="shared-principles.html">Part 4: Shared Principles</a> &mdash; Prompting, data governance, cost, verification, and multi-model use</li>
                 <li><a href="environments.html">Part 5: Where to Run Claude Code</a> &mdash; Web, laptop, Codespaces, server, or cloud</li>
                 <li><a href="skills.html">Part 6: Skills You May Need</a> &mdash; What to learn and in what order</li>
                 <li><a href="workflows.html">Part 7: Worked Examples</a> &mdash; Five humanities-specific workflows step by step</li>
+                <li><a href="glossary.html">Glossary</a> &mdash; Technical terms explained for humanities readers</li>
             </ul>
         </nav>
 
@@ -57,7 +60,7 @@
         <section id="orientation">
             <h2>Which Claude tool do I need?</h2>
 
-            <p>Anthropic offers Claude through several interfaces. They are not competing products but points on a spectrum from conversational to agentic (meaning Claude can take actions on its own, not just respond to messages). Before going deep on any one tool, the guide below will help you choose where to start.</p>
+            <p>Anthropic offers Claude through several interfaces. They are not competing products but points on a spectrum from conversational to <abbr class="glossary" title="Able to take actions autonomously &mdash; reading files, running commands, making decisions &mdash; rather than only responding to messages">agentic</abbr> (meaning Claude can take actions on its own, not just respond to messages). Before going deep on any one tool, the guide below will help you choose where to start.</p>
 
             <div class="highlight">
                 <h4 style="margin-top: 0;">Chat (claude.ai)</h4>
@@ -76,6 +79,14 @@
             </div>
 
             <div class="highlight">
+                <h4 style="margin-top: 0;">Cowork (Research Preview)</h4>
+                <p><strong>Best for:</strong> Research across documents, desktop-based workflow.</p>
+                <p><strong>You&rsquo;ll need:</strong> A paid subscription (Pro or Max). Requires the Claude Desktop app (macOS or Windows x64).</p>
+                <p><strong>Skills required:</strong> None &mdash; GUI-based.</p>
+                <p style="margin-bottom: 0;"><a href="cowork.html">Read the Cowork guide &rarr;</a></p>
+            </div>
+
+            <div class="highlight">
                 <h4 style="margin-top: 0;">Code (web)</h4>
                 <p><strong>Best for:</strong> Building tools, processing data, working with code or files at scale.</p>
                 <p><strong>You&rsquo;ll need:</strong> A Pro subscription (token limits apply) or Max subscription.</p>
@@ -91,18 +102,125 @@
                 <p style="margin-bottom: 0;"><a href="code.html">Read the Code guide &rarr;</a></p>
             </div>
 
-            <div class="highlight">
-                <h4 style="margin-top: 0;">Cowork (Research Preview)</h4>
-                <p><strong>Best for:</strong> Research across documents, desktop-based workflow.</p>
-                <p><strong>You&rsquo;ll need:</strong> A paid subscription (Pro or Max). Requires the Claude Desktop app (macOS or Windows x64).</p>
-                <p><strong>Skills required:</strong> None &mdash; GUI-based.</p>
-                <p style="margin-bottom: 0;"><a href="cowork.html">Read the Cowork guide &rarr;</a></p>
+            <p>Many tasks start in Chat. If you want Claude to work with your local files without learning the terminal, try Cowork. If you need to build tools, process data at scale, or want full version control, move to Code. There is no wrong door &mdash; the tools overlap, and you can move between them as your needs evolve.</p>
+
+            <!-- Figure: Tool spectrum -->
+            <div class="figure">
+                <div class="spectrum">
+                    <div class="spectrum-labels">
+                        <span>Conversational</span>
+                        <span>Agentic</span>
+                    </div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-items">
+                        <div class="spectrum-item">
+                            <strong>Chat</strong>
+                            You talk, Claude responds
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Projects</strong>
+                            Persistent knowledge base
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Cowork</strong>
+                            Claude works alongside you
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Code Desktop</strong>
+                            GUI for building things
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Code CLI</strong>
+                            Full terminal control
+                        </div>
+                    </div>
+                </div>
+                <p class="figure-caption">The Claude tool spectrum: from conversation to autonomous action.</p>
             </div>
 
-            <p>Many tasks start in Chat and graduate to Code when they need file access or iteration. There is no wrong door &mdash; the tools overlap, and you can move between them as your needs evolve.</p>
+            <!-- Figure: Decision flowchart -->
+            <div class="figure">
+                <div class="flowchart">
+                    <div class="flow-question">Do you need to work with local files?</div>
+                    <div class="flow-branch">
+                        <div>
+                            <div class="flow-label">No</div>
+                            <div class="flow-sub-question">Need a persistent knowledge base?</div>
+                            <div class="flow-branch">
+                                <div>
+                                    <div class="flow-label">No</div>
+                                    <div class="flow-answer"><strong><a href="chat.html">Chat</a></strong></div>
+                                </div>
+                                <div>
+                                    <div class="flow-label">Yes</div>
+                                    <div class="flow-answer"><strong><a href="chat.html#chat-projects">Chat + Projects</a></strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flow-label">Yes</div>
+                            <div class="flow-sub-question">Comfortable with a terminal?</div>
+                            <div class="flow-branch">
+                                <div>
+                                    <div class="flow-label">No</div>
+                                    <div class="flow-answer"><strong><a href="cowork.html">Cowork</a></strong> or <strong>Code Desktop</strong></div>
+                                </div>
+                                <div>
+                                    <div class="flow-label">Yes</div>
+                                    <div class="flow-answer"><strong><a href="code.html">Code CLI</a></strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="figure-caption">Which Claude tool do I use? A quick decision guide.</p>
+            </div>
+
+            <h3 id="browser-desktop-mobile">Browser, desktop app, or mobile?</h3>
+
+            <p><strong>Browser (claude.ai):</strong> Chat, Projects, file uploads, artifacts, web search, and Code (web). Works on any device. No installation needed. This is where most people should start.</p>
+
+            <p><strong>Desktop app (macOS, Windows):</strong> Everything the browser offers, plus Cowork mode, a system-wide keyboard shortcut (summon Claude from any application), drag-and-drop local files, a Code tab with a graphical interface, and desktop extensions for connecting Claude to local tools. Download from <a href="https://claude.ai/download" target="_blank">claude.ai/download</a>. Required for Cowork.</p>
+
+            <p><strong>Mobile app (iOS, Android):</strong> Chat and Projects. Useful for reviewing, reading, and quick questions on the move. Not suited to file-heavy or code-heavy work.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Runs in</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chat</td>
+                        <td>Browser, desktop app, mobile</td>
+                    </tr>
+                    <tr>
+                        <td>Projects</td>
+                        <td>Browser, desktop app, mobile</td>
+                    </tr>
+                    <tr>
+                        <td>Code (web)</td>
+                        <td>Browser</td>
+                    </tr>
+                    <tr>
+                        <td>Code (desktop)</td>
+                        <td>Desktop app</td>
+                    </tr>
+                    <tr>
+                        <td>Code (CLI)</td>
+                        <td>Terminal (local or remote)</td>
+                    </tr>
+                    <tr>
+                        <td>Cowork</td>
+                        <td>Desktop app only</td>
+                    </tr>
+                </tbody>
+            </table>
 
             <div class="highlight">
-                <p><strong>If you mainly read, write, teach, and analyse texts:</strong> Start with <a href="chat.html">Chat</a>. Use Projects for sustained work. You can safely ignore Code, Cowork, hooks, MCP, CLAUDE.md, and everything in Parts 2, 5, and 6 until you have a specific need. The <a href="shared-principles.html">Shared Principles</a> (Part 4) apply to you.</p>
+                <p><strong>If you mainly read, write, teach, and analyse texts:</strong> Start with <a href="chat.html">Chat</a>. Use Projects for sustained work. You can safely ignore Code, Cowork, hooks, MCP, CLAUDE.md, and everything in Parts 3, 5, and 6 until you have a specific need. The <a href="shared-principles.html">Shared Principles</a> (Part 4) apply to you.</p>
                 <p style="margin-bottom: 0;"><strong>If you want to build tools, transform data, or automate processing:</strong> Read <a href="code.html">Code</a> and <a href="environments.html">Environments</a>. The <a href="skills.html">Skills</a> page will help you know what to learn first. <a href="shared-principles.html">Shared Principles</a> still apply.</p>
             </div>
 
@@ -117,6 +235,89 @@
                     <li>Record what you asked and what you used from the response.</li>
                     <li>If it&rsquo;s useful, great. If not, nothing was lost.</li>
                 </ol>
+            </div>
+
+            <!-- Figure: Feature availability by plan -->
+            <div class="figure">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Free</th>
+                            <th>Pro</th>
+                            <th>Max</th>
+                            <th>Team</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chat</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Projects</td>
+                            <td>&#10003; (limited)</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>File uploads</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Opus model</td>
+                            <td>&mdash;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Cowork</td>
+                            <td>&mdash;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Code (web &amp; CLI)</td>
+                            <td>&mdash;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Memory</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Usage limits</td>
+                            <td>Lowest</td>
+                            <td>~5&times; free</td>
+                            <td>~5&times; Pro</td>
+                            <td>Per seat</td>
+                            <td>Custom</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="figure-caption">Feature availability by plan. Exact limits change; see <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic&rsquo;s pricing page</a> for current details. As of March 2026.</p>
             </div>
 
             <div class="highlight">

@@ -13,9 +13,9 @@
             <span class="nav-sep">|</span>
             <a href="chat.html" class="current">Chat</a>
             <span class="nav-sep">|</span>
-            <a href="code.html">Code</a>
-            <span class="nav-sep">|</span>
             <a href="cowork.html">Cowork</a>
+            <span class="nav-sep">|</span>
+            <a href="code.html">Code</a>
             <span class="nav-sep">|</span>
             <a href="shared-principles.html">Shared Principles</a>
             <span class="nav-sep">|</span>
@@ -24,6 +24,8 @@
             <a href="skills.html">Skills</a>
             <span class="nav-sep">|</span>
             <a href="workflows.html">Workflows</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
         </nav>
 
         <header>
@@ -187,6 +189,29 @@
 
             <p>For any sustained piece of work, use a Project rather than relying on general memory or chat search.</p>
 
+            <!-- Figure: Memory layers -->
+            <div class="figure">
+                <div class="memory-layers">
+                    <div class="memory-layer">
+                        <strong>1. Chat context</strong>
+                        <p>Within one conversation. Automatic and reliable. Bounded by the context window.</p>
+                    </div>
+                    <div class="memory-layer">
+                        <strong>2. Project context</strong>
+                        <p>Uploaded documents and instructions. You curate what goes in. Shared across conversations in a Project.</p>
+                    </div>
+                    <div class="memory-layer">
+                        <strong>3. Memory</strong>
+                        <p>Profile of your preferences from past conversations. Available on all tiers. Less precise than Project context.</p>
+                    </div>
+                    <div class="memory-layer">
+                        <strong>4. Past chat search</strong>
+                        <p>Keyword search across your conversation history. Retrieval, not continuity.</p>
+                    </div>
+                </div>
+                <p class="figure-caption">How Claude remembers: four layers from most to least reliable.</p>
+            </div>
+
             <div class="note">
                 <p><strong>Note:</strong> These features are changing rapidly. Check <a href="https://docs.anthropic.com" target="_blank">Anthropic&rsquo;s documentation</a> for the current state. Section last verified: March 2026.</p>
             </div>
@@ -257,6 +282,39 @@
 
             <p>Every conversation has a context window &mdash; a limit on how much text Claude can hold in working memory at once. When you upload very long documents or have extended conversations, you may approach this limit. Signs include Claude forgetting earlier parts of the conversation or failing to reference material you uploaded. When this happens: start a new conversation (within the same Project, if applicable), re-upload the most relevant materials, and summarise what has been decided so far.</p>
 
+            <!-- Figure: Context window -->
+            <div class="figure">
+                <p style="margin-bottom: 0.8rem; font-size: 0.9rem;"><strong>What fits in a 200K-token context window?</strong> Approximate humanities equivalents:</p>
+                <div class="context-bars">
+                    <div class="context-bar">
+                        <span class="context-bar-label">Full monograph</span>
+                        <div class="context-bar-fill" style="width: 100%;"></div>
+                        <span class="context-bar-count">~1 book</span>
+                    </div>
+                    <div class="context-bar">
+                        <span class="context-bar-label">Academic pages</span>
+                        <div class="context-bar-fill" style="width: 80%;"></div>
+                        <span class="context-bar-count">~500 pages</span>
+                    </div>
+                    <div class="context-bar">
+                        <span class="context-bar-label">Journal articles (full)</span>
+                        <div class="context-bar-fill" style="width: 40%;"></div>
+                        <span class="context-bar-count">~50 articles</span>
+                    </div>
+                    <div class="context-bar">
+                        <span class="context-bar-label">Abstracts only</span>
+                        <div class="context-bar-fill" style="width: 15%;"></div>
+                        <span class="context-bar-count">~300 abstracts</span>
+                    </div>
+                    <div class="context-bar">
+                        <span class="context-bar-label">PhD thesis</span>
+                        <div class="context-bar-fill" style="width: 65%;"></div>
+                        <span class="context-bar-count">~1 thesis</span>
+                    </div>
+                </div>
+                <p class="figure-caption">Based on 200K tokens &asymp; 150,000 words. Actual capacity depends on document formatting, images, and conversation history.</p>
+            </div>
+
             <h3>Exporting for provenance</h3>
 
             <p>If you use Claude&rsquo;s output in your research or teaching, keep a record. You can export conversations from claude.ai. Good practice includes noting: the date, the model used (Opus, Sonnet, etc.), what you asked, and what you used from the response. This is both good academic practice and increasingly expected by journals and institutions. See the <a href="../guide/rules.html">Rules</a> page for more on provenance and disclosure.</p>
@@ -286,7 +344,7 @@
 
         <footer>
             <p><a href="index.html" class="nav-link">&larr; Overview</a></p>
-            <p><a href="code.html" class="nav-link">Part 2: Claude Code &rarr;</a></p>
+            <p><a href="cowork.html" class="nav-link">Part 2: Cowork &rarr;</a></p>
         </footer>
     </div>
 </body>
