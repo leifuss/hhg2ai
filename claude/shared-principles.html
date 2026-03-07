@@ -236,6 +236,17 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
                 <li><strong>Ask Claude to flag uncertainty.</strong> &ldquo;Tell me how confident you are in each claim&rdquo; or &ldquo;Flag anything you are not sure about&rdquo; can surface potential errors, though Claude may still be overconfident.</li>
             </ul>
 
+            <h3>Verifying transformations</h3>
+
+            <p>When Claude processes data &mdash; cleaning OCR, extracting metadata, normalising dates, merging sources &mdash; the verification challenge is different from checking factual claims. You need to audit the <em>process</em>, not just the output:</p>
+
+            <ul>
+                <li><strong>Spot-check across the full range of your data</strong>, not just the first few items. OCR errors vary by hand, page quality, and ink. Metadata patterns change over decades of correspondence. A sample of 10 items from the start of a corpus tells you little about item 250.</li>
+                <li><strong>Check whether normalisation has erased meaningful variation.</strong> Did the cleaning script &ldquo;correct&rdquo; a variant spelling that was in fact historically significant? Did date normalisation impose a modern calendar on a source using a different reckoning?</li>
+                <li><strong>Check whether extraction has imposed modern categories.</strong> If Claude categorises letters as &ldquo;personal&rdquo; or &ldquo;official&rdquo;, are those your categories or Claude&rsquo;s assumptions? Does the classification scheme fit the material?</li>
+                <li><strong>Document every transformation step</strong> so others (or your future self) can audit the pipeline. What went in, what rules were applied, what came out. Keep transformation scripts in version control alongside the data they produce.</li>
+            </ul>
+
             <h3>Recording provenance</h3>
 
             <p>If you use Claude&rsquo;s output in published research or teaching, document how it was used. Good provenance records include:</p>

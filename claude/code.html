@@ -152,7 +152,20 @@ claude</code></pre>
 
             <p>The most important configuration concept in Claude Code is the <code>CLAUDE.md</code> file. This is a plain text file you place in the root of your project directory. Claude reads it at the start of every session. It functions like the &ldquo;custom instructions&rdquo; in a Chat Project, but for Code.</p>
 
-            <p>A good <code>CLAUDE.md</code> for a humanities project might include:</p>
+            <p>A simple <code>CLAUDE.md</code> might be just a few lines:</p>
+
+            <pre><code># Project: Conference Paper Figures
+
+## Context
+Generating charts and maps for a conference paper on medieval
+trade networks. Source data in data/trade_routes.csv.
+
+## Conventions
+- Use British English
+- Output figures to figures/ directory
+- Use print-friendly colours (no neon)</code></pre>
+
+            <p>For a more technical project, you might include build commands, file conventions, and protective rules:</p>
 
             <pre><code># Project: Digital Edition of the Leptis Magna Inscriptions
 
@@ -569,6 +582,23 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
                 <li>Document how to run, build, or deploy the project (a <code>README.md</code> is standard)</li>
                 <li>Note which parts were AI-generated and which were hand-written, if this matters for your context</li>
                 <li>If the project processes data, document the pipeline: what goes in, what transformations happen, what comes out</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-reproducibility">2.10 Reproducibility</h2>
+
+            <p>If your project processes research data, reproducibility matters &mdash; for your own future work, for collaborators, and for peer review. Claude Code makes it easy to build pipelines; these practices make those pipelines trustworthy:</p>
+
+            <ul>
+                <li><strong>Pin dependencies.</strong> If Claude installs Python packages, save the exact versions: <code>pip freeze &gt; requirements.txt</code>. For JavaScript projects, commit the <code>package-lock.json</code>. This ensures someone else (or you, next year) can recreate the same environment.</li>
+                <li><strong>Record the environment.</strong> Note the Python version, operating system, and key library versions. A <code>README.md</code> in your project root is the standard place for this.</li>
+                <li><strong>Write a data dictionary.</strong> For any transformed dataset, document what each column or field contains, how it was derived, and what assumptions were made. Claude can draft this for you: &ldquo;Write a data dictionary for metadata.csv explaining each column.&rdquo;</li>
+                <li><strong>Include test runs.</strong> Keep a small set of sample inputs with expected outputs. This lets you (or anyone) verify the pipeline produces correct results after changes. Claude can create these: &ldquo;Create a test directory with 5 sample inputs and their expected outputs.&rdquo;</li>
+                <li><strong>Document encoding assumptions.</strong> Specify character encoding (UTF-8 is standard), Unicode normalisation form if relevant, and how the pipeline handles non-Latin scripts, diacritics, and special characters.</li>
+                <li><strong>Keep scripts alongside data.</strong> Transformation scripts belong in the same version-controlled repository as the data they produce. The git history then documents exactly how the data was processed, when, and what changed.</li>
             </ul>
         </section>
 
