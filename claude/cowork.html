@@ -32,7 +32,7 @@
         </header>
 
         <div class="note">
-            <p><strong>Research preview:</strong> Cowork is currently in research preview and available only on macOS. Features, availability, and pricing may change. This section describes Cowork as it exists at the time of writing (early 2026).</p>
+            <p><strong>Research preview:</strong> Cowork is currently in research preview, available on macOS and Windows (x64). Features, availability, and pricing may change. This section describes Cowork as it exists at the time of writing (early 2026).</p>
         </div>
 
         <nav class="toc">
@@ -72,9 +72,9 @@
             <p>Cowork requires:</p>
 
             <ul>
-                <li>A Mac running macOS</li>
+                <li>macOS or Windows (x64)</li>
                 <li>The Claude desktop app (download from <a href="https://claude.ai/download" target="_blank">claude.ai/download</a>)</li>
-                <li>A Pro or Max subscription</li>
+                <li>A paid subscription (Pro, Max, Team, or Enterprise)</li>
             </ul>
 
             <p>Once installed, Cowork is available as a mode within the Claude desktop app. You will need to grant screen-reading and file-access permissions when prompted &mdash; these are standard macOS accessibility permissions that allow Claude to see what is on your screen and read files you point it to.</p>
@@ -147,7 +147,7 @@
             <h3>Don&rsquo;t:</h3>
             <ul>
                 <li><strong>Forget what is on your screen.</strong> Cowork sees everything visible. Close or minimise windows containing information you do not want processed.</li>
-                <li><strong>Use Cowork for tasks that need code execution.</strong> Cowork reads and writes files but does not run programs. Use <a href="code.html">Code</a> for that.</li>
+                <li><strong>Use Cowork for large-scale coding projects</strong> that need full version control and local tool integration. <a href="code.html">Code</a> gives you finer-grained control over builds, dependencies, and shell workflows.</li>
                 <li><strong>Treat file outputs as final without review.</strong> Cowork may save files to your system &mdash; check them before sharing or submitting.</li>
                 <li><strong>Rely on Cowork for tasks requiring precise citation.</strong> The same hallucination risks apply as with Chat &mdash; verify all references.</li>
             </ul>
@@ -207,7 +207,11 @@
                         <td>Cowork</td>
                     </tr>
                     <tr>
-                        <td>Build a tool, process data, write code</td>
+                        <td>Process data, run analysis scripts</td>
+                        <td>Cowork (for smaller tasks) or <a href="code.html">Code</a> (for larger pipelines)</td>
+                    </tr>
+                    <tr>
+                        <td>Build a tool, write code with version control</td>
                         <td><a href="code.html">Code</a></td>
                     </tr>
                     <tr>

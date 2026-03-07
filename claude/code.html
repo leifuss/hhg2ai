@@ -128,16 +128,13 @@
 
             <ol>
                 <li>
-                    <strong>Install Node.js</strong> (version 18 or later). If you do not already have it:
+                    <strong>Install Claude Code.</strong> The recommended method depends on your platform:
                     <ul>
-                        <li>macOS: <code>brew install node</code> (if you use Homebrew) or download from <a href="https://nodejs.org" target="_blank">nodejs.org</a></li>
-                        <li>Linux: use your distribution&rsquo;s package manager or download from nodejs.org</li>
-                        <li>Windows: install WSL (Windows Subsystem for Linux) first, then install Node.js within it</li>
+                        <li><strong>macOS / Linux (native installer, recommended):</strong> Download and run the installer from <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank">Anthropic&rsquo;s documentation</a>. No additional dependencies required.</li>
+                        <li><strong>Windows (native installer, recommended):</strong> Download the Windows installer. Requires <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>. Works in PowerShell or CMD. Node.js is not required.</li>
+                        <li><strong>Windows via WSL (alternative):</strong> Install WSL (Windows Subsystem for Linux), then use the Linux installer within it. This gives you a full Linux environment.</li>
+                        <li><strong>Via npm (legacy):</strong> If you already have Node.js 18+, you can still install via <code>npm install -g @anthropic-ai/claude-code</code>. This method works but the native installer is now preferred.</li>
                     </ul>
-                </li>
-                <li>
-                    <strong>Install Claude Code:</strong>
-                    <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
                 </li>
                 <li>
                     <strong>Authenticate.</strong> Run <code>claude</code> in your terminal. The first time, it will open a browser window for you to log in with your Anthropic account. If using an API key instead, set the environment variable: <code>export ANTHROPIC_API_KEY=your-key-here</code>
