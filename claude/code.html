@@ -13,9 +13,9 @@
             <span class="nav-sep">|</span>
             <a href="chat.html">Chat</a>
             <span class="nav-sep">|</span>
-            <a href="code.html" class="current">Code</a>
-            <span class="nav-sep">|</span>
             <a href="cowork.html">Cowork</a>
+            <span class="nav-sep">|</span>
+            <a href="code.html" class="current">Code</a>
             <span class="nav-sep">|</span>
             <a href="shared-principles.html">Shared Principles</a>
             <span class="nav-sep">|</span>
@@ -27,27 +27,27 @@
         </nav>
 
         <header>
-            <h1>Part 2: Claude Code</h1>
+            <h1>Part 3: Claude Code</h1>
             <p class="subtitle">Part of <a href="index.html">Claude Best Practice for Humanities Scholars</a></p>
         </header>
 
         <nav class="toc">
             <h2>Contents</h2>
             <ul>
-                <li><a href="#code-what">2.1 What it is and what it&rsquo;s for</a></li>
-                <li><a href="#code-where">2.2 Where it runs</a></li>
-                <li><a href="#code-setup">2.3 Setting up</a></li>
-                <li><a href="#code-commands">2.4 Commands and functionality</a></li>
-                <li><a href="#code-hooks">2.5 Hooks</a></li>
-                <li><a href="#code-mcp">2.6 MCP (Model Context Protocol)</a></li>
-                <li><a href="#code-dos-donts">2.7 Dos and don&rsquo;ts</a></li>
-                <li><a href="#code-practices">2.8 Best working practices</a></li>
-                <li><a href="#code-combining">2.9 Combining with other tools</a></li>
+                <li><a href="#code-what">3.1 What it is and what it&rsquo;s for</a></li>
+                <li><a href="#code-where">3.2 Where it runs</a></li>
+                <li><a href="#code-setup">3.3 Setting up</a></li>
+                <li><a href="#code-commands">3.4 Commands and functionality</a></li>
+                <li><a href="#code-hooks">3.5 Hooks</a></li>
+                <li><a href="#code-mcp">3.6 MCP (Model Context Protocol)</a></li>
+                <li><a href="#code-dos-donts">3.7 Dos and don&rsquo;ts</a></li>
+                <li><a href="#code-practices">3.8 Best working practices</a></li>
+                <li><a href="#code-combining">3.9 Combining with other tools</a></li>
             </ul>
         </nav>
 
         <section>
-            <h2 id="code-what">2.1 What it is and what it&rsquo;s for</h2>
+            <h2 id="code-what">3.1 What it is and what it&rsquo;s for</h2>
 
             <p>Claude Code is an agentic coding tool &mdash; Claude can read files, write files, run commands, search the web, and iterate on its own work. Unlike Chat, where you exchange messages and Claude responds with text, Code gives Claude the ability to <em>act</em>: it can create a project from scratch, modify existing files, run tests, fix errors, and push to version control.</p>
 
@@ -79,7 +79,7 @@
         <hr>
 
         <section>
-            <h2 id="code-where">2.2 Where it runs</h2>
+            <h2 id="code-where">3.2 Where it runs</h2>
 
             <p>Understanding where Claude Code runs matters because it determines what files Claude can access and what happens to your work.</p>
 
@@ -116,7 +116,7 @@
         <hr>
 
         <section>
-            <h2 id="code-setup">2.3 Setting up</h2>
+            <h2 id="code-setup">3.3 Setting up</h2>
 
             <h3>Claude Code on the web</h3>
 
@@ -209,7 +209,7 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
         <hr>
 
         <section>
-            <h2 id="code-commands">2.4 Commands and core functionality</h2>
+            <h2 id="code-commands">3.4 Commands and core functionality</h2>
 
             <h3>Starting a session</h3>
 
@@ -318,7 +318,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-hooks">2.5 Hooks</h2>
+            <h2 id="code-hooks">3.5 Hooks</h2>
 
             <div class="note">
                 <p><strong>Advanced topic.</strong> You do not need hooks to use Claude Code effectively. Skip this section on first reading and come back when you have a specific need.</p>
@@ -382,7 +382,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-mcp">2.6 MCP (Model Context Protocol)</h2>
+            <h2 id="code-mcp">3.6 MCP (Model Context Protocol)</h2>
 
             <div class="note">
                 <p><strong>Advanced topic.</strong> MCP is optional. Many excellent projects use Claude Code without any MCP servers. Skip this section on first reading and come back when you have a concrete need for Claude to access an external database, API, or service.</p>
@@ -482,7 +482,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-dos-donts">2.7 Dos and don&rsquo;ts</h2>
+            <h2 id="code-dos-donts">3.7 Dos and don&rsquo;ts</h2>
 
             <h3>Do:</h3>
             <ul>
@@ -511,7 +511,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-practices">2.8 Best working practices</h2>
+            <h2 id="code-practices">3.8 Best working practices</h2>
 
             <h3>The project setup pattern</h3>
 
@@ -588,7 +588,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-reproducibility">2.10 Reproducibility</h2>
+            <h2 id="code-reproducibility">3.10 Reproducibility</h2>
 
             <p>If your project processes research data, reproducibility matters &mdash; for your own future work, for collaborators, and for peer review. Claude Code makes it easy to build pipelines; these practices make those pipelines trustworthy:</p>
 
@@ -605,7 +605,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-combining">2.9 Combining with other tools</h2>
+            <h2 id="code-combining">3.9 Combining with other tools</h2>
 
             <h3>Code + Chat pipeline</h3>
 
@@ -652,8 +652,8 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         </section>
 
         <footer>
-            <p><a href="chat.html" class="nav-link">&larr; Part 1: Claude Chat</a></p>
-            <p><a href="cowork.html" class="nav-link">Part 3: Cowork &rarr;</a></p>
+            <p><a href="cowork.html" class="nav-link">&larr; Part 2: Cowork</a></p>
+            <p><a href="shared-principles.html" class="nav-link">Part 4: Shared Principles &rarr;</a></p>
         </footer>
     </div>
 </body>

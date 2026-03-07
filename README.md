@@ -9,9 +9,9 @@ Individual pages: [Briefing](https://leifuss.github.io/ai4hums/guide/briefing.ht
 
 ### [Claude Best Practice for Humanities Scholars](https://leifuss.github.io/ai4hums/claude/)
 
-A standalone guide to using Claude (Chat, Code, and Cowork) for humanities and social sciences research. Covers setup, best practices, data governance, skills, and worked examples. Collaboratively authored with an LLM (March 2026)
+A standalone guide to using Claude (Chat, Cowork, and Code) for humanities and social sciences research. Covers setup, best practices, data governance, skills, and worked examples. Collaboratively authored with an LLM (March 2026)
 
-Individual pages: [Chat](https://leifuss.github.io/ai4hums/claude/chat.html) · [Code](https://leifuss.github.io/ai4hums/claude/code.html) · [Cowork](https://leifuss.github.io/ai4hums/claude/cowork.html) · [Shared Principles](https://leifuss.github.io/ai4hums/claude/shared-principles.html) · [Environments](https://leifuss.github.io/ai4hums/claude/environments.html) · [Skills](https://leifuss.github.io/ai4hums/claude/skills.html) · [Workflows](https://leifuss.github.io/ai4hums/claude/workflows.html)
+Individual pages: [Chat](https://leifuss.github.io/ai4hums/claude/chat.html) · [Cowork](https://leifuss.github.io/ai4hums/claude/cowork.html) · [Code](https://leifuss.github.io/ai4hums/claude/code.html) · [Shared Principles](https://leifuss.github.io/ai4hums/claude/shared-principles.html) · [Environments](https://leifuss.github.io/ai4hums/claude/environments.html) · [Skills](https://leifuss.github.io/ai4hums/claude/skills.html) · [Workflows](https://leifuss.github.io/ai4hums/claude/workflows.html)
 
 ### [Claude AI Experiments](https://leifuss.github.io/ai4hums/experiments.html)
 
