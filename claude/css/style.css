@@ -652,6 +652,10 @@ details.collapsible .collapsible-body {
     margin-bottom: 0.5rem;
 }
 
+.flow-branch .flow-branch {
+    margin-top: 0.5rem;
+}
+
 /* Memory layers diagram */
 
 .memory-layers {
@@ -704,9 +708,9 @@ details.collapsible .collapsible-body {
 }
 
 .spectrum-bar {
-    height: 4px;
+    height: 8px;
     background: linear-gradient(to right, var(--accent-light), var(--accent));
-    border-radius: 2px;
+    border-radius: 4px;
     margin: 0 2rem;
 }
 
@@ -760,8 +764,16 @@ details.collapsible .collapsible-body {
     flex-shrink: 0;
 }
 
-.context-bar-fill {
+.context-bar-track {
+    flex: 1;
+    min-width: 0;
+    background: var(--border);
+    border-radius: 3px;
     height: 20px;
+}
+
+.context-bar-fill {
+    height: 100%;
     background: var(--accent);
     border-radius: 3px;
     opacity: 0.7;
@@ -796,9 +808,12 @@ details.collapsible .collapsible-body {
 
 abbr.glossary {
     text-decoration: underline dotted;
-    text-decoration-color: #888;
+    text-decoration-color: var(--accent);
     text-underline-offset: 3px;
     cursor: help;
+    font-weight: bold;
+    color: var(--accent);
+    font-style: normal;
 }
 
 /* Definition lists (glossary page) */

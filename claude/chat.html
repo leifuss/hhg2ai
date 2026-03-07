@@ -81,7 +81,7 @@
 
             <h3>Model selection</h3>
 
-            <p>Anthropic offers several models, and you can switch between them within a conversation. The names follow a musical metaphor. As of early 2026, the current generation is the Claude 4 family (e.g., Opus 4.6); model names and capabilities change over time, but the naming convention remains stable:</p>
+            <p>Anthropic offers several <abbr class="glossary" title="The underlying AI system that generates responses &mdash; different models offer different trade-offs between capability and speed">models</abbr>, and you can switch between them within a conversation. The names follow a musical metaphor. As of early 2026, the current generation is the Claude 4 family (e.g., Opus 4.6); model names and capabilities change over time, but the naming convention remains stable:</p>
 
             <ul>
                 <li><strong>Opus:</strong> The most capable model &mdash; best reasoning, most nuanced writing, highest quality analysis. Use it for your most demanding work: complex arguments, careful close reading, tasks where quality matters more than speed.</li>
@@ -113,7 +113,7 @@
             <p>Each conversation with Claude has its own context. Claude remembers everything said within a conversation but starts fresh in a new one (unless you use Projects &mdash; see below).</p>
 
             <div class="highlight">
-                <p><strong>One topic per conversation.</strong> Keeping conversations focused helps Claude maintain coherent context. If you shift topics within a single conversation, Claude may lose track of earlier constraints or priorities. Context windows are finite, topic drift wastes them, and fresh conversations are cheap &mdash; start a new one when you switch tasks. Think of conversations like focused working sessions, not an ongoing relationship.</p>
+                <p><strong>One topic per conversation.</strong> Keeping conversations focused helps Claude maintain coherent context. If you shift topics within a single conversation, Claude may lose track of earlier constraints or priorities. <abbr class="glossary" title="The total amount of text Claude can hold in working memory during a single conversation">Context windows</abbr> are finite, topic drift wastes them, and fresh conversations are cheap &mdash; start a new one when you switch tasks. Think of conversations like focused working sessions, not an ongoing relationship.</p>
             </div>
 
             <p>When to continue an existing conversation: when you are iterating on the same task &mdash; refining a draft, following up on an analysis, asking clarifying questions about the same material. When to start fresh: when you are switching tasks, topics, or source materials.</p>
@@ -138,7 +138,7 @@
 
             <h3 id="chat-artifacts">Artifacts</h3>
 
-            <p>Artifacts are standalone outputs that appear in a side panel next to your conversation. They are one of Claude&rsquo;s most distinctive features. An artifact can be:</p>
+            <p><abbr class="glossary" title="A standalone output (document, code, interactive page, diagram) displayed in a side panel next to your conversation">Artifacts</abbr> are standalone outputs that appear in a side panel next to your conversation. They are one of Claude&rsquo;s most distinctive features. An artifact can be:</p>
 
             <ul>
                 <li>A document (essay, report, structured text)</li>
@@ -158,7 +158,7 @@
 
             <ol>
                 <li><strong>A knowledge base:</strong> Upload PDFs, texts, spreadsheets, and other documents &mdash; up to around 500 pages of material. Claude can draw on this material in every conversation within the Project.</li>
-                <li><strong>Custom instructions:</strong> A system prompt that defines Claude&rsquo;s role, tone, rules, and focus for this Project. For example: &ldquo;You are assisting with a monograph on late-antique North Africa. Use formal academic English. When discussing primary sources, always cite by standard abbreviation. Flag any claims you are uncertain about.&rdquo;</li>
+                <li><strong>Custom instructions:</strong> A <abbr class="glossary" title="Hidden instructions that shape Claude&rsquo;s behaviour before a conversation begins">system prompt</abbr> that defines Claude&rsquo;s role, tone, rules, and focus for this Project. For example: &ldquo;You are assisting with a monograph on late-antique North Africa. Use formal academic English. When discussing primary sources, always cite by standard abbreviation. Flag any claims you are uncertain about.&rdquo;</li>
                 <li><strong>Shared context:</strong> Every conversation in the Project has access to the same knowledge base and instructions. This means you do not need to re-upload documents or re-explain your project each time. However, the specific content of one conversation is not automatically available in another &mdash; if a decision was made in conversation A, add it to the Project knowledge base or instructions so conversation B can see it.</li>
             </ol>
 
@@ -239,7 +239,7 @@
 
             <h3>Don&rsquo;t:</h3>
             <ul>
-                <li><strong>Trust citations without checking.</strong> Claude can fabricate references &mdash; plausible author names, plausible titles, plausible journals, entirely fictional. Always verify.</li>
+                <li><strong>Trust citations without checking.</strong> Claude can <abbr class="glossary" title="Hallucination &mdash; when an AI generates confident-sounding information that is factually wrong or entirely fabricated">fabricate</abbr> references &mdash; plausible author names, plausible titles, plausible journals, entirely fictional. Always verify.</li>
                 <li><strong>Upload sensitive, personal, or embargoed data</strong> without checking your institution&rsquo;s policy on third-party AI services.</li>
                 <li><strong>Assume one good answer means all answers are good.</strong> Quality varies between tasks, topics, and even between turns in the same conversation.</li>
                 <li><strong>Use Chat when you need file-system access or code execution.</strong> Use <a href="code.html">Code</a> instead.</li>
@@ -284,31 +284,31 @@
 
             <!-- Figure: Context window -->
             <div class="figure">
-                <p style="margin-bottom: 0.8rem; font-size: 0.9rem;"><strong>What fits in a 200K-token context window?</strong> Approximate humanities equivalents:</p>
+                <p style="margin-bottom: 0.8rem; font-size: 0.9rem;"><strong>What fits in a 200K-<abbr class="glossary" title="A unit of text processing, roughly three-quarters of an English word">token</abbr> context window?</strong> Approximate humanities equivalents:</p>
                 <div class="context-bars">
                     <div class="context-bar">
                         <span class="context-bar-label">Full monograph</span>
-                        <div class="context-bar-fill" style="width: 100%;"></div>
+                        <div class="context-bar-track"><div class="context-bar-fill" style="width: 100%;"></div></div>
                         <span class="context-bar-count">~1 book</span>
                     </div>
                     <div class="context-bar">
                         <span class="context-bar-label">Academic pages</span>
-                        <div class="context-bar-fill" style="width: 80%;"></div>
+                        <div class="context-bar-track"><div class="context-bar-fill" style="width: 80%;"></div></div>
                         <span class="context-bar-count">~500 pages</span>
                     </div>
                     <div class="context-bar">
                         <span class="context-bar-label">Journal articles (full)</span>
-                        <div class="context-bar-fill" style="width: 40%;"></div>
+                        <div class="context-bar-track"><div class="context-bar-fill" style="width: 40%;"></div></div>
                         <span class="context-bar-count">~50 articles</span>
                     </div>
                     <div class="context-bar">
                         <span class="context-bar-label">Abstracts only</span>
-                        <div class="context-bar-fill" style="width: 15%;"></div>
+                        <div class="context-bar-track"><div class="context-bar-fill" style="width: 15%;"></div></div>
                         <span class="context-bar-count">~300 abstracts</span>
                     </div>
                     <div class="context-bar">
                         <span class="context-bar-label">PhD thesis</span>
-                        <div class="context-bar-fill" style="width: 65%;"></div>
+                        <div class="context-bar-track"><div class="context-bar-fill" style="width: 65%;"></div></div>
                         <span class="context-bar-count">~1 thesis</span>
                     </div>
                 </div>
