@@ -104,6 +104,78 @@
 
             <p>Many tasks start in Chat. If you want Claude to work with your local files without learning the terminal, try Cowork. If you need to build tools, process data at scale, or want full version control, move to Code. There is no wrong door &mdash; the tools overlap, and you can move between them as your needs evolve.</p>
 
+            <!-- Figure: Tool spectrum -->
+            <div class="figure">
+                <div class="spectrum">
+                    <div class="spectrum-labels">
+                        <span>Conversational</span>
+                        <span>Agentic</span>
+                    </div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-items">
+                        <div class="spectrum-item">
+                            <strong>Chat</strong>
+                            You talk, Claude responds
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Projects</strong>
+                            Persistent knowledge base
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Cowork</strong>
+                            Claude works alongside you
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Code Desktop</strong>
+                            GUI for building things
+                        </div>
+                        <div class="spectrum-item">
+                            <strong>Code CLI</strong>
+                            Full terminal control
+                        </div>
+                    </div>
+                </div>
+                <p class="figure-caption">The Claude tool spectrum: from conversation to autonomous action.</p>
+            </div>
+
+            <!-- Figure: Decision flowchart -->
+            <div class="figure">
+                <div class="flowchart">
+                    <div class="flow-question">Do you need to work with local files?</div>
+                    <div class="flow-branch">
+                        <div>
+                            <div class="flow-label">No</div>
+                            <div class="flow-sub-question">Need a persistent knowledge base?</div>
+                            <div class="flow-branch">
+                                <div>
+                                    <div class="flow-label">No</div>
+                                    <div class="flow-answer"><strong><a href="chat.html">Chat</a></strong></div>
+                                </div>
+                                <div>
+                                    <div class="flow-label">Yes</div>
+                                    <div class="flow-answer"><strong><a href="chat.html#chat-projects">Chat + Projects</a></strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flow-label">Yes</div>
+                            <div class="flow-sub-question">Comfortable with a terminal?</div>
+                            <div class="flow-branch">
+                                <div>
+                                    <div class="flow-label">No</div>
+                                    <div class="flow-answer"><strong><a href="cowork.html">Cowork</a></strong> or <strong>Code Desktop</strong></div>
+                                </div>
+                                <div>
+                                    <div class="flow-label">Yes</div>
+                                    <div class="flow-answer"><strong><a href="code.html">Code CLI</a></strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="figure-caption">Which Claude tool do I use? A quick decision guide.</p>
+            </div>
+
             <h3 id="browser-desktop-mobile">Browser, desktop app, or mobile?</h3>
 
             <p><strong>Browser (claude.ai):</strong> Chat, Projects, file uploads, artifacts, web search, and Code (web). Works on any device. No installation needed. This is where most people should start.</p>
@@ -163,6 +235,89 @@
                     <li>Record what you asked and what you used from the response.</li>
                     <li>If it&rsquo;s useful, great. If not, nothing was lost.</li>
                 </ol>
+            </div>
+
+            <!-- Figure: Feature availability by plan -->
+            <div class="figure">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Free</th>
+                            <th>Pro</th>
+                            <th>Max</th>
+                            <th>Team</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chat</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Projects</td>
+                            <td>&#10003; (limited)</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>File uploads</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Opus model</td>
+                            <td>&mdash;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Cowork</td>
+                            <td>&mdash;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Code (web &amp; CLI)</td>
+                            <td>&mdash;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Memory</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Usage limits</td>
+                            <td>Lowest</td>
+                            <td>~5&times; free</td>
+                            <td>~5&times; Pro</td>
+                            <td>Per seat</td>
+                            <td>Custom</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="figure-caption">Feature availability by plan. Exact limits change; see <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic&rsquo;s pricing page</a> for current details. As of March 2026.</p>
             </div>
 
             <div class="highlight">

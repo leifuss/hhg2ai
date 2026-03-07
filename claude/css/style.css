@@ -578,6 +578,220 @@ details.collapsible .collapsible-body {
     }
 }
 
+/* Figures and diagrams */
+
+.figure {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.figure-caption {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Decision flowchart */
+
+.flowchart {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.flow-question {
+    background: var(--accent);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.flow-branch {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.flow-branch > div {
+    flex: 1;
+}
+
+.flow-label {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.flow-answer {
+    background: var(--bg-secondary);
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-light);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.flow-sub-question {
+    background: var(--accent);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Memory layers diagram */
+
+.memory-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.memory-layer {
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    position: relative;
+}
+
+.memory-layer:nth-child(1) {
+    background: rgba(61, 90, 128, 0.15);
+    border-left-color: var(--accent);
+}
+
+.memory-layer:nth-child(2) {
+    background: rgba(61, 90, 128, 0.10);
+    border-left-color: var(--accent-light);
+}
+
+.memory-layer:nth-child(3) {
+    background: rgba(61, 90, 128, 0.06);
+    border-left-color: #bdd4e7;
+}
+
+.memory-layer:nth-child(4) {
+    background: rgba(61, 90, 128, 0.03);
+    border-left-color: #dce8f1;
+}
+
+.memory-layer strong {
+    color: var(--accent);
+}
+
+.memory-layer p {
+    margin: 0.2rem 0 0 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Tool spectrum */
+
+.spectrum {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.spectrum-bar {
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-light), var(--accent));
+    border-radius: 2px;
+    margin: 0 2rem;
+}
+
+.spectrum-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0.3rem 0 1rem 0;
+    font-style: italic;
+}
+
+.spectrum-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.spectrum-item {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.spectrum-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+}
+
+/* Context window visualisation */
+
+.context-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.context-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.context-bar-label {
+    width: 160px;
+    text-align: right;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.context-bar-fill {
+    height: 20px;
+    background: var(--accent);
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+.context-bar-count {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .flow-branch {
+        flex-direction: column;
+    }
+
+    .spectrum-items {
+        flex-wrap: wrap;
+    }
+
+    .spectrum-item {
+        flex: 0 0 45%;
+    }
+
+    .context-bar-label {
+        width: 100px;
+        font-size: 0.75rem;
+    }
+}
+
 /* Glossary tooltips */
 
 abbr.glossary {
