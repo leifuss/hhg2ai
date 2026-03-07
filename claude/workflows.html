@@ -41,6 +41,8 @@
                 <li><a href="#workflow-web-tool">7.3 Building a web-based tool with Code</a></li>
                 <li><a href="#workflow-documents">7.4 Document preparation pipeline</a></li>
                 <li><a href="#workflow-data">7.5 Data cleaning and transformation</a></li>
+                <li><a href="#workflow-interviews">7.6 Interview and transcript analysis</a></li>
+                <li><a href="#workflow-bibliography">7.7 Bibliographic and administrative cleanup</a></li>
             </ul>
         </nav>
 
@@ -280,6 +282,72 @@ Source data in inscriptions.csv.
                 <li>Be explicit about your normalisation rules. &ldquo;Standardise the dates&rdquo; is ambiguous; &ldquo;Convert all dates to ISO 8601, using the first year of the range for approximate dates, and flag any date that cannot be parsed&rdquo; is actionable.</li>
                 <li>Keep the transformation scripts in version control. They are your documentation of exactly how the data was processed &mdash; essential for reproducibility and for explaining your methodology in publications.</li>
                 <li>Always preserve the original data files untouched. Work on copies. If a transformation goes wrong, you need to be able to start again from the originals.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="workflow-interviews">7.6 Interview and transcript analysis</h2>
+
+            <p><strong>Scenario:</strong> You have 25 oral history interview transcripts (Word documents) from a project on post-war migration. You want to identify recurring themes, code passages by topic, and produce a structured comparison across interviews.</p>
+
+            <h3>Working pattern</h3>
+
+            <p><strong>Step 1 &mdash; Project setup:</strong> Create a Chat Project called &ldquo;Migration Oral Histories.&rdquo; Upload the transcripts to the knowledge base. Write custom instructions specifying your research questions, the coding framework you want to use, and any ethical constraints (e.g., &ldquo;do not attempt to identify participants from contextual details&rdquo;).</p>
+
+            <p><strong>Step 2 &mdash; Initial coding:</strong> &ldquo;Read interviews 1&ndash;5. Identify the main themes that emerge, using my coding framework [your framework] as a starting point. Note any themes that appear in the data but aren&rsquo;t in my framework.&rdquo;</p>
+
+            <p>Claude produces a thematic analysis. Review it: Has it captured your categories accurately? Has it identified genuine emergent themes or just generated plausible-sounding ones? Your familiarity with the interviews is essential here.</p>
+
+            <p><strong>Step 3 &mdash; Systematic coding:</strong> &ldquo;For each interview, identify every passage that relates to [theme]. Quote the relevant passage and note the participant and approximate location in the transcript.&rdquo;</p>
+
+            <p>Claude produces a structured index. Spot-check: Did it miss relevant passages? Did it include passages that don&rsquo;t actually fit? Refine the coding instructions based on what you find.</p>
+
+            <p><strong>Step 4 &mdash; Cross-interview comparison:</strong> &ldquo;Compare how participants discuss [theme]. Are there patterns by generation, gender, or country of origin? Where do accounts converge and diverge?&rdquo;</p>
+
+            <p><strong>Step 5 &mdash; Export:</strong> &ldquo;Produce a summary table of themes by participant, with key quotes for each.&rdquo; Download the output for use in your analysis or publication.</p>
+
+            <h3>What to watch for</h3>
+
+            <ul>
+                <li>Claude may impose coherence on accounts that are actually fragmented, contradictory, or ambiguous. Oral history values those qualities &mdash; do not let AI analysis smooth them away.</li>
+                <li>Be cautious about Claude&rsquo;s interpretations of tone, emotion, or subtext. It reads words, not voices. Your notes from the original interviews are irreplaceable context.</li>
+                <li>If transcripts contain sensitive personal information, review your institution&rsquo;s data governance policy before uploading. Consider whether anonymised excerpts would serve your purpose.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="workflow-bibliography">7.7 Bibliographic and administrative cleanup</h2>
+
+            <p><strong>Scenario:</strong> You have a messy bibliography accumulated over years of research &mdash; some entries in Chicago style, some in Harvard, some incomplete, some duplicated. You need a clean, consistently formatted bibliography for a book manuscript, plus a reading list for a new module you are teaching.</p>
+
+            <h3>Working pattern</h3>
+
+            <p><strong>Step 1 &mdash; Assessment:</strong> Upload your bibliography file (BibTeX, Word, or plain text) to Chat. &ldquo;Analyse this bibliography. How many entries are there? What citation styles are used? Identify any duplicates, incomplete entries, or formatting inconsistencies.&rdquo;</p>
+
+            <p>Claude produces a report. Review its assessment &mdash; it will likely find more problems than you expected.</p>
+
+            <p><strong>Step 2 &mdash; Standardise:</strong> &ldquo;Convert all entries to Chicago 17th edition author-date format. Flag any entries where information is missing (no date, no publisher, no page range). Do not fabricate missing information &mdash; mark it as [missing].&rdquo;</p>
+
+            <p>Claude reformats the bibliography. <strong>Critical:</strong> check a sample of entries against the original sources or your reference manager. Claude may &ldquo;correct&rdquo; titles, author names, or dates incorrectly.</p>
+
+            <p><strong>Step 3 &mdash; Deduplicate:</strong> &ldquo;Identify entries that appear to be duplicates (same work cited in different formats or with slight variations). Show me the pairs for manual review.&rdquo;</p>
+
+            <p>You decide which duplicates to merge &mdash; Claude can identify candidates but may not distinguish between, say, a first edition and a revised edition that should both appear.</p>
+
+            <p><strong>Step 4 &mdash; Extract a reading list:</strong> &ldquo;From this bibliography, select the 30 most relevant items for an undergraduate module on [topic]. Organise them by week, with a one-sentence annotation for each explaining why it is on the list.&rdquo;</p>
+
+            <p>Review the selections and annotations. Claude&rsquo;s choices will reflect its training data, not necessarily your pedagogical priorities. Treat its list as a starting point to edit, not a finished syllabus.</p>
+
+            <h3>What to watch for</h3>
+
+            <ul>
+                <li>Never trust Claude&rsquo;s &ldquo;corrections&rdquo; to bibliographic entries without checking. It may silently change an author&rsquo;s initials, normalise a title, or assign a wrong date.</li>
+                <li>For the reading list, Claude may over-represent well-known Anglophone scholarship. Ensure your list reflects the breadth your module requires.</li>
+                <li>If you use Zotero or another reference manager, the cleanest workflow is: clean up with Claude, then import the corrected entries back into your reference manager. Do not abandon your reference manager &mdash; it remains the authoritative record.</li>
             </ul>
         </section>
 

@@ -128,16 +128,13 @@
 
             <ol>
                 <li>
-                    <strong>Install Node.js</strong> (version 18 or later). If you do not already have it:
+                    <strong>Install Claude Code.</strong> The recommended method depends on your platform:
                     <ul>
-                        <li>macOS: <code>brew install node</code> (if you use Homebrew) or download from <a href="https://nodejs.org" target="_blank">nodejs.org</a></li>
-                        <li>Linux: use your distribution&rsquo;s package manager or download from nodejs.org</li>
-                        <li>Windows: install WSL (Windows Subsystem for Linux) first, then install Node.js within it</li>
+                        <li><strong>macOS / Linux (native installer, recommended):</strong> Download and run the installer from <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank">Anthropic&rsquo;s documentation</a>. No additional dependencies required.</li>
+                        <li><strong>Windows (native installer, recommended):</strong> Download the Windows installer. Requires <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>. Works in PowerShell or CMD. Node.js is not required.</li>
+                        <li><strong>Windows via WSL (alternative):</strong> Install WSL (Windows Subsystem for Linux), then use the Linux installer within it. This gives you a full Linux environment.</li>
+                        <li><strong>Via npm (legacy):</strong> If you already have Node.js 18+, you can still install via <code>npm install -g @anthropic-ai/claude-code</code>. This method works but the native installer is now preferred.</li>
                     </ul>
-                </li>
-                <li>
-                    <strong>Install Claude Code:</strong>
-                    <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
                 </li>
                 <li>
                     <strong>Authenticate.</strong> Run <code>claude</code> in your terminal. The first time, it will open a browser window for you to log in with your Anthropic account. If using an API key instead, set the environment variable: <code>export ANTHROPIC_API_KEY=your-key-here</code>
@@ -155,7 +152,20 @@ claude</code></pre>
 
             <p>The most important configuration concept in Claude Code is the <code>CLAUDE.md</code> file. This is a plain text file you place in the root of your project directory. Claude reads it at the start of every session. It functions like the &ldquo;custom instructions&rdquo; in a Chat Project, but for Code.</p>
 
-            <p>A good <code>CLAUDE.md</code> for a humanities project might include:</p>
+            <p>A simple <code>CLAUDE.md</code> might be just a few lines:</p>
+
+            <pre><code># Project: Conference Paper Figures
+
+## Context
+Generating charts and maps for a conference paper on medieval
+trade networks. Source data in data/trade_routes.csv.
+
+## Conventions
+- Use British English
+- Output figures to figures/ directory
+- Use print-friendly colours (no neon)</code></pre>
+
+            <p>For a more technical project, you might include build commands, file conventions, and protective rules:</p>
 
             <pre><code># Project: Digital Edition of the Leptis Magna Inscriptions
 
@@ -279,7 +289,7 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
                 </tbody>
             </table>
 
-            <h3>Headless and non-interactive mode</h3>
+            <h3>Headless and non-interactive mode (advanced)</h3>
 
             <p>Claude Code can run without interactive input, which is useful for automation:</p>
 
@@ -309,6 +319,10 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
         <section>
             <h2 id="code-hooks">2.5 Hooks</h2>
+
+            <div class="note">
+                <p><strong>Advanced topic.</strong> You do not need hooks to use Claude Code effectively. Skip this section on first reading and come back when you have a specific need.</p>
+            </div>
 
             <p>Hooks are shell commands that run automatically in response to Claude Code events. They let you add guardrails, automation, and custom behaviour without modifying Claude itself.</p>
 
@@ -369,6 +383,10 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
         <section>
             <h2 id="code-mcp">2.6 MCP (Model Context Protocol)</h2>
+
+            <div class="note">
+                <p><strong>Advanced topic.</strong> MCP is optional. Many excellent projects use Claude Code without any MCP servers. Skip this section on first reading and come back when you have a concrete need for Claude to access an external database, API, or service.</p>
+            </div>
 
             <p>MCP is an open protocol that lets Claude connect to external data sources and tools. Think of it as a standardised way to give Claude access to things beyond its built-in capabilities &mdash; databases, file systems, APIs, specialised software.</p>
 
@@ -564,6 +582,23 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
                 <li>Document how to run, build, or deploy the project (a <code>README.md</code> is standard)</li>
                 <li>Note which parts were AI-generated and which were hand-written, if this matters for your context</li>
                 <li>If the project processes data, document the pipeline: what goes in, what transformations happen, what comes out</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-reproducibility">2.10 Reproducibility</h2>
+
+            <p>If your project processes research data, reproducibility matters &mdash; for your own future work, for collaborators, and for peer review. Claude Code makes it easy to build pipelines; these practices make those pipelines trustworthy:</p>
+
+            <ul>
+                <li><strong>Pin dependencies.</strong> If Claude installs Python packages, save the exact versions: <code>pip freeze &gt; requirements.txt</code>. For JavaScript projects, commit the <code>package-lock.json</code>. This ensures someone else (or you, next year) can recreate the same environment.</li>
+                <li><strong>Record the environment.</strong> Note the Python version, operating system, and key library versions. A <code>README.md</code> in your project root is the standard place for this.</li>
+                <li><strong>Write a data dictionary.</strong> For any transformed dataset, document what each column or field contains, how it was derived, and what assumptions were made. Claude can draft this for you: &ldquo;Write a data dictionary for metadata.csv explaining each column.&rdquo;</li>
+                <li><strong>Include test runs.</strong> Keep a small set of sample inputs with expected outputs. This lets you (or anyone) verify the pipeline produces correct results after changes. Claude can create these: &ldquo;Create a test directory with 5 sample inputs and their expected outputs.&rdquo;</li>
+                <li><strong>Document encoding assumptions.</strong> Specify character encoding (UTF-8 is standard), Unicode normalisation form if relevant, and how the pipeline handles non-Latin scripts, diacritics, and special characters.</li>
+                <li><strong>Keep scripts alongside data.</strong> Transformation scripts belong in the same version-controlled repository as the data they produce. The git history then documents exactly how the data was processed, when, and what changed.</li>
             </ul>
         </section>
 
