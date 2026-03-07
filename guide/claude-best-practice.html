@@ -1594,10 +1594,230 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
         <!-- ============================================================ -->
 
         <section id="workflows">
-            <h2>Part 7: Humanities-specific workflows</h2>
+            <h2>Part 7: Humanities-specific workflows &mdash; worked examples</h2>
 
-            <!-- Task 6 will replace this placeholder -->
-            <p><em>This section is under construction. It will provide worked examples of humanities research workflows using Claude.</em></p>
+            <p>This section walks through five realistic workflows, each showing how Claude&rsquo;s tools fit into a humanities research process. They are not step-by-step tutorials but worked examples that show what a productive session looks like, what to watch out for, and which tool to use at each stage.</p>
+
+            <h3 id="workflow-research">7.1 Building a research project in Chat</h3>
+
+            <p><strong>Scenario:</strong> You are writing a journal article on the reception of Herodotus in Renaissance Florence. You want Claude to help you explore the topic, organise your thinking, draft sections, and refine your argument.</p>
+
+            <h4>Setting up</h4>
+
+            <ol>
+                <li>Create a <strong>Project</strong> called &ldquo;Herodotus in Renaissance Florence.&rdquo;</li>
+                <li>Upload your key primary sources: relevant passages from Herodotus (in translation and Greek), excerpts from Renaissance commentaries you have already collected, and any secondary literature you want Claude to work with.</li>
+                <li>Write <strong>custom instructions</strong>:
+                    <pre><code>You are assisting with a journal article on the reception of
+Herodotus in Renaissance Florence (c. 1400–1530). The target
+journal is Renaissance Quarterly. Use formal academic English.
+Cite primary sources by standard abbreviations (e.g., Hdt. 1.1).
+When discussing Renaissance texts, give the Latin title and
+author on first mention. Flag any claims you are uncertain about.
+Do not fabricate references — if you are unsure of a citation,
+say so explicitly.</code></pre>
+                </li>
+            </ol>
+
+            <h4>Working pattern</h4>
+
+            <p><strong>Conversation 1 &mdash; Exploration:</strong> &ldquo;What are the main channels through which Herodotus&rsquo;s text reached Florentine humanists in the fifteenth century? I&rsquo;m particularly interested in manuscript transmission and the role of Greek &eacute;migr&eacute;s.&rdquo;</p>
+
+            <p>Claude will draw on its training data to discuss Lorenzo Valla&rsquo;s Latin translation, the role of figures like Manuel Chrysoloras, and the manuscript traditions. <strong>Verify everything it says</strong> &mdash; check names, dates, and claims against your own knowledge and trusted references like the Oxford History of Classical Reception.</p>
+
+            <p><strong>Conversation 2 &mdash; Structure:</strong> &ldquo;Based on our previous discussion and the sources I&rsquo;ve uploaded, suggest a structure for a 10,000-word article. I want to argue that Florentine engagement with Herodotus was shaped more by political analogy than by historical method.&rdquo;</p>
+
+            <p><strong>Conversation 3 &mdash; Drafting:</strong> &ldquo;Draft the introduction (800 words). Open with the specific moment when [your chosen anecdote]. Establish the historiographical gap. State the thesis clearly in the final paragraph.&rdquo;</p>
+
+            <p><strong>Conversation 4 &mdash; Critique:</strong> Upload your own draft of a later section. &ldquo;Read this and identify: (a) where my argument is weakest, (b) where I need more evidence, (c) any anachronistic framing.&rdquo;</p>
+
+            <h4>What to watch for</h4>
+
+            <ul>
+                <li>Claude may confidently describe manuscripts or translations that do not exist in the form it claims. Always cross-check.</li>
+                <li>It may smooth over genuine scholarly disagreements. Ask explicitly: &ldquo;Is this contested?&rdquo;</li>
+                <li>Claude&rsquo;s drafts will be competent but may lack your distinctive scholarly voice. Use them as starting points, not final text.</li>
+            </ul>
+
+            <h3 id="workflow-corpus">7.2 Processing a text corpus with Code</h3>
+
+            <p><strong>Scenario:</strong> You have 300 OCR-scanned letters (plain text files) from a 19th-century colonial archive. The OCR quality is variable. You want to clean them, extract structured metadata (date, sender, recipient, location), and produce a searchable CSV catalogue.</p>
+
+            <h4>Setting up</h4>
+
+            <ol>
+                <li>Put all 300 text files in a directory: <code>corpus/raw/</code></li>
+                <li>Create a <code>CLAUDE.md</code>:
+                    <pre><code># Project: Colonial Correspondence Corpus
+
+## Context
+300 OCR-scanned letters from the National Archives, 1850–1890.
+Variable OCR quality. Goal: clean text, extract metadata, produce
+a searchable catalogue.
+
+## Conventions
+- Output cleaned text to corpus/clean/
+- Output metadata to corpus/metadata.csv
+- CSV columns: filename, date, sender, recipient, location,
+  subject_summary, word_count, ocr_quality_score
+- Dates in ISO 8601 format (YYYY-MM-DD)
+- Use British English in all generated text
+- Preserve original spelling in letter text
+
+## Important
+- Never modify files in corpus/raw/ — these are the originals
+- Flag any letters where OCR quality makes metadata extraction
+  unreliable (ocr_quality_score &lt; 3 on a 1–5 scale)</code></pre>
+                </li>
+                <li>Initialise git: <code>git init &amp;&amp; git add -A &amp;&amp; git commit -m &quot;initial corpus&quot;</code></li>
+            </ol>
+
+            <h4>Working pattern</h4>
+
+            <p><strong>Step 1 &mdash; Sample:</strong> &ldquo;Read 5 representative files from corpus/raw/ and assess the OCR quality. Show me examples of common OCR errors you find.&rdquo;</p>
+
+            <p>Claude will identify patterns: misread characters (&lsquo;rn&rsquo; &rarr; &lsquo;m&rsquo;, &lsquo;cl&rsquo; &rarr; &lsquo;d&rsquo;), broken line breaks, headers misread as body text. Review these &mdash; your knowledge of the handwriting and conventions will help you judge whether Claude&rsquo;s corrections are right.</p>
+
+            <p><strong>Step 2 &mdash; Build the pipeline:</strong> &ldquo;Write a Python script that cleans OCR text based on the patterns we identified. Process one file first so I can check the output.&rdquo;</p>
+
+            <p>Claude writes the script, runs it on one file, shows you the before and after. You review, suggest adjustments. Commit when satisfied.</p>
+
+            <p><strong>Step 3 &mdash; Extract metadata:</strong> &ldquo;Now add metadata extraction. Parse the date, sender, and recipient from the letter headers. Show me the results for the first 10 files before processing the whole corpus.&rdquo;</p>
+
+            <p>Claude adds metadata extraction to the script, runs it on a sample. You check: Are the dates parsed correctly? Are sender/recipient names right? Commit.</p>
+
+            <p><strong>Step 4 &mdash; Batch process:</strong> &ldquo;Process all 300 files. Generate the metadata CSV. Flag any files where extraction was uncertain.&rdquo;</p>
+
+            <p>Claude processes the full corpus, generates the CSV, and reports which files had problems. You review the flagged files manually.</p>
+
+            <h4>What to watch for</h4>
+
+            <ul>
+                <li>Spot-check results across the corpus, not just the first few files. OCR errors vary.</li>
+                <li>Claude may &ldquo;correct&rdquo; OCR errors that are actually correct readings of unusual spellings or obsolete terms. Your domain knowledge is essential.</li>
+                <li>Commit after each milestone so you can revert if a batch operation goes wrong.</li>
+            </ul>
+
+            <h3 id="workflow-web-tool">7.3 Building a web-based tool with Code</h3>
+
+            <p><strong>Scenario:</strong> You teach a module on Roman provincial epigraphy and want to create an interactive tool where students can search, filter, and explore a set of 200 inscriptions. The data exists in a spreadsheet.</p>
+
+            <h4>Setting up</h4>
+
+            <ol>
+                <li>Export your spreadsheet as <code>inscriptions.csv</code></li>
+                <li>Create a project directory with a <code>CLAUDE.md</code>:
+                    <pre><code># Project: Epigraphy Teaching Tool
+
+## Context
+Interactive web tool for teaching Roman provincial epigraphy.
+200 inscriptions from North Africa (IRT and ILAlg corpora).
+Source data in inscriptions.csv.
+
+## Requirements
+- Static HTML/CSS/JS — no server, no framework, no build step
+- Must work offline (students may have limited connectivity)
+- Accessible design (WCAG 2.1 AA)
+- Mobile-responsive
+- No external dependencies (no CDN links)
+
+## Conventions
+- British English throughout
+- Cite inscriptions by corpus abbreviation and number
+- Use Unicode for Greek and Latin text with diacritics</code></pre>
+                </li>
+            </ol>
+
+            <h4>Working pattern</h4>
+
+            <p><strong>Step 1 &mdash; Minimal version:</strong> &ldquo;Create a single HTML page that loads inscriptions.csv and displays them in a table. Just the basic structure &mdash; no styling yet.&rdquo;</p>
+
+            <p>Claude creates the HTML, embeds the CSV data as JSON (so it works offline), and builds a basic table. Open it in your browser, check that the data displays correctly. Commit.</p>
+
+            <p><strong>Step 2 &mdash; Search and filter:</strong> &ldquo;Add a search box that filters inscriptions by any column. Add dropdown filters for date range and findspot.&rdquo;</p>
+
+            <p>Claude adds JavaScript for filtering. Test in browser. Commit.</p>
+
+            <p><strong>Step 3 &mdash; Design:</strong> &ldquo;Style the page for readability. Use a clean, academic design. Make the Latin text display in a serif font. Ensure it works well on mobile.&rdquo;</p>
+
+            <p>Claude adds CSS. Test on different screen sizes (your browser&rsquo;s developer tools can simulate mobile). Commit.</p>
+
+            <p><strong>Step 4 &mdash; Detail view:</strong> &ldquo;When a student clicks an inscription, show a detail panel with the full text, translation, commentary, and an image placeholder. Include a link to the EDH/EDCS entry if available.&rdquo;</p>
+
+            <p>Claude adds the detail view. Test with several inscriptions. Commit.</p>
+
+            <p><strong>Step 5 &mdash; Deploy:</strong> Push to a GitHub repository and enable GitHub Pages. The tool is now live at a URL you can share with students. No server costs, no maintenance &mdash; it is a static site.</p>
+
+            <h4>What to watch for</h4>
+
+            <ul>
+                <li>Test with real data early. Synthetic test data may not surface encoding issues, unusual characters, or edge cases in your actual inscriptions.</li>
+                <li>Check accessibility: can you navigate with keyboard only? Does the colour contrast meet WCAG standards? Claude can run accessibility checks for you.</li>
+                <li>The finished tool is plain HTML/CSS/JS &mdash; no AI dependency. Students interact with a conventional web page. You can maintain it without Claude if needed.</li>
+            </ul>
+
+            <h3 id="workflow-documents">7.4 Document preparation pipeline</h3>
+
+            <p><strong>Scenario:</strong> You are preparing a book manuscript. The publisher requires camera-ready copy in a specific LaTeX template. Your draft is in Word. You have 50 figures, a bibliography in Zotero, and an index to compile.</p>
+
+            <h4>Working pattern</h4>
+
+            <p><strong>Step 1 &mdash; Convert:</strong> &ldquo;Convert manuscript.docx to LaTeX using pandoc. Use the publisher&rsquo;s template (template.tex). Preserve all footnotes and cross-references.&rdquo;</p>
+
+            <p>Claude runs pandoc with the right options, then fixes the inevitable conversion artefacts &mdash; broken footnotes, mangled special characters, formatting that did not survive the conversion.</p>
+
+            <p><strong>Step 2 &mdash; Bibliography:</strong> &ldquo;Export my Zotero collection to BibTeX. Integrate it with the LaTeX document. Use author-date citation style (Chicago 17th).&rdquo;</p>
+
+            <p>You export the BibTeX file from Zotero manually (Claude cannot access Zotero directly unless you set up an MCP server). Claude integrates it with the LaTeX document and configures biblatex.</p>
+
+            <p><strong>Step 3 &mdash; Figures:</strong> &ldquo;Process all figures in figures/ to meet the publisher&rsquo;s requirements: 300 DPI minimum, TIFF format, maximum 15 cm wide. Insert them at the correct points in the LaTeX document.&rdquo;</p>
+
+            <p>Claude uses ImageMagick to batch-convert and resize the figures, then inserts <code>\includegraphics</code> commands at the right places.</p>
+
+            <p><strong>Step 4 &mdash; Index:</strong> &ldquo;Generate an index. The key terms are: [your list]. Also index all personal names and place names mentioned in the text.&rdquo;</p>
+
+            <p>Claude adds <code>\index{}</code> commands throughout the document. You review the index entries &mdash; automated indexing always needs human review for nuance and consistency.</p>
+
+            <p><strong>Step 5 &mdash; Compile and review:</strong> Claude compiles the LaTeX document, identifies and fixes compilation errors, and produces the final PDF. You review the PDF against the publisher&rsquo;s checklist.</p>
+
+            <h4>What to watch for</h4>
+
+            <ul>
+                <li>LaTeX conversion from Word is never perfect. Budget time for manual fixes, especially for complex formatting, tables, and mathematical notation.</li>
+                <li>Check the bibliography carefully &mdash; BibTeX export from Zotero can have encoding issues, especially with non-Latin characters.</li>
+                <li>The index will need manual curation. Claude can generate a first pass, but scholarly indexing requires judgement about what to include, what to cross-reference, and how to handle variant names.</li>
+            </ul>
+
+            <h3 id="workflow-data">7.5 Data cleaning and transformation</h3>
+
+            <p><strong>Scenario:</strong> You are combining data from three different sources for a prosopographical database: a published catalogue (PDF), an institutional database (CSV export), and your own fieldwork notes (spreadsheet). The three sources use different date formats, different name conventions, and different classification schemes.</p>
+
+            <h4>Working pattern</h4>
+
+            <p><strong>Step 1 &mdash; Assess:</strong> &ldquo;Read samples from each of these three data files. Describe the format, structure, and conventions used in each. Identify the inconsistencies I&rsquo;ll need to resolve to merge them.&rdquo;</p>
+
+            <p>Claude analyses the three sources and produces a report: Source A uses &ldquo;3rd century CE&rdquo;, Source B uses &ldquo;201&ndash;300 AD&rdquo;, Source C uses &ldquo;III sec. d.C.&rdquo; for the same date range. Names are &ldquo;Marcus Aurelius&rdquo; in A, &ldquo;AVRELIVS, M.&rdquo; in B, and &ldquo;M. Aurelius&rdquo; in C. And so on.</p>
+
+            <p><strong>Step 2 &mdash; Define the target schema:</strong> Working with Claude in Chat (or in the same Code session), decide on a unified schema: what columns, what format for dates, what conventions for names, what classification categories.</p>
+
+            <p><strong>Step 3 &mdash; Build transformers:</strong> &ldquo;Write a Python script that transforms each source file into the target schema. Process one source at a time. Show me the first 10 rows of each transformation before proceeding.&rdquo;</p>
+
+            <p>Claude writes transformation scripts for each source. You review the sample outputs: Are the date conversions correct? Are the name normalisation rules working? Are there edge cases the script mishandles?</p>
+
+            <p><strong>Step 4 &mdash; Merge and deduplicate:</strong> &ldquo;Merge the three transformed files. Identify potential duplicates &mdash; records that likely refer to the same person across sources. Show me the candidate duplicates for manual review.&rdquo;</p>
+
+            <p>Claude merges the data and flags potential duplicates based on name similarity, date range overlap, and location. You review the candidates and make the final decisions &mdash; prosopographical identification requires domain expertise that Claude cannot provide.</p>
+
+            <p><strong>Step 5 &mdash; Validate and export:</strong> &ldquo;Validate the merged dataset: check for missing required fields, impossible date ranges, duplicate IDs. Export as both CSV and a SQLite database.&rdquo;</p>
+
+            <h4>What to watch for</h4>
+
+            <ul>
+                <li>Data merging is where domain expertise matters most. Claude can identify <em>possible</em> matches, but confirming whether two records refer to the same historical person requires scholarly judgement.</li>
+                <li>Be explicit about your normalisation rules. &ldquo;Standardise the dates&rdquo; is ambiguous; &ldquo;Convert all dates to ISO 8601, using the first year of the range for approximate dates, and flag any date that cannot be parsed&rdquo; is actionable.</li>
+                <li>Keep the transformation scripts in version control. They are your documentation of exactly how the data was processed &mdash; essential for reproducibility and for explaining your methodology in publications.</li>
+                <li>Always preserve the original data files untouched. Work on copies. If a transformation goes wrong, you need to be able to start again from the originals.</li>
+            </ul>
         </section>
 
         <footer>
