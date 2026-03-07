@@ -276,7 +276,7 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
                 </tbody>
             </table>
 
-            <h3>Headless and non-interactive mode</h3>
+            <h3>Headless and non-interactive mode (advanced)</h3>
 
             <p>Claude Code can run without interactive input, which is useful for automation:</p>
 
@@ -306,6 +306,10 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
         <section>
             <h2 id="code-hooks">2.5 Hooks</h2>
+
+            <div class="note">
+                <p><strong>Advanced topic.</strong> You do not need hooks to use Claude Code effectively. Skip this section on first reading and come back when you have a specific need.</p>
+            </div>
 
             <p>Hooks are shell commands that run automatically in response to Claude Code events. They let you add guardrails, automation, and custom behaviour without modifying Claude itself.</p>
 
@@ -366,6 +370,10 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
         <section>
             <h2 id="code-mcp">2.6 MCP (Model Context Protocol)</h2>
+
+            <div class="note">
+                <p><strong>Advanced topic.</strong> MCP is optional. Many excellent projects use Claude Code without any MCP servers. Skip this section on first reading and come back when you have a concrete need for Claude to access an external database, API, or service.</p>
+            </div>
 
             <p>MCP is an open protocol that lets Claude connect to external data sources and tools. Think of it as a standardised way to give Claude access to things beyond its built-in capabilities &mdash; databases, file systems, APIs, specialised software.</p>
 

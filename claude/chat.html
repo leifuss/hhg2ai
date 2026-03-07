@@ -174,17 +174,22 @@
 
             <p>Projects are available on all plans including free, with usage limits. A paid subscription (Pro or higher) increases capacity.</p>
 
-            <h3 id="chat-memory">Memory</h3>
+            <h3 id="chat-memory">How Claude remembers</h3>
 
-            <p>Claude&rsquo;s memory works differently depending on context:</p>
+            <p>Claude has four distinct kinds of memory. Understanding the difference helps you choose the right one for your work:</p>
 
-            <ul>
-                <li><strong>Within a conversation:</strong> Claude remembers everything said so far. This is automatic and reliable, up to the context window limit.</li>
-                <li><strong>Within a Project:</strong> Claude has access to the Project&rsquo;s knowledge base and instructions in every conversation, and retains memory across conversations within that Project.</li>
-                <li><strong>Between separate conversations (outside Projects):</strong> Claude has a general memory feature that can recall facts and preferences you have shared in previous conversations. This is less reliable than Project memory &mdash; think of it as a general impression rather than a precise record.</li>
-            </ul>
+            <ol>
+                <li><strong>Chat context.</strong> Within a single conversation, Claude remembers everything said so far. This is automatic and reliable, bounded only by the context window (a limit on how much text Claude can hold at once).</li>
+                <li><strong>Project context.</strong> Uploaded documents and custom instructions that are shared across all conversations in a Project. This is not automatic memory &mdash; you curate what goes in. It is the most reliable way to give Claude persistent context for a sustained piece of work.</li>
+                <li><strong>Memory from chat history.</strong> Claude builds a profile of your preferences and facts from past conversations. This is available on all tiers including free. Think of it as Claude recognising you and your working habits, not as a precise record of your arguments. Useful for general preferences (citation style, disciplinary context); not a substitute for Project context.</li>
+                <li><strong>Past chat search.</strong> Claude can search your previous conversations by keyword. Useful for finding what you discussed previously, but does not give Claude automatic continuity between conversations.</li>
+            </ol>
 
-            <p>For any sustained piece of work, use a Project rather than relying on Claude&rsquo;s general memory across separate conversations.</p>
+            <p>For any sustained piece of work, use a Project rather than relying on general memory or chat search.</p>
+
+            <div class="note">
+                <p><strong>Note:</strong> These features are changing rapidly. Check <a href="https://docs.anthropic.com" target="_blank">Anthropic&rsquo;s documentation</a> for the current state. Section last verified: March 2026.</p>
+            </div>
 
             <h3 id="chat-integrations">Integrations</h3>
 
