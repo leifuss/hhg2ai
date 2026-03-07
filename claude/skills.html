@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills You May Need &mdash; Claude Best Practice for Humanities Scholars</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="index.html">Overview</a>
+            <span class="nav-sep">|</span>
+            <a href="chat.html">Chat</a>
+            <span class="nav-sep">|</span>
+            <a href="code.html">Code</a>
+            <span class="nav-sep">|</span>
+            <a href="cowork.html">Cowork</a>
+            <span class="nav-sep">|</span>
+            <a href="shared-principles.html">Shared Principles</a>
+            <span class="nav-sep">|</span>
+            <a href="environments.html">Environments</a>
+            <span class="nav-sep">|</span>
+            <a href="skills.html" class="current">Skills</a>
+            <span class="nav-sep">|</span>
+            <a href="workflows.html">Workflows</a>
+        </nav>
+
+        <header>
+            <h1>Part 6: Skills You May Need</h1>
+            <p class="subtitle">Part of <a href="index.html">Claude Best Practice for Humanities Scholars</a></p>
+        </header>
+
+        <p>Claude Code reduces the barrier to technical work, but it does not eliminate it entirely. You do not need to become a software engineer, but some foundational knowledge makes the difference between productive use and frustration. This section lists the skills roughly in order of priority.</p>
+
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#essential">Essential skills</a></li>
+                <li><a href="#very-useful">Very useful skills</a></li>
+                <li><a href="#helpful">Helpful skills</a></li>
+                <li><a href="#key-insight">The key insight</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2 id="essential">Essential: skills you need before starting with Claude Code CLI</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>What it means</th>
+                        <th>How much you need</th>
+                        <th>How to learn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Terminal basics</strong></td>
+                        <td>Navigating directories, running commands, reading output</td>
+                        <td>Know <code>cd</code>, <code>ls</code>, <code>pwd</code>, <code>mkdir</code>, and how to run a command. You do not need to be fluent &mdash; Claude will write the complex commands for you.</td>
+                        <td>Any &ldquo;command line for beginners&rdquo; tutorial (30&ndash;60 minutes). The Programming Historian has good introductions for humanities scholars.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Git basics</strong></td>
+                        <td>Version control &mdash; tracking changes to files over time</td>
+                        <td>Know <code>git init</code>, <code>git add</code>, <code>git commit</code>, <code>git status</code>, <code>git log</code>, and <code>git checkout</code> (to revert). Understand what a commit is and why it matters.</td>
+                        <td>GitHub&rsquo;s &ldquo;Git Handbook&rdquo; or the Software Carpentry git lesson (2&ndash;3 hours).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plain text files</strong></td>
+                        <td>Understanding that code, data, and configuration are just text files with specific formats</td>
+                        <td>Know the difference between a .txt, .csv, .html, .py, and .json file. Understand that you can open any of them in a text editor.</td>
+                        <td>Comes naturally with terminal and git practice. Use a proper text editor (VS Code is free and widely used).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight">
+                <p><strong>If you use only Claude Code on the web</strong>, you can skip terminal and git entirely. The web interface handles file management through its GUI. These skills become essential only for the CLI version.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="very-useful">Very useful: skills that significantly improve your experience</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>What it means</th>
+                        <th>How much you need</th>
+                        <th>How to learn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Reading code</strong></td>
+                        <td>Understanding what a piece of Python, JavaScript, or HTML does at a high level</td>
+                        <td>You do not need to <em>write</em> code, but being able to read Claude&rsquo;s output and understand its structure helps enormously. Can you look at an HTML file and see where the headings, paragraphs, and links are? Can you read a Python script and follow the logic, even if you could not write it yourself?</td>
+                        <td>Comes with practice. Ask Claude to explain any code it writes: &ldquo;Explain this script to me line by line.&rdquo;</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HTML/CSS basics</strong></td>
+                        <td>The languages of web pages &mdash; structure (HTML) and appearance (CSS)</td>
+                        <td>Knowing what a <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;table&gt;</code>, and <code>&lt;a&gt;</code> tag do lets you direct Claude much more precisely when building web-based tools. &ldquo;Put the search box in a <code>&lt;header&gt;</code> element&rdquo; is much more effective than &ldquo;put the search box at the top.&rdquo;</td>
+                        <td>MDN Web Docs &ldquo;Getting started with HTML&rdquo; (1&ndash;2 hours for the basics).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>File formats</strong></td>
+                        <td>Understanding CSV, JSON, XML/TEI, and how structured data works</td>
+                        <td>Know what these formats look like, when each is appropriate, and how to open them. If you work with TEI-encoded texts, understanding the XML structure helps you direct Claude&rsquo;s transformations.</td>
+                        <td>Depends on your field. The TEI Guidelines are the reference for XML/TEI. For CSV and JSON, any data science introduction covers these.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GitHub</strong></td>
+                        <td>The platform for hosting git repositories, collaborating, and sharing code</td>
+                        <td>Know how to create a repository, push to it, and navigate the web interface. Useful for backing up projects, collaborating, and deploying web-based tools via GitHub Pages.</td>
+                        <td>GitHub&rsquo;s own tutorials. Start by putting one project on GitHub; the rest follows.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="helpful">Helpful: skills that open up advanced workflows</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>What it means</th>
+                        <th>When you need it</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Python basics</strong></td>
+                        <td>The most common scripting language for data processing and academic computing</td>
+                        <td>When you want to understand or customise the scripts Claude writes, or when you want to build more complex data pipelines. Even a little Python knowledge helps you review Claude&rsquo;s work.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regular expressions</strong></td>
+                        <td>Patterns for finding and replacing text &mdash; far more powerful than simple find-and-replace</td>
+                        <td>When you work with text processing at scale. Claude writes regex for you, but understanding the basics helps you verify its patterns and describe what you want.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SQL</strong></td>
+                        <td>The language for querying databases</td>
+                        <td>When you work with structured data in databases (prosopography, epigraphy, archaeological finds). Claude can write SQL, but knowing the basics helps you formulate questions and check results.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XSLT / XPath</strong></td>
+                        <td>Languages for transforming and querying XML documents</td>
+                        <td>When you work extensively with TEI/XML. Claude can write XSLT transformations, but knowing the concepts helps you specify what you want.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LaTeX</strong></td>
+                        <td>A typesetting system widely used in academia</td>
+                        <td>When you want Claude to help with document preparation, especially for publications with complex formatting, mathematical notation, or critical apparatus.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="key-insight">The key insight</h2>
+
+            <p>Claude Code shifts the balance from <em>writing</em> code to <em>reading and directing</em> it. You do not need to memorise syntax or write programs from scratch. But you do need enough understanding to:</p>
+
+            <ul>
+                <li><strong>Describe what you want</strong> in terms Claude can act on</li>
+                <li><strong>Read what Claude produces</strong> well enough to spot obvious problems</li>
+                <li><strong>Understand error messages</strong> well enough to describe them, even if you cannot fix them yourself</li>
+                <li><strong>Make informed decisions</strong> when Claude offers alternatives (&ldquo;Shall I use SQLite or JSON for the data store?&rdquo;)</li>
+            </ul>
+
+            <p>This is a lower bar than traditional programming, but it is not zero. Investing a few hours in the &ldquo;essential&rdquo; skills above will make your experience with Claude Code dramatically more productive. And Claude itself is an excellent teacher &mdash; you can ask it to explain anything it does, in as much or as little detail as you want.</p>
+        </section>
+
+        <footer>
+            <p><a href="environments.html" class="nav-link">&larr; Part 5: Environments</a></p>
+            <p><a href="workflows.html" class="nav-link">Part 7: Worked Examples &rarr;</a></p>
+        </footer>
+    </div>
+</body>
+</html>
