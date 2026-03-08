@@ -1,0 +1,122 @@
+site_name: "A Hitchhiker's Guide to AI for the Humanities"
+site_url: https://leifuss.github.io/hhg2ai/
+site_description: >-
+  A practical, independent guide for humanities scholars navigating artificial
+  intelligence. Written by a working academic. No hype, no hard sell, no assumed expertise.
+site_author: Leif Isaksen
+repo_url: https://github.com/leifuss/hhg2ai
+repo_name: leifuss/hhg2ai
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Source Serif 4
+    code: JetBrains Mono
+  palette:
+    - scheme: hhg
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - The Primer:
+    - guide/index.md
+    - Briefing: guide/briefing.md
+    - Getting Started: guide/getting-started.md
+    - Mindset: guide/mindset.md
+    - Use Cases: guide/use-cases.md
+    - FAQ: guide/faq.md
+    - Field Guides:
+      - Ancient Languages: guide/ancient-languages.md
+      - Agentic AI: guide/agentic.md
+  - Essentials:
+    - essentials/index.md
+    - Verification & Citation: essentials/verification.md
+    - Data Governance: essentials/data-governance.md
+    - Prompting Principles: essentials/prompting.md
+    - Disclosure & Ethics: essentials/disclosure.md
+    - Multi-Model Strategy: essentials/multi-model.md
+    - Decision Sheet: essentials/decision-sheet.md
+    - Cost & Plans: essentials/cost.md
+  - Claude:
+    - claude/index.md
+    - Chat: claude/chat.md
+    - Cowork: claude/cowork.md
+    - Apps & Extensions: claude/apps.md
+    - Code: claude/code.md
+    - Environments: claude/environments.md
+    - Prerequisites: claude/prerequisites.md
+    - Worked Examples: claude/workflows.md
+    - Glossary: claude/glossary.md
+  - Bootcamp:
+    - bootcamp/index.md
+  - Resources: resources/index.md
+  - About: about/index.md
+  - Glossary: glossary/index.md
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/leifuss/hhg2ai
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+  - redirects:
+      redirect_maps:
+        'claude/shared-principles.md': 'essentials/index.md'
+        'guide/rules.md': 'essentials/verification.md'
+
+copyright: >-
+  Leif Isaksen · University of Exeter · 2026 ·
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
