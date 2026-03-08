@@ -18,7 +18,7 @@ Part of [A Hitchhiker's Guide to AI for the Humanities](../index.md)
 - [4.6 MCP (Model Context Protocol)](#mcp-model-context-protocol)
 - [4.7 Dos and don'ts](#dos-and-donts)
 - [4.8 Best working practices](#best-working-practices)
-    - [The explore--plan--execute pattern](#the-exploreplanexecute-pattern)
+    - [The explore-plan-execute pattern](#the-explore-plan-execute-pattern)
 - [4.9 Combining with other tools](#combining-with-other-tools)
 - [4.10 Reproducibility](#reproducibility)
 
@@ -429,7 +429,7 @@ Claude Code is not just for new projects. It can work effectively with existing 
 - Ask Claude to explore and understand the project before modifying it: "Read through this project and explain its structure to me"
 - Start with small, well-defined changes rather than major refactoring
 
-### The explore--plan--execute pattern
+### The explore-plan-execute pattern
 
 For any project that matters -- especially when working with existing files, source data, or unfamiliar codebases -- the most reliable approach is a three-phase workflow that separates understanding from action:
 
