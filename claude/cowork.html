@@ -15,6 +15,8 @@
             <span class="nav-sep">|</span>
             <a href="cowork.html" class="current">Cowork</a>
             <span class="nav-sep">|</span>
+            <a href="apps.html">Apps</a>
+            <span class="nav-sep">|</span>
             <a href="code.html">Code</a>
             <span class="nav-sep">|</span>
             <a href="shared-principles.html">Shared Principles</a>
@@ -29,7 +31,7 @@
         </nav>
 
         <header>
-            <h1>Part 2: Cowork (Research Preview)</h1>
+            <h1>Part 2: Cowork</h1>
             <p class="subtitle">Part of <a href="index.html">Claude Best Practice for Humanities Scholars</a></p>
         </header>
 
@@ -52,18 +54,23 @@
         <section>
             <h2 id="cowork-what">2.1 What it is and what it&rsquo;s for</h2>
 
-            <p>Cowork is a desktop feature within the Claude macOS app that can see your screen, read your files, and work alongside you in real time. Where Chat is conversational and Code is <abbr class="glossary" title="Able to take actions autonomously &mdash; reading files, running commands, making decisions &mdash; rather than only responding to messages">agentic</abbr>, Cowork is <em>ambient</em>: it observes what you are doing and offers help in context, or you can ask it to perform tasks while you continue other work.</p>
+            <p>Cowork is a mode within the Claude Desktop app that gives Claude access to folders on your computer and the ability to work autonomously on multi-step tasks. Where Chat is conversational &mdash; you ask, Claude responds &mdash; Cowork is task-oriented: you describe an outcome, Claude plans and executes it, and you come back to finished work.</p>
 
-            <p>Think of it as a research assistant who can see the document on your screen, understand what you are working on, and either answer questions about it or go away and do something useful while you carry on reading.</p>
+            <p>Think of it as delegating a task to a capable assistant who has access to your filing cabinet. You say &ldquo;organise these 200 PDFs by date and create a summary spreadsheet&rdquo; or &ldquo;turn these scattered notes into a formatted report,&rdquo; and Cowork plans the work, executes it in an isolated environment, and saves the results to your file system.</p>
 
-            <p>Cowork is particularly useful for:</p>
+            <p>Cowork is built on the same architecture as Claude Code but does not require a terminal or command line. It is particularly useful for:</p>
 
             <ul>
-                <li><strong>Research across multiple documents</strong> &mdash; Cowork can read files on your desktop, compare them, and synthesise findings while you focus on one document at a time</li>
-                <li><strong>Contextual assistance</strong> &mdash; ask questions about what is on your screen without needing to copy-paste or upload anything</li>
-                <li><strong>Background tasks</strong> &mdash; ask Cowork to draft something, search for information, or organise notes while you continue your primary work</li>
-                <li><strong>Writing support</strong> &mdash; Cowork can see your draft in progress and offer feedback, suggest references, or help with specific passages</li>
+                <li><strong>File and document management</strong> &mdash; organising, renaming, sorting, and processing files in bulk</li>
+                <li><strong>Document creation</strong> &mdash; producing spreadsheets, presentations, and formatted reports from your source materials</li>
+                <li><strong>Research synthesis</strong> &mdash; reading through folders of notes, articles, or transcripts and producing structured summaries, indices, or bibliographies</li>
+                <li><strong>Data processing</strong> &mdash; cleaning, transforming, and analysing datasets</li>
+                <li><strong>Scheduled recurring tasks</strong> &mdash; work that Claude runs automatically on a cadence you set</li>
             </ul>
+
+            <div class="note">
+                <p><strong>What Cowork does <em>not</em> do:</strong> Cowork cannot see your screen or observe what you are doing in other applications. It interacts with your computer exclusively through file-system access within folders you explicitly grant and code execution in an isolated environment. For browser-based awareness, see <a href="apps.html">Claude in Chrome</a>.</p>
+            </div>
         </section>
 
         <hr>
@@ -79,11 +86,11 @@
                 <li>A paid subscription (Pro, Max, Team, or Enterprise)</li>
             </ul>
 
-            <p>Once installed, Cowork is available as a mode within the Claude desktop app. You will need to grant screen-reading and file-access permissions when prompted &mdash; these are standard macOS accessibility permissions that allow Claude to see what is on your screen and read files you point it to.</p>
+            <p>Once installed, Cowork is available as a mode within the Claude desktop app. You will need to grant file-access permissions for the folders you want Claude to work with. Cowork only accesses folders you explicitly approve &mdash; it does not have blanket access to your file system.</p>
 
             <h3>Privacy considerations</h3>
 
-            <p>Because Cowork can see your screen, be mindful of what is visible when you activate it. If you have sensitive information open in another window &mdash; email, banking, personal messages &mdash; Cowork may see it. You can control what Cowork has access to, and it will tell you what it can see. But good practice is to be aware of your screen contents before engaging Cowork, just as you would before sharing your screen on a video call.</p>
+            <p>Cowork reads files in folders you grant access to. Be mindful of what those folders contain: if a folder includes sensitive or personal documents alongside the files you want processed, Cowork will have access to all of them. Good practice is to keep your working folder focused on the materials Cowork needs, just as you would when sharing a folder with a colleague.</p>
         </section>
 
         <hr>
@@ -91,45 +98,41 @@
         <section>
             <h2 id="cowork-capabilities">2.3 What it can do</h2>
 
-            <h3>Screen awareness</h3>
+            <h3>File access and management</h3>
 
-            <p>Cowork can see and understand what is displayed on your screen. This means you can:</p>
-
-            <ul>
-                <li>Point to a passage in a PDF and ask &ldquo;What does this argument assume?&rdquo;</li>
-                <li>Have a spreadsheet open and ask &ldquo;Are there any inconsistencies in the date column?&rdquo;</li>
-                <li>Show it a manuscript image and ask &ldquo;Can you read the text in the margin?&rdquo;</li>
-                <li>Display a web page and ask &ldquo;Summarise this article&rdquo;</li>
-            </ul>
-
-            <p>This removes the upload step that Chat requires. You work in your normal applications; Cowork sees what you see.</p>
-
-            <h3>File access</h3>
-
-            <p>Cowork can read files on your computer (with your permission). You can ask it to:</p>
+            <p>Cowork can read, create, edit, and organise files in folders you grant access to. You can ask it to:</p>
 
             <ul>
-                <li>Read and summarise a document in your Downloads folder</li>
+                <li>Read and summarise documents in a folder</li>
                 <li>Compare two versions of a file</li>
                 <li>Search through a folder of PDFs for specific content</li>
-                <li>Read your notes and help you organise them</li>
+                <li>Rename, sort, or reorganise files by criteria you specify</li>
+                <li>Read your notes and produce a structured synthesis</li>
             </ul>
 
-            <h3>Background work</h3>
+            <h3>Autonomous task execution</h3>
 
-            <p>One of Cowork&rsquo;s distinctive features is that it can work in the background while you do something else. You might ask Cowork to:</p>
+            <p>Unlike Chat, where you exchange messages back and forth, Cowork can plan and execute multi-step tasks on its own. Describe the outcome you want, review Claude&rsquo;s plan, then let it run. Progress indicators show what Claude is doing, and you can steer mid-task or let it work to completion. You can continue other work while Cowork runs &mdash; it does not require your attention.</p>
 
-            <ul>
-                <li>&ldquo;Read through these five articles and prepare a summary of their main arguments&rdquo;</li>
-                <li>&ldquo;Draft a response to reviewer 2&rsquo;s comments based on the paper on my screen&rdquo;</li>
-                <li>&ldquo;Go through my notes folder and create a bibliography of all the sources I&rsquo;ve mentioned&rdquo;</li>
-            </ul>
+            <h3>Document creation</h3>
 
-            <p>While Cowork works on these tasks, you can continue reading, writing, or doing other work. Cowork will notify you when it finishes.</p>
+            <p>Cowork can produce professional documents directly: Excel spreadsheets with working formulas, PowerPoint presentations, Word documents, and formatted text files. Claude uses specialised skills to produce outputs with correct structure and formatting rather than approximations.</p>
 
-            <h3>Writing to files</h3>
+            <h3>Sub-agent coordination</h3>
 
-            <p>Cowork can create and edit files on your computer. It can save its outputs &mdash; summaries, drafts, organised notes &mdash; directly to your file system rather than only displaying them in the chat interface. This makes it practical for tasks where the output needs to become part of your working files.</p>
+            <p>For complex tasks, Cowork may break the work into parallel workstreams &mdash; for example, processing different subsets of your files simultaneously or running analysis on one dataset while formatting another. This happens automatically; you describe the outcome, and Claude decides how to divide the work.</p>
+
+            <h3>Scheduled tasks</h3>
+
+            <p>Use the <code>/schedule</code> command to create tasks that run automatically on a cadence you set. Claude runs them while the desktop app is open. Useful for recurring work: weekly literature digests, regular file organisation, periodic data pulls.</p>
+
+            <h3>Plugins</h3>
+
+            <p>Cowork supports plugins &mdash; bundles of skills, connectors, slash commands, and sub-agents that customise it for specific roles or domains. These extend what Cowork can do beyond its built-in capabilities.</p>
+
+            <h3>Global and folder instructions</h3>
+
+            <p>You can set standing instructions that persist across sessions &mdash; either globally (for all Cowork sessions) or per folder. These function like Project instructions in Chat: they tell Claude your conventions, preferences, and constraints so you do not have to repeat them each time.</p>
         </section>
 
         <hr>
@@ -139,19 +142,21 @@
 
             <h3>Do:</h3>
             <ul>
-                <li><strong>Use Cowork for document-heavy research workflows</strong> where you are reading, comparing, and synthesising across multiple sources.</li>
-                <li><strong>Take advantage of screen awareness</strong> &mdash; it is faster to say &ldquo;look at this&rdquo; than to upload a file or paste text.</li>
-                <li><strong>Set background tasks</strong> while you focus on close reading or writing. Cowork is most valuable when it works in parallel with you, not sequentially.</li>
-                <li><strong>Be specific about where to save outputs</strong> &mdash; tell Cowork which folder to use and what to name files.</li>
+                <li><strong>Be explicit about which folders Cowork should access</strong> and where to save outputs. Clear folder structure helps Claude produce better results.</li>
+                <li><strong>Start with a small, well-defined task</strong> before delegating complex multi-step work. This lets you calibrate expectations.</li>
+                <li><strong>Review Cowork&rsquo;s plan before letting it run,</strong> especially for tasks that modify or create files.</li>
+                <li><strong>Use folder instructions</strong> to set context: what these materials are, what conventions to follow, what the output should look like.</li>
                 <li><strong>Review Cowork&rsquo;s outputs</strong> with the same critical eye you would apply to any AI-generated content.</li>
             </ul>
 
             <h3>Don&rsquo;t:</h3>
             <ul>
-                <li><strong>Forget what is on your screen.</strong> Cowork sees everything visible. Close or minimise windows containing information you do not want processed.</li>
-                <li><strong>Use Cowork for large-scale coding projects</strong> that need full <abbr class="glossary" title="A system (usually git) for tracking changes to files over time, enabling undo, collaboration, and audit trails">version control</abbr> and local tool integration. <a href="code.html">Code</a> gives you finer-grained control over builds, dependencies, and shell workflows.</li>
+                <li><strong>Leave sensitive files in accessible folders</strong> unless you intend Cowork to process them. Grant access only to what is needed.</li>
+                <li><strong>Close the desktop app while Cowork is working</strong> &mdash; the session ends if the app closes.</li>
+                <li><strong>Assume Cowork retains memory across sessions.</strong> It currently does not. Use folder instructions for persistent context.</li>
                 <li><strong>Treat file outputs as final without review.</strong> Cowork may save files to your system &mdash; check them before sharing or submitting.</li>
                 <li><strong>Rely on Cowork for tasks requiring precise citation.</strong> The same <abbr class="glossary" title="When an AI generates confident-sounding information that is factually wrong or entirely fabricated">hallucination</abbr> risks apply as with Chat &mdash; verify all references.</li>
+                <li><strong>Use Cowork for large-scale coding projects</strong> that need full <abbr class="glossary" title="A system (usually git) for tracking changes to files over time, enabling undo, collaboration, and audit trails">version control</abbr> and sophisticated build workflows. <a href="code.html">Code</a> gives you finer-grained control.</li>
             </ul>
         </section>
 
@@ -160,16 +165,21 @@
         <section>
             <h2 id="cowork-practices">2.5 Best working practices</h2>
 
-            <h3>The parallel research pattern</h3>
+            <h3>The delegation pattern</h3>
 
-            <p>The most productive Cowork workflow leverages its ability to work alongside you:</p>
+            <p>The most productive Cowork workflow treats it as a capable assistant you delegate tasks to:</p>
 
             <ol>
-                <li>Open your primary source or document in your normal reading application</li>
-                <li>Ask Cowork to read related materials in the background &mdash; secondary literature, your own earlier notes, comparative sources</li>
-                <li>As you read, ask Cowork contextual questions: &ldquo;Does Smith 2019 agree with the argument on my screen?&rdquo; or &ldquo;What does my notes file say about this topic?&rdquo;</li>
-                <li>When you are ready to write, ask Cowork to draft sections based on what it has read and your instructions</li>
+                <li>Gather your source materials into a folder (notes, articles, data files, transcripts).</li>
+                <li>Write folder instructions that tell Claude the context: what these materials are, what conventions to follow, what the output should look like.</li>
+                <li>Open Cowork, select the folder, and describe the outcome you want.</li>
+                <li>Review Claude&rsquo;s plan, adjust if needed, then let it run.</li>
+                <li>Check the output. If it needs refinement, describe what to change &mdash; Cowork can iterate.</li>
             </ol>
+
+            <h3>The scheduled research pattern</h3>
+
+            <p>Set up recurring tasks for work that repeats: weekly literature digests, regular file organisation, periodic data tidying. Claude runs the task automatically while the desktop app is open. This is especially useful for maintaining a research project over weeks or months &mdash; the routine upkeep happens without you initiating it each time.</p>
 
             <h3>Organising research materials</h3>
 
@@ -201,24 +211,20 @@
                         <td><a href="chat.html">Chat</a> (with upload)</td>
                     </tr>
                     <tr>
-                        <td>Work across many local files simultaneously</td>
+                        <td>Organise, process, or create files without a terminal</td>
                         <td>Cowork</td>
                     </tr>
                     <tr>
-                        <td>Ask about what is on your screen right now</td>
+                        <td>Autonomous multi-step tasks while you do other work</td>
                         <td>Cowork</td>
                     </tr>
                     <tr>
-                        <td>Process data, run analysis scripts</td>
-                        <td>Cowork (for smaller tasks) or <a href="code.html">Code</a> (for larger pipelines)</td>
-                    </tr>
-                    <tr>
-                        <td>Build a tool, write code with version control</td>
+                        <td>Build tools, write code, version-controlled projects</td>
                         <td><a href="code.html">Code</a></td>
                     </tr>
                     <tr>
-                        <td>Sustained project with version control</td>
-                        <td><a href="code.html">Code</a></td>
+                        <td>Interact with web pages in your browser</td>
+                        <td><a href="apps.html">Claude in Chrome</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -231,20 +237,20 @@
 
             <h3>Cowork &rarr; Chat</h3>
 
-            <p>Use Cowork to gather and synthesise information from your local files, then take the key findings into a Chat Project for deeper analysis or writing. Cowork is good at breadth (reading many files quickly); Chat Projects are good at depth (sustained, focused conversation about a specific topic).</p>
+            <p>Use Cowork to gather and synthesise information from your local files, then take the key findings into a Chat Project for deeper analysis or writing. Cowork is good at breadth (processing many files quickly); Chat Projects are good at depth (sustained, focused conversation about a specific topic).</p>
 
             <h3>Cowork &rarr; Code</h3>
 
-            <p>If Cowork identifies a data problem or a need for systematic processing &mdash; &ldquo;these 50 XML files have inconsistent date formats&rdquo; &mdash; switch to <a href="code.html">Code</a> to build a solution. Cowork can diagnose; Code can fix at scale.</p>
+            <p>If Cowork identifies a data problem or a need for systematic processing &mdash; &ldquo;these 50 XML files have inconsistent date formats&rdquo; &mdash; switch to <a href="code.html">Code</a> for version-controlled development. Cowork handles ad-hoc tasks well; Code is better when you need a reproducible pipeline or a polished tool.</p>
 
             <h3>Cowork + your normal tools</h3>
 
-            <p>Cowork is designed to complement, not replace, your existing workflow. Continue using your preferred PDF reader, word processor, reference manager, and note-taking app. Cowork adds a layer of AI assistance on top of whatever you already do, without requiring you to change your tools or habits.</p>
+            <p>Cowork is designed to complement, not replace, your existing workflow. Continue using your preferred PDF reader, word processor, reference manager, and note-taking app. Cowork adds a layer of AI assistance on top of whatever you already do, operating on the files those tools produce.</p>
         </section>
 
         <footer>
             <p><a href="chat.html" class="nav-link">&larr; Part 1: Claude Chat</a></p>
-            <p><a href="code.html" class="nav-link">Part 3: Claude Code &rarr;</a></p>
+            <p><a href="apps.html" class="nav-link">Part 3: Claude in Your Apps &rarr;</a></p>
         </footer>
     </div>
 </body>
