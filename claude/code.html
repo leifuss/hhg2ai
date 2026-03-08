@@ -45,7 +45,11 @@
                 <li><a href="#code-hooks">4.5 Hooks</a></li>
                 <li><a href="#code-mcp">4.6 MCP (Model Context Protocol)</a></li>
                 <li><a href="#code-dos-donts">4.7 Dos and don&rsquo;ts</a></li>
-                <li><a href="#code-practices">4.8 Best working practices</a></li>
+                <li><a href="#code-practices">4.8 Best working practices</a>
+                    <ul>
+                        <li><a href="#code-explore-plan">The explore&ndash;plan&ndash;execute pattern</a></li>
+                    </ul>
+                </li>
                 <li><a href="#code-combining">4.9 Combining with other tools</a></li>
             </ul>
         </nav>
@@ -53,7 +57,7 @@
         <section>
             <h2 id="code-what">4.1 What it is and what it&rsquo;s for</h2>
 
-            <p>Claude Code is an agentic coding tool &mdash; Claude can read files, write files, run commands, search the web, and iterate on its own work. Unlike Chat, where you exchange messages and Claude responds with text, Code gives Claude the ability to <em>act</em>: it can create a project from scratch, modify existing files, run tests, fix errors, and push to <abbr class="glossary" title="A system for tracking changes to files, enabling undo, collaboration, and audit trails">version control</abbr>.</p>
+            <p>Claude Code is an agentic coding tool &mdash; meaning it can take actions autonomously, not just respond to messages. Claude can read files, write files, run commands, search the web, and iterate on its own work. Unlike Chat, where you exchange messages and Claude responds with text, Code gives Claude the ability to <em>act</em>: it can create a project from scratch, modify existing files, run tests, fix errors, and push to <abbr class="glossary" title="A system for tracking changes to files, enabling undo, collaboration, and audit trails">version control</abbr>.</p>
 
             <p>It is available in three forms:</p>
 
@@ -78,7 +82,7 @@
                 <li><strong>Document preparation</strong> &mdash; LaTeX formatting, converting between document formats, preparing camera-ready copy</li>
             </ul>
 
-            <p>Claude Code is available with a Pro subscription (though with token limits that may constrain heavier use), a Max subscription (with significantly higher limits), or an <abbr class="glossary" title="A unique code that identifies you when using an API, like a password for software access">API key</abbr>. For most humanities scholars starting out, the Pro subscription is the simplest way to try it; you can upgrade to Max if you find the token limits restrictive. See <a href="shared-principles.html#cost-awareness">cost awareness</a> for more detail.</p>
+            <p>Claude Code is included with Pro, Max, Team, and Enterprise subscriptions. On the web and in the Desktop app, no separate installation is needed &mdash; just sign in and start a session. For the CLI, install the native binary (free) and authenticate with your existing Anthropic account. API key access is also available for those who want direct usage-based billing. For most humanities scholars starting out, the Pro subscription is the simplest entry point; upgrade to Max if you find the token limits restrictive. See <a href="shared-principles.html#cost-awareness">cost awareness</a> for more detail.</p>
         </section>
 
         <hr>
@@ -107,12 +111,26 @@
 
             <p>Key characteristics:</p>
             <ul>
-                <li>Requires installation via npm: <code>npm install -g @anthropic-ai/claude-code</code></li>
+                <li>Requires the native installer (see §4.3) or the legacy npm method</li>
                 <li>Claude reads and writes your actual files</li>
                 <li>Works within git repositories, can commit and push</li>
                 <li>Has access to any tools installed on your system (Python, pandoc, LaTeX, etc.)</li>
                 <li>You approve or deny each action Claude takes &mdash; it asks before writing files or running commands</li>
                 <li>Good for: sustained projects, version-controlled work, anything that needs local tools or large file sets</li>
+            </ul>
+
+            <h3>Claude Code Desktop</h3>
+
+            <p>The Claude Desktop app (macOS or Windows) includes a Code tab that provides the same capabilities as the CLI through a graphical interface &mdash; no terminal required.</p>
+
+            <p>Key characteristics:</p>
+            <ul>
+                <li>Requires the Claude Desktop app &mdash; no separate Claude Code installation</li>
+                <li>Select a project folder from within the app</li>
+                <li>Visual diff view &mdash; see exactly what Claude changed before accepting</li>
+                <li>Preview running web apps directly within the app</li>
+                <li>Remote sessions: can run in the cloud and continue even if you close the app</li>
+                <li>Good for: humanities scholars who want Code&rsquo;s capabilities without learning the terminal</li>
             </ul>
 
             <p>For a detailed comparison of environments, including cloud-hosted options, see <a href="environments.html">Part 6: Environments</a>.</p>
@@ -135,10 +153,16 @@
                 <li>
                     <strong>Install Claude Code.</strong> The recommended method depends on your platform:
                     <ul>
-                        <li><strong>macOS / Linux (native installer, recommended):</strong> Download and run the installer from <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank">Anthropic&rsquo;s documentation</a>. No additional dependencies required.</li>
-                        <li><strong>Windows (native installer, recommended):</strong> Download the Windows installer. Requires <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>. Works in PowerShell or CMD. Node.js is not required.</li>
-                        <li><strong>Windows via WSL (alternative):</strong> Install WSL (Windows Subsystem for Linux), then use the Linux installer within it. This gives you a full Linux environment.</li>
-                        <li><strong>Via <abbr class="glossary" title="Node Package Manager &mdash; a tool for installing JavaScript software packages">npm</abbr> (legacy):</strong> If you already have Node.js 18+, you can still install via <code>npm install -g @anthropic-ai/claude-code</code>. This method works but the native installer is now preferred.</li>
+                        <li><strong>macOS / Linux (recommended):</strong> Run in your terminal:
+                            <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+                            No Node.js required.
+                        </li>
+                        <li><strong>Windows (recommended):</strong> Run in PowerShell:
+                            <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+                            Requires <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>. Works in PowerShell, CMD, or Git Bash. No Node.js required.
+                        </li>
+                        <li><strong>Windows via WSL (alternative):</strong> Install WSL (Windows Subsystem for Linux), then run the Linux installer within it. Gives you a full Linux environment. No longer required for Windows, but still supported.</li>
+                        <li><strong>Via <abbr class="glossary" title="Node Package Manager &mdash; a tool for installing JavaScript software packages">npm</abbr> (legacy):</strong> <code>npm install -g @anthropic-ai/claude-code</code>. Requires Node.js 18+. Still works, but the native installer above is now preferred.</li>
                     </ul>
                 </li>
                 <li>
@@ -157,7 +181,7 @@ claude</code></pre>
 
             <p>The most important configuration concept in Claude Code is the <code>CLAUDE.md</code> file. This is a plain text file you place in the root of your project directory. Claude reads it at the start of every session. It functions like the &ldquo;custom instructions&rdquo; in a Chat Project, but for Code.</p>
 
-            <p>A simple <code>CLAUDE.md</code> might be just a few lines:</p>
+            <p>A minimal <code>CLAUDE.md</code> for a humanities project might be just a few lines:</p>
 
             <pre><code># Project: Conference Paper Figures
 
@@ -170,7 +194,7 @@ trade networks. Source data in data/trade_routes.csv.
 - Output figures to figures/ directory
 - Use print-friendly colours (no neon)</code></pre>
 
-            <p>For a more technical project, you might include build commands, file conventions, and protective rules:</p>
+            <p>For a digital humanities project with specific technical requirements, you might include build commands, file conventions, and protective rules:</p>
 
             <pre><code># Project: Digital Edition of the Leptis Magna Inscriptions
 
@@ -200,15 +224,36 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
 
             <h3>Permissions and trust</h3>
 
-            <p>Claude Code operates on a permission model. By default, Claude will ask before:</p>
+            <p>Claude Code operates in one of three permission modes. You switch between them by pressing <kbd>Shift+Tab</kbd> twice in the CLI (cycles through all three), or by starting a session with a flag:</p>
 
-            <ul>
-                <li>Writing or modifying any file</li>
-                <li>Running any shell command</li>
-                <li>Accessing the network</li>
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mode</th>
+                        <th>What Claude can do</th>
+                        <th>When to use it</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Normal</strong> (default)</td>
+                        <td>Reads files freely. Asks before writing files or running shell commands.</td>
+                        <td>Day-to-day work. The right balance for most sessions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plan mode</strong></td>
+                        <td>Read-only. Claude can explore the codebase and create a plan but cannot write, edit, or execute anything.</td>
+                        <td>Starting a new project or unfamiliar codebase. Review what Claude intends to do before it does it.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Auto-accept</strong></td>
+                        <td>Claude makes changes without asking. Fast but risky.</td>
+                        <td>Only when you fully trust the task and have version control in place to catch mistakes.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <p>You can approve individual actions, approve a category of actions for the session, or configure broader permissions if you trust Claude with routine operations. For beginners, the default &ldquo;ask every time&rdquo; mode is recommended &mdash; it lets you learn what Claude is doing and why.</p>
+            <p>Start a session in plan mode from the command line: <code>claude --permission-mode plan</code>. Or type <code>/plan</code> after starting a session. For humanities scholars new to Claude Code, <strong>plan mode is the recommended starting point</strong> &mdash; it lets Claude explore your project, explain what it finds, and propose a course of action before touching anything.</p>
         </section>
 
         <hr>
@@ -241,7 +286,7 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
 
             <h3>Slash commands (CLI)</h3>
 
-            <p>In the CLI, several built-in commands are available:</p>
+            <p>In the CLI, several built-in commands are available. Claude Code adds commands regularly &mdash; run <code>/help</code> to see the current full list.</p>
 
             <table>
                 <thead>
@@ -256,6 +301,10 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
                         <td>Show available commands and usage information</td>
                     </tr>
                     <tr>
+                        <td><code>/plan</code></td>
+                        <td>Enter plan mode &mdash; Claude explores and plans without modifying anything</td>
+                    </tr>
+                    <tr>
                         <td><code>/clear</code></td>
                         <td>Clear the conversation history (start fresh within the same session)</td>
                     </tr>
@@ -268,6 +317,14 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
                         <td>Show how much the current session has cost (API users)</td>
                     </tr>
                     <tr>
+                        <td><code>/model</code></td>
+                        <td>Switch between models (Opus, Sonnet, Haiku) mid-session</td>
+                    </tr>
+                    <tr>
+                        <td><code>/agents</code></td>
+                        <td>View and manage sub-agents spawned during the session</td>
+                    </tr>
+                    <tr>
                         <td><code>/doctor</code></td>
                         <td>Diagnose and fix common installation or configuration issues</td>
                     </tr>
@@ -276,23 +333,15 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
                         <td>Generate a <code>CLAUDE.md</code> file for the current project</td>
                     </tr>
                     <tr>
-                        <td><code>/memory</code></td>
-                        <td>Edit Claude&rsquo;s memory files</td>
-                    </tr>
-                    <tr>
-                        <td><code>/model</code></td>
-                        <td>Switch between models (Opus, Sonnet, Haiku) mid-session</td>
-                    </tr>
-                    <tr>
                         <td><code>/review</code></td>
                         <td>Review a pull request or set of changes</td>
                     </tr>
-                    <tr>
-                        <td><code>/status</code></td>
-                        <td>Show the current session status</td>
-                    </tr>
                 </tbody>
             </table>
+
+            <p><strong>Custom slash commands.</strong> You can create your own commands by placing a Markdown file in <code>.claude/commands/</code> in your project directory. The filename becomes the command. For example, a file called <code>check-encoding.md</code> containing instructions for verifying UTF-8 encoding across your corpus would be triggered by typing <code>/check-encoding</code>. This is useful for standardising repetitive tasks: a <code>/validate-tei</code> command for TEI XML checking, a <code>/update-bibliography</code> command for bibliography maintenance. Global commands (available in all projects) go in <code>~/.claude/commands/</code>.</p>
+
+            <p><strong>Sub-agents.</strong> Claude Code can delegate specific tasks to specialised sub-agents, each working in its own context window with its own instructions and tool access. Use <code>/agents</code> to view and manage active sub-agents. This is useful for repetitive specialist tasks &mdash; for example, a sub-agent configured to validate TEI XML encoding could check every file in your corpus while your main session handles other work. Sub-agents can also be defined as Markdown files in <code>.claude/agents/</code>.</p>
 
             <h3>Headless and non-interactive mode (advanced)</h3>
 
@@ -555,6 +604,22 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
                 <li>Ask Claude to explore and understand the project before modifying it: &ldquo;Read through this project and explain its structure to me&rdquo;</li>
                 <li>Start with small, well-defined changes rather than major refactoring</li>
             </ul>
+
+            <h3 id="code-explore-plan">The explore&ndash;plan&ndash;execute pattern</h3>
+
+            <p>For any project that matters &mdash; especially when working with existing files, source data, or unfamiliar codebases &mdash; the most reliable approach is a three-phase workflow that separates understanding from action:</p>
+
+            <ol>
+                <li><strong>Explore (plan mode).</strong> Start a session in plan mode: <code>claude --permission-mode plan</code> or type <code>/plan</code>. In this mode, Claude reads files, searches your project, and builds understanding &mdash; but cannot write, edit, or execute anything. Ask it to explain what it finds: &ldquo;Read through this project and describe its structure and any potential issues.&rdquo;</li>
+                <li><strong>Plan (still in plan mode).</strong> Ask Claude to propose a course of action: &ldquo;Create a plan for adding a search function to this edition.&rdquo; Claude produces a written plan. Review it, ask questions, and refine it. Because Claude is still in plan mode, it cannot act until you say so.</li>
+                <li><strong>Execute (normal mode).</strong> Switch to normal mode (press <kbd>Shift+Tab</kbd> twice, or start a new session without the plan flag). Claude implements the agreed plan, asking permission before each individual change.</li>
+            </ol>
+
+            <p>This pattern directly addresses the most common anxiety about AI coding tools: that Claude will &ldquo;just start changing things.&rdquo; Plan mode guarantees it cannot &mdash; Claude literally has no write or execute capability until you switch modes. It is the built-in mechanism for the &ldquo;understand before acting&rdquo; principle the guide already advocates.</p>
+
+            <h3>Extended thinking</h3>
+
+            <p>Claude Code has extended thinking enabled by default for complex tasks: before responding, Claude reasons through the problem step-by-step. You can see this reasoning in verbose mode (toggle with <kbd>Ctrl+O</kbd>). This is the built-in equivalent of the &ldquo;think step by step&rdquo; prompt described in <a href="shared-principles.html">Shared Principles</a> &mdash; you do not need to ask for it separately in Code sessions. Turning on verbose mode is particularly useful when Claude is making decisions about your data or proposing a structural approach you want to understand.</p>
 
             <h3>Context window management</h3>
 
