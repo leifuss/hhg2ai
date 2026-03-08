@@ -220,7 +220,7 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
 - The canonical text is always the XML; HTML is generated from it
 - Cite inscriptions by IRT number (e.g., IRT 321)</code></pre>
 
-            <p>Keep your <code>CLAUDE.md</code> concise and factual. Claude reads it every session, so brevity saves <abbr class="glossary" title="The total amount of text Claude can hold in working memory during a single conversation">context window</abbr> space. Focus on what Claude needs to know to work effectively in your project: what the project is, what conventions to follow, how to build and test, and what to be careful about.</p>
+            <p>Keep your <code>CLAUDE.md</code> concise and factual. Claude reads it every session, so brevity saves <abbr class="glossary" title="The total amount of text Claude can hold in working memory during a single conversation">context window</abbr> space. Focus on what Claude needs to know to work effectively in your project: what the project is, what conventions to follow, how to build and test, and what to be careful about. See <a href="https://code.claude.com/docs/en/memory" target="_blank">CLAUDE.md documentation</a>.</p>
 
             <h3>Permissions and trust</h3>
 
@@ -341,7 +341,7 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
 
             <p><strong>Custom slash commands.</strong> You can create your own commands by placing a Markdown file in <code>.claude/commands/</code> in your project directory. The filename becomes the command. For example, a file called <code>check-encoding.md</code> containing instructions for verifying UTF-8 encoding across your corpus would be triggered by typing <code>/check-encoding</code>. This is useful for standardising repetitive tasks: a <code>/validate-tei</code> command for TEI XML checking, a <code>/update-bibliography</code> command for bibliography maintenance. Global commands (available in all projects) go in <code>~/.claude/commands/</code>.</p>
 
-            <p><strong>Sub-agents.</strong> Claude Code can delegate specific tasks to specialised sub-agents, each working in its own context window with its own instructions and tool access. Use <code>/agents</code> to view and manage active sub-agents. This is useful for repetitive specialist tasks &mdash; for example, a sub-agent configured to validate TEI XML encoding could check every file in your corpus while your main session handles other work. Sub-agents can also be defined as Markdown files in <code>.claude/agents/</code>.</p>
+            <p><strong>Sub-agents.</strong> Claude Code can delegate specific tasks to specialised sub-agents, each working in its own context window with its own instructions and tool access. Use <code>/agents</code> to view and manage active sub-agents. This is useful for repetitive specialist tasks &mdash; for example, a sub-agent configured to validate TEI XML encoding could check every file in your corpus while your main session handles other work. Sub-agents can also be defined as Markdown files in <code>.claude/agents/</code>. See <a href="https://code.claude.com/docs/en/sub-agents" target="_blank">Sub-agents documentation</a>.</p>
 
             <h3>Headless and non-interactive mode (advanced)</h3>
 
@@ -430,7 +430,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
             <p>This hook checks every file write operation. If Claude tries to modify anything in <code>source-data/</code>, the hook blocks it and explains why. Claude will see the blocked message and adjust its approach.</p>
 
-            <p>Hooks are optional and you do not need them to use Claude Code effectively. But as your projects grow, they become a useful safety net &mdash; especially for protecting canonical source files that should never be modified by an automated tool.</p>
+            <p>Hooks are optional and you do not need them to use Claude Code effectively. But as your projects grow, they become a useful safety net &mdash; especially for protecting canonical source files that should never be modified by an automated tool. See <a href="https://code.claude.com/docs/en/hooks" target="_blank">Hooks documentation</a>.</p>
         </section>
 
         <hr>
@@ -518,7 +518,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
             <p>Once configured, Claude automatically discovers the available tools when a session starts. You do not need to tell Claude to &ldquo;use the database server&rdquo; &mdash; it will see the database tools and use them when relevant.</p>
 
-            <p>On the web version of Claude Code, MCP configuration is available through the interface settings rather than a JSON file.</p>
+            <p>On the web version of Claude Code, MCP configuration is available through the interface settings rather than a JSON file. See <a href="https://code.claude.com/docs/en/mcp" target="_blank">MCP in Claude Code</a>.</p>
 
             <h3>When MCP is worth the setup</h3>
 
@@ -615,7 +615,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
                 <li><strong>Execute (normal mode).</strong> Switch to normal mode (press <kbd>Shift+Tab</kbd> twice, or start a new session without the plan flag). Claude implements the agreed plan, asking permission before each individual change.</li>
             </ol>
 
-            <p>This pattern directly addresses the most common anxiety about AI coding tools: that Claude will &ldquo;just start changing things.&rdquo; Plan mode guarantees it cannot &mdash; Claude literally has no write or execute capability until you switch modes. It is the built-in mechanism for the &ldquo;understand before acting&rdquo; principle the guide already advocates.</p>
+            <p>This pattern directly addresses the most common anxiety about AI coding tools: that Claude will &ldquo;just start changing things.&rdquo; Plan mode guarantees it cannot &mdash; Claude literally has no write or execute capability until you switch modes. It is the built-in mechanism for the &ldquo;understand before acting&rdquo; principle the guide already advocates. See <a href="https://code.claude.com/docs/en/common-workflows" target="_blank">Common workflows</a> for more patterns.</p>
 
             <h3>Extended thinking</h3>
 
@@ -720,6 +720,18 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
             <p>Claude Code can call other AI models via their APIs as part of a workflow. For example, a script that uses a local Whisper model for speech-to-text transcription, then passes the text to Claude for analysis. Or a pipeline that uses a specialised OCR model for handwriting recognition and Claude for the subsequent text processing. See <a href="shared-principles.html#multi-model">5.5</a> for more on multi-model strategies.</p>
         </section>
+
+        <div class="highlight">
+            <h4 style="margin-top: 0;">Going further with Claude Code</h4>
+            <p>The features above cover what most humanities scholars need. Claude Code has additional capabilities that may be useful as your projects grow:</p>
+            <ul style="margin-bottom: 0;">
+                <li><strong>Output styles</strong> let you change how Claude Code communicates &mdash; from concise to explanatory to fully custom. See <a href="https://code.claude.com/docs/en/output-styles" target="_blank">Output styles documentation</a>.</li>
+                <li><strong>Agent teams</strong> coordinate multiple Claude instances working in parallel across separate git branches. Useful for large projects with independent components. See <a href="https://code.claude.com/docs/en/agent-teams" target="_blank">Agent teams documentation</a>.</li>
+                <li><strong>The Claude Agent SDK</strong> lets you build custom agent workflows programmatically &mdash; for automation, CI/CD, or integration with other tools. See <a href="https://code.claude.com/docs/en/sdk" target="_blank">Agent SDK documentation</a>.</li>
+                <li><strong>Plugins</strong> bundle skills, sub-agents, commands, and connectors into shareable packages. See <a href="https://code.claude.com/docs/en/plugins" target="_blank">Plugins documentation</a>.</li>
+                <li><strong>GitHub Actions integration</strong> lets Claude Code run as part of automated testing and review pipelines. See <a href="https://code.claude.com/docs/en/github-actions" target="_blank">CI/CD documentation</a>.</li>
+            </ul>
+        </div>
 
         <footer>
             <p><a href="apps.html" class="nav-link">&larr; Part 3: Claude in Your Apps</a></p>

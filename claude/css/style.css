@@ -804,6 +804,26 @@ details.collapsible .collapsible-body {
     }
 }
 
+/* External link indicators */
+
+a[href^="https://support.claude.com"]::after,
+a[href^="https://code.claude.com"]::after,
+a[href^="https://claude.com/blog"]::after,
+a[href^="https://docs.claude.com"]::after,
+a[href^="https://www.anthropic.com"]::after,
+a[href^="https://privacy.claude.com"]::after {
+    content: " \2197";
+    font-size: 0.75em;
+    vertical-align: super;
+    color: #888;
+}
+
+/* Don't add external link icon in nav, footer, or print */
+nav a[href]::after,
+footer a[href]::after {
+    content: none !important;
+}
+
 /* Glossary tooltips */
 
 abbr.glossary {
