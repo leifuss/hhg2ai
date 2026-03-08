@@ -15,6 +15,8 @@
             <span class="nav-sep">|</span>
             <a href="cowork.html">Cowork</a>
             <span class="nav-sep">|</span>
+            <a href="apps.html">Apps</a>
+            <span class="nav-sep">|</span>
             <a href="code.html" class="current">Code</a>
             <span class="nav-sep">|</span>
             <a href="shared-principles.html">Shared Principles</a>
@@ -29,27 +31,27 @@
         </nav>
 
         <header>
-            <h1>Part 3: Claude Code</h1>
+            <h1>Part 4: Claude Code</h1>
             <p class="subtitle">Part of <a href="index.html">Claude Best Practice for Humanities Scholars</a></p>
         </header>
 
         <nav class="toc">
             <h2>Contents</h2>
             <ul>
-                <li><a href="#code-what">3.1 What it is and what it&rsquo;s for</a></li>
-                <li><a href="#code-where">3.2 Where it runs</a></li>
-                <li><a href="#code-setup">3.3 Setting up</a></li>
-                <li><a href="#code-commands">3.4 Commands and functionality</a></li>
-                <li><a href="#code-hooks">3.5 Hooks</a></li>
-                <li><a href="#code-mcp">3.6 MCP (Model Context Protocol)</a></li>
-                <li><a href="#code-dos-donts">3.7 Dos and don&rsquo;ts</a></li>
-                <li><a href="#code-practices">3.8 Best working practices</a></li>
-                <li><a href="#code-combining">3.9 Combining with other tools</a></li>
+                <li><a href="#code-what">4.1 What it is and what it&rsquo;s for</a></li>
+                <li><a href="#code-where">4.2 Where it runs</a></li>
+                <li><a href="#code-setup">4.3 Setting up</a></li>
+                <li><a href="#code-commands">4.4 Commands and functionality</a></li>
+                <li><a href="#code-hooks">4.5 Hooks</a></li>
+                <li><a href="#code-mcp">4.6 MCP (Model Context Protocol)</a></li>
+                <li><a href="#code-dos-donts">4.7 Dos and don&rsquo;ts</a></li>
+                <li><a href="#code-practices">4.8 Best working practices</a></li>
+                <li><a href="#code-combining">4.9 Combining with other tools</a></li>
             </ul>
         </nav>
 
         <section>
-            <h2 id="code-what">3.1 What it is and what it&rsquo;s for</h2>
+            <h2 id="code-what">4.1 What it is and what it&rsquo;s for</h2>
 
             <p>Claude Code is an agentic coding tool &mdash; Claude can read files, write files, run commands, search the web, and iterate on its own work. Unlike Chat, where you exchange messages and Claude responds with text, Code gives Claude the ability to <em>act</em>: it can create a project from scratch, modify existing files, run tests, fix errors, and push to <abbr class="glossary" title="A system for tracking changes to files, enabling undo, collaboration, and audit trails">version control</abbr>.</p>
 
@@ -82,7 +84,7 @@
         <hr>
 
         <section>
-            <h2 id="code-where">3.2 Where it runs</h2>
+            <h2 id="code-where">4.2 Where it runs</h2>
 
             <p>Understanding where Claude Code runs matters because it determines what files Claude can access and what happens to your work.</p>
 
@@ -113,13 +115,13 @@
                 <li>Good for: sustained projects, version-controlled work, anything that needs local tools or large file sets</li>
             </ul>
 
-            <p>For a detailed comparison of environments, including cloud-hosted options, see <a href="environments.html">Part 5: Environments</a>.</p>
+            <p>For a detailed comparison of environments, including cloud-hosted options, see <a href="environments.html">Part 6: Environments</a>.</p>
         </section>
 
         <hr>
 
         <section>
-            <h2 id="code-setup">3.3 Setting up</h2>
+            <h2 id="code-setup">4.3 Setting up</h2>
 
             <h3>Claude Code on the web</h3>
 
@@ -127,7 +129,7 @@
 
             <h3>Claude Code CLI</h3>
 
-            <p>Setting up the CLI requires a few steps. If any of these are unfamiliar, see <a href="skills.html">Part 6: Skills</a> for guidance on building the necessary skills.</p>
+            <p>Setting up the CLI requires a few steps. If any of these are unfamiliar, see <a href="skills.html">Part 7: Skills</a> for guidance on building the necessary skills.</p>
 
             <ol>
                 <li>
@@ -212,7 +214,7 @@ inscriptions from Leptis Magna. The source data is in EpiDoc XML
         <hr>
 
         <section>
-            <h2 id="code-commands">3.4 Commands and core functionality</h2>
+            <h2 id="code-commands">4.4 Commands and core functionality</h2>
 
             <h3>Starting a session</h3>
 
@@ -321,7 +323,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-hooks">3.5 Hooks</h2>
+            <h2 id="code-hooks">4.5 Hooks</h2>
 
             <div class="note">
                 <p><strong>Advanced topic.</strong> You do not need <abbr class="glossary" title="A shell command that runs automatically at a specific point in Claude Code's workflow">hooks</abbr> to use Claude Code effectively. Skip this section on first reading and come back when you have a specific need.</p>
@@ -385,7 +387,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-mcp">3.6 MCP (Model Context Protocol)</h2>
+            <h2 id="code-mcp">4.6 MCP (Model Context Protocol)</h2>
 
             <div class="note">
                 <p><strong>Advanced topic.</strong> <abbr class="glossary" title="Model Context Protocol &mdash; a standard way to connect Claude to external tools and data sources">MCP</abbr> is optional. Many excellent projects use Claude Code without any MCP servers. Skip this section on first reading and come back when you have a concrete need for Claude to access an external database, API, or service.</p>
@@ -485,11 +487,11 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-dos-donts">3.7 Dos and don&rsquo;ts</h2>
+            <h2 id="code-dos-donts">4.7 Dos and don&rsquo;ts</h2>
 
             <h3>Do:</h3>
             <ul>
-                <li><strong>Use version control (git).</strong> This is the single most important practice. Git lets you track every change Claude makes and revert anything you do not want. Even if you are not a programmer, learn the basics of git before using Claude Code for serious work (see <a href="skills.html">Part 6</a>).</li>
+                <li><strong>Use version control (git).</strong> This is the single most important practice. Git lets you track every change Claude makes and revert anything you do not want. Even if you are not a programmer, learn the basics of git before using Claude Code for serious work (see <a href="skills.html">Part 7</a>).</li>
                 <li><strong>Write a good <code>CLAUDE.md</code>.</strong> Five minutes of setup saves hours of repeated instructions. Include your project&rsquo;s conventions, important file locations, and anything Claude should be careful about.</li>
                 <li><strong>Review changes before committing.</strong> Claude will show you what it has changed. Read the diffs. Understand what was modified and why before accepting it into your project.</li>
                 <li><strong>Start small.</strong> Ask Claude to do one well-defined thing at a time rather than everything at once. &ldquo;Convert this one XML file to HTML&rdquo; before &ldquo;build an entire digital edition.&rdquo;</li>
@@ -506,7 +508,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
                 <li><strong>Let Claude modify your canonical source files directly.</strong> Work on copies, or use hooks to protect originals. The master copy of a critical text or dataset should be modified only by you, deliberately.</li>
                 <li><strong>Assume Claude&rsquo;s first approach is optimal.</strong> Claude may choose a complex solution when a simple one exists, or use a library you do not need. Question its architectural choices, especially early in a project.</li>
                 <li><strong>Ignore error messages.</strong> If Claude encounters an error and &ldquo;fixes&rdquo; it, make sure the fix addresses the root cause rather than papering over a symptom. Ask Claude to explain what went wrong.</li>
-                <li><strong>Upload sensitive or personally identifiable data</strong> without understanding your institution&rsquo;s data governance policies (see <a href="shared-principles.html#data-governance">4.2</a>).</li>
+                <li><strong>Upload sensitive or personally identifiable data</strong> without understanding your institution&rsquo;s data governance policies (see <a href="shared-principles.html#data-governance">5.2</a>).</li>
                 <li><strong>Use Claude Code for tasks better suited to Chat.</strong> If you just want to discuss an idea, get feedback on your writing, or brainstorm &mdash; use <a href="chat.html">Chat</a>. Code is for building things.</li>
             </ul>
         </section>
@@ -514,7 +516,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-practices">3.8 Best working practices</h2>
+            <h2 id="code-practices">4.8 Best working practices</h2>
 
             <h3>The project setup pattern</h3>
 
@@ -591,7 +593,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-reproducibility">3.10 Reproducibility</h2>
+            <h2 id="code-reproducibility">4.10 Reproducibility</h2>
 
             <p>If your project processes research data, reproducibility matters &mdash; for your own future work, for collaborators, and for peer review. Claude Code makes it easy to build pipelines; these practices make those pipelines trustworthy:</p>
 
@@ -608,7 +610,7 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
         <hr>
 
         <section>
-            <h2 id="code-combining">3.9 Combining with other tools</h2>
+            <h2 id="code-combining">4.9 Combining with other tools</h2>
 
             <h3>Code + Chat pipeline</h3>
 
@@ -651,12 +653,12 @@ cat report.txt | claude -p "summarise this report in three bullet points"</code>
 
             <h3>Code + other AI models</h3>
 
-            <p>Claude Code can call other AI models via their APIs as part of a workflow. For example, a script that uses a local Whisper model for speech-to-text transcription, then passes the text to Claude for analysis. Or a pipeline that uses a specialised OCR model for handwriting recognition and Claude for the subsequent text processing. See <a href="shared-principles.html#multi-model">4.5</a> for more on multi-model strategies.</p>
+            <p>Claude Code can call other AI models via their APIs as part of a workflow. For example, a script that uses a local Whisper model for speech-to-text transcription, then passes the text to Claude for analysis. Or a pipeline that uses a specialised OCR model for handwriting recognition and Claude for the subsequent text processing. See <a href="shared-principles.html#multi-model">5.5</a> for more on multi-model strategies.</p>
         </section>
 
         <footer>
-            <p><a href="cowork.html" class="nav-link">&larr; Part 2: Cowork</a></p>
-            <p><a href="shared-principles.html" class="nav-link">Part 4: Shared Principles &rarr;</a></p>
+            <p><a href="apps.html" class="nav-link">&larr; Part 3: Claude in Your Apps</a></p>
+            <p><a href="shared-principles.html" class="nav-link">Part 5: Shared Principles &rarr;</a></p>
         </footer>
     </div>
 </body>
