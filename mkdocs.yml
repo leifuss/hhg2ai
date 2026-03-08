@@ -1,11 +1,11 @@
 site_name: "A Hitchhiker's Guide to AI for the Humanities"
-site_url: https://leifuss.github.io/hhg2ai/
+site_url: https://leifuss.github.io/ai4hums/
 site_description: >-
   A practical, independent guide for humanities scholars navigating artificial
   intelligence. Written by a working academic. No hype, no hard sell, no assumed expertise.
 site_author: Leif Isaksen
-repo_url: https://github.com/leifuss/hhg2ai
-repo_name: leifuss/hhg2ai
+repo_url: https://github.com/leifuss/ai4hums
+repo_name: leifuss/ai4hums
 
 theme:
   name: material
