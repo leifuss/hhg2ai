@@ -13,7 +13,7 @@ A standalone guide to using Claude (Chat, Cowork, and Code) for humanities and s
 
 Individual pages: [Chat](https://leifuss.github.io/ai4hums/claude/chat.html) · [Cowork](https://leifuss.github.io/ai4hums/claude/cowork.html) · [Apps](https://leifuss.github.io/ai4hums/claude/apps.html) · [Code](https://leifuss.github.io/ai4hums/claude/code.html) · [Shared Principles](https://leifuss.github.io/ai4hums/claude/shared-principles.html) · [Environments](https://leifuss.github.io/ai4hums/claude/environments.html) · [Skills](https://leifuss.github.io/ai4hums/claude/skills.html) · [Workflows](https://leifuss.github.io/ai4hums/claude/workflows.html) · [Glossary](https://leifuss.github.io/ai4hums/claude/glossary.html)
 
-### [Claude AI Experiments](https://leifuss.github.io/ai4hums/experiments.html)
+### [Claude AI Experiments](https://leifuss.github.io/ai4hums/reference/experiments.html)
 
 A collection of experiments and small projects using Claude AI, including interactive tools, visualisations, and proof-of-concept applications for teaching and research.
 
