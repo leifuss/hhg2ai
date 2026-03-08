@@ -23,7 +23,7 @@
             <span class="nav-sep">|</span>
             <a href="environments.html">Environments</a>
             <span class="nav-sep">|</span>
-            <a href="skills.html">Skills</a>
+            <a href="skills.html">Prerequisites</a>
             <span class="nav-sep">|</span>
             <a href="workflows.html">Workflows</a>
             <span class="nav-sep">|</span>
@@ -97,7 +97,7 @@
 
             <h3>Give Claude a role</h3>
 
-            <p>Claude responds well to role-framing: &ldquo;You are an expert in Byzantine Greek palaeography&rdquo; or &ldquo;Act as a critical reviewer for a journal in medieval history.&rdquo; This is not a magic formula &mdash; it works because it implicitly sets expectations about register, depth, and the kind of knowledge to draw on.</p>
+            <p>Claude responds well to role-framing: &ldquo;You are an expert in Byzantine Greek palaeography&rdquo; or &ldquo;Act as a critical reviewer for a journal in medieval history.&rdquo; This is not a magic formula &mdash; it works because it implicitly sets expectations about register, depth, and the kind of knowledge to draw on. That said, being specific about the actual task (what you want, in what format, for what audience) is usually more effective than role-assignment alone. Use both together for best results.</p>
 
             <h3>Use structured prompts for complex tasks</h3>
 
@@ -170,6 +170,10 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
                 <li><strong>Data under embargo, NDA, or contractual restriction:</strong> Do not use with cloud-based AI services unless your contract explicitly permits it.</li>
                 <li><strong>Student data:</strong> Subject to specific regulations (GDPR, FERPA, etc.) that generally prohibit sharing with third-party services without consent.</li>
             </ul>
+
+            <div class="highlight">
+                <p style="margin-bottom: 0;"><strong>Quick decision aid:</strong> Before uploading anything to Claude, ask: (1) Is this publicly available or out of copyright? If yes, proceed. (2) Is this my own unpublished work? Generally safe on paid tiers. (3) Does it contain personal data, data under NDA, or student data? Check your institutional policy first. (4) Am I unsure? Don&rsquo;t upload it until you&rsquo;ve checked.</p>
+            </div>
         </section>
 
         <hr>
@@ -188,6 +192,8 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
                 <li><strong>Max</strong> significantly increases the usage limits, especially for Claude Code. Worth considering if you use Code frequently or for larger projects.</li>
             </ul>
 
+            <p>Note that usage limits are shared across all Claude surfaces &mdash; Chat, Code, Cowork, and add-ins all draw from the same allocation. A heavy Cowork or Code session can leave you with reduced access to Chat until the limit resets.</p>
+
             <h3>API pricing (for Code CLI users)</h3>
 
             <p>If you use Claude Code with an API key rather than a subscription, you pay per token (roughly per word). Costs vary by model:</p>
@@ -198,7 +204,7 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
                 <li><strong>Haiku</strong> is the cheapest &mdash; appropriate for bulk processing and simple tasks</li>
             </ul>
 
-            <p>A typical Claude Code session for building a small web tool might cost a few dollars with Sonnet or considerably more with Opus. The <code>/cost</code> command shows your running total. For current per-token rates, see <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic&rsquo;s pricing page</a>.</p>
+            <p>A typical Claude Code session for building a small web tool might cost a few dollars with Sonnet. Opus costs more but the gap has narrowed significantly with each model generation &mdash; check current pricing before assuming Opus is prohibitive. The <code>/cost</code> command shows your running total. For current per-token rates, see <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic&rsquo;s pricing page</a>.</p>
 
             <h3>Cost-saving strategies</h3>
 
@@ -229,6 +235,8 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
                 <li><strong>Smoothing over complexity.</strong> Claude tends to present clean narratives. If a scholarly debate is genuinely unresolved, Claude may still present one position as the consensus view. Ask explicitly: &ldquo;Is there scholarly disagreement on this?&rdquo;</li>
                 <li><strong>Translation errors.</strong> Claude handles major languages well but can make errors with ancient or less-resourced languages, especially with unusual vocabulary, dialect forms, or damaged text. Always have a domain expert check critical translations.</li>
             </ul>
+
+            <p>More broadly, Claude&rsquo;s error rate rises for ancient, low-resource, or specialist-domain content. Latin, Greek, medieval vernaculars, and non-Western historical traditions are all areas where Claude produces confident output with a higher error rate than for modern English text. Any task in a specialist domain warrants extra verification &mdash; not just translation.</p>
 
             <h3>Verification practices</h3>
 
@@ -263,6 +271,8 @@ the Latin text reference, the rhetorical function, and your commentary.</code></
             </ul>
 
             <p>Some journals and institutions now require disclosure of AI use. Even where it is not required, transparency about your methods strengthens your work. See the <a href="../guide/rules.html">Rules</a> page for more on institutional policies and disclosure requirements.</p>
+
+            <p>Verification is not a chore added on top of your work &mdash; it <em>is</em> the work. Claude&rsquo;s outputs are secondary sources at best, and unverified ones at that. Your critical judgement is what turns a Claude-assisted workflow into scholarship.</p>
         </section>
 
         <hr>

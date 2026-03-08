@@ -23,7 +23,7 @@
             <span class="nav-sep">|</span>
             <a href="environments.html" class="current">Environments</a>
             <span class="nav-sep">|</span>
-            <a href="skills.html">Skills</a>
+            <a href="skills.html">Prerequisites</a>
             <span class="nav-sep">|</span>
             <a href="workflows.html">Workflows</a>
             <span class="nav-sep">|</span>
@@ -57,10 +57,17 @@
                 </tr>
                 <tr>
                     <td><strong>Your own laptop/desktop</strong></td>
-                    <td>Low &mdash; install Node.js + Claude Code</td>
+                    <td>Low &mdash; run the native installer</td>
                     <td>Pro or Max subscription, or <abbr class="glossary" title="A unique code that identifies you when using an API, like a password for software access">API key</abbr></td>
                     <td>Most users. Full control, local files, your own tools</td>
                     <td>Relies on your machine&rsquo;s hardware; you manage your own software</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Code Desktop</strong></td>
+                    <td>None beyond the desktop app</td>
+                    <td>Pro or Max subscription</td>
+                    <td>Users who want local Code capabilities without the terminal</td>
+                    <td>Requires the Claude Desktop app; less flexible than CLI for scripting and automation</td>
                 </tr>
                 <tr>
                     <td><strong>GitHub Codespaces</strong></td>
@@ -90,7 +97,7 @@
             <h2>Recommendations by situation</h2>
 
             <h3>I&rsquo;m just starting out</h3>
-            <p>Use <strong>Claude Code on the web</strong>. No installation, no configuration, no risk to your local files. Try a small project &mdash; build a simple web page, process a sample dataset &mdash; and see whether Code is useful for your work before investing in a more complex setup.</p>
+            <p>If you are new to Claude entirely, start with <a href="chat.html">Chat</a> &mdash; you do not need Code at all for most humanities work. If you have used Chat and want to try building something, <strong>Claude Code on the web</strong> is the lowest-friction entry point: no installation, no configuration, no risk to your local files. Try a small project and see whether Code is useful for your work before investing in a more complex setup.</p>
 
             <h3>I want to use Code regularly for my research</h3>
             <p>Install <strong>Claude Code on your laptop or desktop</strong>. This gives you full access to your files, your reference managers, your LaTeX installation, and any other tools you use. It is the most natural environment for sustained work.</p>
@@ -109,11 +116,13 @@
             <h2>A note on IDE integration</h2>
 
             <p>Claude Code can also run inside code editors like VS Code and JetBrains IDEs as an extension. If you already use one of these editors for other work (LaTeX editing, Python scripting, web development), the integrated experience can be convenient &mdash; you get Claude&rsquo;s assistance directly alongside your files and terminal. But an IDE is not required; the standalone CLI works perfectly well.</p>
+
+            <p>The Claude Desktop app also supports <strong>remote sessions</strong> &mdash; Code sessions that run on Anthropic&rsquo;s cloud infrastructure and continue even if you close the app. This is useful for long-running tasks (batch processing large corpora, overnight builds) where you do not want to keep your machine running. Remote sessions are available through the Desktop app&rsquo;s Code tab.</p>
         </section>
 
         <footer>
             <p><a href="shared-principles.html" class="nav-link">&larr; Part 5: Shared Principles</a></p>
-            <p><a href="skills.html" class="nav-link">Part 7: Skills You May Need &rarr;</a></p>
+            <p><a href="skills.html" class="nav-link">Part 7: Prerequisites &rarr;</a></p>
         </footer>
     </div>
 </body>
