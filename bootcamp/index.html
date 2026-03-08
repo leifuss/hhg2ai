@@ -1,0 +1,3425 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Ten structured experiments for humanities scholars to build genuine AI fluency — from foundational setup to advanced critical methods.">
+      
+      
+        <meta name="author" content="Leif Isaksen">
+      
+      
+        <link rel="canonical" href="https://leifuss.github.io/hhg2ai/bootcamp/">
+      
+      
+        <link rel="prev" href="../claude/glossary/">
+      
+      
+        <link rel="next" href="../resources/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>AI Bootcamp - A Hitchhiker's Guide to AI for the Humanities</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="hhg" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-10-experiment-ai-bootcamp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="A Hitchhiker&#39;s Guide to AI for the Humanities" class="md-header__button md-logo" aria-label="A Hitchhiker's Guide to AI for the Humanities" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            A Hitchhiker's Guide to AI for the Humanities
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI Bootcamp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="hhg" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/leifuss/hhg2ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    leifuss/hhg2ai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guide/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  The Primer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../essentials/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Essentials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../claude/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Claude
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Bootcamp
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+  
+        
+      
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="A Hitchhiker&#39;s Guide to AI for the Humanities" class="md-nav__button md-logo" aria-label="A Hitchhiker's Guide to AI for the Humanities" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    A Hitchhiker's Guide to AI for the Humanities
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/leifuss/hhg2ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    leifuss/hhg2ai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../guide/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Primer
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Primer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/briefing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Briefing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/mindset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mindset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Field Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/ancient-languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ancient Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/agentic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../essentials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essentials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essentials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essentials/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification & Citation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essentials/data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essentials/prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompting Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essentials/disclosure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disclosure & Ethics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essentials/multi-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Model Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essentials/decision-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essentials/cost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost & Plans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../claude/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Claude
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/cowork/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cowork
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apps & Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worked Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootcamp
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bootcamp
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-0-the-scholars-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 0: The Scholar's Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 0: The Scholar&#39;s Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-1-the-research-partner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 1: The Research Partner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 1: The Research Partner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-2-the-source-analysis-laboratory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 2: The Source Analysis Laboratory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 2: The Source Analysis Laboratory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-3-the-argument-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 3: The Argument Workshop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 3: The Argument Workshop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-4-the-literature-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 4: The Literature Navigator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 4: The Literature Navigator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-5-the-teaching-laboratory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 5: The Teaching Laboratory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 5: The Teaching Laboratory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-6-the-data-humanities-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 6: The Data Humanities Workshop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 6: The Data Humanities Workshop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-7-visual-and-material-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 7: Visual and Material Sources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 7: Visual and Material Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-8-the-writing-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 8: The Writing Studio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 8: The Writing Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-9-the-critical-methods-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 9: The Critical Methods Workshop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 9: The Critical Methods Workshop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-10-research-infrastructure-and-public-scholarship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment 10: Research Infrastructure and Public Scholarship
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 10: Research Infrastructure and Public Scholarship">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-further_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-experiment-the-agent-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bonus Experiment: The Agent Evaluation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bonus Experiment: The Agent Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-do_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-will-learn_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done-when_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done when
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-work_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-gauntlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The gauntlet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-the-bootcamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After the Bootcamp
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-10-experiment-ai-bootcamp">The 10-Experiment AI Bootcamp<a class="headerlink" href="#the-10-experiment-ai-bootcamp" title="Permanent link">&para;</a></h1>
+<p><em>A structured path to advanced AI fluency</em></p>
+<p>This bootcamp is a series of ten practical experiments, each designed to build a specific AI skill relevant to humanities research and teaching. It is a companion to the rest of this guide: where the other pages provide theoretical foundations, prompting principles, and reference material, these experiments give you structured, hands-on practice.</p>
+<p><strong>This page is for those who want to lean into AI usage.</strong> It is not an expectation. Many colleagues will reasonably decide that a few of these experiments are enough, or that none of them suit their work right now. That is fine. You can do one, three, or all ten --- and you can come back to any of them later. The experiments are designed to stand alone as well as to build on each other.</p>
+<div class="admonition essential">
+<p class="admonition-title">How this works</p>
+<ul>
+<li>Each experiment takes <strong>2--4 hours</strong> of focused work.</li>
+<li>Do <strong>no more than one or two per day</strong>. The skills compound better with time to reflect between sessions.</li>
+<li>Every experiment produces a <strong>concrete, reusable output</strong> --- not just knowledge, but tools and workflows you will actually use.</li>
+<li>By the end, you will be able to use AI tools <strong>more effectively than the vast majority of people who currently advocate for them</strong>. Most AI commentary focuses on surface-level use. These experiments build genuine depth.</li>
+</ul>
+</div>
+<div class="admonition panic">
+<p class="admonition-title">Don't Panic</p>
+<p><strong>You do not need to do all ten.</strong> Here are three sensible paths:</p>
+<ul>
+<li><strong>Core track (6--8 hours):</strong> Experiments 0, 1, and 2 --- gives you the foundational calibration skills that improve everything else.</li>
+<li><strong>Add by role:</strong> Teaching --&gt; add 5 + 9. Research --&gt; add 3 + 4. Public-facing work --&gt; add 8 + 10.</li>
+<li><strong>Full bootcamp (~30 hours):</strong> All 10 experiments plus the bonus, for those who want comprehensive fluency.</li>
+</ul>
+</div>
+<div class="admonition offtrack">
+<p class="admonition-title">Or start from a pain point</p>
+<ul>
+<li>"I'm buried in literature" --&gt; <a href="#experiment-4-the-literature-navigator">Experiment 4</a></li>
+<li>"My students are using AI to cheat" --&gt; <a href="#experiment-5-the-teaching-laboratory">Experiment 5</a> (Option D)</li>
+<li>"I don't trust AI outputs" --&gt; <a href="#experiment-9-the-critical-methods-workshop">Experiment 9</a></li>
+<li>"I need to write faster" --&gt; <a href="#experiment-8-the-writing-studio">Experiment 8</a></li>
+<li>"I have images or manuscripts to process" --&gt; <a href="#experiment-7-visual-and-material-sources">Experiment 7</a></li>
+<li>"I want to understand what AI actually is" --&gt; <a href="#experiment-0-the-scholars-setup">Experiment 0</a> + <a href="#experiment-1-the-research-partner">1</a></li>
+</ul>
+</div>
+<p>The experiments are numbered but modular. You can reorder them to suit your needs, though the sequence is designed so that later experiments build on skills from earlier ones.</p>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>On collaboration:</strong> These experiments are designed for self-guided work, but many of them become more valuable when done alongside a colleague. Where this is the case, each experiment includes an optional "If collaborating" note. You do not need a partner --- but if you have one, the comparative perspective significantly deepens the learning.</p>
+</div>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>On revisiting these experiments:</strong> AI capabilities change rapidly. An experiment you did three months ago may yield substantially different results with a newer model or tool. While AI continues to evolve at pace, periodically repeating these experiments --- even quickly --- is one of the most reliable ways to stay abreast of major developments without having to track every product announcement. The structure remains useful even as the technology shifts beneath it.</p>
+</div>
+<h3 id="acknowledgement">Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permanent link">&para;</a></h3>
+<p>This bootcamp is inspired by and adapted from "<a href="https://aidbnewyear.com">The 10-Weekend AI Resolution</a>" created by <em>The AI Daily Brief</em> podcast. Their original framework --- focusing on practical weekend projects with clear deliverables --- has been reimagined here for the specific needs of humanities scholarship. While theirs was built for general AI fluency and productivity (and also worth looking at), this version addresses the particular challenges of research, teaching, and public scholarship in the humanities, and restructures the pedagogical approach around self-contained experiments with explicit learning objectives.</p>
+<hr />
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#experiment-0-the-scholars-setup">Experiment 0: The Scholar's Setup</a></li>
+<li><a href="#experiment-1-the-research-partner">Experiment 1: The Research Partner</a></li>
+<li><a href="#experiment-2-the-source-analysis-laboratory">Experiment 2: The Source Analysis Laboratory</a></li>
+<li><a href="#experiment-3-the-argument-workshop">Experiment 3: The Argument Workshop</a></li>
+<li><a href="#experiment-4-the-literature-navigator">Experiment 4: The Literature Navigator</a></li>
+<li><a href="#experiment-5-the-teaching-laboratory">Experiment 5: The Teaching Laboratory</a></li>
+<li><a href="#experiment-6-the-data-humanities-workshop">Experiment 6: The Data Humanities Workshop</a></li>
+<li><a href="#experiment-7-visual-and-material-sources">Experiment 7: Visual and Material Sources</a></li>
+<li><a href="#experiment-8-the-writing-studio">Experiment 8: The Writing Studio</a></li>
+<li><a href="#experiment-9-the-critical-methods-workshop">Experiment 9: The Critical Methods Workshop</a></li>
+<li><a href="#experiment-10-research-infrastructure-and-public-scholarship">Experiment 10: Research Infrastructure and Public Scholarship</a></li>
+<li><a href="#bonus-experiment-the-agent-evaluation">Bonus Experiment: The Agent Evaluation</a></li>
+<li><a href="#completion-checklist">Completion Checklist</a></li>
+<li><a href="#after-the-bootcamp">After the Bootcamp</a></li>
+</ul>
+<hr />
+<h2 id="experiment-0-the-scholars-setup">Experiment 0: The Scholar's Setup<a class="headerlink" href="#experiment-0-the-scholars-setup" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 30--60 minutes</p>
+<h3 id="what-you-will-do">What you will do<a class="headerlink" href="#what-you-will-do" title="Permanent link">&para;</a></h3>
+<p>Set up the workspace, accounts, and materials you will need for the rest of the bootcamp.</p>
+<h3 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
+<p>Having your infrastructure ready before you begin means each subsequent experiment starts with doing, not configuring. It also forces you to identify the research questions and materials you will work with throughout.</p>
+<h3 id="what-you-will-learn">What you will learn<a class="headerlink" href="#what-you-will-learn" title="Permanent link">&para;</a></h3>
+<p>Which tools are available to you, how to organise AI-related work, and how to evaluate your own progress systematically.</p>
+<h3 id="the-work">The work<a class="headerlink" href="#the-work" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: A computer with internet access. Accounts for the AI tools you intend to use (free tiers are fine to start). A folder structure for organising outputs. 2--3 research questions or teaching topics you are currently working on.</em></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Review data boundaries first.</strong> Before uploading any material to AI tools, read the <a href="../essentials/data-governance/">Data Governance</a> page. Establish what you will and will not share with commercial AI services. Check whether your institution provides AI access under procurement agreements with stronger data protection --- if so, use those tools for anything sensitive. This is the single most important step in your setup.</p>
+</div>
+<p><strong>Create your workspace:</strong></p>
+<ul>
+<li>Set up a "Scholarly AI Lab" folder structure on your computer or cloud storage</li>
+<li>Create subfolders for each experiment's outputs</li>
+<li>Set up accounts for the tools you intend to use (e.g. Claude Projects, NotebookLM, ChatGPT)</li>
+</ul>
+<div class="admonition offtrack">
+<p class="admonition-title">Off the Beaten Track</p>
+<p><strong>A note on tool types:</strong> These tools have different architectures and suit different tasks. <strong>Chat-based tools</strong> (Claude, ChatGPT) are conversational and good for dialogue, context documents, and argument development. <strong>Grounded/source-based tools</strong> (NotebookLM) work from uploaded documents and are better for source analysis where you need the AI to stay close to specific texts. <strong>Institutional tools</strong> (Microsoft Copilot) operate within your university's data tenancy --- see the platform manuals. You do not need all of these; use what you have access to.</p>
+</div>
+<p><strong>Gather your research materials:</strong></p>
+<ul>
+<li>Identify 2--3 current research questions you are actively working on</li>
+<li>Collect sample corpora: texts, data, sources you know well enough to evaluate AI outputs against</li>
+<li>Note teaching contexts where AI might be useful</li>
+</ul>
+<p><strong>Save this evaluation rubric</strong> --- use it after each experiment:</p>
+<ul>
+<li><strong>Scholarly value</strong> (1--5): Does this advance your research or teaching?</li>
+<li><strong>Time efficiency</strong> (1--5): Does this save time compared to your existing workflow?</li>
+<li><strong>Repeatability:</strong> Could you use this workflow again without rebuilding it?</li>
+<li><strong>Critical rigour:</strong> Does this maintain the standards of your discipline?</li>
+</ul>
+<hr />
+<h2 id="experiment-1-the-research-partner">Experiment 1: The Research Partner<a class="headerlink" href="#experiment-1-the-research-partner" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiment 0</p>
+<h3 id="what-you-will-do_1">What you will do<a class="headerlink" href="#what-you-will-do_1" title="Permanent link">&para;</a></h3>
+<p>Write a detailed context document that makes an AI understand your field, then test it with real research questions.</p>
+<h3 id="why-this-matters_1">Why this matters<a class="headerlink" href="#why-this-matters_1" title="Permanent link">&para;</a></h3>
+<p>Most AI interactions fail because the AI lacks disciplinary context. A good context document transforms generic responses into ones that engage with your field's methods, debates, and standards. Build this foundation and every subsequent experiment improves exponentially.</p>
+<h3 id="what-you-will-learn_1">What you will learn<a class="headerlink" href="#what-you-will-learn_1" title="Permanent link">&para;</a></h3>
+<p>How to articulate disciplinary knowledge in a form AI can use; how context-setting changes output quality; the difference between a generic AI response and one grounded in your field.</p>
+<h3 id="done-when">Done when<a class="headerlink" href="#done-when" title="Permanent link">&para;</a></h3>
+<p>You can ask a complex research question and get responses that demonstrate genuine understanding of your field's methods and debates. As a concrete test: ask the AI to summarise the key methodological debates in your field, name three canonical positions, and define five field-specific terms. Score the response against your own knowledge --- if it gets the broad strokes right (even if imperfect on detail), your context document is working.</p>
+<h3 id="the-work_1">The work<a class="headerlink" href="#the-work_1" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: A paid-tier LLM account (Claude or ChatGPT recommended). Your research interests, methodological commitments, and key debates in your field --- enough to write 2--3 pages of context. Three research questions of varying complexity to test with.</em></p>
+<p><strong>Write your context document</strong> (2--3 pages). Use this skeleton as a starting point:</p>
+<ol>
+<li><strong>Research areas and current projects:</strong> What are you working on? What questions drive your work?</li>
+<li><strong>Methodological approaches:</strong> How does your field investigate its questions? What counts as evidence?</li>
+<li><strong>Key debates:</strong> What are the live scholarly disagreements? Who are the major positions associated with?</li>
+<li><strong>Citation and conventions:</strong> What citation style do you use? What conventions govern good work in your field?</li>
+<li><strong>Quality markers:</strong> What distinguishes excellent scholarship from competent scholarship in your discipline?</li>
+</ol>
+<p><strong>Test drive</strong> --- run three research queries:</p>
+<ol>
+<li>A straightforward factual question in your area</li>
+<li>A methodological question about how to approach a problem</li>
+<li>A complex interpretive question that requires disciplinary judgement</li>
+</ol>
+<p><strong>Iterate:</strong> Refine the context document based on what the AI misunderstands. Note which gaps in your framing led to the weakest responses.</p>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>If collaborating:</strong> Swap context documents with a colleague and run the same research question through each. The difference in the AI's responses reveals how much the framing --- not just the question --- shapes the output. This is one of the most powerful ways to understand AI subjectivity, and it often reveals assumptions in your own framing you had not noticed.</p>
+</div>
+<h3 id="going-further">Going further<a class="headerlink" href="#going-further" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create separate context profiles for different research projects</li>
+<li>Include examples of your own published writing as stylistic reference</li>
+<li>Add field-specific terminology glossaries</li>
+</ul>
+<hr />
+<h2 id="experiment-2-the-source-analysis-laboratory">Experiment 2: The Source Analysis Laboratory<a class="headerlink" href="#experiment-2-the-source-analysis-laboratory" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiment 1</p>
+<h3 id="what-you-will-do_2">What you will do<a class="headerlink" href="#what-you-will-do_2" title="Permanent link">&para;</a></h3>
+<p>Use AI to perform a multi-source comparative analysis addressing a real research question, then verify its findings against the sources themselves.</p>
+<h3 id="why-this-matters_2">Why this matters<a class="headerlink" href="#why-this-matters_2" title="Permanent link">&para;</a></h3>
+<p>This is where AI excels for humanists: processing multiple texts simultaneously, identifying patterns, suggesting interpretive possibilities --- while you maintain critical oversight. The combination of computational breadth and scholarly depth is genuinely powerful.</p>
+<h3 id="what-you-will-learn_2">What you will learn<a class="headerlink" href="#what-you-will-learn_2" title="Permanent link">&para;</a></h3>
+<p>How to frame source analysis tasks for AI; how to evaluate AI-generated textual observations; the workflow of using AI as a research assistant for close reading at scale.</p>
+<h3 id="done-when_1">Done when<a class="headerlink" href="#done-when_1" title="Permanent link">&para;</a></h3>
+<p>You have used AI to identify patterns, contradictions, or connections you had not noticed, and verified them against the sources.</p>
+<h3 id="the-work_2">The work<a class="headerlink" href="#the-work_2" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: 3--5 primary or secondary sources (PDFs or text) related to a current research question. Your context document from Experiment 1. Sources you know well enough to verify AI claims against.</em></p>
+<p><strong>Gather sources:</strong> 3--5 primary or secondary sources related to a research question you are working on.</p>
+<p><strong>Upload and frame:</strong> Provide the sources with scholarly framing:</p>
+<ul>
+<li>What are you investigating?</li>
+<li>What debates does this intersect with?</li>
+<li>What are you specifically uncertain about?</li>
+</ul>
+<p><strong>Iterative analysis</strong> (use a two-stage workflow):</p>
+<ol>
+<li><strong>Stage 1 --- Claims with anchors:</strong> Ask the AI to identify patterns and comparisons, but require it to quote or give specific textual references (page, line, passage) for every claim. Do not proceed to interpretation until you have a list of anchored claims.</li>
+<li><strong>Stage 2 --- Interpretation after verification:</strong> Check the anchored claims against your sources. Verify at least 10 claims. If more than 2 are wrong, reframe your prompt or reduce the scope before continuing --- the AI is not reading closely enough.</li>
+</ol>
+<p><strong>Document:</strong> Write a research memo with:</p>
+<ul>
+<li>AI-identified patterns and where you found them in the sources</li>
+<li>Your verification process and its results</li>
+<li>Interpretations you accept, reject, or wish to investigate further, and why</li>
+</ul>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>If collaborating:</strong> Have a colleague run the same sources through the same analysis framework independently. Compare your verification memos: did the AI identify the same patterns for both of you? Where do your assessments of the AI's accuracy diverge? The differences are often revealing.</p>
+</div>
+<h3 id="going-further_1">Going further<a class="headerlink" href="#going-further_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Work with texts in multiple languages</li>
+<li>Compare AI analysis with existing published scholarship on the same sources</li>
+<li>Create a reusable analysis template you can apply to future source sets</li>
+</ul>
+<hr />
+<h2 id="experiment-3-the-argument-workshop">Experiment 3: The Argument Workshop<a class="headerlink" href="#experiment-3-the-argument-workshop" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiments 1--2</p>
+<h3 id="what-you-will-do_3">What you will do<a class="headerlink" href="#what-you-will-do_3" title="Permanent link">&para;</a></h3>
+<p>Develop a scholarly argument, then use AI to stress-test it by generating substantive counter-arguments, identifying logical gaps, and suggesting alternative interpretations.</p>
+<h3 id="why-this-matters_3">Why this matters<a class="headerlink" href="#why-this-matters_3" title="Permanent link">&para;</a></h3>
+<p>Academic arguments require dialectical development. AI can generate serious objections and alternative perspectives without the social constraints of asking colleagues --- and it is available at any hour. The goal is a stronger argument than you started with.</p>
+<h3 id="what-you-will-learn_3">What you will learn<a class="headerlink" href="#what-you-will-learn_3" title="Permanent link">&para;</a></h3>
+<p>How to use AI as a critical interlocutor; how to structure prompts that generate genuine intellectual challenge rather than agreement; the difference between useful criticism and AI-generated noise.</p>
+<h3 id="done-when_2">Done when<a class="headerlink" href="#done-when_2" title="Permanent link">&para;</a></h3>
+<p>You have a stronger argument than you started with, having identified and addressed its weaknesses through AI-assisted dialectic.</p>
+<h3 id="the-work_3">The work<a class="headerlink" href="#the-work_3" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: A thesis or argument you are developing --- ideally from current research or a work in progress. Your context document from Experiment 1. Willingness to have your argument challenged.</em></p>
+<p><strong>Articulate your argument:</strong> State your thesis and main supporting points clearly.</p>
+<p><strong>Devil's advocate:</strong> Ask the AI to:</p>
+<ul>
+<li>Challenge your premises</li>
+<li>Identify logical gaps</li>
+<li>Suggest alternative interpretations of your evidence</li>
+<li>Point out evidence you have not considered</li>
+</ul>
+<div class="admonition essential">
+<p class="admonition-title">Essential</p>
+<p><strong>Quality constraint:</strong> When asking for perspective-based critiques (e.g. "critique this from a post-colonial perspective"), require each critique to identify at least two specific "if X, then Y" vulnerabilities in your argument and propose concrete revisions. Vague thematic commentary ("this doesn't account for power dynamics") is not useful --- specific structural weaknesses and proposed fixes are.</p>
+</div>
+<p><strong>Find the failure:</strong> Deliberately probe for a case where the AI's disciplinary logic breaks down. Ask it to defend a position you know to be weak, or to critique an argument in a way that requires specialist knowledge it lacks. Identifying <em>where</em> and <em>why</em> AI reasoning fails in your field is often more instructive than finding where it succeeds --- and it calibrates your trust for future interactions.</p>
+<p><strong>Refine:</strong> Revise your argument to address the strongest objections.</p>
+<p><strong>Map:</strong> Create an argument structure showing:</p>
+<ul>
+<li>Main claims and supporting evidence</li>
+<li>Anticipated objections</li>
+<li>Your responses to those objections</li>
+</ul>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>If collaborating:</strong> Present your argument to a colleague and have <em>both</em> of you independently ask the AI to critique it. Then compare: did the AI find the same weaknesses for both prompts? Did your colleague spot things the AI missed, or vice versa? This triangulation --- human, human, AI --- is remarkably effective for argument development.</p>
+</div>
+<h3 id="going-further_2">Going further<a class="headerlink" href="#going-further_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ask AI to adopt specific scholarly perspectives (feminist, post-colonial, formalist) and critique your argument from each --- using the quality constraint above</li>
+<li>Test your argument against different theoretical frameworks</li>
+<li>Generate a bibliography of counter-positions to read</li>
+</ul>
+<hr />
+<h2 id="experiment-4-the-literature-navigator">Experiment 4: The Literature Navigator<a class="headerlink" href="#experiment-4-the-literature-navigator" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiments 1--3</p>
+<h3 id="what-you-will-do_4">What you will do<a class="headerlink" href="#what-you-will-do_4" title="Permanent link">&para;</a></h3>
+<p>Use AI to map the scholarly landscape around a research question --- not to generate citations, but to formulate better search strategies and identify the shape of relevant conversations.</p>
+<h3 id="why-this-matters_4">Why this matters<a class="headerlink" href="#why-this-matters_4" title="Permanent link">&para;</a></h3>
+<p>Literature reviews are time-intensive but essential. AI is poor at generating accurate citations (it hallucinates references freely), but it is surprisingly good at mapping intellectual territory: identifying schools of thought, suggesting search terms, and describing the structure of debates. The key is to use AI for what it does well and real bibliographic databases for what it does not.</p>
+<h3 id="what-you-will-learn_4">What you will learn<a class="headerlink" href="#what-you-will-learn_4" title="Permanent link">&para;</a></h3>
+<p>How to use AI for bibliographic discovery strategy (rather than citation generation); how to combine AI with proper bibliographic tools; how to build a research landscape map efficiently.</p>
+<h3 id="done-when_3">Done when<a class="headerlink" href="#done-when_3" title="Permanent link">&para;</a></h3>
+<p>You can articulate where your research fits in existing scholarship and what gaps it addresses, supported by a verified annotated bibliography assembled using proper databases.</p>
+<h3 id="the-work_4">The work<a class="headerlink" href="#the-work_4" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: 5--10 key works in your area that you already know. Access to bibliographic databases (library discovery system, Scopus, JSTOR, or your field's equivalent). A reference manager (e.g. Zotero) is helpful but not essential.</em></p>
+<p><strong>Seed bibliography:</strong> Start with 5--10 key works in your area that you already know.</p>
+<p><strong>Use AI for discovery strategy</strong> (not citation generation):</p>
+<ul>
+<li><strong>Query formulation:</strong> Ask AI to suggest search terms, controlled vocabulary, key names, and relevant venues (journals, book series, conference proceedings) based on your seed bibliography</li>
+<li><strong>Landscape mapping:</strong> Ask AI to describe the main schools of thought, methodological camps, and intellectual debates that intersect with your topic</li>
+<li><strong>"Who and where to look":</strong> Ask for suggestions of scholars, research groups, journals, and societies working in adjacent areas you may not have explored</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Do not ask AI to generate a bibliography for you.</strong> It will produce plausible-looking references that may not exist. Use AI to tell you <em>where</em> and <em>how</em> to look, then do the actual searching in proper bibliographic databases: your library discovery system, Scopus, Web of Science, JSTOR, MLA International Bibliography, L'Annee philologique, or the equivalent tools for your field.</p>
+</div>
+<p><strong>Search and verify:</strong> Take the AI's suggestions to your databases. For each strand of the conversation AI identified:</p>
+<ul>
+<li>Find real publications using the search terms and names AI suggested</li>
+<li>Assess their relevance and scholarly credibility</li>
+<li>Note where AI's map of the field was accurate and where it was misleading</li>
+</ul>
+<p><strong>Map:</strong> Create a research landscape --- this could be:</p>
+<ul>
+<li>A concept map showing how different conversations relate to each other</li>
+<li>A table with columns for school/approach, key figures, key works, and relevance to your project</li>
+<li>A tagged collection in a reference manager (e.g. Zotero groups or tags)</li>
+</ul>
+<h3 id="going-further_3">Going further<a class="headerlink" href="#going-further_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Compare landscape descriptions from different AI models --- where do they agree and disagree?</li>
+<li>Build discipline-specific search strategies that combine AI with your field's bibliographic tools</li>
+<li>Create an ongoing research alert system using database alerts alongside periodic AI check-ins</li>
+</ul>
+<hr />
+<h2 id="experiment-5-the-teaching-laboratory">Experiment 5: The Teaching Laboratory<a class="headerlink" href="#experiment-5-the-teaching-laboratory" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiment 1</p>
+<h3 id="what-you-will-do_5">What you will do<a class="headerlink" href="#what-you-will-do_5" title="Permanent link">&para;</a></h3>
+<p>Build one AI-powered teaching tool that you will actually use this term. Choose from assignment design, feedback systems, discussion preparation, or assessment hardening.</p>
+<h3 id="why-this-matters_5">Why this matters<a class="headerlink" href="#why-this-matters_5" title="Permanent link">&para;</a></h3>
+<p>Teaching consumes enormous time. Strategic AI use can improve pedagogical quality while reducing mechanical labour --- if done thoughtfully and with clear boundaries about what AI should and should not do in educational contexts.</p>
+<h3 id="what-you-will-learn_5">What you will learn<a class="headerlink" href="#what-you-will-learn_5" title="Permanent link">&para;</a></h3>
+<p>How to apply AI to teaching tasks while maintaining pedagogical integrity; where AI genuinely saves time versus where it creates false efficiency; how to set appropriate boundaries for AI in your teaching.</p>
+<h3 id="done-when_4">Done when<a class="headerlink" href="#done-when_4" title="Permanent link">&para;</a></h3>
+<p>You have tested an AI teaching tool with real course materials and trust it enough to use with students. You have also produced a student-facing disclosure statement and an instructor-only failure modes sheet.</p>
+<h3 id="the-work_5">The work<a class="headerlink" href="#the-work_5" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: A current syllabus, learning outcomes, or module description. Sample student work (anonymised) if testing feedback tools. Existing assignment briefs you are willing to redesign. A clear sense of what students should actually learn from the task.</em></p>
+<p>Choose <strong>one</strong> of the following focuses:</p>
+<p><strong>Option A --- Assignment Design:</strong></p>
+<ul>
+<li>Upload your syllabus and learning outcomes</li>
+<li>Generate assignment options with AI</li>
+<li>Critically evaluate their pedagogical value</li>
+<li>Refine one assignment for actual use</li>
+</ul>
+<p><strong>Option B --- Feedback System:</strong></p>
+<ul>
+<li>Create an AI-assisted feedback rubric</li>
+<li>Test it on sample student work</li>
+<li>Refine to maintain your personal voice and standards</li>
+<li>Document appropriate use guidelines</li>
+</ul>
+<p><strong>Option C --- Discussion Preparation:</strong></p>
+<ul>
+<li>Build an AI discussion partner for text analysis</li>
+<li>Test with actual course readings</li>
+<li>Create question sequences that build in complexity</li>
+<li>Plan how to integrate with seminar teaching</li>
+</ul>
+<p><strong>Option D --- Assessment Hardening:</strong></p>
+<ul>
+<li>Take an existing assignment and test it: could a student use AI to produce a passable submission?</li>
+<li>Redesign the assignment so that it remains meaningful even with AI assistance</li>
+<li>Consider: oral components, process portfolios, personal reflection, in-class elements, or tasks that require access to specific unpublished materials</li>
+<li>Test the redesigned assignment against AI to confirm it resists shallow automation</li>
+</ul>
+<div class="admonition essential">
+<p class="admonition-title">Essential</p>
+<p><strong>Required outputs</strong> (whichever option you choose):</p>
+<ol>
+<li>A <strong>student-facing disclosure statement</strong>: how AI was used in designing the material, and what the expectations are for students' own AI use</li>
+<li>An <strong>instructor-only failure modes sheet</strong>: what the AI tends to get wrong for this type of material, and what you have decided not to outsource</li>
+</ol>
+</div>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>If collaborating:</strong> Test each other's AI teaching tools. A colleague from outside your specific area can give you valuable perspective on whether the tool makes sense to someone who does not share all your assumptions --- which is closer to the student experience.</p>
+</div>
+<h3 id="going-further_4">Going further<a class="headerlink" href="#going-further_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Build an AI teaching assistant trained on your course materials</li>
+<li>Create a student-facing AI research guide for your courses</li>
+<li>Develop a critical AI literacy module for your students</li>
+</ul>
+<hr />
+<h2 id="experiment-6-the-data-humanities-workshop">Experiment 6: The Data Humanities Workshop<a class="headerlink" href="#experiment-6-the-data-humanities-workshop" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiments 1--2</p>
+<h3 id="what-you-will-do_6">What you will do<a class="headerlink" href="#what-you-will-do_6" title="Permanent link">&para;</a></h3>
+<p>Analyse your own research data with AI --- whether that is a textual corpus, a spreadsheet of manuscripts, network data, or spatial information --- and produce actionable insights.</p>
+<h3 id="why-this-matters_6">Why this matters<a class="headerlink" href="#why-this-matters_6" title="Permanent link">&para;</a></h3>
+<p>Humanists increasingly work with data, but often lack computational skills for analysis. AI bridges this gap, allowing you to ask analytical questions of your data in natural language and get results you can evaluate with your domain expertise.</p>
+<h3 id="what-you-will-learn_6">What you will learn<a class="headerlink" href="#what-you-will-learn_6" title="Permanent link">&para;</a></h3>
+<p>How to frame data analysis questions for AI; how to critically evaluate AI-generated analysis; the workflow of using AI as an analytical partner for humanities data.</p>
+<h3 id="done-when_5">Done when<a class="headerlink" href="#done-when_5" title="Permanent link">&para;</a></h3>
+<p>You have identified patterns or relationships in your data you had not seen before, and verified they are real.</p>
+<h3 id="the-work_6">The work<a class="headerlink" href="#the-work_6" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: A dataset you are working with --- spreadsheet, textual corpus, metadata, network data, or similar. An LLM with code execution (Claude or ChatGPT paid tier). Specific research questions about your data. Enough familiarity with the data to spot-check results.</em></p>
+<p><strong>Gather data:</strong> Collect research data you are currently working with (spreadsheet of manuscripts, textual corpus, network data, metadata, etc.).</p>
+<p><strong>Frame analysis:</strong> Articulate specific research questions about your data.</p>
+<p><strong>AI analysis:</strong></p>
+<ul>
+<li>Upload data with scholarly context</li>
+<li>Request specific analytical approaches</li>
+<li>Ask for pattern identification</li>
+<li>Generate visualisations</li>
+</ul>
+<p><strong>Critical verification</strong> --- your deliverable must include:</p>
+<ul>
+<li>At least one <strong>sanity-check</strong> you can interpret directly from the raw data (counts, distributions, simple cross-tabulations) --- something you can verify without trusting the AI's analysis</li>
+<li>At least one <strong>manual spot-check procedure</strong> documented: how did you verify a specific finding against the underlying data?</li>
+<li>A <strong>method validity note</strong>: what assumptions did the AI make about your data? Were those assumptions appropriate? (For example: did it treat categorical data as numerical? Did it assume completeness where your data has gaps?)</li>
+</ul>
+<p><strong>Insights memo:</strong> Write up findings with a methodology section explaining what AI did and how you verified it.</p>
+<h3 id="going-further_5">Going further<a class="headerlink" href="#going-further_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Compare analyses from different AI models</li>
+<li>Build a reusable analysis pipeline for similar datasets</li>
+<li>Create data visualisations suitable for publication</li>
+</ul>
+<hr />
+<h2 id="experiment-7-visual-and-material-sources">Experiment 7: Visual and Material Sources<a class="headerlink" href="#experiment-7-visual-and-material-sources" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiments 1--2</p>
+<h3 id="what-you-will-do_7">What you will do<a class="headerlink" href="#what-you-will-do_7" title="Permanent link">&para;</a></h3>
+<p>Use AI to work with images: analyse visual sources, extract text from manuscripts or archival documents, and generate images for teaching or reconstruction. Then evaluate where AI helps, where it misleads, and what verification is needed.</p>
+<h3 id="why-this-matters_7">Why this matters<a class="headerlink" href="#why-this-matters_7" title="Permanent link">&para;</a></h3>
+<p>Humanities scholars routinely work with visual and material evidence --- photographs of artefacts, manuscript pages, maps, artworks, archaeological sites. AI capabilities in image recognition, handwriting transcription, and image generation have advanced rapidly, but each has distinct strengths and failure modes that you need to understand through direct testing.</p>
+<h3 id="what-you-will-learn_7">What you will learn<a class="headerlink" href="#what-you-will-learn_7" title="Permanent link">&para;</a></h3>
+<p>How to use AI for image analysis and description; the current state of OCR and handwritten text recognition (HWR) for historical documents; how to evaluate and use AI-generated images responsibly; where these tools save real time and where they produce confident errors.</p>
+<h3 id="done-when_6">Done when<a class="headerlink" href="#done-when_6" title="Permanent link">&para;</a></h3>
+<p>You have tested AI on all three visual tasks below using materials from your own field, and can articulate where it helps, where it misleads, and what verification is needed for each.</p>
+<h3 id="the-work_7">The work<a class="headerlink" href="#the-work_7" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: Photographs of artefacts, manuscripts, artworks, or other visual sources from your field. An LLM that accepts image uploads (Claude or ChatGPT paid tier). For OCR/HWR testing, a document you can check the transcription against. For image generation, access to a tool that generates images (ChatGPT/DALL-E, Midjourney, or similar).</em></p>
+<p><strong>Image analysis:</strong></p>
+<ul>
+<li>Upload photographs of artefacts, artworks, architectural features, or archaeological sites</li>
+<li>Ask AI to describe, identify, and contextualise what it sees</li>
+<li>Compare the AI's observations with your own expert knowledge --- what does it get right? What does it miss or misidentify?</li>
+<li>Test whether it can distinguish stylistic features, date objects, or identify iconographic elements</li>
+</ul>
+<p><strong>Text extraction (OCR / HWR):</strong></p>
+<ul>
+<li>Scan or photograph a manuscript page, archival document, or historical printed text</li>
+<li>Use AI to transcribe the text</li>
+<li>Compare the transcription against your own reading or an existing published edition</li>
+<li>Note error patterns: what kinds of characters, ligatures, abbreviations, or damage does it handle well or poorly?</li>
+</ul>
+<p><strong>Image generation:</strong></p>
+<ul>
+<li>Generate a teaching illustration, historical reconstruction, or explanatory diagram</li>
+<li>Evaluate the result for factual accuracy and appropriateness --- are architectural details correct? Are clothing and objects period-appropriate? Does the image contain anachronisms?</li>
+<li>Consider the ethical dimensions: is the generated image misleading? Would students or readers understand it as an AI reconstruction rather than a photograph or scholarly illustration?</li>
+</ul>
+<p><strong>Critical evaluation:</strong> For each of the three tasks, document:</p>
+<ul>
+<li>Accuracy: how reliable was the output?</li>
+<li>Failure modes: what kinds of errors did it make?</li>
+<li>Appropriate use cases: where would you trust this in your workflow?</li>
+</ul>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>If collaborating:</strong> Upload the same image or manuscript page and compare results. A colleague with different expertise may notice errors you would miss --- an art historian and an archaeologist will catch different things in the same photograph. This cross-disciplinary checking is especially valuable for OCR/HWR, where domain knowledge of abbreviation conventions and scribal hands matters enormously.</p>
+</div>
+<h3 id="going-further_6">Going further<a class="headerlink" href="#going-further_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Compare OCR/HWR results across different tools and models (Claude, ChatGPT, specialised tools like Transkribus)</li>
+<li>Build a workflow for batch processing archival images</li>
+<li>Create guidelines for responsible use of AI-generated images in teaching materials and publications</li>
+</ul>
+<hr />
+<h2 id="experiment-8-the-writing-studio">Experiment 8: The Writing Studio<a class="headerlink" href="#experiment-8-the-writing-studio" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> Experiments 1, 3</p>
+<h3 id="what-you-will-do_8">What you will do<a class="headerlink" href="#what-you-will-do_8" title="Permanent link">&para;</a></h3>
+<p>Draft a section of a paper using AI as a writing partner --- not a ghostwriter --- and document the process so you understand exactly how AI contributed.</p>
+<h3 id="why-this-matters_8">Why this matters<a class="headerlink" href="#why-this-matters_8" title="Permanent link">&para;</a></h3>
+<p>Writing is thinking. AI cannot do your thinking, but it can help you think through problems, organise ideas, and overcome blocks. The challenge is using it in ways that accelerate without replacing your intellectual work.</p>
+<h3 id="what-you-will-learn_8">What you will learn<a class="headerlink" href="#what-you-will-learn_8" title="Permanent link">&para;</a></h3>
+<p>How to use AI at different stages of the writing process (pre-writing, drafting, revision); how to maintain your scholarly voice; where the line falls between AI assistance and AI authorship in your own practice.</p>
+<h3 id="done-when_7">Done when<a class="headerlink" href="#done-when_7" title="Permanent link">&para;</a></h3>
+<p>You have written something you are proud of, faster than usual, while maintaining your scholarly voice --- and you can articulate exactly how AI helped.</p>
+<h3 id="the-work_8">The work<a class="headerlink" href="#the-work_8" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: A section of a paper, chapter, or other scholarly text you are working on --- something where you have ideas but need to develop them. Your context document from Experiment 1. Familiarity with your publisher's or institution's AI disclosure policy.</em></p>
+<p><strong>Pre-writing</strong> --- use AI for:</p>
+<ul>
+<li>Articulating half-formed ideas through dialogue</li>
+<li>Generating organisational structures</li>
+<li>Identifying what you are actually trying to argue</li>
+</ul>
+<p><strong>Drafting</strong> --- AI assists with:</p>
+<ul>
+<li>First-pass structural outlines</li>
+<li>Alternative phrasings when you are stuck</li>
+<li>Identifying logical gaps in your draft</li>
+</ul>
+<p><strong>Revision</strong> --- AI helps to:</p>
+<ul>
+<li>Identify unclear passages</li>
+<li>Suggest structural improvements</li>
+<li>Spot repetition or logical leaps</li>
+</ul>
+<p><strong>Document the process:</strong> Maintain a log with columns for: the prompt you gave, the model or tool used, a summary of the output, what you used from it, what you changed, and what you verified. This turns a vague sense of "I used AI" into a concrete, auditable record.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Critical boundaries:</strong></p>
+<ul>
+<li>As a default, do not paste AI-generated text into scholarly work without substantial revision. If you do use AI-generated phrasing, treat it as you would any quoted assistance: revise heavily, verify all claims, and disclose per your journal's or institution's policy.</li>
+<li>Always check your publisher's and institution's policies on AI disclosure --- these vary and are evolving.</li>
+<li>Maintain your voice and your argument throughout.</li>
+<li>AI accelerates; it does not replace.</li>
+</ul>
+</div>
+<h3 id="going-further_7">Going further<a class="headerlink" href="#going-further_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create a style guide based on your published work to help AI match your voice</li>
+<li>Build paper-specific context documents</li>
+<li>Develop a personal AI writing ethics framework</li>
+</ul>
+<hr />
+<h2 id="experiment-9-the-critical-methods-workshop">Experiment 9: The Critical Methods Workshop<a class="headerlink" href="#experiment-9-the-critical-methods-workshop" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> All previous experiments</p>
+<h3 id="what-you-will-do_9">What you will do<a class="headerlink" href="#what-you-will-do_9" title="Permanent link">&para;</a></h3>
+<p>Systematically interrogate AI for bias, hallucination, and limitation. Build a critique framework that you can apply to all future AI use.</p>
+<h3 id="why-this-matters_9">Why this matters<a class="headerlink" href="#why-this-matters_9" title="Permanent link">&para;</a></h3>
+<p>Humanists are trained in source criticism. This experiment applies those same skills to AI itself. Without a critical apparatus, even sophisticated AI use risks incorporating unexamined biases and errors into your scholarship.</p>
+<h3 id="what-you-will-learn_9">What you will learn<a class="headerlink" href="#what-you-will-learn_9" title="Permanent link">&para;</a></h3>
+<p>How to detect systematic bias in AI outputs; how to test for hallucination in your field; how to build appropriate trust levels for different AI use cases; how to apply source-critical methods to computational tools.</p>
+<h3 id="done-when_8">Done when<a class="headerlink" href="#done-when_8" title="Permanent link">&para;</a></h3>
+<p>You can systematically assess reliability, bias, and limitations of AI-generated content, and have a documented framework for doing so.</p>
+<h3 id="the-work_9">The work<a class="headerlink" href="#the-work_9" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: Access to at least two different LLMs (e.g. Claude and ChatGPT). A topic in your field where you know the correct answers and the landscape of scholarly positions. A contested or controversial topic where you can assess bias. Time to run the same prompts multiple times (AI outputs vary between runs).</em></p>
+<p><strong>Bias detection</strong> (use a minimal methodology):</p>
+<ul>
+<li>Choose a prompt relevant to your field and fix both the prompt text and the context you provide</li>
+<li>Run the same prompt across at least two different models</li>
+<li>Run it at least 3 times per model --- a single run proves very little, because AI outputs vary between runs</li>
+<li>Compare responses using a small rubric: accuracy, hedging behaviour, citation quality, and bias indicators</li>
+<li>Test contested or controversial topics in your field, where you know the landscape of positions well</li>
+</ul>
+<p><strong>Hallucination testing:</strong></p>
+<ul>
+<li>Request citations and verify each one</li>
+<li>Ask about obscure topics in your field where you know the correct answers</li>
+<li>Identify where AI expresses confidence without accuracy</li>
+</ul>
+<p><strong>Source verification protocol:</strong></p>
+<ul>
+<li>Develop a checklist for verifying AI-sourced information</li>
+<li>Create a verification workflow you can use routinely</li>
+<li>Build "trust levels" for different categories of AI use</li>
+</ul>
+<p><strong>Critique framework:</strong> Document:</p>
+<ul>
+<li>When to trust AI outputs and when not to</li>
+<li>Required verification steps for different use cases</li>
+<li>Known limitation patterns in your field</li>
+<li>Ethical red lines for your own practice</li>
+</ul>
+<div class="admonition leifnote">
+<p class="admonition-title">Leif's Notes</p>
+<p><strong>If collaborating:</strong> Run the same bias-detection prompts independently and compare your rubric scores. Disagreements about what counts as "biased" or "accurate" are themselves valuable data --- they reveal where disciplinary judgement shapes the evaluation, not just the AI output. Building a shared critique framework with colleagues is one of the most productive outcomes of this experiment.</p>
+</div>
+<h3 id="going-further_8">Going further<a class="headerlink" href="#going-further_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Write up your framework as a methodology note for publication</li>
+<li>Create a discipline-specific AI evaluation rubric</li>
+<li>Share your framework with colleagues and refine collaboratively</li>
+</ul>
+<hr />
+<h2 id="experiment-10-research-infrastructure-and-public-scholarship">Experiment 10: Research Infrastructure and Public Scholarship<a class="headerlink" href="#experiment-10-research-infrastructure-and-public-scholarship" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> All previous experiments</p>
+<h3 id="what-you-will-do_10">What you will do<a class="headerlink" href="#what-you-will-do_10" title="Permanent link">&para;</a></h3>
+<p>Integrate the tools, workflows, and documents from the previous nine experiments into a coherent personal research infrastructure --- then test it by producing a piece of public-facing scholarship.</p>
+<h3 id="why-this-matters_10">Why this matters<a class="headerlink" href="#why-this-matters_10" title="Permanent link">&para;</a></h3>
+<p>Individual tools and workflows are useful, but their value compounds when connected. And public engagement is increasingly expected of academics, yet scholarly training emphasises peer communication. This experiment builds the system and stress-tests it against a real output.</p>
+<h3 id="what-you-will-learn_10">What you will learn<a class="headerlink" href="#what-you-will-learn_10" title="Permanent link">&para;</a></h3>
+<p>How to design a personal AI research infrastructure; how to create maintainable documentation for your own workflows; how to use AI to translate between academic and public registers while maintaining scholarly integrity.</p>
+<h3 id="done-when_9">Done when<a class="headerlink" href="#done-when_9" title="Permanent link">&para;</a></h3>
+<p>You have a sustainable, integrated system documented clearly enough that you can return to it after months away --- and you have used it to produce at least one piece of public-facing scholarship at whatever level of visibility you are comfortable with.</p>
+<h3 id="the-work_10">The work<a class="headerlink" href="#the-work_10" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: Outputs and workflows from previous experiments. A research finding suitable for a wider audience. A platform or venue for sharing (departmental blog, social media, or simply a colleague to share with). Your critique framework from Experiment 9.</em></p>
+<p><strong>System architecture:</strong> Create a structure for:</p>
+<ul>
+<li><strong>Active research:</strong> Current project folders with context documents</li>
+<li><strong>Methods library:</strong> Reusable prompts and workflows</li>
+<li><strong>Teaching resources:</strong> Course-specific materials</li>
+<li><strong>Public scholarship:</strong> Outreach pipelines (see below)</li>
+<li><strong>Critical tools:</strong> Verification checklists and evaluation frameworks</li>
+</ul>
+<p><strong>Integration points:</strong> Link:</p>
+<ul>
+<li>Research workflows to writing process</li>
+<li>Teaching preparation to research insights</li>
+<li>Public scholarship to research findings</li>
+<li>Critical methods throughout all workflows</li>
+</ul>
+<p><strong>Public scholarship pipeline</strong> --- test the infrastructure by producing something:</p>
+<ol>
+<li>Select a research finding suitable for a wider audience</li>
+<li>Use AI to help translate it: research notes --&gt; plain language summary --&gt; blog post, article, or thread</li>
+<li>Apply your critical framework: every factual claim must have a source; every interpretation must be clearly labelled as interpretation</li>
+<li>
+<p>Share the result at whatever level suits you:</p>
+<ul>
+<li><strong>Internal:</strong> share with a colleague or research group for feedback</li>
+<li><strong>Semi-public:</strong> draft for a departmental blog or newsletter</li>
+<li><strong>Public:</strong> publish on a blog, social media, or external outlet</li>
+</ul>
+<p>Any of these counts as completion.</p>
+</li>
+</ol>
+<p><strong>Maintenance protocol:</strong></p>
+<ul>
+<li><strong>Weekly:</strong> Capture new prompts and workflows that worked</li>
+<li><strong>Monthly:</strong> Review and refine existing workflows</li>
+<li><strong>Quarterly:</strong> Update context documents and re-run key experiments</li>
+<li><strong>Annually:</strong> Reassess infrastructure against current AI capabilities</li>
+</ul>
+<p><strong>Documentation:</strong> Write guides for:</p>
+<ul>
+<li>Quick start: your most common tasks</li>
+<li>Advanced: complex workflows</li>
+<li>Troubleshooting: when things fail</li>
+<li>Ethics: your decision framework</li>
+</ul>
+<h3 id="going-further_9">Going further<a class="headerlink" href="#going-further_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Share your infrastructure with a research group</li>
+<li>Create discipline-specific templates others can adapt</li>
+<li>Build platform-specific public scholarship versions (blog, social media, institutional newsletter)</li>
+<li>Publish your methodology as a scholarly contribution</li>
+</ul>
+<hr />
+<h2 id="bonus-experiment-the-agent-evaluation">Bonus Experiment: The Agent Evaluation<a class="headerlink" href="#bonus-experiment-the-agent-evaluation" title="Permanent link">&para;</a></h2>
+<p><strong>Time:</strong> 2--4 hours | <strong>Builds on:</strong> All previous experiments</p>
+<h3 id="what-you-will-do_11">What you will do<a class="headerlink" href="#what-you-will-do_11" title="Permanent link">&para;</a></h3>
+<p>Test advanced AI capabilities --- autonomous agents, multi-step reasoning, and tool-using systems --- against real scholarly tasks, and build a decision framework for when to use what.</p>
+<h3 id="why-this-matters_11">Why this matters<a class="headerlink" href="#why-this-matters_11" title="Permanent link">&para;</a></h3>
+<p>AI is moving beyond simple chat into systems that plan, execute, and iterate autonomously (see the <a href="../guide/agentic/">Agentic AI</a> page for background). Understanding the distinctions between chatbots, research tools, and autonomous agents helps you deploy AI appropriately and critically.</p>
+<h3 id="what-you-will-learn_11">What you will learn<a class="headerlink" href="#what-you-will-learn_11" title="Permanent link">&para;</a></h3>
+<p>What current AI agents can and cannot do with scholarly tasks; how to evaluate agent capabilities systematically; how to decide which tasks to delegate, supervise, collaborate on, or reserve for human work.</p>
+<h3 id="done-when_10">Done when<a class="headerlink" href="#done-when_10" title="Permanent link">&para;</a></h3>
+<p>You have a completed evaluation scorecard and a practical decision framework for which AI capabilities suit which scholarly tasks.</p>
+<h3 id="the-work_11">The work<a class="headerlink" href="#the-work_11" title="Permanent link">&para;</a></h3>
+<p><em>What you'll need: Access to multiple AI tools, including at least one with agentic capabilities (see the <a href="../guide/agentic/">Agentic AI</a> page). Safe test materials: public domain texts, open-access articles, or synthetic data. Your critique framework from Experiment 9.</em></p>
+<h3 id="the-gauntlet">The gauntlet<a class="headerlink" href="#the-gauntlet" title="Permanent link">&para;</a></h3>
+<p>Test advanced AI capabilities on these scholarly tasks. Use <strong>safe test materials</strong>: public domain texts, open-access articles, or synthetic data you create for the purpose --- not unpublished or sensitive research.</p>
+<ol>
+<li><strong>Literature synthesis:</strong> Process 10+ articles into a research brief</li>
+<li><strong>Source discovery:</strong> Find obscure primary sources</li>
+<li><strong>Comparative analysis:</strong> Multi-text analysis with citations</li>
+<li><strong>Argument development:</strong> Dialectical refinement of a thesis</li>
+<li><strong>Peer review simulation:</strong> Critical evaluation of a draft</li>
+</ol>
+<p><strong>Evaluate each on:</strong></p>
+<ul>
+<li><strong>Accuracy:</strong> How often does it hallucinate?</li>
+<li><strong>Depth:</strong> Can it handle disciplinary complexity?</li>
+<li><strong>Citations:</strong> Are sources real and relevant?</li>
+<li><strong>Critical thinking:</strong> Does it identify genuine weaknesses?</li>
+<li><strong>Efficiency:</strong> How does the time and cost compare to doing the task yourself?</li>
+</ul>
+<p><strong>Decision framework</strong> --- classify tasks as:</p>
+<ul>
+<li><strong>Fully delegated:</strong> Low risk, mechanical tasks</li>
+<li><strong>Supervised:</strong> AI suggests, you verify</li>
+<li><strong>Collaborative:</strong> AI as thinking partner</li>
+<li><strong>Reserved for humans:</strong> Core intellectual work</li>
+</ul>
+<hr />
+<h2 id="completion-checklist">Completion Checklist<a class="headerlink" href="#completion-checklist" title="Permanent link">&para;</a></h2>
+<p><strong>Foundation</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 0: Infrastructure set up, data boundaries reviewed</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 1: Research partner context document written and tested</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 2: Source analysis completed and documented</li>
+</ul>
+<p><strong>Core Workflows</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 3: Argument map with counter-arguments produced</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 4: Research landscape mapped using AI + bibliographic databases</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 5: Teaching tool tested, with disclosure statement and failure modes sheet</li>
+</ul>
+<p><strong>Advanced Methods</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 6: Data analysis with verified insights</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 7: Visual and material sources tested across all three tasks</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 8: Paper section drafted with documented AI process</li>
+</ul>
+<p><strong>Integration</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 9: Critique framework developed</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment 10: Research infrastructure documented and public scholarship produced</li>
+</ul>
+<p><strong>Bonus</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Agent evaluation scorecard completed</li>
+</ul>
+<hr />
+<h2 id="after-the-bootcamp">After the Bootcamp<a class="headerlink" href="#after-the-bootcamp" title="Permanent link">&para;</a></h2>
+<p>If you complete all ten experiments, you will have built:</p>
+<ul>
+<li>A custom research partner that understands your field</li>
+<li>Proven source analysis workflows</li>
+<li>An argument development process</li>
+<li>Literature mapping capabilities</li>
+<li>AI-enhanced teaching tools</li>
+<li>Data analysis skills</li>
+<li>Visual and material source processing workflows</li>
+<li>Writing acceleration methods</li>
+<li>A critical AI evaluation framework</li>
+<li>An integrated research infrastructure with a public scholarship pipeline</li>
+</ul>
+<p>More importantly, you will have:</p>
+<ul>
+<li><strong>Confidence</strong> in using AI as a scholarly tool, grounded in direct experience</li>
+<li><strong>Critical perspective</strong> on AI limitations, built through systematic testing</li>
+<li><strong>Workflows you will actually maintain</strong>, because you built them around your real work</li>
+<li><strong>Skills that compound</strong> over time, each experiment reinforcing the others</li>
+<li><strong>Infrastructure that grows</strong> with your research and adapts as AI evolves</li>
+</ul>
+<div class="admonition essential">
+<p class="admonition-title">Essential</p>
+<p><strong>Remember:</strong> This is not about replacing humanistic inquiry with AI. It is about thoughtfully integrating new tools into rigorous scholarly practice. Each experiment maintains the critical, methodologically sophisticated approach that defines humanities scholarship while leveraging AI's genuine strengths.</p>
+<p>And because AI continues to change rapidly, revisiting these experiments periodically --- even briefly --- is one of the most effective ways to keep your skills and intuitions current. The structure endures even as the technology beneath it shifts.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../claude/glossary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Glossary">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Resources">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Resources
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Leif Isaksen · University of Exeter · 2026 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/leifuss/hhg2ai" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

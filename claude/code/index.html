@@ -1,0 +1,3308 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive guide to Claude Code for humanities scholars — setup, commands, hooks, MCP, best practices, and combining with other tools.">
+      
+      
+        <meta name="author" content="Leif Isaksen">
+      
+      
+        <link rel="canonical" href="https://leifuss.github.io/hhg2ai/claude/code/">
+      
+      
+        <link rel="prev" href="../apps/">
+      
+      
+        <link rel="next" href="../environments/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Code - A Hitchhiker's Guide to AI for the Humanities</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="hhg" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#code" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="A Hitchhiker&#39;s Guide to AI for the Humanities" class="md-header__button md-logo" aria-label="A Hitchhiker's Guide to AI for the Humanities" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            A Hitchhiker's Guide to AI for the Humanities
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="hhg" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/leifuss/hhg2ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    leifuss/hhg2ai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  The Primer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../essentials/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Essentials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Claude
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../bootcamp/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Bootcamp
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+  
+        
+      
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="A Hitchhiker&#39;s Guide to AI for the Humanities" class="md-nav__button md-logo" aria-label="A Hitchhiker's Guide to AI for the Humanities" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    A Hitchhiker's Guide to AI for the Humanities
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/leifuss/hhg2ai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    leifuss/hhg2ai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../guide/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Primer
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Primer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/briefing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Briefing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/mindset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mindset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Field Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/ancient-languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ancient Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/agentic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../essentials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essentials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essentials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essentials/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification & Citation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essentials/data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essentials/prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompting Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essentials/disclosure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disclosure & Ethics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essentials/multi-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Model Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essentials/decision-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essentials/cost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost & Plans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Claude
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cowork/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cowork
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apps & Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-is-and-what-its-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it is and what it's for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-it-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where it runs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where it runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-on-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code on the web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-cli-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code CLI (terminal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code Desktop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-on-the-web_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code on the web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-claudemd-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CLAUDE.md file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions-and-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions and trust
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-and-core-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands and core functionality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands and core functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting a session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-claude-can-do-in-a-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Claude can do in a session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slash-commands-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slash commands (CLI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headless-and-non-interactive-mode-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headless and non-interactive mode (advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-file-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-file operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hooks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-model-context-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP (Model Context Protocol)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MCP (Model Context Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-mcp-servers-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What MCP servers do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-mcp-is-worth-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When MCP is worth the setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-and-donts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dos and don'ts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dos and don&#39;ts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Don't:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-working-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best working practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best working practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-project-setup-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The project setup pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-incremental-building-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The incremental building pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-existing-codebases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with existing codebases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-explore-plan-execute-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The explore--plan--execute pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended thinking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-window-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context window management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-things-go-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When things go wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-and-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation and reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-with-other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining with other tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combining with other tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-chat-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + Chat pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-version-control-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + version control platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-specialist-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + specialist software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-other-ai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + other AI models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worked Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bootcamp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootcamp
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bootcamp
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-is-and-what-its-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it is and what it's for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-it-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where it runs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where it runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-on-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code on the web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-cli-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code CLI (terminal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code Desktop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-on-the-web_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code on the web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-claudemd-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CLAUDE.md file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions-and-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions and trust
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-and-core-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands and core functionality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands and core functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting a session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-claude-can-do-in-a-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Claude can do in a session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slash-commands-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slash commands (CLI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headless-and-non-interactive-mode-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headless and non-interactive mode (advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-file-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-file operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hooks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-model-context-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP (Model Context Protocol)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MCP (Model Context Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-mcp-servers-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What MCP servers do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-mcp-is-worth-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When MCP is worth the setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-and-donts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dos and don'ts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dos and don&#39;ts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Don't:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-working-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best working practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best working practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-project-setup-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The project setup pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-incremental-building-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The incremental building pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-existing-codebases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with existing codebases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-explore-plan-execute-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The explore--plan--execute pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended thinking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-window-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context window management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-things-go-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When things go wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-and-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation and reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-with-other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining with other tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combining with other tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-chat-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + Chat pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-version-control-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + version control platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-specialist-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + specialist software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-other-ai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code + other AI models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h1>
+<p>Part of <a href="../../">A Hitchhiker's Guide to AI for the Humanities</a></p>
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#what-it-is-and-what-its-for">4.1 What it is and what it's for</a></li>
+<li><a href="#where-it-runs">4.2 Where it runs</a></li>
+<li><a href="#setting-up">4.3 Setting up</a></li>
+<li><a href="#commands-and-core-functionality">4.4 Commands and functionality</a></li>
+<li><a href="#hooks">4.5 Hooks</a></li>
+<li><a href="#mcp-model-context-protocol">4.6 MCP (Model Context Protocol)</a></li>
+<li><a href="#dos-and-donts">4.7 Dos and don'ts</a></li>
+<li><a href="#best-working-practices">4.8 Best working practices</a><ul>
+<li><a href="#the-exploreplanexecute-pattern">The explore--plan--execute pattern</a></li>
+</ul>
+</li>
+<li><a href="#combining-with-other-tools">4.9 Combining with other tools</a></li>
+<li><a href="#reproducibility">4.10 Reproducibility</a></li>
+</ul>
+<hr />
+<h2 id="what-it-is-and-what-its-for">What it is and what it's for<a class="headerlink" href="#what-it-is-and-what-its-for" title="Permanent link">&para;</a></h2>
+<p>Claude Code is an agentic coding tool -- meaning it can take actions autonomously, not just respond to messages. Claude can read files, write files, run commands, search the web, and iterate on its own work. Unlike Chat, where you exchange messages and Claude responds with text, Code gives Claude the ability to <em>act</em>: it can create a project from scratch, modify existing files, run tests, fix errors, and push to version control.</p>
+<p>It is available in three forms:</p>
+<ul>
+<li><strong>Claude Code on the web</strong> -- runs in your browser at claude.ai. No local installation required. Claude works in a cloud sandbox with its own file system. You upload files, Claude works on them, and you download the results.</li>
+<li><strong>Claude Code Desktop</strong> -- a graphical Code interface within the Claude Desktop app. If you prefer a graphical interface, the Desktop app includes a Code tab that provides the same capabilities without requiring the terminal, plus visual diff review and app previews. Good for humanities scholars who find the terminal intimidating but want Code's capabilities.</li>
+<li><strong>Claude Code CLI</strong> -- runs in your terminal (macOS, Linux, or Windows via WSL). Claude works directly on your local files, in your git repository, using your tools. The most powerful and flexible option -- but requires some comfort with a command-line interface.</li>
+</ul>
+<div class="admonition essential">
+<p class="admonition-title">Essential</p>
+<p><strong>Why humanities scholars should care about Code:</strong> Claude Code is not just for software engineers. It can build you a searchable digital edition of a text corpus. It can create an interactive map of historical trade routes. It can clean and transform a messy spreadsheet of archival data into a structured database. It can build a static website to present your research. The "code" is the means; the output is a humanities tool, resource, or dataset that works entirely without AI once built.</p>
+</div>
+<p>What Claude Code is particularly good at for humanities work:</p>
+<ul>
+<li><strong>Building web-based tools and resources</strong> -- interactive editions, teaching tools, visualisations, project websites</li>
+<li><strong>Data transformation</strong> -- converting between formats (XML to JSON, OCR output to clean text, spreadsheet to database), cleaning inconsistent data, merging sources</li>
+<li><strong>Text processing at scale</strong> -- batch operations across hundreds of files that would be impractical by hand</li>
+<li><strong>Automating repetitive tasks</strong> -- formatting bibliographies, standardising metadata, generating indices</li>
+<li><strong>Creating visualisations</strong> -- charts, timelines, network graphs, maps from your data</li>
+<li><strong>Document preparation</strong> -- LaTeX formatting, converting between document formats, preparing camera-ready copy</li>
+</ul>
+<p>Claude Code is included with Pro, Max, Team, and Enterprise subscriptions. On the web and in the Desktop app, no separate installation is needed -- just sign in and start a session. For the CLI, install the native binary (free) and authenticate with your existing Anthropic account. API key access is also available for those who want direct usage-based billing. For most humanities scholars starting out, the Pro subscription is the simplest entry point; upgrade to Max if you find the token limits restrictive. For cost awareness principles that apply across all platforms, see <a href="../../essentials/cost/">Cost</a>.</p>
+<hr />
+<h2 id="where-it-runs">Where it runs<a class="headerlink" href="#where-it-runs" title="Permanent link">&para;</a></h2>
+<p>Understanding where Claude Code runs matters because it determines what files Claude can access and what happens to your work.</p>
+<h3 id="claude-code-on-the-web">Claude Code on the web<a class="headerlink" href="#claude-code-on-the-web" title="Permanent link">&para;</a></h3>
+<p>When you use Claude Code through the web interface at claude.ai, Claude works in a cloud-hosted sandbox -- a temporary virtual environment with its own file system. You upload files into this sandbox, Claude works on them, and you download the results.</p>
+<p>Key characteristics:</p>
+<ul>
+<li>No installation required -- works in any modern browser</li>
+<li>Claude has its own temporary file system in the cloud</li>
+<li>You upload and download files manually</li>
+<li>The sandbox persists for the duration of your session but is not a permanent workspace</li>
+<li>Good for: trying Claude Code for the first time, one-off tasks, building something self-contained that you will download when finished</li>
+</ul>
+<h3 id="claude-code-cli-terminal">Claude Code CLI (terminal)<a class="headerlink" href="#claude-code-cli-terminal" title="Permanent link">&para;</a></h3>
+<p>The CLI version runs on your own machine (or a cloud server you control). Claude operates directly on your local file system, in your git repositories, with access to your installed tools.</p>
+<p>Key characteristics:</p>
+<ul>
+<li>Requires the native installer (see <a href="#setting-up">Setting up</a>) or the legacy npm method</li>
+<li>Claude reads and writes your actual files</li>
+<li>Works within git repositories, can commit and push</li>
+<li>Has access to any tools installed on your system (Python, pandoc, LaTeX, etc.)</li>
+<li>You approve or deny each action Claude takes -- it asks before writing files or running commands</li>
+<li>Good for: sustained projects, version-controlled work, anything that needs local tools or large file sets</li>
+</ul>
+<h3 id="claude-code-desktop">Claude Code Desktop<a class="headerlink" href="#claude-code-desktop" title="Permanent link">&para;</a></h3>
+<p>The Claude Desktop app (macOS or Windows) includes a Code tab that provides the same capabilities as the CLI through a graphical interface -- no terminal required.</p>
+<p>Key characteristics:</p>
+<ul>
+<li>Requires the Claude Desktop app -- no separate Claude Code installation</li>
+<li>Select a project folder from within the app</li>
+<li>Visual diff view -- see exactly what Claude changed before accepting</li>
+<li>Preview running web apps directly within the app</li>
+<li>Remote sessions: can run in the cloud and continue even if you close the app</li>
+<li>Good for: humanities scholars who want Code's capabilities without learning the terminal</li>
+</ul>
+<p>For a detailed comparison of environments, including cloud-hosted options, see <a href="../environments/">Environments</a>.</p>
+<hr />
+<h2 id="setting-up">Setting up<a class="headerlink" href="#setting-up" title="Permanent link">&para;</a></h2>
+<h3 id="claude-code-on-the-web_1">Claude Code on the web<a class="headerlink" href="#claude-code-on-the-web_1" title="Permanent link">&para;</a></h3>
+<p>No setup required beyond having a Pro or Max subscription. Go to claude.ai, start a new conversation, and select Claude Code as the mode. You will see a file panel on the left and a conversation panel where you can talk to Claude and watch it work.</p>
+<h3 id="claude-code-cli">Claude Code CLI<a class="headerlink" href="#claude-code-cli" title="Permanent link">&para;</a></h3>
+<p>Setting up the CLI requires a few steps. If any of these are unfamiliar, see <a href="../prerequisites/">Prerequisites</a> for guidance on building the necessary skills.</p>
+<ol>
+<li>
+<p><strong>Install Claude Code.</strong> The recommended method depends on your platform:</p>
+<ul>
+<li>
+<p><strong>macOS / Linux (recommended):</strong> Run in your terminal:
+  <div class="highlight"><pre><span></span><code>curl -fsSL https://claude.ai/install.sh | bash
+</code></pre></div>
+  No Node.js required.</p>
+</li>
+<li>
+<p><strong>Windows (recommended):</strong> Run in PowerShell:
+  <div class="highlight"><pre><span></span><code>irm https://claude.ai/install.ps1 | iex
+</code></pre></div>
+  Requires <a href="https://git-scm.com/download/win">Git for Windows</a>. Works in PowerShell, CMD, or Git Bash. No Node.js required.</p>
+</li>
+<li>
+<p><strong>Windows via WSL (alternative):</strong> Install WSL (Windows Subsystem for Linux), then run the Linux installer within it. Gives you a full Linux environment. No longer required for Windows, but still supported.</p>
+</li>
+<li>
+<p><strong>Via npm (legacy):</strong> <code>npm install -g @anthropic-ai/claude-code</code>. Requires Node.js 18+. Still works, but the native installer above is now preferred.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Authenticate.</strong> Run <code>claude</code> in your terminal. The first time, it will open a browser window for you to log in with your Anthropic account. If using an API key instead, set the environment variable: <code>export ANTHROPIC_API_KEY=your-key-here</code></p>
+</li>
+<li>
+<p><strong>Navigate to your project directory</strong> and run <code>claude</code> to start a session:
+    <div class="highlight"><pre><span></span><code>cd ~/my-research-project
+claude
+</code></pre></div></p>
+</li>
+</ol>
+<p>Claude will now see all the files in that directory (and subdirectories). It will ask permission before reading, writing, or executing anything.</p>
+<h3 id="the-claudemd-file">The CLAUDE.md file<a class="headerlink" href="#the-claudemd-file" title="Permanent link">&para;</a></h3>
+<p>The most important configuration concept in Claude Code is the <code>CLAUDE.md</code> file. This is a plain text file you place in the root of your project directory. Claude reads it at the start of every session. It functions like the "custom instructions" in a Chat Project, but for Code.</p>
+<p>A minimal <code>CLAUDE.md</code> for a humanities project might be just a few lines:</p>
+<div class="highlight"><pre><span></span><code># Project: Conference Paper Figures
+
+## Context
+Generating charts and maps for a conference paper on medieval
+trade networks. Source data in data/trade_routes.csv.
+
+## Conventions
+- Use British English
+- Output figures to figures/ directory
+- Use print-friendly colours (no neon)
+</code></pre></div>
+<p>For a digital humanities project with specific technical requirements, you might include build commands, file conventions, and protective rules:</p>
+<div class="highlight"><pre><span></span><code># Project: Digital Edition of the Leptis Magna Inscriptions
+
+## Context
+This project creates a searchable web-based edition of Latin
+inscriptions from Leptis Magna. The source data is in EpiDoc XML
+(TEI-compliant). The output is a static HTML/CSS/JS website.
+
+## Conventions
+- Use British English in all comments and documentation
+- Follow TEI P5 guidelines for markup
+- CSS: use BEM naming convention
+- File encoding: UTF-8 throughout
+- Greek text: use Unicode polytonic Greek, never transliteration
+
+## Commands
+- Build the site: python build.py
+- Run tests: python -m pytest tests/
+- Validate XML: xmllint --schema tei_all.xsd inscriptions/*.xml
+
+## Important
+- Never modify files in the source-data/ directory without asking
+- The canonical text is always the XML; HTML is generated from it
+- Cite inscriptions by IRT number (e.g., IRT 321)
+</code></pre></div>
+<p>Keep your <code>CLAUDE.md</code> concise and factual. Claude reads it every session, so brevity saves context window space. Focus on what Claude needs to know to work effectively in your project: what the project is, what conventions to follow, how to build and test, and what to be careful about. See <a href="https://code.claude.com/docs/en/memory">CLAUDE.md documentation</a>.</p>
+<h3 id="permissions-and-trust">Permissions and trust<a class="headerlink" href="#permissions-and-trust" title="Permanent link">&para;</a></h3>
+<p>Claude Code operates in one of three permission modes. You switch between them by pressing ++shift+tab++ twice in the CLI (cycles through all three), or by starting a session with a flag:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>What Claude can do</th>
+<th>When to use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normal</strong> (default)</td>
+<td>Reads files freely. Asks before writing files or running shell commands.</td>
+<td>Day-to-day work. The right balance for most sessions.</td>
+</tr>
+<tr>
+<td><strong>Plan mode</strong></td>
+<td>Read-only. Claude can explore the codebase and create a plan but cannot write, edit, or execute anything.</td>
+<td>Starting a new project or unfamiliar codebase. Review what Claude intends to do before it does it.</td>
+</tr>
+<tr>
+<td><strong>Auto-accept</strong></td>
+<td>Claude makes changes without asking. Fast but risky.</td>
+<td>Only when you fully trust the task and have version control in place to catch mistakes.</td>
+</tr>
+</tbody>
+</table>
+<p>Start a session in plan mode from the command line: <code>claude --permission-mode plan</code>. Or type <code>/plan</code> after starting a session. For humanities scholars new to Claude Code, <strong>plan mode is the recommended starting point</strong> -- it lets Claude explore your project, explain what it finds, and propose a course of action before touching anything.</p>
+<hr />
+<h2 id="commands-and-core-functionality">Commands and core functionality<a class="headerlink" href="#commands-and-core-functionality" title="Permanent link">&para;</a></h2>
+<h3 id="starting-a-session">Starting a session<a class="headerlink" href="#starting-a-session" title="Permanent link">&para;</a></h3>
+<p>On the CLI, you start Claude Code by running <code>claude</code> in your terminal. You can also pass an initial instruction directly:</p>
+<div class="highlight"><pre><span></span><code>claude &quot;create a timeline visualisation from dates.csv&quot;
+</code></pre></div>
+<p>On the web, you simply type your request in the conversation panel.</p>
+<h3 id="what-claude-can-do-in-a-session">What Claude can do in a session<a class="headerlink" href="#what-claude-can-do-in-a-session" title="Permanent link">&para;</a></h3>
+<p>Within a Code session, Claude can:</p>
+<ul>
+<li><strong>Read files</strong> -- any file in your project directory (or uploaded to the web sandbox)</li>
+<li><strong>Write and edit files</strong> -- create new files or modify existing ones</li>
+<li><strong>Run shell commands</strong> -- execute Python scripts, install packages, run build tools, use git</li>
+<li><strong>Search your codebase</strong> -- find files by name or content, navigate large projects</li>
+<li><strong>Search the web</strong> -- look up documentation, find examples, check current information</li>
+<li><strong>Iterate on errors</strong> -- if something fails, Claude reads the error, diagnoses the problem, and tries again</li>
+</ul>
+<p>This last point -- iteration -- is what makes Claude Code qualitatively different from Chat. In Chat, if Claude produces a Python script with a bug, you have to copy the error message back into the conversation and ask Claude to fix it. In Code, Claude runs the script, sees the error, and fixes it automatically. This loop of write &rarr; run &rarr; read error &rarr; fix can happen many times without your intervention.</p>
+<h3 id="slash-commands-cli">Slash commands (CLI)<a class="headerlink" href="#slash-commands-cli" title="Permanent link">&para;</a></h3>
+<p>In the CLI, several built-in commands are available. Claude Code adds commands regularly -- run <code>/help</code> to see the current full list.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/help</code></td>
+<td>Show available commands and usage information</td>
+</tr>
+<tr>
+<td><code>/plan</code></td>
+<td>Enter plan mode -- Claude explores and plans without modifying anything</td>
+</tr>
+<tr>
+<td><code>/clear</code></td>
+<td>Clear the conversation history (start fresh within the same session)</td>
+</tr>
+<tr>
+<td><code>/compact</code></td>
+<td>Compress the conversation to save context window space</td>
+</tr>
+<tr>
+<td><code>/cost</code></td>
+<td>Show how much the current session has cost (API users)</td>
+</tr>
+<tr>
+<td><code>/model</code></td>
+<td>Switch between models (Opus, Sonnet, Haiku) mid-session</td>
+</tr>
+<tr>
+<td><code>/agents</code></td>
+<td>View and manage sub-agents spawned during the session</td>
+</tr>
+<tr>
+<td><code>/doctor</code></td>
+<td>Diagnose and fix common installation or configuration issues</td>
+</tr>
+<tr>
+<td><code>/init</code></td>
+<td>Generate a <code>CLAUDE.md</code> file for the current project</td>
+</tr>
+<tr>
+<td><code>/review</code></td>
+<td>Review a pull request or set of changes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Custom slash commands.</strong> You can create your own commands by placing a Markdown file in <code>.claude/commands/</code> in your project directory. The filename becomes the command. For example, a file called <code>check-encoding.md</code> containing instructions for verifying UTF-8 encoding across your corpus would be triggered by typing <code>/check-encoding</code>. This is useful for standardising repetitive tasks: a <code>/validate-tei</code> command for TEI XML checking, a <code>/update-bibliography</code> command for bibliography maintenance. Global commands (available in all projects) go in <code>~/.claude/commands/</code>.</p>
+<p><strong>Sub-agents.</strong> Claude Code can delegate specific tasks to specialised sub-agents, each working in its own context window with its own instructions and tool access. Use <code>/agents</code> to view and manage active sub-agents. This is useful for repetitive specialist tasks -- for example, a sub-agent configured to validate TEI XML encoding could check every file in your corpus while your main session handles other work. Sub-agents can also be defined as Markdown files in <code>.claude/agents/</code>. See <a href="https://code.claude.com/docs/en/sub-agents">Sub-agents documentation</a>.</p>
+<h3 id="headless-and-non-interactive-mode-advanced">Headless and non-interactive mode (advanced)<a class="headerlink" href="#headless-and-non-interactive-mode-advanced" title="Permanent link">&para;</a></h3>
+<p>Claude Code can run without interactive input, which is useful for automation:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Process every XML file in a directory</span>
+claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;validate all XML files in inscriptions/ against the TEI schema and report any errors&quot;</span>
+
+<span class="c1"># Pipe input to Claude</span>
+cat<span class="w"> </span>report.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;summarise this report in three bullet points&quot;</span>
+</code></pre></div>
+<p>The <code>-p</code> flag (print mode) runs Claude with your prompt and outputs the result to stdout, then exits. This lets you incorporate Claude into shell scripts and batch workflows.</p>
+<h3 id="multi-file-operations">Multi-file operations<a class="headerlink" href="#multi-file-operations" title="Permanent link">&para;</a></h3>
+<p>One of Claude Code's strengths is working across multiple files. You can ask it to:</p>
+<ul>
+<li>Rename a field across an entire codebase</li>
+<li>Convert a directory of Markdown files to HTML</li>
+<li>Add consistent metadata headers to 200 XML files</li>
+<li>Find and fix a pattern across all files matching a glob</li>
+</ul>
+<p>Claude will read the relevant files, plan the changes, and ask for permission before modifying anything. For large batch operations, it often proposes a strategy first ("I'll process these 150 files in groups of 10") and checks with you before proceeding.</p>
+<hr />
+<h2 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
+<div class="admonition offtrack">
+<p class="admonition-title">Off the Beaten Track</p>
+<p><strong>Advanced topic.</strong> You do not need hooks to use Claude Code effectively. Skip this section on first reading and come back when you have a specific need.</p>
+</div>
+<p>Hooks are shell commands that run automatically in response to Claude Code events. They let you add guardrails, automation, and custom behaviour without modifying Claude itself.</p>
+<p>Hooks are configured in your Claude Code settings file (<code>~/.claude/settings.json</code> for global settings, or <code>.claude/settings.json</code> in a project directory for project-specific hooks). They fire at specific points in Claude's workflow:</p>
+<table>
+<thead>
+<tr>
+<th>Hook event</th>
+<th>When it fires</th>
+<th>Humanities example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PreToolUse</code></td>
+<td>Before Claude uses a tool (reads a file, runs a command, etc.)</td>
+<td>Block Claude from modifying files in your <code>source-data/</code> directory</td>
+</tr>
+<tr>
+<td><code>PostToolUse</code></td>
+<td>After Claude uses a tool</td>
+<td>Auto-format XML files after Claude edits them</td>
+</tr>
+<tr>
+<td><code>Notification</code></td>
+<td>When Claude sends a notification (e.g., task complete)</td>
+<td>Play a sound or send a system notification when a long task finishes</td>
+</tr>
+<tr>
+<td><code>SessionStart</code></td>
+<td>When a new Claude Code session begins</td>
+<td>Run a git pull to ensure you're working on the latest version</td>
+</tr>
+</tbody>
+</table>
+<p>A practical example -- protecting source data from accidental modification:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// In .claude/settings.json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;PreToolUse&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;matcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Edit|Write&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bash -c &#39;[[ \&quot;$CLAUDE_FILE_PATH\&quot; == source-data/* ]] &amp;&amp; echo \&quot;BLOCKED: Do not modify source data files\&quot; &amp;&amp; exit 1 || exit 0&#39;&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This hook checks every file write operation. If Claude tries to modify anything in <code>source-data/</code>, the hook blocks it and explains why. Claude will see the blocked message and adjust its approach.</p>
+<p>Hooks are optional and you do not need them to use Claude Code effectively. But as your projects grow, they become a useful safety net -- especially for protecting canonical source files that should never be modified by an automated tool. See <a href="https://code.claude.com/docs/en/hooks">Hooks documentation</a>.</p>
+<hr />
+<h2 id="mcp-model-context-protocol">MCP (Model Context Protocol)<a class="headerlink" href="#mcp-model-context-protocol" title="Permanent link">&para;</a></h2>
+<div class="admonition offtrack">
+<p class="admonition-title">Off the Beaten Track</p>
+<p><strong>Advanced topic.</strong> MCP is optional. Many excellent projects use Claude Code without any MCP servers. Skip this section on first reading and come back when you have a concrete need for Claude to access an external database, API, or service.</p>
+</div>
+<p>MCP is an open protocol that lets Claude connect to external data sources and tools. Think of it as a standardised way to give Claude access to things beyond its built-in capabilities -- databases, file systems, APIs, specialised software.</p>
+<p>For most humanities scholars, MCP matters in two ways:</p>
+<ol>
+<li><strong>Using existing MCP servers</strong> that give Claude access to useful services</li>
+<li><strong>Understanding the concept</strong> so you can evaluate whether a particular MCP integration would help your work</li>
+</ol>
+<h3 id="what-mcp-servers-do">What MCP servers do<a class="headerlink" href="#what-mcp-servers-do" title="Permanent link">&para;</a></h3>
+<p>An MCP server is a small program that exposes a specific capability to Claude. When you connect an MCP server, Claude gains new tools it can use during your session. Some examples relevant to humanities work:</p>
+<table>
+<thead>
+<tr>
+<th>MCP server</th>
+<th>What it gives Claude</th>
+<th>Humanities use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filesystem</td>
+<td>Access to specific directories outside the project</td>
+<td>Reading source texts stored in a shared network drive</td>
+</tr>
+<tr>
+<td>PostgreSQL / SQLite</td>
+<td>Direct database queries</td>
+<td>Querying a prosopographical or epigraphic database</td>
+</tr>
+<tr>
+<td>Fetch</td>
+<td>Ability to retrieve web pages and APIs</td>
+<td>Pulling data from digital archives, library catalogues, or APIs like Pleiades, Pelagios, or IIIF manifests</td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>Interact with repositories, issues, pull requests</td>
+<td>Managing a collaborative digital edition project</td>
+</tr>
+<tr>
+<td>Google Drive</td>
+<td>Read and search files in Google Drive</td>
+<td>Accessing shared research documents without downloading them</td>
+</tr>
+<tr>
+<td>Zotero (community)</td>
+<td>Search and retrieve references from your Zotero library</td>
+<td>Pulling citations directly into your workflow</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-up-mcp">Setting up MCP<a class="headerlink" href="#setting-up-mcp" title="Permanent link">&para;</a></h3>
+<p>MCP servers are configured in your Claude Code settings. For the CLI, this lives in <code>~/.claude/settings.json</code> (global) or <code>.claude/settings.json</code> (per-project):</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// In .claude/settings.json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;sqlite&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;@anthropic-ai/mcp-server-sqlite&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="s2">&quot;--db-path&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./data/inscriptions.db&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;fetch&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;@anthropic-ai/mcp-server-fetch&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Once configured, Claude automatically discovers the available tools when a session starts. You do not need to tell Claude to "use the database server" -- it will see the database tools and use them when relevant.</p>
+<p>On the web version of Claude Code, MCP configuration is available through the interface settings rather than a JSON file. See <a href="https://code.claude.com/docs/en/mcp">MCP in Claude Code</a>.</p>
+<h3 id="when-mcp-is-worth-the-setup">When MCP is worth the setup<a class="headerlink" href="#when-mcp-is-worth-the-setup" title="Permanent link">&para;</a></h3>
+<p>MCP is optional. Many excellent projects use Claude Code without any MCP servers. Consider adding MCP when:</p>
+<ul>
+<li>You repeatedly need Claude to access the same external resource (a database, an API, a shared drive)</li>
+<li>You want Claude to query structured data directly rather than exporting and uploading CSV files</li>
+<li>You are building a workflow that needs to pull from multiple sources automatically</li>
+</ul>
+<p>If you are just starting with Claude Code, skip MCP for now and come back to it when you have a concrete need.</p>
+<hr />
+<h2 id="dos-and-donts">Dos and don'ts<a class="headerlink" href="#dos-and-donts" title="Permanent link">&para;</a></h2>
+<h3 id="do">Do:<a class="headerlink" href="#do" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Use version control (git).</strong> This is the single most important practice. Git lets you track every change Claude makes and revert anything you do not want. Even if you are not a programmer, learn the basics of git before using Claude Code for serious work (see <a href="../prerequisites/">Prerequisites</a>).</li>
+<li><strong>Write a good <code>CLAUDE.md</code>.</strong> Five minutes of setup saves hours of repeated instructions. Include your project's conventions, important file locations, and anything Claude should be careful about.</li>
+<li><strong>Review changes before committing.</strong> Claude will show you what it has changed. Read the diffs. Understand what was modified and why before accepting it into your project.</li>
+<li><strong>Start small.</strong> Ask Claude to do one well-defined thing at a time rather than everything at once. "Convert this one XML file to HTML" before "build an entire digital edition."</li>
+<li><strong>Use <code>/compact</code> in long sessions.</strong> If Claude starts losing context or repeating itself, compact the conversation to free up context window space.</li>
+<li><strong>Keep source data separate from generated output.</strong> Maintain a clear distinction between your canonical sources (which Claude should never modify unsupervised) and the outputs Claude generates from them.</li>
+<li><strong>Test outputs.</strong> If Claude builds you a web page, open it in a browser. If it writes a script, run it on a sample. If it transforms data, spot-check the results.</li>
+<li><strong>Use the web version first</strong> if you are new to Claude Code. It is lower-risk (sandboxed) and requires no local setup.</li>
+</ul>
+<h3 id="dont">Don't:<a class="headerlink" href="#dont" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Work without version control on anything you care about.</strong> Claude is powerful but imperfect. Without git, a bad edit has no undo button.</li>
+<li><strong>Grant blanket permissions before you understand what Claude is doing.</strong> Start with the default "ask every time" mode. Loosen permissions only after you are comfortable with the patterns.</li>
+<li><strong>Let Claude modify your canonical source files directly.</strong> Work on copies, or use hooks to protect originals. The master copy of a critical text or dataset should be modified only by you, deliberately.</li>
+<li><strong>Assume Claude's first approach is optimal.</strong> Claude may choose a complex solution when a simple one exists, or use a library you do not need. Question its architectural choices, especially early in a project.</li>
+<li><strong>Ignore error messages.</strong> If Claude encounters an error and "fixes" it, make sure the fix addresses the root cause rather than papering over a symptom. Ask Claude to explain what went wrong.</li>
+<li><strong>Upload sensitive or personally identifiable data</strong> without understanding your institution's data governance policies. For data governance principles that apply across all platforms, see <a href="../../essentials/data-governance/">Data Governance</a>.</li>
+<li><strong>Use Claude Code for tasks better suited to Chat.</strong> If you just want to discuss an idea, get feedback on your writing, or brainstorm -- use <a href="../chat/">Chat</a>. Code is for building things.</li>
+</ul>
+<hr />
+<h2 id="best-working-practices">Best working practices<a class="headerlink" href="#best-working-practices" title="Permanent link">&para;</a></h2>
+<h3 id="the-project-setup-pattern">The project setup pattern<a class="headerlink" href="#the-project-setup-pattern" title="Permanent link">&para;</a></h3>
+<p>Before asking Claude to build anything, spend five minutes setting up your project properly:</p>
+<ol>
+<li>Create a directory for your project</li>
+<li>Initialise a git repository: <code>git init</code></li>
+<li>Create a <code>CLAUDE.md</code> with your project context, conventions, and any rules</li>
+<li>Add your source files (texts, data, images) to the directory</li>
+<li>Make an initial commit: <code>git add -A &amp;&amp; git commit -m "initial project setup"</code></li>
+</ol>
+<p>Now when you start Claude Code, it has your context, your files, and a safety net (git history) in place from the very beginning.</p>
+<h3 id="the-incremental-building-pattern">The incremental building pattern<a class="headerlink" href="#the-incremental-building-pattern" title="Permanent link">&para;</a></h3>
+<p>The most reliable way to build something with Claude Code is incrementally:</p>
+<ol>
+<li><strong>Describe the end goal</strong> clearly but ask Claude to start with the simplest possible version</li>
+<li><strong>Get the basics working</strong> before adding complexity -- a plain HTML page before styling, one file processed before the whole directory</li>
+<li><strong>Commit after each working milestone.</strong> If the next step goes wrong, you can revert to the last good state</li>
+<li><strong>Add features one at a time,</strong> testing each before moving to the next</li>
+</ol>
+<p>This pattern avoids the common failure mode where Claude attempts to build an entire complex system at once, hits a problem three layers deep, and produces something that half-works in a way that is hard to debug.</p>
+<h3 id="working-with-existing-codebases">Working with existing codebases<a class="headerlink" href="#working-with-existing-codebases" title="Permanent link">&para;</a></h3>
+<p>Claude Code is not just for new projects. It can work effectively with existing code, data, or websites. When pointing Claude at an existing project:</p>
+<ul>
+<li>Make sure the project is in a git repository (so you can track and revert changes)</li>
+<li>Write a <code>CLAUDE.md</code> that explains the project structure, key files, and any conventions</li>
+<li>Ask Claude to explore and understand the project before modifying it: "Read through this project and explain its structure to me"</li>
+<li>Start with small, well-defined changes rather than major refactoring</li>
+</ul>
+<h3 id="the-explore-plan-execute-pattern">The explore--plan--execute pattern<a class="headerlink" href="#the-explore-plan-execute-pattern" title="Permanent link">&para;</a></h3>
+<p>For any project that matters -- especially when working with existing files, source data, or unfamiliar codebases -- the most reliable approach is a three-phase workflow that separates understanding from action:</p>
+<ol>
+<li><strong>Explore (plan mode).</strong> Start a session in plan mode: <code>claude --permission-mode plan</code> or type <code>/plan</code>. In this mode, Claude reads files, searches your project, and builds understanding -- but cannot write, edit, or execute anything. Ask it to explain what it finds: "Read through this project and describe its structure and any potential issues."</li>
+<li><strong>Plan (still in plan mode).</strong> Ask Claude to propose a course of action: "Create a plan for adding a search function to this edition." Claude produces a written plan. Review it, ask questions, and refine it. Because Claude is still in plan mode, it cannot act until you say so.</li>
+<li><strong>Execute (normal mode).</strong> Switch to normal mode (press ++shift+tab++ twice, or start a new session without the plan flag). Claude implements the agreed plan, asking permission before each individual change.</li>
+</ol>
+<p>This pattern directly addresses the most common anxiety about AI coding tools: that Claude will "just start changing things." Plan mode guarantees it cannot -- Claude literally has no write or execute capability until you switch modes. It is the built-in mechanism for the "understand before acting" principle the guide already advocates. See <a href="https://code.claude.com/docs/en/common-workflows">Common workflows</a> for more patterns.</p>
+<h3 id="extended-thinking">Extended thinking<a class="headerlink" href="#extended-thinking" title="Permanent link">&para;</a></h3>
+<p>Claude Code has extended thinking enabled by default for complex tasks: before responding, Claude reasons through the problem step-by-step. You can see this reasoning in verbose mode (toggle with ++ctrl+o++). This is the built-in equivalent of the "think step by step" prompt -- you do not need to ask for it separately in Code sessions. Turning on verbose mode is particularly useful when Claude is making decisions about your data or proposing a structural approach you want to understand.</p>
+<h3 id="context-window-management">Context window management<a class="headerlink" href="#context-window-management" title="Permanent link">&para;</a></h3>
+<p>Claude Code sessions have the same context window limits as Chat, but they fill up faster because Claude is reading files, running commands, and processing output. Practical strategies:</p>
+<ul>
+<li><strong>Use <code>/compact</code></strong> when the conversation gets long. This compresses earlier context while preserving the essential information.</li>
+<li><strong>Use <code>/clear</code></strong> to start fresh within the same session if you are switching to a different task within the same project.</li>
+<li><strong>Keep your <code>CLAUDE.md</code> concise.</strong> Claude reads it every session -- a 2,000-word CLAUDE.md consumes significant context that could be used for actual work.</li>
+<li><strong>Break large tasks into sessions.</strong> Rather than processing 500 files in one session, do 50 at a time, committing between batches.</li>
+</ul>
+<h3 id="when-things-go-wrong">When things go wrong<a class="headerlink" href="#when-things-go-wrong" title="Permanent link">&para;</a></h3>
+<p>Claude will sometimes produce code that does not work, make changes you did not want, or go down an unproductive path. This is normal. Strategies:</p>
+<ul>
+<li><strong>Revert with git:</strong> <code>git checkout -- .</code> undoes all uncommitted changes. <code>git revert HEAD</code> undoes the last commit. This is why version control is non-negotiable.</li>
+<li><strong>Be specific about what went wrong.</strong> "That didn't work" is less helpful than "the table headings are misaligned in Firefox" or "the script fails on files with non-ASCII characters."</li>
+<li><strong>Ask Claude to explain its reasoning.</strong> Sometimes the approach is sound but the implementation has a bug; sometimes the approach itself is wrong. Understanding which helps you guide the fix.</li>
+<li><strong>Start a new conversation</strong> if Claude seems stuck in a loop or keeps making the same mistake. A fresh start with a clearer prompt often works better than persisting.</li>
+</ul>
+<h3 id="documentation-and-reproducibility">Documentation and reproducibility<a class="headerlink" href="#documentation-and-reproducibility" title="Permanent link">&para;</a></h3>
+<p>Good academic practice applies to AI-assisted work too. For any project built with Claude Code:</p>
+<ul>
+<li>Keep your git history clean and well-commented -- it is your audit trail</li>
+<li>Document how to run, build, or deploy the project (a <code>README.md</code> is standard)</li>
+<li>Note which parts were AI-generated and which were hand-written, if this matters for your context</li>
+<li>If the project processes data, document the pipeline: what goes in, what transformations happen, what comes out</li>
+</ul>
+<hr />
+<h2 id="reproducibility">Reproducibility<a class="headerlink" href="#reproducibility" title="Permanent link">&para;</a></h2>
+<p>If your project processes research data, reproducibility matters -- for your own future work, for collaborators, and for peer review. Claude Code makes it easy to build pipelines; these practices make those pipelines trustworthy:</p>
+<ul>
+<li><strong>Pin dependencies.</strong> If Claude installs Python packages, save the exact versions: <code>pip freeze &gt; requirements.txt</code>. For JavaScript projects, commit the <code>package-lock.json</code>. This ensures someone else (or you, next year) can recreate the same environment.</li>
+<li><strong>Record the environment.</strong> Note the Python version, operating system, and key library versions. A <code>README.md</code> in your project root is the standard place for this.</li>
+<li><strong>Write a data dictionary.</strong> For any transformed dataset, document what each column or field contains, how it was derived, and what assumptions were made. Claude can draft this for you: "Write a data dictionary for metadata.csv explaining each column."</li>
+<li><strong>Include test runs.</strong> Keep a small set of sample inputs with expected outputs. This lets you (or anyone) verify the pipeline produces correct results after changes. Claude can create these: "Create a test directory with 5 sample inputs and their expected outputs."</li>
+<li><strong>Document encoding assumptions.</strong> Specify character encoding (UTF-8 is standard), Unicode normalisation form if relevant, and how the pipeline handles non-Latin scripts, diacritics, and special characters.</li>
+<li><strong>Keep scripts alongside data.</strong> Transformation scripts belong in the same version-controlled repository as the data they produce. The git history then documents exactly how the data was processed, when, and what changed.</li>
+</ul>
+<hr />
+<h2 id="combining-with-other-tools">Combining with other tools<a class="headerlink" href="#combining-with-other-tools" title="Permanent link">&para;</a></h2>
+<h3 id="code-chat-pipeline">Code + Chat pipeline<a class="headerlink" href="#code-chat-pipeline" title="Permanent link">&para;</a></h3>
+<p>A productive pattern is to use Chat and Code together, each for what it does best:</p>
+<ul>
+<li><strong>Chat for planning:</strong> Discuss the project design, work through edge cases, decide on architecture. Chat is better for open-ended thinking because it does not try to execute anything -- it just talks.</li>
+<li><strong>Code for building:</strong> Once you know what you want, switch to Code to implement it. Paste key decisions from your Chat conversation into the <code>CLAUDE.md</code> so Code has the same context.</li>
+<li><strong>Chat for review:</strong> After Code builds something, use Chat to review the output. Upload the generated files and ask Chat to critique them, check for errors, or suggest improvements.</li>
+</ul>
+<h3 id="code-version-control-platforms">Code + version control platforms<a class="headerlink" href="#code-version-control-platforms" title="Permanent link">&para;</a></h3>
+<p>Claude Code integrates naturally with GitHub (and other git platforms). It can:</p>
+<ul>
+<li>Create branches, commit, and push</li>
+<li>Open pull requests with descriptive summaries</li>
+<li>Review pull requests from collaborators</li>
+<li>Work within a CI/CD pipeline (automated testing on each commit)</li>
+</ul>
+<p>This makes Claude Code suitable for collaborative projects where multiple people contribute to a shared repository -- for example, a team building a digital edition or a shared dataset.</p>
+<h3 id="code-specialist-software">Code + specialist software<a class="headerlink" href="#code-specialist-software" title="Permanent link">&para;</a></h3>
+<p>Because Claude Code (CLI) runs on your machine, it can use any software you have installed:</p>
+<ul>
+<li><strong>pandoc</strong> -- convert between document formats (Markdown, LaTeX, DOCX, HTML, EPUB)</li>
+<li><strong>LaTeX</strong> -- typeset documents, format mathematical notation, prepare camera-ready papers</li>
+<li><strong>Python scientific stack</strong> -- pandas for data analysis, matplotlib for visualisation, NLTK/spaCy for text processing</li>
+<li><strong>xmllint / Saxon</strong> -- validate and transform XML/TEI documents</li>
+<li><strong>ImageMagick</strong> -- batch process images (resize, convert, annotate)</li>
+<li><strong>ffmpeg</strong> -- process audio and video files (useful for oral history or linguistic fieldwork data)</li>
+<li><strong>Tesseract</strong> -- OCR processing of scanned documents and images</li>
+</ul>
+<p>Claude knows how to use these tools. You install them on your system; Claude calls them as part of its workflow. You do not need to learn their command-line syntax -- Claude handles that -- but understanding what they do helps you direct Claude effectively.</p>
+<h3 id="code-other-ai-models">Code + other AI models<a class="headerlink" href="#code-other-ai-models" title="Permanent link">&para;</a></h3>
+<p>Claude Code can call other AI models via their APIs as part of a workflow. For example, a script that uses a local Whisper model for speech-to-text transcription, then passes the text to Claude for analysis. Or a pipeline that uses a specialised OCR model for handwriting recognition and Claude for the subsequent text processing. For multi-model strategies that apply across all platforms, see <a href="../../essentials/multi-model/">Multi-Model Use</a>.</p>
+<div class="admonition offtrack">
+<p class="admonition-title">Off the Beaten Track</p>
+<p><strong>Going further with Claude Code</strong></p>
+<p>The features above cover what most humanities scholars need. Claude Code has additional capabilities that may be useful as your projects grow:</p>
+<ul>
+<li><strong>Output styles</strong> let you change how Claude Code communicates -- from concise to explanatory to fully custom. See <a href="https://code.claude.com/docs/en/output-styles">Output styles documentation</a>.</li>
+<li><strong>Agent teams</strong> coordinate multiple Claude instances working in parallel across separate git branches. Useful for large projects with independent components. See <a href="https://code.claude.com/docs/en/agent-teams">Agent teams documentation</a>.</li>
+<li><strong>The Claude Agent SDK</strong> lets you build custom agent workflows programmatically -- for automation, CI/CD, or integration with other tools. See <a href="https://code.claude.com/docs/en/sdk">Agent SDK documentation</a>.</li>
+<li><strong>Plugins</strong> bundle skills, sub-agents, commands, and connectors into shareable packages. See <a href="https://code.claude.com/docs/en/plugins">Plugins documentation</a>.</li>
+<li><strong>GitHub Actions integration</strong> lets Claude Code run as part of automated testing and review pipelines. See <a href="https://code.claude.com/docs/en/github-actions">CI/CD documentation</a>.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../apps/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Apps &amp; Extensions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Apps & Extensions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../environments/" class="md-footer__link md-footer__link--next" aria-label="Next: Environments">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Environments
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Leif Isaksen · University of Exeter · 2026 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/leifuss/hhg2ai" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
