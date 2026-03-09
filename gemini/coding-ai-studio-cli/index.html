@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guide to Claude's Cowork mode — autonomous file tasks, document creation, and research synthesis via the desktop app.">
+        <meta name="description" content="Google AI Studio, Gemini CLI, Code Assist, and Jules — developer and coding tools in the Gemini ecosystem.">
       
       
         <meta name="author" content="Leif Isaksen">
       
       
-        <link rel="canonical" href="https://leifuss.github.io/hhg2ai/claude/cowork/">
+        <link rel="canonical" href="https://leifuss.github.io/hhg2ai/gemini/coding-ai-studio-cli/">
       
       
-        <link rel="prev" href="../chat/">
+        <link rel="prev" href="../deep-research-canvas-live/">
       
       
-        <link rel="next" href="../apps/">
+        <link rel="next" href="../plans-privacy/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Cowork - A Hitchhiker's Guide to AI for the Humanities</title>
+        <title>Coding & Developer Tools - A Hitchhiker's Guide to AI for the Humanities</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cowork" class="md-skip">
+        <a href="#coding-and-developer-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cowork
+              Coding & Developer Tools
             
           </span>
         </div>
@@ -1161,8 +1161,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1200,15 +1198,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../claude/" class="md-nav__link ">
               
   
   
@@ -1232,7 +1232,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1252,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chat/" class="md-nav__link">
+      <a href="../../claude/chat/" class="md-nav__link">
         
   
   
@@ -1277,37 +1277,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cowork
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../claude/cowork/" class="md-nav__link">
         
   
   
@@ -1323,320 +1296,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contents
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-it-is-and-what-its-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What it is and what it's for
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setting up
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Setting up">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#privacy-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Privacy considerations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-it-can-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What it can do
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What it can do">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#file-access-and-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File access and management
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autonomous-task-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Autonomous task execution
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#document-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Document creation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sub-agent-coordination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sub-agent coordination
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scheduled-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scheduled tasks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plugins" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plugins
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#global-and-folder-instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Global and folder instructions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dos-and-donts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dos and don'ts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dos and don&#39;ts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dont" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Don't:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-working-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best working practices
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Best working practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-delegation-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The delegation pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-scheduled-research-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The scheduled research pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#organising-research-materials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Organising research materials
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-cowork-vs-chat-vs-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to use Cowork vs Chat vs Code
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combining-with-other-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combining with other tools
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Combining with other tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cowork-chat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cowork &rarr; Chat
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cowork-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cowork &rarr; Code
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cowork-your-normal-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cowork + your normal tools
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1649,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../apps/" class="md-nav__link">
+      <a href="../../claude/apps/" class="md-nav__link">
         
   
   
@@ -1677,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../code/" class="md-nav__link">
+      <a href="../../claude/code/" class="md-nav__link">
         
   
   
@@ -1705,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../environments/" class="md-nav__link">
+      <a href="../../claude/environments/" class="md-nav__link">
         
   
   
@@ -1733,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prerequisites/" class="md-nav__link">
+      <a href="../../claude/prerequisites/" class="md-nav__link">
         
   
   
@@ -1761,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../workflows/" class="md-nav__link">
+      <a href="../../claude/workflows/" class="md-nav__link">
         
   
   
@@ -1789,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../claude/glossary/" class="md-nav__link">
         
   
   
@@ -2112,8 +1771,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2145,17 +1806,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../gemini/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -2179,7 +1838,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2199,7 +1858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/chat/" class="md-nav__link">
+      <a href="../chat/" class="md-nav__link">
         
   
   
@@ -2227,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/gems-connected-apps/" class="md-nav__link">
+      <a href="../gems-connected-apps/" class="md-nav__link">
         
   
   
@@ -2255,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/deep-research-canvas-live/" class="md-nav__link">
+      <a href="../deep-research-canvas-live/" class="md-nav__link">
         
   
   
@@ -2280,10 +1939,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../gemini/coding-ai-studio-cli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding & Developer Tools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2299,6 +1985,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#google-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google AI Studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini CLI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-assist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Assist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gemini-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gemini API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-model-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current model generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2311,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/plans-privacy/" class="md-nav__link">
+      <a href="../plans-privacy/" class="md-nav__link">
         
   
   
@@ -2339,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/workflows/" class="md-nav__link">
+      <a href="../workflows/" class="md-nav__link">
         
   
   
@@ -2582,10 +2354,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contents" class="md-nav__link">
+  <a href="#google-ai-studio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contents
+        Google AI Studio
       
     </span>
   </a>
@@ -2593,10 +2365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-it-is-and-what-its-for" class="md-nav__link">
+  <a href="#gemini-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What it is and what it's for
+        Gemini CLI
       
     </span>
   </a>
@@ -2604,274 +2376,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up" class="md-nav__link">
+  <a href="#code-assist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setting up
+        Code Assist
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Setting up">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#privacy-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Privacy considerations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-it-can-do" class="md-nav__link">
+  <a href="#jules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What it can do
+        Jules
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="What it can do">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#file-access-and-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File access and management
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autonomous-task-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Autonomous task execution
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#document-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Document creation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sub-agent-coordination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sub-agent coordination
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scheduled-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scheduled tasks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plugins" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plugins
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#global-and-folder-instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Global and folder instructions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dos-and-donts" class="md-nav__link">
+  <a href="#the-gemini-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dos and don'ts
+        The Gemini API
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Dos and don&#39;ts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do:
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dont" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Don't:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-working-practices" class="md-nav__link">
+  <a href="#current-model-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best working practices
+        Current model generation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Best working practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-delegation-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The delegation pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-scheduled-research-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The scheduled research pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#organising-research-materials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Organising research materials
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-cowork-vs-chat-vs-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to use Cowork vs Chat vs Code
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combining-with-other-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combining with other tools
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Combining with other tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cowork-chat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cowork &rarr; Chat
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cowork-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cowork &rarr; Code
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cowork-your-normal-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cowork + your normal tools
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2892,165 +2436,42 @@
 
 
 
-<h1 id="cowork">Cowork<a class="headerlink" href="#cowork" title="Permanent link">&para;</a></h1>
-<p>Part of <a href="../../">A Hitchhiker's Guide to AI for the Humanities</a></p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p><strong>Research preview:</strong> Cowork is currently in research preview, available on macOS and Windows (x64). Features, availability, and pricing may change. This section describes Cowork as it exists at the time of writing (early 2026).</p>
-</div>
-<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="#what-it-is-and-what-its-for">2.1 What it is and what it's for</a></li>
-<li><a href="#setting-up">2.2 Setting up</a></li>
-<li><a href="#what-it-can-do">2.3 What it can do</a></li>
-<li><a href="#dos-and-donts">2.4 Dos and don'ts</a></li>
-<li><a href="#best-working-practices">2.5 Best working practices</a></li>
-<li><a href="#combining-with-other-tools">2.6 Combining with other tools</a></li>
-</ul>
+<h1 id="coding-and-developer-tools">Coding and Developer Tools<a class="headerlink" href="#coding-and-developer-tools" title="Permanent link">&para;</a></h1>
+<p>Most humanities researchers can skip this page entirely. It covers tools designed for software development, scripting, and technical automation. If you are building websites, data pipelines, scripts, or digital tools for your research, read on. Otherwise, <a href="../chat/">Chat</a> and <a href="../deep-research-canvas-live/#canvas">Canvas</a> are where you should be.</p>
+<details class="deeper">
+<summary>About this page</summary>
+<p>This page covers technical tools that require comfort with code, the command line, or developer interfaces. Nothing elsewhere in the Gemini section depends on this material. Skip it now and come back when you have a specific need.</p>
+</details>
 <hr />
-<h2 id="what-it-is-and-what-its-for">What it is and what it's for<a class="headerlink" href="#what-it-is-and-what-its-for" title="Permanent link">&para;</a></h2>
-<p>Cowork is a mode within the Claude Desktop app that gives Claude access to folders on your computer and the ability to work autonomously on multi-step tasks. Where Chat is conversational -- you ask, Claude responds -- Cowork is task-oriented: you describe an outcome, Claude plans and executes it, and you come back to finished work.</p>
-<p>Think of it as delegating a task to a capable assistant who has access to your filing cabinet. You say "organise these 200 PDFs by date and create a summary spreadsheet" or "turn these scattered notes into a formatted report," and Cowork plans the work, executes it in an isolated environment, and saves the results to your file system.</p>
-<p>Cowork is built on the same architecture as Claude Code but does not require a terminal or command line (see <a href="https://support.claude.com/en/articles/13345190-get-started-with-cowork">Getting started with Cowork</a>). It is particularly useful for:</p>
+<h2 id="google-ai-studio">Google AI Studio<a class="headerlink" href="#google-ai-studio" title="Permanent link">&para;</a></h2>
+<p>Google AI Studio is the browser-based environment for experimenting with Gemini models. It sits between the consumer Gemini app and the full API — a prototyping space where you can test prompts, adjust model parameters, and explore capabilities without writing code.</p>
+<p>For digital humanities researchers, AI Studio is useful for:</p>
 <ul>
-<li><strong>File and document management</strong> -- organising, renaming, sorting, and processing files in bulk</li>
-<li><strong>Document creation</strong> -- producing spreadsheets, presentations, and formatted reports from your source materials</li>
-<li><strong>Research synthesis</strong> -- reading through folders of notes, articles, or transcripts and producing structured summaries, indices, or bibliographies</li>
-<li><strong>Data processing</strong> -- cleaning, transforming, and analysing datasets</li>
-<li><strong>Scheduled recurring tasks</strong> -- work that Claude runs automatically on a cadence you set</li>
+<li>Testing structured prompts before committing to an API workflow</li>
+<li>Comparing model responses across different parameter settings</li>
+<li>Exploring Gemini's capabilities beyond what the consumer app exposes</li>
 </ul>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p><strong>What Cowork does <em>not</em> do:</strong> Cowork cannot see your screen or observe what you are doing in other applications. It interacts with your computer exclusively through file-system access within folders you explicitly grant and code execution in an isolated environment. For browser-based awareness, see <a href="../apps/#claude-in-chrome">Claude in Chrome</a>.</p>
-</div>
+<p>AI Studio is free to use. API usage beyond free-tier limits is billed separately from Gemini subscriptions.</p>
 <hr />
-<h2 id="setting-up">Setting up<a class="headerlink" href="#setting-up" title="Permanent link">&para;</a></h2>
-<p>Cowork requires:</p>
-<ul>
-<li>macOS or Windows (x64)</li>
-<li>The Claude desktop app (download from <a href="https://claude.ai/download">claude.ai/download</a>)</li>
-<li>A paid subscription (Pro, Max, Team, or Enterprise)</li>
-</ul>
-<p>Once installed, Cowork is available as a mode within the Claude desktop app. You will need to grant file-access permissions for the folders you want Claude to work with. Cowork only accesses folders you explicitly approve -- it does not have blanket access to your file system.</p>
-<h3 id="privacy-considerations">Privacy considerations<a class="headerlink" href="#privacy-considerations" title="Permanent link">&para;</a></h3>
-<p>Cowork reads files in folders you grant access to. Be mindful of what those folders contain: if a folder includes sensitive or personal documents alongside the files you want processed, Cowork will have access to all of them. Good practice is to keep your working folder focused on the materials Cowork needs, just as you would when sharing a folder with a colleague.</p>
-<p>For data governance principles that apply across all platforms, see <a href="../../essentials/data-governance/">Data Governance</a>.</p>
+<h2 id="gemini-cli">Gemini CLI<a class="headerlink" href="#gemini-cli" title="Permanent link">&para;</a></h2>
+<p>The Gemini CLI is an open-source command-line agent. It runs in your terminal and can work with local files, execute commands, and handle multi-step tasks — similar in concept to Anthropic's Claude Code.</p>
+<p>For digital humanists building tools, processing data, or managing technical projects, the CLI offers full local control, version-control integration, and scriptable workflows.</p>
 <hr />
-<h2 id="what-it-can-do">What it can do<a class="headerlink" href="#what-it-can-do" title="Permanent link">&para;</a></h2>
-<h3 id="file-access-and-management">File access and management<a class="headerlink" href="#file-access-and-management" title="Permanent link">&para;</a></h3>
-<p>Cowork can read, create, edit, and organise files in folders you grant access to. You can ask it to:</p>
-<ul>
-<li>Read and summarise documents in a folder</li>
-<li>Compare two versions of a file</li>
-<li>Search through a folder of PDFs for specific content</li>
-<li>Rename, sort, or reorganise files by criteria you specify</li>
-<li>Read your notes and produce a structured synthesis</li>
-</ul>
-<h3 id="autonomous-task-execution">Autonomous task execution<a class="headerlink" href="#autonomous-task-execution" title="Permanent link">&para;</a></h3>
-<p>Unlike Chat, where you exchange messages back and forth, Cowork can plan and execute multi-step tasks on its own. Describe the outcome you want, review Claude's plan, then let it run. Progress indicators show what Claude is doing, and you can steer mid-task or let it work to completion. You can continue other work while Cowork runs -- it does not require your attention.</p>
-<h3 id="document-creation">Document creation<a class="headerlink" href="#document-creation" title="Permanent link">&para;</a></h3>
-<p>Cowork can produce professional documents directly: Excel spreadsheets with working formulas, PowerPoint presentations, Word documents, and formatted text files. Claude uses specialised skills to produce outputs with correct structure and formatting rather than approximations.</p>
-<h3 id="sub-agent-coordination">Sub-agent coordination<a class="headerlink" href="#sub-agent-coordination" title="Permanent link">&para;</a></h3>
-<p>For complex tasks, Cowork may break the work into parallel workstreams -- for example, processing different subsets of your files simultaneously or running analysis on one dataset while formatting another. This happens automatically; you describe the outcome, and Claude decides how to divide the work.</p>
-<h3 id="scheduled-tasks">Scheduled tasks<a class="headerlink" href="#scheduled-tasks" title="Permanent link">&para;</a></h3>
-<p>Use the <code>/schedule</code> command to create tasks that run automatically on a cadence you set. Claude runs them while the desktop app is open. Useful for recurring work: weekly literature digests, regular file organisation, periodic data pulls. See <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork">Schedule recurring tasks</a>.</p>
-<h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h3>
-<p>Cowork supports plugins -- bundles of skills, connectors, slash commands, and sub-agents that customise it for specific roles or domains. These extend what Cowork can do beyond its built-in capabilities. See <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-cowork">Use plugins in Cowork</a>.</p>
-<h3 id="global-and-folder-instructions">Global and folder instructions<a class="headerlink" href="#global-and-folder-instructions" title="Permanent link">&para;</a></h3>
-<p>You can set standing instructions that persist across sessions -- either globally (for all Cowork sessions) or per folder. These function like Project instructions in Chat: they tell Claude your conventions, preferences, and constraints so you do not have to repeat them each time.</p>
+<h2 id="code-assist">Code Assist<a class="headerlink" href="#code-assist" title="Permanent link">&para;</a></h2>
+<p>Code Assist is Google's IDE-integrated coding assistant — available in VS Code, JetBrains, and other editors. It provides code completion, explanation, refactoring, and generation within your development environment.</p>
 <hr />
-<h2 id="dos-and-donts">Dos and don'ts<a class="headerlink" href="#dos-and-donts" title="Permanent link">&para;</a></h2>
-<h3 id="do">Do:<a class="headerlink" href="#do" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Be explicit about which folders Cowork should access</strong> and where to save outputs. Clear folder structure helps Claude produce better results.</li>
-<li><strong>Start with a small, well-defined task</strong> before delegating complex multi-step work. This lets you calibrate expectations.</li>
-<li><strong>Review Cowork's plan before letting it run,</strong> especially for tasks that modify or create files.</li>
-<li><strong>Use folder instructions</strong> to set context: what these materials are, what conventions to follow, what the output should look like.</li>
-<li><strong>Review Cowork's outputs</strong> with the same critical eye you would apply to any AI-generated content.</li>
-</ul>
-<h3 id="dont">Don't:<a class="headerlink" href="#dont" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Leave sensitive files in accessible folders</strong> unless you intend Cowork to process them. Grant access only to what is needed.</li>
-<li><strong>Close the desktop app while Cowork is working</strong> -- the session ends if the app closes.</li>
-<li><strong>Assume Cowork retains memory across sessions.</strong> It currently does not. Use folder instructions for persistent context.</li>
-<li><strong>Treat file outputs as final without review.</strong> Cowork may save files to your system -- check them before sharing or submitting.</li>
-<li><strong>Rely on Cowork for tasks requiring precise citation.</strong> The same hallucination risks apply as with Chat -- verify all references.</li>
-<li><strong>Use Cowork for large-scale coding projects</strong> that need full version control and sophisticated build workflows. <a href="../code/">Code</a> gives you finer-grained control.</li>
-</ul>
-<p>For more on safe usage patterns, see <a href="https://support.claude.com/en/articles/13364135-using-cowork-safely">Using Cowork safely</a>.</p>
+<h2 id="jules">Jules<a class="headerlink" href="#jules" title="Permanent link">&para;</a></h2>
+<p>Jules is Google's GitHub-connected AI coding agent, roughly analogous to OpenAI's Codex or Anthropic's Claude Code in the agentic coding space. It can work on complex, multi-file engineering tasks directly from your GitHub repositories. Jules is currently bundled with Google AI Ultra.</p>
 <hr />
-<h2 id="best-working-practices">Best working practices<a class="headerlink" href="#best-working-practices" title="Permanent link">&para;</a></h2>
-<h3 id="the-delegation-pattern">The delegation pattern<a class="headerlink" href="#the-delegation-pattern" title="Permanent link">&para;</a></h3>
-<p>The most productive Cowork workflow treats it as a capable assistant you delegate tasks to:</p>
-<ol>
-<li>Gather your source materials into a folder (notes, articles, data files, transcripts).</li>
-<li>Write folder instructions that tell Claude the context: what these materials are, what conventions to follow, what the output should look like.</li>
-<li>Open Cowork, select the folder, and describe the outcome you want.</li>
-<li>Review Claude's plan, adjust if needed, then let it run.</li>
-<li>Check the output. If it needs refinement, describe what to change -- Cowork can iterate.</li>
-</ol>
-<h3 id="the-scheduled-research-pattern">The scheduled research pattern<a class="headerlink" href="#the-scheduled-research-pattern" title="Permanent link">&para;</a></h3>
-<p>Set up recurring tasks for work that repeats: weekly literature digests, regular file organisation, periodic data tidying. Claude runs the task automatically while the desktop app is open. This is especially useful for maintaining a research project over weeks or months -- the routine upkeep happens without you initiating it each time.</p>
-<h3 id="organising-research-materials">Organising research materials<a class="headerlink" href="#organising-research-materials" title="Permanent link">&para;</a></h3>
-<p>Cowork can help impose structure on unstructured research materials. Ask it to read through a folder of notes or downloaded articles and create:</p>
-<ul>
-<li>A thematic index of your materials</li>
-<li>A chronological summary of key arguments in the literature</li>
-<li>A comparison table of different scholars' positions on a question</li>
-<li>An annotated bibliography from your reading notes</li>
-</ul>
-<h3 id="when-to-use-cowork-vs-chat-vs-code">When to use Cowork vs Chat vs Code<a class="headerlink" href="#when-to-use-cowork-vs-chat-vs-code" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Best tool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Quick question, no files needed</td>
-<td><a href="../chat/">Chat</a></td>
-</tr>
-<tr>
-<td>Discuss a document you can upload</td>
-<td><a href="../chat/">Chat</a> (with upload)</td>
-</tr>
-<tr>
-<td>Organise, process, or create files without a terminal</td>
-<td>Cowork</td>
-</tr>
-<tr>
-<td>Autonomous multi-step tasks while you do other work</td>
-<td>Cowork</td>
-</tr>
-<tr>
-<td>Build tools, write code, version-controlled projects</td>
-<td><a href="../code/">Code</a></td>
-</tr>
-<tr>
-<td>Interact with web pages in your browser</td>
-<td><a href="../apps/#claude-in-chrome">Claude in Chrome</a></td>
-</tr>
-</tbody>
-</table>
+<h2 id="the-gemini-api">The Gemini API<a class="headerlink" href="#the-gemini-api" title="Permanent link">&para;</a></h2>
+<p>The Gemini API is the developer platform for building your own tools, automations, or research workflows on top of Google's models. It is billed separately from Gemini subscriptions. For most humanities researchers, the API is only relevant if you want structured automation, reproducible pipelines, or integration into your own software.</p>
+<details class="deeper">
+<summary>API pricing</summary>
+<p>API pricing is usage-based and separate from any Gemini subscription. Google offers a free tier with daily limits, and paid usage scales with volume. See <a href="https://ai.google.dev/pricing">Google's API pricing page</a> for current details.</p>
+</details>
 <hr />
-<h2 id="combining-with-other-tools">Combining with other tools<a class="headerlink" href="#combining-with-other-tools" title="Permanent link">&para;</a></h2>
-<h3 id="cowork-chat">Cowork &rarr; Chat<a class="headerlink" href="#cowork-chat" title="Permanent link">&para;</a></h3>
-<p>Use Cowork to gather and synthesise information from your local files, then take the key findings into a Chat Project for deeper analysis or writing. Cowork is good at breadth (processing many files quickly); Chat Projects are good at depth (sustained, focused conversation about a specific topic).</p>
-<h3 id="cowork-code">Cowork &rarr; Code<a class="headerlink" href="#cowork-code" title="Permanent link">&para;</a></h3>
-<p>If Cowork identifies a data problem or a need for systematic processing -- "these 50 XML files have inconsistent date formats" -- switch to <a href="../code/">Code</a> for version-controlled development. Cowork handles ad-hoc tasks well; Code is better when you need a reproducible pipeline or a polished tool.</p>
-<h3 id="cowork-your-normal-tools">Cowork + your normal tools<a class="headerlink" href="#cowork-your-normal-tools" title="Permanent link">&para;</a></h3>
-<p>Cowork is designed to complement, not replace, your existing workflow. Continue using your preferred PDF reader, word processor, reference manager, and note-taking app. Cowork adds a layer of AI assistance on top of whatever you already do, operating on the files those tools produce.</p>
-<div class="admonition offtrack">
-<p class="admonition-title">Off the Beaten Track</p>
-<p><strong>Extending Cowork</strong></p>
-<ul>
-<li><strong>Plugins</strong> customise Cowork for specific roles and domains. See <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-cowork">Cowork plugins</a>.</li>
-<li><strong>Scheduled tasks</strong> let Claude run work automatically on a cadence you set. See <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork">Scheduling documentation</a>.</li>
-<li><strong>Office add-ins</strong> -- Cowork can coordinate with Claude in Excel and Claude in PowerPoint. See the <a href="../apps/">Apps &amp; Extensions</a> page.</li>
-</ul>
-</div>
+<h2 id="current-model-generation">Current model generation<a class="headerlink" href="#current-model-generation" title="Permanent link">&para;</a></h2>
+<p>Gemini 3 is the current model generation (as of March 2026). When you encounter model names in Google's documentation — Gemini 3 Pro, Gemini 3 Flash, Gemini 3.1 Pro, Deep Think variants — they all belong to this family. "Gemini 3" is to Google roughly what "GPT-5.x" is to OpenAI or "Claude Opus" is to Anthropic: the label for the current frontier generation.</p>
 
 
 
@@ -3091,7 +2512,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../chat/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chat">
+          <a href="../deep-research-canvas-live/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deep Research, Canvas &amp; Live">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3101,20 +2522,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Chat
+                Deep Research, Canvas & Live
               </div>
             </div>
           </a>
         
         
           
-          <a href="../apps/" class="md-footer__link md-footer__link--next" aria-label="Next: Apps &amp; Extensions">
+          <a href="../plans-privacy/" class="md-footer__link md-footer__link--next" aria-label="Next: Plans &amp; Privacy">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Apps & Extensions
+                Plans & Privacy
               </div>
             </div>
             <div class="md-footer__button md-icon">
