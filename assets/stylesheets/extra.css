@@ -68,6 +68,34 @@
    Six types mapped to the travel-guide voice
    ============================================================ */
 
+/* Match body text size in admonition boxes */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 1rem;
+}
+
+/* Shared fix: disable Material's mask/background icon system for emoji icons */
+.md-typeset .panic > .admonition-title::before,
+.md-typeset .panic > summary::before,
+.md-typeset .essential > .admonition-title::before,
+.md-typeset .essential > summary::before,
+.md-typeset .offtrack > .admonition-title::before,
+.md-typeset .offtrack > summary::before,
+.md-typeset .caution > .admonition-title::before,
+.md-typeset .caution > summary::before,
+.md-typeset .updated > .admonition-title::before,
+.md-typeset .updated > summary::before,
+.md-typeset .leifnote > .admonition-title::before,
+.md-typeset .leifnote > summary::before {
+  background-color: transparent;
+  -webkit-mask-image: none;
+  mask-image: none;
+  width: auto;
+  height: auto;
+  position: relative;
+  top: auto;
+}
+
 /* 1. Don't Panic — Teal */
 :root {
   --md-admonition-icon--panic: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 9V5.5a2.5 2.5 0 0 0-5 0V9m-3.5 0h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="12" y="17" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor">OK</text></svg>');
@@ -286,20 +314,21 @@
   border-top: 3px solid var(--section-color-basecamp);
 }
 
-/* Section label above page title */
-.section-label {
-  font-size: 0.7rem;
+/* Beta badge in hero banner */
+.beta-badge {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.2rem 0;
-  margin-bottom: 0;
+  letter-spacing: 0.1em;
+  color: #faf8f4;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin-bottom: 12px;
 }
-.section-label--primer { color: var(--section-color-primer); }
-.section-label--essentials { color: var(--section-color-essentials); }
-.section-label--field-guides { color: var(--section-color-field-guides); }
-.section-label--platforms { color: var(--section-color-platforms); }
-.section-label--basecamp { color: var(--section-color-basecamp); }
 
 /* ============================================================
    LANDING PAGE STYLES
