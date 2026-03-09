@@ -65,7 +65,7 @@ These concerns do not get resolved by deciding to use the tools. They remain liv
 !!! leifnote "Leif's Notes"
     These concerns merit attention, but they should not be evaluated in isolation. We rarely subject other technologies to equivalent scrutiny: the carbon footprint of air travel to conferences, the labour conditions behind smartphone manufacture, the environmental costs of constructing and maintaining digital infrastructure. This observation cuts two ways. It might suggest that AI-specific concerns are disproportionate — or it might prompt more critical attention to technologies we have ceased to question. Either way, treating AI as uniquely requiring ethical justification, while other consequential technologies get a pass, risks distorting our assessment.
 
-Choosing not to engage with these technologies, whether for any of these reasons or others, is a fully legitimate scholarly position — not technophobia or Luddism, but a considered response to genuine concerns.
+Choosing not to engage with these technologies, whether for any of these reasons or others, is a fully legitimate scholarly position — not technophobia, but a considered response to genuine concerns.
 
 ## Why awareness matters even without using these tools
 
