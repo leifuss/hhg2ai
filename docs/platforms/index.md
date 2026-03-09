@@ -18,17 +18,17 @@ Several AI platforms now offer capable general-purpose assistants, and many of t
   </a>
   <a class="hhg-path-card" href="../chatgpt/">
     <div class="time">OpenAI</div>
-    <h3><img src="../assets/images/platforms/chatgpt-icon.svg" class="platform-logo"> ChatGPT</h3>
+    <h3><img src="../assets/images/platforms/ChatGPT-Logo.png" class="platform-logo"> ChatGPT</h3>
     <p>Broad capabilities, large ecosystem. Deep research and custom GPTs.</p>
   </a>
   <a class="hhg-path-card" href="../gemini/">
     <div class="time">Google</div>
-    <h3><img src="../assets/images/platforms/gemini-icon.svg" class="platform-logo"> Gemini</h3>
+    <h3><img src="../assets/images/platforms/Google_Gemini_icon_2025.png" class="platform-logo"> Gemini</h3>
     <p>Deep ecosystem integration, strong multimodal support.</p>
   </a>
   <a class="hhg-path-card" href="copilot-placeholder/">
     <div class="time">Microsoft</div>
-    <h3><img src="../assets/images/platforms/copilot-icon.svg" class="platform-logo"> Copilot</h3>
+    <h3><img src="../assets/images/platforms/Microsoft_Copilot_Icon.svg.png" class="platform-logo"> Copilot</h3>
     <p>AI in Microsoft 365. Guide coming soon.</p>
   </a>
 </div>
