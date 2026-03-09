@@ -4,8 +4,7 @@ site_description: >-
   A practical, independent guide for humanities scholars navigating artificial
   intelligence. Written by a working academic. No hype, no hard sell, no assumed expertise.
 site_author: Leif Isaksen
-repo_url: https://github.com/leifuss/hhg2ai
-repo_name: leifuss/hhg2ai
+# repo_url and repo_name removed — GitHub link now in footer via extra.social
 
 theme:
   name: material
@@ -13,8 +12,6 @@ theme:
   language: en
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.svg
-  icon:
-    repo: fontawesome/brands/github
   font:
     text: Source Serif 4
     code: JetBrains Mono
@@ -65,25 +62,28 @@ nav:
     - Multi-Model Strategy: essentials/multi-model.md
     - Decision Sheet: essentials/decision-sheet.md
     - Cost & Plans: essentials/cost.md
-  - Claude:
-    - claude/index.md
-    - Chat: claude/chat.md
-    - Cowork: claude/cowork.md
-    - Apps & Extensions: claude/apps.md
-    - Code: claude/code.md
-    - Environments: claude/environments.md
-    - Prerequisites: claude/prerequisites.md
-    - Worked Examples: claude/workflows.md
-    - Glossary: claude/glossary.md
-  - ChatGPT:
-    - chatgpt/index.md
-    - Chat: chatgpt/chat.md
-    - Projects: chatgpt/projects.md
-    - Research, Apps & Agent: chatgpt/research-apps-agent.md
-    - Canvas, Data & Study: chatgpt/canvas-data-study.md
-    - GPTs & Codex: chatgpt/gpts-codex.md
-    - Plans & Privacy: chatgpt/plans-privacy.md
-    - Worked Examples: chatgpt/workflows.md
+  - Platforms:
+    - How to Choose: platforms/index.md
+    - Claude:
+      - claude/index.md
+      - Chat: claude/chat.md
+      - Cowork: claude/cowork.md
+      - Apps & Extensions: claude/apps.md
+      - Code: claude/code.md
+      - Environments: claude/environments.md
+      - Prerequisites: claude/prerequisites.md
+      - Worked Examples: claude/workflows.md
+      - Glossary: claude/glossary.md
+    - ChatGPT:
+      - chatgpt/index.md
+      - Chat: chatgpt/chat.md
+      - Projects: chatgpt/projects.md
+      - Research, Apps & Agent: chatgpt/research-apps-agent.md
+      - Canvas, Data & Study: chatgpt/canvas-data-study.md
+      - GPTs & Codex: chatgpt/gpts-codex.md
+      - Plans & Privacy: chatgpt/plans-privacy.md
+      - Worked Examples: chatgpt/workflows.md
+    - Microsoft Copilot: platforms/copilot-placeholder.md
   - Bootcamp:
     - bootcamp/index.md
   - Resources: resources/index.md
@@ -97,6 +97,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/leifuss/hhg2ai
+      name: Contribute on GitHub
   generator: false
 
 markdown_extensions:

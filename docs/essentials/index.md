@@ -4,7 +4,7 @@ description: Cross-platform principles that apply regardless of which AI tool yo
 last_verified: 2026-03-08
 ---
 
-# The Essentials Range
+# Essential Considerations
 
 Whether you use Claude, ChatGPT, Gemini, Copilot, or an open-weights model running on your own laptop, certain principles apply everywhere. This section covers them.
 
