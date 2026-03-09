@@ -1,33 +1,66 @@
 ---
-title: "How to Choose a Platform"
-description: "A decision guide for humanities scholars choosing between AI platforms — Claude, ChatGPT, Gemini, Copilot, and open-weights models."
+title: "Platform Guides"
+description: "Guides to AI platforms for humanities scholars — Claude, ChatGPT, Gemini, Copilot, and open-weights models. Decision guide for choosing between them."
 last_verified: 2026-03-09
 ---
 
-# How to Choose a Platform
+# Platform Guides
 
 *March 2026*
+
+Several AI platforms now offer capable general-purpose assistants, and many of them do very similar things. You do not need to learn them all, or even use all the capabilities of any one platform. The guides below cover the platforms most relevant to humanities researchers. Each can be read independently. If you are unsure where to start, the [choosing guide](#how-to-choose-a-platform) below will help you decide.
+
+<div class="hhg-paths" style="padding: 24px 0;">
+  <a class="hhg-path-card" href="../claude/">
+    <div class="time">Anthropic</div>
+    <h3><img src="../assets/images/platforms/claude-icon.svg" class="platform-logo"> Claude</h3>
+    <p>Strong for writing, analysis, and coding. Clean product hierarchy.</p>
+  </a>
+  <a class="hhg-path-card" href="../chatgpt/">
+    <div class="time">OpenAI</div>
+    <h3><img src="../assets/images/platforms/chatgpt-icon.svg" class="platform-logo"> ChatGPT</h3>
+    <p>Broad capabilities, large ecosystem. Deep research and custom GPTs.</p>
+  </a>
+  <a class="hhg-path-card" href="../gemini/">
+    <div class="time">Google</div>
+    <h3><img src="../assets/images/platforms/gemini-icon.svg" class="platform-logo"> Gemini</h3>
+    <p>Deep ecosystem integration, strong multimodal support.</p>
+  </a>
+  <a class="hhg-path-card" href="copilot-placeholder/">
+    <div class="time">Microsoft</div>
+    <h3><img src="../assets/images/platforms/copilot-icon.svg" class="platform-logo"> Copilot</h3>
+    <p>AI in Microsoft 365. Guide coming soon.</p>
+  </a>
+</div>
+
+A detailed guide for local open-weights setups is planned.
+
+---
+
+## How to Choose a Platform
 
 !!! panic "Don't Panic"
     You do not need to pick the right platform on your first try. The core skill — learning to work well with an AI assistant — transfers across all of them. Start anywhere. Switch when you have a reason to.
 
-## The short version
+### The short version
 
 All major platforms now offer capable free tiers. The differences that matter most for humanities researchers are price, privacy, institutional availability, and how far you want to push agentic or multimodal capabilities. If you have no strong reason to choose one over another, start with whichever is easiest to sign up for and move on when you have a specific need.
 
 ---
 
-## Questions to ask
+### Questions to ask
 
-### What is your budget?
+#### What is your budget?
 
 **Nothing for now.** ChatGPT Free gives access to GPT-4o and limited GPT-5.x. Claude Free and Gemini Free are also capable. All three are good enough for a genuine first encounter with what these tools can do. Start with whichever is easiest to sign up for.
+
+Free tiers give you a realistic sense of the *nature* of what these tools can do — the kinds of tasks they handle, how conversation works, what file uploads feel like. But they do not reliably represent the *quality* of output you can expect from a paid tier. Free-tier models are often older, slower, or more heavily rate-limited, and may not produce results good enough for professional or academic work. If you try a free tier and find the output underwhelming, that is a reason to try a paid tier before writing the technology off, not a reason to stop.
 
 **Around £20/month for individual use.** Claude Pro and ChatGPT Plus are both roughly £20/month (or equivalent). Claude Pro gives access to Opus (Anthropic's most capable model), Claude Code, Cowork, and higher usage limits. ChatGPT Plus gives expanded access to GPT-5.x, deep research, agent mode, Codex, and custom GPTs. Either is a reasonable choice. If your main work is writing, reading, and analysis, both are strong. If you want agentic coding, Claude Code is currently more mature for that workflow.
 
 **Institutional budget.** Ask your IT department what is already available. Many UK universities have Microsoft 365 licences that include Copilot. Some have negotiated institutional access to ChatGPT (Edu/Enterprise) or are exploring Anthropic's offerings. Using an institutional platform is almost always better for data governance than a personal subscription.
 
-### Do you need privacy guarantees?
+#### Do you need privacy guarantees?
 
 **Personal, low-risk, exploratory work.** Any consumer plan is fine. Be aware that consumer ChatGPT may use your conversations for model training unless you opt out. Claude and Gemini have their own data policies — check the current terms.
 
@@ -35,7 +68,7 @@ All major platforms now offer capable free tiers. The differences that matter mo
 
 **Maximum control.** Open-weights models (such as Llama, Mistral, or Qwen) can be run locally on your own hardware. Nothing leaves your machine. This requires technical setup but gives complete data sovereignty. See the [terminology section below](#essential-terminology) for what "open weights" means.
 
-### Are you interested in multimodal capabilities?
+#### Are you interested in multimodal capabilities?
 
 **Image understanding and generation.** ChatGPT (via DALL-E and GPT-4o/5.x vision) and Gemini are currently strongest here. Claude can analyse images but does not generate them.
 
@@ -43,17 +76,10 @@ All major platforms now offer capable free tiers. The differences that matter mo
 
 **Video.** Gemini has native video understanding. Other platforms are more limited. For most humanities work this is not yet a primary need.
 
-### Do you care about the company behind the model?
+!!! leifnote "Leif's Notes — on choosing by company"
+    None of the major AI platforms is without ethical questions — on corporate governance, environmental impact, labour practices, data handling, and societal risk. The differences between them are real but not straightforward, and they change as companies evolve. Rather than offering a ranking here, I would encourage you to do your own research. (LLMs themselves can be surprisingly candid about the controversies surrounding their own makers — try asking.)
 
-This is a legitimate question for humanities scholars. These companies have different corporate structures, safety commitments, and relationships to government and military contracts.
-
-- **Anthropic** (Claude) is a public benefit corporation focused on AI safety research. It has accepted US defence contracts.
-- **OpenAI** (ChatGPT) was founded as a nonprofit in 2015 and restructured in 2025 into the OpenAI Foundation (nonprofit) controlling OpenAI Group (a public benefit corporation). It has extensive commercial partnerships, notably with Microsoft.
-- **Google** (Gemini) is a division of Alphabet, one of the world's largest technology companies.
-- **Microsoft** (Copilot) integrates OpenAI models into its 365 productivity suite.
-- **Open-weights models** are released by various organisations (Meta, Mistral, Alibaba, and others) under varying licence terms. They can be run independently of any company's infrastructure.
-
-None of these affiliations is automatically disqualifying, but they are worth knowing about, especially if your institution has policies on technology procurement or ethical sourcing.
+    Many academics I speak to tend to default to Anthropic (Claude) as having arguably the strongest explicit commitment to safe and ethical AI development. That is an observation of a trend among colleagues, not a formal endorsement from this guide. Your own priorities — on privacy, on environmental impact, on corporate structure, on military contracts — may lead you to a different conclusion.
 
 ---
 
@@ -64,19 +90,6 @@ Most platforms now offer some form of memory: the assistant learns your preferen
 The important thing to know is that the core skill transfers. What you learn about prompting, verification, and working with AI on one platform applies on every other. If you later switch platforms, you will lose accumulated memory but not accumulated competence.
 
 Some platforms (Claude, ChatGPT) allow you to view and manage what the system remembers. Formal memory export and import across platforms is not yet straightforward, but the practical lock-in is low: switching costs time, not money or data.
-
----
-
-## Platform guides
-
-Detailed guides are available for the following platforms:
-
-- **[Claude](../claude/index.md)** — Anthropic's AI assistant. Chat, Projects, Cowork, Code, and more.
-- **[ChatGPT](../chatgpt/index.md)** — OpenAI's AI assistant. Chat, Projects, Deep Research, GPTs, Codex, and more.
-- **[Gemini](../gemini/index.md)** — Google's AI assistant. Chat, Deep Research, Canvas, Connected Apps, and more.
-- **[Microsoft Copilot](copilot-placeholder.md)** — AI integrated into Microsoft 365. Guide coming soon.
-
-A detailed guide for local open-weights setups is planned.
 
 ---
 

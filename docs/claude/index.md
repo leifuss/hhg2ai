@@ -4,9 +4,7 @@ description: "Overview of Claude's tools for humanities research — choosing th
 last_verified: 2026-03-08
 ---
 
-# Claude for Humanities Scholars
-
-![Claude logo](../assets/images/platforms/claude-icon.svg){ .platform-logo }
+# ![Claude](../assets/images/platforms/claude-icon.svg){ .platform-logo } Claude for Humanities Scholars
 
 *March 2026*
 

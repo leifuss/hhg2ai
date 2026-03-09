@@ -62,7 +62,7 @@ nav:
     - Multi-Model Strategy: essentials/multi-model.md
     - Decision Sheet: essentials/decision-sheet.md
     - Cost & Plans: essentials/cost.md
-  - Platforms:
+  - Platform Guides:
     - How to Choose: platforms/index.md
     - Claude:
       - claude/index.md
