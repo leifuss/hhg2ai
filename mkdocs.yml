@@ -83,6 +83,14 @@ nav:
       - GPTs & Codex: chatgpt/gpts-codex.md
       - Plans & Privacy: chatgpt/plans-privacy.md
       - Worked Examples: chatgpt/workflows.md
+    - Gemini:
+      - gemini/index.md
+      - Chat: gemini/chat.md
+      - Gems & Connected Apps: gemini/gems-connected-apps.md
+      - Deep Research, Canvas & Live: gemini/deep-research-canvas-live.md
+      - Coding & Developer Tools: gemini/coding-ai-studio-cli.md
+      - Plans & Privacy: gemini/plans-privacy.md
+      - Worked Examples: gemini/workflows.md
     - Microsoft Copilot: platforms/copilot-placeholder.md
   - Bootcamp:
     - bootcamp/index.md

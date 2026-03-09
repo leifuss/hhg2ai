@@ -73,9 +73,10 @@ Detailed guides are available for the following platforms:
 
 - **[Claude](../claude/index.md)** — Anthropic's AI assistant. Chat, Projects, Cowork, Code, and more.
 - **[ChatGPT](../chatgpt/index.md)** — OpenAI's AI assistant. Chat, Projects, Deep Research, GPTs, Codex, and more.
+- **[Gemini](../gemini/index.md)** — Google's AI assistant. Chat, Deep Research, Canvas, Connected Apps, and more.
 - **[Microsoft Copilot](copilot-placeholder.md)** — AI integrated into Microsoft 365. Guide coming soon.
 
-Detailed guides for Gemini and local open-weights setups are planned.
+A detailed guide for local open-weights setups is planned.
 
 ---
 

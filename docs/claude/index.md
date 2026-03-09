@@ -6,6 +6,8 @@ last_verified: 2026-03-08
 
 # Claude for Humanities Scholars
 
+![Claude logo](../assets/images/platforms/claude-icon.svg){ .platform-logo }
+
 *March 2026*
 
 ## What Claude is — and how it relates to Anthropic
