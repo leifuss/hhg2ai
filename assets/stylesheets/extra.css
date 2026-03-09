@@ -188,9 +188,10 @@
 
 /* --- Platform logo styling --- */
 .platform-logo {
-  height: 48px;
+  height: 28px;
   width: auto;
-  margin-bottom: 0.5rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
 
 /* ============================================================
