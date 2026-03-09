@@ -39,14 +39,14 @@ The guide is built to be adaptable. Discipline-specific examples and institution
 
 ## Fancy joining the expedition?
 
-!!! panic "Don't Panic"
-    You do not need to be a technologist to contribute. If you have used this guide and found something unclear, missing, or wrong --- or if you have adapted it for your own context and want to share what you learned --- your input is welcome.
-
 This guide is actively maintained and contributions are invited. Whether you want to suggest corrections, propose new content, share discipline-specific examples, or help with translation, there are several ways to get involved:
 
 - **Feedback form:** [Let us know](https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&entry.1470426217=About) what was useful, unclear, or missing. (Please do not include personal, confidential, or sensitive information.)
 - **Email:** [l.isaksen@exeter.ac.uk](mailto:l.isaksen@exeter.ac.uk) for longer discussions, collaboration proposals, or adaptation enquiries.
 - **GitHub:** If you are comfortable with version control, contributions via pull request are welcome.
+
+!!! panic "Don't Panic"
+    You do not need to be a technologist to contribute. If you have used this guide and found something unclear, missing, or wrong --- or if you have adapted it for your own context and want to share what you learned --- your input is welcome.
 
 ## Licence
 
