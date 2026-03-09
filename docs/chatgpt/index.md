@@ -6,6 +6,8 @@ last_verified: 2026-03-09
 
 # ChatGPT for Humanities Scholars
 
+![ChatGPT logo](../assets/images/platforms/chatgpt-icon.svg){ .platform-logo }
+
 *March 2026*
 
 !!! panic "Don't Panic"

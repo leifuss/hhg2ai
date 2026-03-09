@@ -6,6 +6,8 @@ last_verified: 2026-03-09
 
 # Microsoft Copilot
 
+![Copilot logo](../assets/images/platforms/copilot-icon.svg){ .platform-logo }
+
 *Coming soon.*
 
 Microsoft Copilot integrates AI capabilities into Microsoft 365 applications (Word, Excel, PowerPoint, Outlook, Teams). For researchers at institutions with Microsoft 365 licences, Copilot may be the most readily available AI assistant.
