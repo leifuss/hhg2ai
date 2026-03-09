@@ -62,6 +62,23 @@ nav:
     - Multi-Model Strategy: essentials/multi-model.md
     - Decision Sheet: essentials/decision-sheet.md
     - Cost & Plans: essentials/cost.md
+  - Field Guides:
+    - field-guides/index.md
+    - Activities:
+      - Translation & Language: field-guides/translation.md
+      - Close Reading & Textual Analysis: field-guides/close-reading.md
+      - Images, Objects & Visual Evidence: field-guides/images-objects.md
+      - Archives & Manuscripts: field-guides/archives.md
+      - Spatial & Geographic Analysis: field-guides/spatial.md
+      - Quantitative & Tabular Data: field-guides/data.md
+      - Teaching & Assessment: field-guides/teaching.md
+    - Discipline Pathways:
+      - Classics & Ancient History: field-guides/pathways/classics.md
+      - Theology & Religious Studies: field-guides/pathways/theology.md
+      - History: field-guides/pathways/history.md
+      - Archaeology: field-guides/pathways/archaeology.md
+      - Literature & Languages: field-guides/pathways/literature.md
+      - Philosophy: field-guides/pathways/philosophy.md
   - Platform Guides:
     - How to Choose: platforms/index.md
     - Claude:
@@ -130,6 +147,8 @@ markdown_extensions:
 
 plugins:
   - search
+  - tags:
+      tags_file: field-guides/tags.md
   - redirects:
       redirect_maps:
         'claude/shared-principles.md': 'essentials/index.md'

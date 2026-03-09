@@ -76,4 +76,4 @@ Biblical, Qur'anic, liturgical, and other sacred texts occupy a distinct categor
 
 ---
 
-*For general use cases, see [Use Cases](use-cases.md). For verification practices, see [Verification & Citation](../essentials/verification.md).*
+*For the broader translation and language activity guide, see [Translation & Language](../field-guides/translation.md) in the Field Guides section. For general use cases, see [Use Cases](use-cases.md). For verification practices, see [Verification & Citation](../essentials/verification.md).*

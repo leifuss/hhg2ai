@@ -61,7 +61,18 @@ hide:
     </ul>
   </div>
   <div class="hhg-sitemap-group">
-    <h4>Platforms</h4>
+    <h4>Field Guides</h4>
+    <ul>
+      <li><a href="field-guides/">Overview</a> — By activity and discipline</li>
+      <li><a href="field-guides/translation/">Translation & Language</a></li>
+      <li><a href="field-guides/close-reading/">Close Reading & Textual Analysis</a></li>
+      <li><a href="field-guides/images-objects/">Images, Objects & Visual Evidence</a></li>
+      <li><a href="field-guides/archives/">Archives & Manuscripts</a></li>
+      <li><a href="field-guides/teaching/">Teaching & Assessment</a></li>
+    </ul>
+  </div>
+  <div class="hhg-sitemap-group">
+    <h4>Platform Guides</h4>
     <ul>
       <li><a href="platforms/">How to Choose</a> — Decision guide</li>
       <li><a href="claude/">Claude</a></li>
