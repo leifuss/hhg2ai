@@ -13,8 +13,7 @@ Several AI platforms now offer capable general-purpose assistants, and many of t
 <div class="hhg-paths" style="padding: 24px 0;">
   <a class="hhg-path-card" href="../claude/">
     <div class="time">Anthropic</div>
-    <h3><img src="https://en.wikipedia.org/wiki/File:Claude_AI_symbol.svg" class="platform-logo"> Claude</h3>
-    <!--<h3><img src="../assets/images/platforms/claude-icon.svg" class="platform-logo"> Claude</h3>-->
+    <h3><img src="../assets/images/platforms/Claude_AI_symbol.svg.png" class="platform-logo"> Claude</h3>
     <p>Strong for writing, analysis, and coding. Clean product hierarchy.</p>
   </a>
   <a class="hhg-path-card" href="../chatgpt/">
