@@ -7,8 +7,7 @@ hide:
 ---
 
 <div class="hhg-hero">
-  <span class="beta-badge">Beta</span>
-  <div class="panic-title">☕ Don't Panic.</div>
+  <div class="panic-title">Don't Panic.</div>
   <h1>A Hitchhiker's Guide to AI for the Humanities</h1>
   <p>A practical, independent guide for humanities scholars navigating artificial intelligence.</p>
 </div>

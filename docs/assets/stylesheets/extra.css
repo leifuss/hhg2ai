@@ -71,7 +71,7 @@
 /* Match body text size in admonition boxes */
 .md-typeset .admonition,
 .md-typeset details {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 /* Shared fix: disable Material's mask/background icon system for emoji icons */
@@ -314,20 +314,20 @@
   border-top: 3px solid var(--section-color-basecamp);
 }
 
-/* Beta badge in hero banner */
-.beta-badge {
-  display: inline-block;
+/* Beta badge in header bar (top-right) */
+.md-header__inner::after {
+  content: "Beta";
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #faf8f4;
-  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  padding: 2px 10px;
-  margin-bottom: 12px;
+  padding: 2px 8px;
+  margin-left: auto;
+  align-self: center;
 }
 
 /* ============================================================
