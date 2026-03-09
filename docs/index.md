@@ -51,7 +51,6 @@ hide:
       <li><a href="guide/getting-started/">Getting Started</a> — A 15-minute exercise</li>
       <li><a href="guide/mindset/">Mindset</a> — How to think about these tools</li>
       <li><a href="guide/use-cases/">Use Cases</a> — Practical tasks by time</li>
-      <li><a href="guide/ancient-languages/">Ancient Languages</a> — Translation &amp; textual criticism</li>
       <li><a href="guide/agentic/">Agentic AI</a> — Autonomous tools</li>
       <li><a href="guide/faq/">FAQ</a> — Common anxieties answered</li>
     </ul>

@@ -1,5 +1,5 @@
 ---
-section: primer
+section: field-guides
 title: "Ancient Languages and Texts"
 description: "A field guide to using AI for translation, textual criticism, and working with ancient and sacred texts."
 last_verified: 2026-03-08
@@ -7,7 +7,7 @@ last_verified: 2026-03-08
 
 # Ancient Languages and Texts
 
-*Field Guide · Part of [The Primer](index.md)*
+*Worked examples for [Translation & Language Work](translation.md)*
 
 !!! panic "Don't Panic"
     **This page is useful across disciplines.** The worked examples use Latin, Greek, and Hebrew, but the techniques apply to any language you work with. The methodology sections — Iterative Engagement, Teaching vs. Research, and Manuscripts, Fragments, and Sacred Texts — are relevant to anyone who pushes back on AI output with specialist knowledge.
@@ -77,4 +77,4 @@ Biblical, Qur'anic, liturgical, and other sacred texts occupy a distinct categor
 
 ---
 
-*For the broader translation and language activity guide, see [Translation & Language](../field-guides/translation.md) in the Field Guides section. For general use cases, see [Use Cases](use-cases.md). For verification practices, see [Verification & Citation](../essentials/verification.md).*
+*For the broader translation and language activity guide, see [Translation & Language](translation.md). For general use cases, see [Use Cases](../guide/use-cases.md). For verification practices, see [Verification & Citation](../essentials/verification.md).*

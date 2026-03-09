@@ -80,7 +80,7 @@ For a full treatment of prompting strategy, see [Prompting Principles](../essent
 
 - **[Use Cases](use-cases.md)** — practical tasks organised by time investment
 - **[Mindset](mindset.md)** — how to think about these tools
-- **[Ancient Languages](ancient-languages.md)** — if you work with translation and textual criticism
+- **[Ancient Languages](../field-guides/ancient-languages.md)** — if you work with translation and textual criticism
 - **[How to Choose a Platform](../platforms/index.md)** — if you're ready to pick a tool, or go straight to [Claude](../claude/index.md) or [ChatGPT](../chatgpt/index.md)
 - **[AI Basecamp](../basecamp/index.md)** — structured exercises for deeper learning
 

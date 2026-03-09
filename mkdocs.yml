@@ -52,10 +52,8 @@ nav:
     - Getting Started: guide/getting-started.md
     - Mindset: guide/mindset.md
     - Use Cases: guide/use-cases.md
+    - Agentic AI: guide/agentic.md
     - FAQ: guide/faq.md
-    - Field Guides:
-      - Ancient Languages: guide/ancient-languages.md
-      - Agentic AI: guide/agentic.md
   - Essentials:
     - essentials/index.md
     - Verification & Citation: essentials/verification.md
@@ -69,6 +67,7 @@ nav:
     - field-guides/index.md
     - Activities:
       - Translation & Language: field-guides/translation.md
+      - Ancient Languages & Texts: field-guides/ancient-languages.md
       - Close Reading & Textual Analysis (coming soon): field-guides/close-reading.md
       - Images, Objects & Visual Evidence (coming soon): field-guides/images-objects.md
       - Archives & Manuscripts (coming soon): field-guides/archives.md

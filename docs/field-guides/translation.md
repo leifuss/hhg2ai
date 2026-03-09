@@ -57,11 +57,12 @@ AI tools can participate in all of these, but they perform very differently depe
 
 ## Worked examples
 
-For detailed worked examples with Latin, Greek, and Hebrew texts — including side-by-side comparison with published human translations — see the [Ancient Languages field guide](../guide/ancient-languages.md) in the Primer.
+The worked examples for this activity — covering Latin, Greek, and Hebrew texts with side-by-side comparison against published human translations — are on a dedicated page:
+
+**[Ancient Languages and Texts](ancient-languages.md)** — iterative engagement, teaching vs. research distinctions, and working with manuscripts, fragments, and sacred texts.
 
 ## Further reading
 
 - [Verification & Citation](../essentials/verification.md) — systematic approach to checking AI output
 - [Prompting Principles](../essentials/prompting.md) — how to get better results through better prompting
-- [Ancient Languages](../guide/ancient-languages.md) — the original field guide with worked translation examples
 - [Platform Guides](../platforms/index.md) — choosing which tool to use
