@@ -13,22 +13,22 @@ Several AI platforms now offer capable general-purpose assistants, and many of t
 <div class="hhg-paths" style="padding: 24px 0;">
   <a class="hhg-path-card" href="../claude/">
     <div class="time">Anthropic</div>
-    <h3><img src="../assets/images/platforms/Claude_AI_symbol.svg.png" width="480" class="platform-logo"> Claude</h3>
+    <h3><img src="../assets/images/platforms/Claude_AI_symbol.svg.png" width="240" class="platform-logo"> Claude</h3>
     <p>Strong for writing, analysis, and coding. Clean product hierarchy.</p>
   </a>
   <a class="hhg-path-card" href="../chatgpt/">
     <div class="time">OpenAI</div>
-    <h3><img src="../assets/images/platforms/ChatGPT-Logo.png" width="480" class="platform-logo"> ChatGPT</h3>
+    <h3><img src="../assets/images/platforms/ChatGPT-Logo.png" width="240" class="platform-logo"> ChatGPT</h3>
     <p>Broad capabilities, large ecosystem. Deep research and custom GPTs.</p>
   </a>
   <a class="hhg-path-card" href="../gemini/">
     <div class="time">Google</div>
-    <h3><img src="../assets/images/platforms/Google_Gemini_icon_2025.png" width="480" class="platform-logo"> Gemini</h3>
+    <h3><img src="../assets/images/platforms/Google_Gemini_icon_2025.png" width="240" class="platform-logo"> Gemini</h3>
     <p>Deep ecosystem integration, strong multimodal support.</p>
   </a>
   <a class="hhg-path-card" href="copilot-placeholder/">
     <div class="time">Microsoft</div>
-    <h3><img src="../assets/images/platforms/Microsoft_Copilot_Icon.svg.png" width="480" class="platform-logo"> Copilot</h3>
+    <h3><img src="../assets/images/platforms/Microsoft_Copilot_Icon.svg.png" width="240" class="platform-logo"> Copilot</h3>
     <p>AI in Microsoft 365. Guide coming soon.</p>
   </a>
 </div>
