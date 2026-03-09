@@ -7,14 +7,14 @@ description: "An overview of the guide's structure, suggested reading paths, and
 
 Think of this guide the way you would a travel guide. You would not read a Lonely Planet cover to cover before booking a flight. You would flip to the destination that interests you, skim the practical advice, and ignore the rest until you needed it. This guide works the same way. There is no need to see and do everything. It is here to help you on *your* journey, not to prescribe one.
 
-This guide is organised into five main sections. You do not need to read them in order, and you certainly do not need to read them all. Here is how they fit together and where to start depending on what you need.
-
 !!! info "What this guide covers — and what it doesn't"
     This guide focuses on large language models (LLMs) and the consumer AI platforms built around them — tools like Claude, ChatGPT, and Gemini that you interact with through conversation. These are the AI tools that most humanities researchers are encountering first, and the ones that raise the most immediate questions about method, ethics, and everyday use.
 
     Other AI technologies — machine learning for classification and prediction, computer vision, semantic web technologies, knowledge graphs, natural language processing pipelines — are important for digital humanities but are not covered here. For a broader view of AI methods in the humanities, see [The Turing Way](https://book.the-turing-way.org/) and the [AI4LAM resources](https://ai4lam.github.io/).
 
 ## The sections
+
+The guide is organised into five main sections. 
 
 **[The Primer](guide/index.md)** is for readers who are new to AI tools altogether. It covers what these tools are, how they work at a high level, and how to think about them critically. Start here if you have not yet had a sustained conversation with an AI assistant.
 
@@ -37,9 +37,6 @@ Read the [Essentials](essentials/index.md), especially [Verification](essentials
 **"I am technically confident and want to build things."**
 Go directly to the platform guide for your tool of choice. The Code and Developer Tools sections of each platform guide are where to start. The [Prerequisites](claude/prerequisites.md) page in the Claude section covers foundational technical skills.
 
-**"I need to advise my department or institution."**
-Read [Data Governance](essentials/data-governance.md), [Disclosure & Ethics](essentials/disclosure.md), and [Cost & Plans](essentials/cost.md). The privacy sections of each platform guide cover governance differences in detail.
-
 ## Conventions used in this guide
 
 Throughout the guide, you will encounter several types of highlighted box:
@@ -52,6 +49,6 @@ Throughout the guide, you will encounter several types of highlighted box:
 
 ## Authorship
 
-This guide has largely been authored and continues to be updated by Large Language Models, with editorial judgements by Leif Isaksen. 
+This guide has largely been authored and continues to be updated by Large Language Models, with editorial judgements by Leif Isaksen. For mor information see [About](about/index.md)
 
 Pages are dated. If a page says *March 2026* and you are reading it much later, check the platform's own documentation for current details — features and pricing change frequently.
