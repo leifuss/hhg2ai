@@ -94,6 +94,7 @@
   height: auto;
   position: relative;
   top: auto;
+  left: 0;
   display: inline-block;
   margin-right: 0.4em;
 }
