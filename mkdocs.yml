@@ -5,7 +5,7 @@ site_description: >-
   intelligence. Written by a working academic. No hype, no hard sell, no assumed expertise.
 site_author: Leif Isaksen
 repo_url: https://github.com/leifuss/hhg2ai
-edit_uri: edit/master/docs/
+edit_uri: edit/claude/create-draft-readme-WtIgb/docs/
 
 theme:
   name: material
