@@ -7,8 +7,6 @@ last_verified: 2026-03-08
 
 # Agentic AI — Autonomous Tools That Plan and Execute
 
-*Field Guide · Part of [The Primer](index.md)*
-
 ## What "agentic" means
 
 Most AI interactions follow a simple pattern: you ask a question, the system responds, you ask another question. **Agentic AI** breaks this pattern. Instead of responding to individual messages, an agentic system can:
