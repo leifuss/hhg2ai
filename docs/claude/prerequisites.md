@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Prerequisites"
 description: "What technical skills to learn and in what order for effective use of Claude Code — from essential terminal basics to helpful advanced skills."
 last_verified: 2026-03-08

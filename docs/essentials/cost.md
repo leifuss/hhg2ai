@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Cost & Plans
 description: Subscription tiers across AI platforms, API pricing overview, cost-saving strategies, and guidance on what is worth paying for in academic work.
 last_verified: 2026-03-08

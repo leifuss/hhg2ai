@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Environments"
 description: "Where to run Claude Code — comparing web, laptop, desktop app, Codespaces, institutional servers, and cloud VMs."
 last_verified: 2026-03-08

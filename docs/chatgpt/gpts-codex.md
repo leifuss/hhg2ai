@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "GPTs & Codex"
 description: "Custom GPTs for recurring humanities tasks and OpenAI Codex for software engineering work."
 last_verified: 2026-03-09

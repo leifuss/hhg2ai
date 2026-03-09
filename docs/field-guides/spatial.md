@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Spatial & Geographic Analysis"
 description: "Using AI for mapping, gazetteers, geographic reasoning, and spatial analysis in humanities research."
 last_verified: 2026-03-09

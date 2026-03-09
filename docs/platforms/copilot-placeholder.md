@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Microsoft Copilot"
 description: "Placeholder for the Microsoft Copilot humanities guide."
 last_verified: 2026-03-09

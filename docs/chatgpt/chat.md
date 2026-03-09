@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Chat"
 description: "Guide to ChatGPT's conversational interface — core features, settings, and best practices for humanities scholars."
 last_verified: 2026-03-09

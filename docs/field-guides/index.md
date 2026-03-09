@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Field Guides"
 description: "Activity-based guides for humanities scholars — organised by task, with discipline pathway pages for curated starting points."
 last_verified: 2026-03-09
@@ -59,11 +60,11 @@ If you want a curated starting point for your discipline, use the **pathway page
 | Activity | Typical disciplines |
 |---|---|
 | [Translation & Language](translation.md) | Classics, Theology, Languages, Medieval Studies |
-| [Close Reading & Textual Analysis](close-reading.md) | Literature, Philosophy, Theology, Classics |
-| [Images, Objects & Visual Evidence](images-objects.md) | Archaeology, Art History, Classics |
-| [Archives & Manuscripts](archives.md) | History, Medieval Studies, Theology |
-| [Spatial & Geographic Analysis](spatial.md) | Archaeology, History, Classics |
-| [Quantitative & Tabular Data](data.md) | Archaeology, History, Digital Humanities |
-| [Teaching & Assessment](teaching.md) | All disciplines |
+| [Close Reading & Textual Analysis](close-reading.md) *(coming soon)* | Literature, Philosophy, Theology, Classics |
+| [Images, Objects & Visual Evidence](images-objects.md) *(coming soon)* | Archaeology, Art History, Classics |
+| [Archives & Manuscripts](archives.md) *(coming soon)* | History, Medieval Studies, Theology |
+| [Spatial & Geographic Analysis](spatial.md) *(coming soon)* | Archaeology, History, Classics |
+| [Quantitative & Tabular Data](data.md) *(coming soon)* | Archaeology, History, Digital Humanities |
+| [Teaching & Assessment](teaching.md) *(coming soon)* | All disciplines |
 
 Or browse by discipline tag: [View all tags](tags.md)

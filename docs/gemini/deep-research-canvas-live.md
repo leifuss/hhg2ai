@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Deep Research, Canvas & Live"
 description: "Gemini's deep research, canvas artefact creation, voice interaction, and agentic features for humanities scholars."
 last_verified: 2026-03-09

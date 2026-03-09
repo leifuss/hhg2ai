@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Chat"
 description: "Guide to Claude's conversational interface — setting up, core features, best practices for humanities scholars, and combining Chat with other tools."
 last_verified: 2026-03-08

@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Apps & Extensions"
 description: "Claude integrations for Chrome, Excel, PowerPoint, and Slack — when humanities scholars might use them and how to set up."
 last_verified: 2026-03-08

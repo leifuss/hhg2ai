@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Close Reading & Textual Analysis"
 description: "Using AI for close reading, textual analysis, argument mapping, and engagement with secondary literature."
 last_verified: 2026-03-09

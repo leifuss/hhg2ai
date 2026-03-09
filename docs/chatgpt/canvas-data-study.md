@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Canvas, Data & Study"
 description: "ChatGPT's canvas editing surface, data analysis, study mode, and voice features for humanities scholars."
 last_verified: 2026-03-09

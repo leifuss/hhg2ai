@@ -1,4 +1,5 @@
 ---
+section: primer
 title: "Briefing — What LLMs Are and Aren't"
 description: "An informed-choice briefing on large language models for humanities scholars. What they are, what they aren't, and why it matters."
 last_verified: 2026-03-08

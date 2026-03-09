@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Glossary"
 description: "Technical terms used in the Claude manual, explained for humanities readers."
 last_verified: 2026-03-08

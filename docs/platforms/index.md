@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Platform Guides"
 description: "Guides to AI platforms for humanities scholars — Claude, ChatGPT, Gemini, Copilot, and open-weights models. Decision guide for choosing between them."
 last_verified: 2026-03-09

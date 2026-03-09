@@ -1,4 +1,5 @@
 ---
+section: primer
 title: "Getting Started"
 description: "A 15-minute first exercise with an LLM. No prior experience assumed."
 last_verified: 2026-03-08

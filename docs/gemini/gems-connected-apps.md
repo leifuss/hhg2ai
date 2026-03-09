@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Gems & Connected Apps"
 description: "Custom Gems for recurring tasks and Google Workspace integration via Connected Apps."
 last_verified: 2026-03-09

@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Disclosure & Ethics
 description: When and how to declare AI use in teaching and publication, institutional policies, journal requirements, and a practical disclosure template.
 last_verified: 2026-03-08

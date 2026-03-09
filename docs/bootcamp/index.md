@@ -1,4 +1,5 @@
 ---
+section: bootcamp
 title: AI Bootcamp
 description: "Ten structured experiments for humanities scholars to build genuine AI fluency — from foundational setup to advanced critical methods."
 last_verified: 2026-03-08

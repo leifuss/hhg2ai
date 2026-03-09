@@ -1,4 +1,5 @@
 ---
+section: primer
 title: The Primer
 description: "A practical guide to Large Language Models for the humanities and social sciences — choose a path or browse by topic."
 last_verified: 2026-03-08

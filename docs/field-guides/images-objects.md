@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Images, Objects & Visual Evidence"
 description: "Using AI for working with photographs, inscriptions, coins, pottery, and other visual or material evidence."
 last_verified: 2026-03-09

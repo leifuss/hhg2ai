@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Coding & Developer Tools"
 description: "Google AI Studio, Gemini CLI, Code Assist, and Jules — developer and coding tools in the Gemini ecosystem."
 last_verified: 2026-03-09

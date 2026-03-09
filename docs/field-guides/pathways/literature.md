@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Literature & Languages"
 description: "A curated pathway through the Field Guides for scholars of literature and modern languages."
 ---

@@ -1,4 +1,5 @@
 ---
+section: primer
 title: "Ancient Languages and Texts"
 description: "A field guide to using AI for translation, textual criticism, and working with ancient and sacred texts."
 last_verified: 2026-03-08

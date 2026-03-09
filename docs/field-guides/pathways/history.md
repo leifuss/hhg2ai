@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "History"
 description: "A curated pathway through the Field Guides for historians."
 ---

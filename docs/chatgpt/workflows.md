@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Worked Examples"
 description: "Practical humanities workflows using ChatGPT — article drafting, teaching preparation, data exploration, and more."
 last_verified: 2026-03-09

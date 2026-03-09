@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Field Guides by Discipline"
 description: "Browse activity guides filtered by discipline."
 ---

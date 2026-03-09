@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Projects"
 description: "Using ChatGPT Projects for sustained humanities work — persistent context, memory, and compartmentalised research."
 last_verified: 2026-03-09

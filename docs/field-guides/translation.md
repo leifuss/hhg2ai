@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Translation & Language Work"
 description: "Using AI for translation, language analysis, and working with ancient and modern languages in humanities research."
 last_verified: 2026-03-09
