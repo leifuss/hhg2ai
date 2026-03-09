@@ -39,8 +39,12 @@ Throughout the guide, you will encounter several types of highlighted box:
 
 - **Don't Panic** boxes offer reassurance at moments where the material might feel overwhelming.
 - **Essential** boxes flag content that most readers should not skip.
-- **Leif's Notes** boxes contain the author's editorial judgements — opinions, not reference material.
+- **Leif's Notes** boxes contain the editor's personal judgements — opinions, not reference material.
 - **Going Deeper** boxes flag sections involving technical setup or terminology. These are always optional. Nothing elsewhere on the page depends on them.
 - **Draft** boxes indicate pages where content is still being written.
+
+## Authorship
+
+This guide has largely been authored and continues to be updated by Large Language Models, with editorial judgements by Leif Isaksen. 
 
 Pages are dated. If a page says *March 2026* and you are reading it much later, check the platform's own documentation for current details — features and pricing change frequently.
