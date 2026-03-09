@@ -54,7 +54,7 @@ to discuss scope.
 
 ## Author
 
-[Leif Isaksen](https://humanities.exeter.ac.uk/staff/isaksen),
+[Leif Isaksen]([https://humanities.exeter.ac.uk/staff/isaksen](https://experts.exeter.ac.uk/26718-leif-isaksen)),
 Professor and Director of Digital Humanities, University of Exeter.
 
 ## Licence
