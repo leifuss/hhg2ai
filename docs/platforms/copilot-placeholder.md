@@ -4,9 +4,7 @@ description: "Placeholder for the Microsoft Copilot humanities guide."
 last_verified: 2026-03-09
 ---
 
-# Microsoft Copilot
-
-![Copilot logo](../assets/images/platforms/copilot-icon.svg){ .platform-logo }
+# ![Copilot](../assets/images/platforms/copilot-icon.svg){ .platform-logo } Microsoft Copilot
 
 *Coming soon.*
 

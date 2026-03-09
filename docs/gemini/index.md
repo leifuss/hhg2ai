@@ -4,9 +4,7 @@ description: "Overview of Google's Gemini for humanities research — ecosystem 
 last_verified: 2026-03-09
 ---
 
-# Gemini for Humanities Scholars
-
-![Gemini logo](../assets/images/platforms/gemini-icon.svg){ .platform-logo }
+# ![Gemini](../assets/images/platforms/gemini-icon.svg){ .platform-logo } Gemini for Humanities Scholars
 
 *March 2026*
 

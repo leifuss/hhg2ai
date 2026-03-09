@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Microsoft Copilot icon (simplified multi-colour) -->
-  <path d="M14 12 C14 12 20 10 24 14 C28 10 34 12 34 12 C38 14 40 20 36 26 L24 40 L12 26 C8 20 10 14 14 12Z" fill="#6264A7"/>
-  <path d="M24 14 C28 10 34 12 34 12 C38 14 40 20 36 26 L24 40 Z" fill="#4F52B2"/>
-  <circle cx="20" cy="22" r="2" fill="#fff"/>
-  <circle cx="28" cy="22" r="2" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Microsoft Copilot: simplified two-tone icon -->
+  <path d="M28 8 C16 8 8 18 8 28 C8 38 14 44 20 48 L32 56 L32 28 Z" fill="#4F52B2"/>
+  <path d="M36 8 C48 8 56 18 56 28 C56 38 50 44 44 48 L32 56 L32 28 Z" fill="#7B83EB"/>
 </svg>
