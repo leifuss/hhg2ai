@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Research, Apps & Agent"
 description: "ChatGPT's deep research, connected apps, and agent mode — structured web synthesis and delegated online tasks for humanities scholars."
 last_verified: 2026-03-09

@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Multi-Model Strategy
 description: Using multiple AI models as a verification and enrichment strategy — disagreement as a signal, mixing models within and across providers.
 last_verified: 2026-03-08

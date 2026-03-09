@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Data Governance
 description: What AI providers do with your data, institutional policies, practical guidelines by data type, and a quick decision aid for humanities scholars.
 last_verified: 2026-03-08

@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Worked Examples"
 description: "Practical humanities workflows using Gemini — article drafting, teaching preparation, multimodal research, and more."
 last_verified: 2026-03-09

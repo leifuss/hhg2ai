@@ -1,4 +1,5 @@
 ---
+section: primer
 title: "Agentic AI — Autonomous Tools That Plan and Execute"
 description: "A field guide to agentic AI systems — what they are, how they differ from conversational AI, and what they mean for humanities work."
 last_verified: 2026-03-08

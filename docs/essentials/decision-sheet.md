@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Decision Sheet
 description: A one-page printable checklist for using AI in academic work — covering data governance, prompting, verification, citation, and disclosure.
 last_verified: 2026-03-08

@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Plans & Privacy"
 description: "ChatGPT subscription tiers, privacy settings, data handling, and choosing the right plan for humanities work."
 last_verified: 2026-03-09

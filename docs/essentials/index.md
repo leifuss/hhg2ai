@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Essentials
 description: Cross-platform principles that apply regardless of which AI tool you use. Verification, data governance, prompting, disclosure, and more.
 last_verified: 2026-03-08

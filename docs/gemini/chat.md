@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Chat"
 description: "Guide to Gemini's conversational interface — core features, multimodal capabilities, and best practices for humanities scholars."
 last_verified: 2026-03-09

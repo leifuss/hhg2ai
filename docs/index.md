@@ -14,6 +14,13 @@ hide:
 
 <!-- Map temporarily removed — will be replaced with illustrated version -->
 
+<div style="max-width: 720px; margin: 32px auto 0; padding: 0 48px; font-size: 16px; line-height: 1.7;">
+  <h2 style="font-family: 'Inter', sans-serif; font-size: 22px; color: var(--md-primary-fg-color); border-bottom: 1px solid #d8d4cc; padding-bottom: 6px;">Welcome</h2>
+  <p>This is a practical guide to using AI tools in humanities research, teaching, and administration. It is written for scholars who want to use these tools well — not just use them.</p>
+  <p>You do not need to read this guide from start to finish. Most people start with one of the <a href="platforms/">platform guides</a> and go from there. If you are entirely new to AI tools, the <a href="guide/">Primer</a> will give you the foundation. If you already know the basics and want to work well, the <a href="essentials/">Essentials</a> apply across all platforms.</p>
+  <p>For a fuller overview of how the guide is organised and suggested reading paths, see <a href="how-to-use/">How to use this guide</a>.</p>
+</div>
+
 <div class="hhg-paths">
   <a class="hhg-path-card" href="guide/">
     <div class="time">30–60 min</div>

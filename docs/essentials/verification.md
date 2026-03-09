@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Verification & Citation
 description: What LLMs get wrong, how to verify their outputs, the verification ladder, checking citations, and recording provenance for academic work.
 last_verified: 2026-03-08

@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Philosophy"
 description: "A curated pathway through the Field Guides for philosophers."
 ---

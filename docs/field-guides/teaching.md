@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Teaching & Assessment"
 description: "Using AI for teaching preparation, assessment design, student support, and pedagogical materials across all humanities disciplines."
 last_verified: 2026-03-09

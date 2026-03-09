@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Code"
 description: "Comprehensive guide to Claude Code for humanities scholars — setup, commands, hooks, MCP, best practices, and combining with other tools."
 last_verified: 2026-03-08

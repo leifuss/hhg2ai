@@ -188,14 +188,121 @@
 
 /* --- Platform logo styling --- */
 .platform-logo {
-  height: 28px !important;
-  max-height: 28px !important;
-  width: 28px !important;
-  max-width: 28px !important;
+  height: 40px !important;
+  max-height: 40px !important;
+  width: 40px !important;
+  max-width: 40px !important;
   vertical-align: middle;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   display: inline-block;
 }
+
+/* --- Platform nav icons (left sidebar) --- */
+.md-nav__link[href*="claude/"]::before,
+.md-nav__link[href*="claude/index.html"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/claude-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.md-nav__link[href*="chatgpt/"]::before,
+.md-nav__link[href*="chatgpt/index.html"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/chatgpt-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.md-nav__link[href*="gemini/"]::before,
+.md-nav__link[href*="gemini/index.html"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/gemini-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.md-nav__link[href*="copilot"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/copilot-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* --- TOC page title --- */
+.md-toc__title {
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.6rem;
+  margin: 0 0 0.4rem 0;
+  color: var(--md-default-fg-color--light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* --- Hide header repo icon (kept in footer via extra.social) --- */
+.md-header__source {
+  display: none;
+}
+
+/* --- Section colour wayfinding --- */
+:root {
+  --section-color-primer: #7b8fa2;
+  --section-color-essentials: #5a9e8f;
+  --section-color-field-guides: #b8914a;
+  --section-color-platforms: #7678a8;
+  --section-color-bootcamp: #a87066;
+}
+
+.section-primer .md-content {
+  border-top: 3px solid var(--section-color-primer);
+}
+.section-essentials .md-content {
+  border-top: 3px solid var(--section-color-essentials);
+}
+.section-field-guides .md-content {
+  border-top: 3px solid var(--section-color-field-guides);
+}
+.section-platforms .md-content {
+  border-top: 3px solid var(--section-color-platforms);
+}
+.section-bootcamp .md-content {
+  border-top: 3px solid var(--section-color-bootcamp);
+}
+
+/* Section label above page title */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0;
+  margin-bottom: 0;
+}
+.section-label--primer { color: var(--section-color-primer); }
+.section-label--essentials { color: var(--section-color-essentials); }
+.section-label--field-guides { color: var(--section-color-field-guides); }
+.section-label--platforms { color: var(--section-color-platforms); }
+.section-label--bootcamp { color: var(--section-color-bootcamp); }
 
 /* ============================================================
    LANDING PAGE STYLES

@@ -1,4 +1,5 @@
 ---
+section: primer
 title: "Mindset — How to Think About These Tools"
 description: "A framework for thinking about AI tools in humanities research. Not advocacy, not hostility — calibrated engagement."
 last_verified: 2026-03-08

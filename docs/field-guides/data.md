@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Quantitative & Tabular Data"
 description: "Using AI for working with spreadsheets, catalogues, databases, and quantitative evidence in humanities research."
 last_verified: 2026-03-09

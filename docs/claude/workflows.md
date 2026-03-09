@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Worked Examples"
 description: "Seven humanities-specific workflows showing how Claude's tools fit into real research processes — from Chat Projects to corpus processing to web tools."
 last_verified: 2026-03-08

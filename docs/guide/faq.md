@@ -1,4 +1,5 @@
 ---
+section: primer
 title: "FAQ — Common Anxieties and Objections"
 description: "Honest answers to the questions humanities scholars most often ask about AI tools."
 last_verified: 2026-03-08

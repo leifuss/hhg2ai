@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Cowork"
 description: "Guide to Claude's Cowork mode — autonomous file tasks, document creation, and research synthesis via the desktop app."
 last_verified: 2026-03-08

@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Claude for Humanities Scholars"
 description: "Overview of Claude's tools for humanities research — choosing the right interface, feature comparison by plan, and minimum safe practice."
 last_verified: 2026-03-08

@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Archives & Manuscripts"
 description: "Using AI for archival research, manuscript work, palaeography, and document analysis."
 last_verified: 2026-03-09

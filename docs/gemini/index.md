@@ -1,4 +1,5 @@
 ---
+section: platforms
 title: "Gemini for Humanities Scholars"
 description: "Overview of Google's Gemini for humanities research — ecosystem integration, multimodal capabilities, and navigating a complex product landscape."
 last_verified: 2026-03-09

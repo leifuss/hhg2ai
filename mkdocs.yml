@@ -4,7 +4,8 @@ site_description: >-
   A practical, independent guide for humanities scholars navigating artificial
   intelligence. Written by a working academic. No hype, no hard sell, no assumed expertise.
 site_author: Leif Isaksen
-# repo_url and repo_name removed — GitHub link now in footer via extra.social
+repo_url: https://github.com/leifuss/hhg2ai
+edit_uri: edit/master/docs/
 
 theme:
   name: material
@@ -39,10 +40,12 @@ theme:
     - search.suggest
     - search.highlight
     - content.tabs.link
+    - content.action.edit
     - toc.follow
 
 nav:
   - Home: index.md
+  - How to Use This Guide: how-to-use.md
   - The Primer:
     - guide/index.md
     - Briefing: guide/briefing.md
@@ -66,12 +69,12 @@ nav:
     - field-guides/index.md
     - Activities:
       - Translation & Language: field-guides/translation.md
-      - Close Reading & Textual Analysis: field-guides/close-reading.md
-      - Images, Objects & Visual Evidence: field-guides/images-objects.md
-      - Archives & Manuscripts: field-guides/archives.md
-      - Spatial & Geographic Analysis: field-guides/spatial.md
-      - Quantitative & Tabular Data: field-guides/data.md
-      - Teaching & Assessment: field-guides/teaching.md
+      - Close Reading & Textual Analysis (coming soon): field-guides/close-reading.md
+      - Images, Objects & Visual Evidence (coming soon): field-guides/images-objects.md
+      - Archives & Manuscripts (coming soon): field-guides/archives.md
+      - Spatial & Geographic Analysis (coming soon): field-guides/spatial.md
+      - Quantitative & Tabular Data (coming soon): field-guides/data.md
+      - Teaching & Assessment (coming soon): field-guides/teaching.md
     - Discipline Pathways:
       - Classics & Ancient History: field-guides/pathways/classics.md
       - Theology & Religious Studies: field-guides/pathways/theology.md

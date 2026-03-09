@@ -1,4 +1,5 @@
 ---
+section: primer
 title: "Use Cases by Time Investment"
 description: "Practical AI use cases for humanities scholars, organised by time investment — from 15-minute experiments to deeper projects."
 last_verified: 2026-03-08

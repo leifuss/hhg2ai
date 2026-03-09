@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Theology & Religious Studies"
 description: "A curated pathway through the Field Guides for theologians and scholars of religion."
 ---

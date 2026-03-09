@@ -1,4 +1,5 @@
 ---
+section: essentials
 title: Prompting Principles
 description: How to communicate effectively with LLMs — being specific, providing context, role-framing, structured prompts, iteration, and step-by-step reasoning.
 last_verified: 2026-03-08

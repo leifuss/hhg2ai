@@ -1,4 +1,5 @@
 ---
+section: field-guides
 title: "Classics & Ancient History"
 description: "A curated pathway through the Field Guides for classicists and ancient historians."
 ---
