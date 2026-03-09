@@ -6,9 +6,15 @@ last_verified: 2026-03-08
 
 # Claude for Humanities Scholars
 
-Part of [A Hitchhiker's Guide to AI for the Humanities](../index.md)
-
 *March 2026*
+
+## What Claude is — and how it relates to Anthropic
+
+Anthropic is an AI safety company founded in 2021 by former OpenAI researchers, including Dario and Daniela Amodei. Its stated mission is the responsible development and maintenance of advanced AI for the long-term benefit of humanity. Anthropic develops the Claude family of AI models and the products built around them.
+
+Claude is Anthropic's general-purpose AI assistant: the product most people use directly through a browser, desktop app, or mobile app at [claude.ai](https://claude.ai). Since its initial release in March 2023, Claude has grown from a conversational interface into a broader work environment: ordinary chat, web search, file uploads, projects, memory, artifacts, coding tools, document creation, and autonomous task completion.
+
+It is worth separating Claude from the Anthropic API. Claude is the end-user application: you open it and work inside it. The API is the developer platform for building your own tools, automations, or research workflows on top of Anthropic's models. For most humanities researchers, Claude is the place to start. The API only becomes necessary when you want structured automation, reproducible pipelines, or integration into your own software. Anthropic bills the API separately from Claude subscriptions.
 
 !!! panic "Don't Panic"
     **Skip to what you need:** If you only use Claude's conversational interface, read the orientation below and [Chat](chat.md), then skip to the [Essentials](../essentials/index.md) section. If you want Claude to work with your local files without learning the terminal, see [Cowork](cowork.md). If you're interested in building tools or processing data at scale, read [Code](code.md).

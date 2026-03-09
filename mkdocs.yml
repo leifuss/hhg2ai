@@ -75,6 +75,15 @@ nav:
     - Prerequisites: claude/prerequisites.md
     - Worked Examples: claude/workflows.md
     - Glossary: claude/glossary.md
+  - ChatGPT:
+    - chatgpt/index.md
+    - Chat: chatgpt/chat.md
+    - Projects: chatgpt/projects.md
+    - Research, Apps & Agent: chatgpt/research-apps-agent.md
+    - Canvas, Data & Study: chatgpt/canvas-data-study.md
+    - GPTs & Codex: chatgpt/gpts-codex.md
+    - Plans & Privacy: chatgpt/plans-privacy.md
+    - Worked Examples: chatgpt/workflows.md
   - Bootcamp:
     - bootcamp/index.md
   - Resources: resources/index.md

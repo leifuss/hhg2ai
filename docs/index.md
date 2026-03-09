@@ -64,7 +64,7 @@ hide:
     <h4>Platform Manuals</h4>
     <ul>
       <li><a href="claude/">Claude</a></li>
-      <li><span style="opacity:0.4">ChatGPT</span> <small style="color:#d4883a">(coming)</small></li>
+      <li><a href="chatgpt/">ChatGPT</a></li>
       <li><span style="opacity:0.4">Gemini</span> <small style="color:#d4883a">(coming)</small></li>
       <li><span style="opacity:0.4">Microsoft Copilot</span> <small style="color:#d4883a">(coming)</small></li>
       <li><span style="opacity:0.4">Open-Weights Models</span> <small style="color:#d4883a">(coming)</small></li>
