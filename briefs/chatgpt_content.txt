@@ -1,0 +1,92 @@
+Yes. Below is a draft package you can hand to Claude Code.
+I’ve written it as markdown-ready copy, split into plausible files. I’ve kept volatile details generic where possible, because ChatGPT plan names, model menus, and feature gates change fast. I’ve also left citations in, so you can verify claims before freezing them into the site.
+Suggested structure
+chatgpt/index.md
+chatgpt/chat.md
+chatgpt/projects.md
+chatgpt/research-apps-agent.md
+chatgpt/canvas-data-study.md
+chatgpt/gpts-codex.md
+chatgpt/plans-privacy.md
+chatgpt/workflows.md
+chatgpt/index.md
+ChatGPT
+What ChatGPT is — and how it relates to OpenAI
+OpenAI is an AI research and deployment company. It was founded in 2015 as a nonprofit, and its stated mission is to ensure that artificial general intelligence benefits all of humanity. OpenAI now develops models, consumer products, business products, and developer tools. ChatGPT is OpenAI’s main general-purpose chat application: the product most people use directly in a browser, desktop app, or mobile app.
+A very short history helps. ChatGPT launched in November 2022 as a conversational interface for interacting with OpenAI’s models. Since then it has grown from “chatbot” into a broader work environment: ordinary chat, web search, file uploads, data analysis, projects, memory, voice, image generation, custom GPTs, deep research, apps that connect to third-party services, and more recently agentic task completion.
+It is also worth separating ChatGPT from the OpenAI API. ChatGPT is the end-user application: you open it and work inside it. The API is the developer platform for building your own tools, automations, websites, or research workflows on top of OpenAI models. For most humanities researchers, ChatGPT is the place to start. The API only becomes necessary when you want structured automation, reproducible pipelines, or integration into your own software. OpenAI also bills the API separately from ChatGPT subscriptions.
+Who this guide is for
+This section is for humanities scholars who want practical guidance on using ChatGPT well. It is not a general introduction to AI. If you are new to these tools altogether, start with the Primer first. If you already know the basics and want to know which parts of ChatGPT matter for real research, teaching, writing, and administration, start here.
+The short version
+For many humanities researchers, the useful parts of ChatGPT are:
+ordinary chat for drafting, summarising, brainstorming, translation support, and explanation
+web search for timely answers with links back to sources
+file uploads and data analysis for working with PDFs, tables, and spreadsheets
+projects for long-running work with shared context
+canvas for iterative writing or coding
+deep research for structured online research with a documented report
+custom GPTs for repeated tasks
+apps and connectors when you need ChatGPT to work with your own tools or files
+Codex only if you are doing genuine coding or technical build work.
+A practical rule: start with plain chat. Move to projects when the work becomes ongoing. Use deep research when you need broad web-based synthesis. Use GPTs only when you find yourself repeating the same kind of task. Ignore Codex unless you really do want software help.
+chatgpt/chat.md
+Everyday ChatGPT
+For most humanities users, “ChatGPT” mainly means the ordinary chat interface. That is still the centre of gravity. In a normal chat you can ask questions, upload files, draft or revise writing, analyse passages, brainstorm teaching materials, work through translations, summarise readings, and ask for help understanding unfamiliar concepts. ChatGPT can also search the web, talk about images, generate images, and respond by voice on supported platforms.
+In humanities work, ordinary chat is often enough for:
+close-reading support, first-pass summaries, rewriting for different audiences, seminar preparation, tentative translation checking, generating discussion questions, producing structured notes from messy material, and getting unstuck when a project has stalled. It is also often the safest place to begin, because it lets you experiment without first setting up a whole system.
+That said, ordinary chat has obvious limits. It can sound more confident than it should. It may invent references, flatten nuance, mishandle chronology, or over-regularise messy evidence. It is best treated as a fast and suggestive assistant, not as an authority. Web search can help with current information because it returns links to sources, but those sources still need human checking.
+Two settings matter here. Custom Instructions let you set durable preferences about how ChatGPT should respond; OpenAI says they apply across chats and are available on all plans. Temporary Chat gives you a blank slate: no memory, no use of past chats, and no lasting history for that conversation. For sensitive, provisional, or compartmentalised work, Temporary Chat is often the better option.
+A sensible default for humanities users is simple: use ordinary chat for one bounded task at a time, upload the relevant source material where possible, ask for explicit uncertainty when claims are weak, and verify anything factual before reusing it in teaching or publication.
+chatgpt/projects.md
+Projects, memory, and longer-running work
+Projects are ChatGPT’s answer to sustained work. They let you group related chats, files, and instructions into a single workspace organised around an ongoing objective. OpenAI describes projects as having built-in memory: ChatGPT can remember the chats and files inside the project and use that shared context in later work. Projects also support the same built-in tools you may use elsewhere, including canvas, image generation, study mode, voice, and web search.
+For humanities researchers, projects are useful when the work has continuity. A book chapter, article, grant application, digital edition, teaching module, reading group, or recurring administrative role all benefit from a stable context space. Instead of re-explaining the topic every time, you can keep working in one bounded environment with the same files, the same instructions, and the same evolving conversation history.
+There are, however, a few caveats. Project memory is helpful, but it is not magically transparent. OpenAI says there is no list view of project memories in the way there is for personal memory. If you want ChatGPT not to draw on a particular conversation, you may need to delete that chat or move it elsewhere. Temporary chats cannot be added to projects. In practice, this means projects are excellent for continuity, but less good when you need extremely fine-grained control over what the system remembers.
+A useful distinction is this. Custom Instructions tell ChatGPT how to behave in general. Personal memory lets it remember details across chats if you allow that. Projects give you a bounded workspace for one stream of work. If you care about intellectual compartmentalisation, projects are usually a better tool than relying on memory alone.
+chatgpt/research-apps-agent.md
+Deep research, apps, and agentic work
+One of ChatGPT’s biggest shifts has been from “answer my question” toward “go and do a substantial research task for me.” OpenAI’s deep research feature is the clearest example. It is designed for complex online tasks: the system researches, reasons, and synthesises material into a documented report, working from public web sources, uploaded files, specific websites, and enabled apps while keeping the user in control.
+For humanities use, deep research is potentially valuable for exploratory literature overviews, policy or funding scans, background briefings on current debates, preliminary comparisons of institutions or archives, and synthesis across a large number of contemporary web sources. It is much less suitable as a substitute for primary-source scholarship, and it should not be treated as a reliable bibliographic authority without careful checking. Used well, it is a research assistant for scoping; used badly, it becomes a polished source of false confidence.
+OpenAI’s older language of “connectors” has now been folded into the broader term apps. These can do two rather different things. Some apps add interactive interfaces inside ChatGPT. Others let ChatGPT search and reference information from connected third-party services such as Google Drive, SharePoint, GitHub, Box, and other tools. Some apps can also be used inside deep research. Availability varies by plan, app, and region.
+OpenAI also now offers ChatGPT agent, which is more interventionist than deep research. According to OpenAI, agent mode can navigate websites, work with uploaded files, connect to third-party data sources, fill out forms, edit spreadsheets, and carry out complex online tasks while keeping the user in control. For most humanities researchers, this is not the starting point. It is for moments when you genuinely want delegated action, not just delegated thinking.
+A sensible rule is: use ordinary chat first, deep research second, apps when you need access to your own tools or repositories, and full agent mode only when the task truly requires action as well as analysis.
+chatgpt/canvas-data-study.md
+Canvas, data analysis, study mode, and voice
+ChatGPT is no longer only a chat box. Canvas is an editing surface for writing and coding projects that need revision, restructuring, or incremental improvement. OpenAI describes it as a separate interface for projects where plain back-and-forth chat is not enough. For humanities users, canvas is useful for essay drafting, grant text, structured notes, lesson plans, and any document where you want to edit alongside the model rather than merely receive one more block of prose. At the time of writing, OpenAI says canvas is available on web, Windows, and macOS, with mobile support still being rolled out.
+For tabular material, data analysis is one of ChatGPT’s more concretely useful features. OpenAI says that when you upload data, ChatGPT can create interactive tables and charts, inspect rows and columns, and answer follow-up questions about the dataset in natural language. For humanities researchers this is helpful for CSVs, catalogues, survey data, bibliographic exports, coding sheets, and quick exploratory work on tabular evidence. It is not a substitute for reproducible statistical workflow, but it is often a very good first pass.
+Study mode is aimed at learning rather than merely answering. OpenAI says it is available across ChatGPT plans and is designed to ask interactive questions, adapt to your level, and guide you step by step. That makes it relevant not only for students but for academics learning a new method, tool, language feature, or technical concept.
+Voice mode matters less for most formal research tasks, but it can be useful for thinking aloud, note capture, travel, and accessibility. OpenAI also offers record mode on the macOS desktop app for supported paid and workspace plans, which can transcribe and summarise meetings or voice notes into canvases. That could be valuable for seminars, brainstorming sessions, and research administration, though accuracy still needs checking.
+chatgpt/gpts-codex.md
+Custom GPTs and Codex
+GPTs are custom versions of ChatGPT built for a particular purpose. OpenAI describes them as combinations of instructions, knowledge, and capabilities tailored to a topic or task. In practice, a GPT is useful when you keep doing the same sort of work and want a reusable setup instead of restating your needs each time.
+For humanities users, a custom GPT can make sense for recurring jobs such as:
+a seminar-feedback assistant, a house-style editor, a grant-drafting helper, a structured interview-coding aide, a metadata normaliser, or a “first pass” guide for a specific archive, corpus, or project handbook. The key is repetition. If a task is genuinely one-off, a normal chat or project is usually enough.
+GPTs are not magic. They are only as good as their instructions, attached knowledge, and boundaries. They can still hallucinate, overgeneralise, or leak into the wrong tone if poorly designed. In most cases, it is wise to start with a normal chat, then a project, and only build a GPT once the recurring need is clear. OpenAI’s own guidance for GPT-building stresses clear, broken-down instructions rather than vague grand goals.
+For users doing actual software work, OpenAI now also offers Codex, its coding agent. OpenAI describes Codex as an AI coding partner that can work locally in the terminal or complete coding tasks in cloud environments; within ChatGPT, you can assign it coding work from the sidebar. This is the nearest analogue in the OpenAI ecosystem to Claude Code. It is relevant to digital humanists building sites, scripts, pipelines, or tools, but it is overkill for most ordinary humanities use.
+The practical advice is blunt: do not build GPTs too early, and do not touch Codex unless you really have a coding problem.
+chatgpt/plans-privacy.md
+Plans, privacy, and choosing the right level
+ChatGPT is available as a free product, with paid individual tiers and workspace plans for teams and institutions. OpenAI’s public pricing and help pages currently distinguish between Free, Go, Plus, Pro, Business, Enterprise, and higher-education offerings, though names and feature bundles do change over time. Business is the self-serve team workspace; Enterprise is the larger managed offering; Edu is the institutional higher-education version.
+For humanities researchers, the practical distinction is often less about “which model is best?” than “what kind of data and governance situation am I in?” Individual consumer ChatGPT is appropriate for public, low-risk, or personal exploratory work. If you are handling institutional data, student data, internal documents, or sensitive unpublished material, the better question is whether your university should be looking at Edu, Business, or Enterprise-style arrangements instead. OpenAI says business and institutional offerings include shared workspaces, admin controls, stronger governance features, and business privacy commitments.
+Privacy needs clear handling. For consumer services such as ordinary ChatGPT, OpenAI says it may use your content to train models unless you opt out through Data Controls or the privacy portal. Temporary Chat gives you a blank slate, and OpenAI says you can also turn off model training for your chats. By contrast, OpenAI says business products such as ChatGPT Business, Enterprise, Edu, and the API do not train on your data by default.
+One last practical point: ChatGPT subscriptions and API usage are separate. Paying for ChatGPT does not give you API credits, and API use is billed separately. That matters if you move from ordinary use into scripted or automated workflows.
+chatgpt/workflows.md
+Worked humanities workflows
+1. Article or chapter drafting
+Use an ordinary chat or a project. Upload your abstract, notes, or draft section. Ask ChatGPT to identify argument structure, missing transitions, duplicated claims, implicit assumptions, and likely reader objections. Move into canvas if the writing becomes heavily iterative. Use Temporary Chat if you do not want the work to affect memory.
+2. Current-context briefing
+Use web search or deep research. Ask for a tightly bounded question, a short report, and explicit links back to sources. This is useful for policy changes, funding landscapes, software changes, or public debates. It is less suitable for settled historical scholarship or close bibliographic work.
+3. Working with PDFs, spreadsheets, or catalogues
+Upload the file and use ChatGPT’s data-analysis capabilities for first-pass exploration. Ask for summaries, patterns, anomalies, missing values, column explanations, or quick charts. Treat this as exploratory analysis, not as a final statistical workflow.
+4. Teaching preparation
+Use ordinary chat for seminar questions, glosses, activities, assignment prompts, or alternative explanations. Use Study mode when the goal is learning through interaction rather than receiving a single answer. This can be helpful both for students and for staff learning a new method or technology.
+5. Long-running research themes
+Use Projects when the work has continuity across sessions: a grant bid, module, edition, dataset, or book project. Add key files, keep task-specific instructions in the project, and avoid mixing unrelated work in the same project unless you want the context to blur.
+6. Repeated specialist tasks
+Once a repeated workflow is stable, consider a custom GPT. This is sensible only when the task recurs often enough to justify the setup: for example, a style guide assistant, metadata normaliser, or recurring feedback assistant. Otherwise, the overhead is not worth it.
+7. Technical build work
+If you are building software, websites, pipelines, or scripts, ordinary ChatGPT may help at first, but Codex is the more relevant OpenAI tool for real coding work. If you are not building software, skip it.
+A couple of editorial judgements.
+I would keep this ChatGPT section a little more matter-of-fact than the Primer. The history and OpenAI relationship belong on the overview page, but only briefly. I would also resist hard-coding current model menus, exact message caps, or feature matrices by plan unless you are prepared to keep them updated; OpenAI changes those often enough that they become a maintenance trap. The more durable distinctions are chat vs projects vs deep research vs GPTs vs Codex, and consumer vs workspace privacy.
+One small extra: a reusable intro paragraph for the Claude section should probably mirror the ChatGPT one exactly in function — “who makes it, what it is, how it differs from the company/API, and a three-sentence history” — rather than turning into a mini-company profile.
+If you want, I can do the same package next for Gemini, or produce a shorter “Claude Code handoff brief” version that tells it exactly how to slot this into your existing MkDocs navigation and tone.
