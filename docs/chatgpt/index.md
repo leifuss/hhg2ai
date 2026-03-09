@@ -4,7 +4,7 @@ description: "Overview of ChatGPT's tools for humanities research — choosing t
 last_verified: 2026-03-09
 ---
 
-# ![ChatGPT](../assets/images/platforms/chatgpt-icon.svg){ .platform-logo } ChatGPT for Humanities Scholars
+# ![ChatGPT](../assets/images/platforms/ChatGPT-Logo.png){ .platform-logo } ChatGPT for Humanities Scholars
 
 *March 2026*
 
