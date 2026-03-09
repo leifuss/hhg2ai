@@ -7,7 +7,7 @@ last_verified: 2026-03-08
 
 # Briefing — What LLMs Are and Aren't
 
-*This document was produced through iterative use of Generative AI (Claude Opus 4.5) by Leif Isaksen. Errors remain the human author's responsibility.*
+*This document was produced through iterative use of Generative AI (Claude Opus 4.5) by Leif Isaksen. Errors remain the editor's responsibility.*
 
 ---
 

@@ -198,9 +198,8 @@
   display: inline-block;
 }
 
-/* --- Platform nav icons (left sidebar) --- */
-.md-nav__link[href*="claude/"]::before,
-.md-nav__link[href*="claude/index.html"]::before {
+/* --- Platform nav icons (left sidebar, section headers only) --- */
+.md-nav__container > .md-nav__link[href*="claude/"]::before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -211,8 +210,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.md-nav__link[href*="chatgpt/"]::before,
-.md-nav__link[href*="chatgpt/index.html"]::before {
+.md-nav__container > .md-nav__link[href*="chatgpt/"]::before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -223,8 +221,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.md-nav__link[href*="gemini/"]::before,
-.md-nav__link[href*="gemini/index.html"]::before {
+.md-nav__container > .md-nav__link[href*="gemini/"]::before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -235,7 +232,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.md-nav__link[href*="copilot"]::before {
+.md-nav__container > .md-nav__link[href*="copilot"]::before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -270,7 +267,7 @@
   --section-color-essentials: #5a9e8f;
   --section-color-field-guides: #b8914a;
   --section-color-platforms: #7678a8;
-  --section-color-bootcamp: #a87066;
+  --section-color-basecamp: #a87066;
 }
 
 .section-primer .md-content {
@@ -285,8 +282,8 @@
 .section-platforms .md-content {
   border-top: 3px solid var(--section-color-platforms);
 }
-.section-bootcamp .md-content {
-  border-top: 3px solid var(--section-color-bootcamp);
+.section-basecamp .md-content {
+  border-top: 3px solid var(--section-color-basecamp);
 }
 
 /* Section label above page title */
@@ -302,7 +299,7 @@
 .section-label--essentials { color: var(--section-color-essentials); }
 .section-label--field-guides { color: var(--section-color-field-guides); }
 .section-label--platforms { color: var(--section-color-platforms); }
-.section-label--bootcamp { color: var(--section-color-bootcamp); }
+.section-label--basecamp { color: var(--section-color-basecamp); }
 
 /* ============================================================
    LANDING PAGE STYLES

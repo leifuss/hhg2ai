@@ -18,7 +18,7 @@ A free, open educational resource covering:
 - **Platforms** — Detailed practical guides for Claude, ChatGPT,
   Microsoft Copilot, and others. How to use each tool for real
   humanities work, not just demos.
-- **Bootcamp** — Structured training materials for workshops and
+- **Basecamp** — Structured training materials for workshops and
   self-directed learning.
 
 The guide assumes no technical background. It is aimed primarily
@@ -52,7 +52,7 @@ To contribute: fork the repository, make changes on a branch,
 and open a pull request. For larger changes, open an issue first
 to discuss scope.
 
-## Author
+## Editor
 
 [Leif Isaksen](https://humanities.exeter.ac.uk/staff/isaksen),
 Professor and Director of Digital Humanities, University of Exeter.

@@ -47,59 +47,18 @@ This list is for "regular" humanities academics (teaching + research), not prima
 
 ---
 
-## 3. Source-facing AI in ancient-world scholarship
+## 3. Discipline-specific resources
 
-!!! leifnote "Leif's Notes"
-    This is where AI changes the discipline, not just the workflow. The most significant impact in classics, ancient history, and archaeology is "extends what is legible, datable, and searchable," not "writes prose."
+For source-facing AI tools and discipline-specific pedagogy, see the relevant [Field Guides pathway pages](../field-guides/index.md):
 
-### Inscriptions and text restoration
-
-- **Ithaca** (Google DeepMind) --- Ancient Greek inscriptions: restoration of missing text, geographical attribution, and chronological dating via deep learning on epigraphic parallels.
-  [ithaca.deepmind.com](https://ithaca.deepmind.com/)
-
-- **Aeneas** (Google DeepMind) --- Latin inscriptions: the Latin counterpart to Ithaca. Restoration, dating, and provenance assistance.
-
-- **Research group** behind Ithaca and Aeneas --- For colleagues who want to know "what exactly is this?" and follow the underlying research.
-  [deepmind.google/discover/blog/](https://deepmind.google/discover/blog/) (search "Ithaca" or "Aeneas")
-
-### Manuscripts, archival handwriting, and OCR/HTR
-
-- **Transkribus** --- The most widely used handwritten text recognition (HTR) platform across archives and manuscript-based fields. Free tier available; institutional licensing for large projects.
-  [transkribus.org](https://www.transkribus.org/)
-
-- **eScriptorium** --- Open-source environment for HTR/OCR workflows, often paired with the kraken engine. Good for institutional projects and bespoke model training.
-  [escriptorium.inria.fr](https://escriptorium.inria.fr/)
-
-- **kraken** --- Open-source HTR/OCR engine. Especially useful where bespoke training on particular scripts or hands is needed.
-  [github.com/mittagessen/kraken](https://github.com/mittagessen/kraken)
-
-### A vivid example
-
-- **Vesuvius Challenge** --- Machine learning + imaging applied to carbonised Herculaneum papyri. A concrete, headline-worthy example of "AI extends the readable."
-  [scrollprize.org](https://scrollprize.org/)
+- [Classics & Ancient History](../field-guides/pathways/classics.md) --- inscription tools (Ithaca, Aeneas), HTR/OCR, and classics-specific teaching resources
+- [History](../field-guides/pathways/history.md) --- archival tools, HTR/OCR, and history-specific pedagogy
+- [Archaeology](../field-guides/pathways/archaeology.md) --- spatial tools, material culture, and archaeological AI resources
+- [Theology & Religious Studies](../field-guides/pathways/theology.md) --- faith-based pedagogy and scriptural language tools
 
 ---
 
-## 4. Pedagogy and discipline-specific teaching
-
-### Classics & ancient history
-
-- **Shawn Graham, *Practical Necromancy for Beginners*** (Digital Press at the University of North Dakota, 2025) --- Opinionated, memorable introduction to AI for archaeology and history. Good for framing, caution, and classroom discussion.
-
-- **Morrice et al., "Making Use of AI in the Classics Classroom,"** *Journal of Classics Teaching* (2025) --- Practical uses (translation exercises, question generation, comprehension tasks) plus risks and limits. Directly applicable.
-
-- **"Artificial Intelligence and the Practice of History: A Forum,"** *American Historical Review* 128, no. 3 (September 2023): 1345--89 --- Multiple perspectives from practising historians. Excellent seminar reading.
-
-### Religion & theology
-
-- **"Teaching with Technology, Thinking with Theology"** --- Useful discussion prompt around agency, authority, and "distinctly human" traits in faith-based pedagogy. Pair with locally published work relevant to your denominational or pedagogical context.
-
-!!! offtrack "Off the Beaten Track"
-    The religion/theology publication landscape on AI is fragmented. Check your denomination's or professional body's latest position statements before relying on any single source.
-
----
-
-## 5. Books and edited volumes (for depth, framing, and critique)
+## 4. Books and edited volumes (for depth, framing, and critique)
 
 - **Nina Begus, *Artificial Humanities*** (University of Michigan Press, 2025) --- AI as a lens for humanistic inquiry: language, creativity, ethics, epistemology. Good for seminars and reading groups.
 
@@ -117,7 +76,7 @@ This list is for "regular" humanities academics (teaching + research), not prima
 
 ---
 
-## 6. Critical literacy and practical workflows
+## 5. Critical literacy and practical workflows
 
 - **Moritz Mahr, *Critical AI Literacy for Historians*** --- Source criticism meets reproducible workflows. Good for methods teaching.
 
