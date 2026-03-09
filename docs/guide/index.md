@@ -39,7 +39,7 @@ Pick the route that fits your situation. Time estimates assume focused reading.
 
     ---
 
-    **[Briefing](briefing.md)** --> **[Getting Started](getting-started.md)** --> **[Ancient Languages](ancient-languages.md)** or **[Use Cases](use-cases.md)** (research tasks) --> **[Mindset](mindset.md)** --> **[Agentic AI](agentic.md)** (optional)
+    **[Briefing](briefing.md)** --> **[Getting Started](getting-started.md)** --> **[Use Cases](use-cases.md)** (research tasks) --> **[Mindset](mindset.md)** --> **[Agentic AI](agentic.md)** (optional)
 
 -   ### I need to use institutional tools :material-clock-outline:{ .lg } 20--30 min
 
@@ -59,7 +59,6 @@ Each page stands on its own. Dip in wherever you like.
 - **[Getting Started](getting-started.md)** --- A 15-minute exercise, setup, and prompting principles
 - **[Mindset](mindset.md)** --- How to think about these tools differently
 - **[Use Cases](use-cases.md)** --- Practical tasks by time investment
-- **[Ancient Languages](ancient-languages.md)** --- Translation, textual criticism, sacred texts
 - **[Agentic AI](agentic.md)** --- Autonomous tools that plan and execute
 - **[FAQ](faq.md)** --- Replacement anxieties, cheating, ethics, data
 
