@@ -20,7 +20,7 @@ hide:
     <h3>🗺️ I'm new to AI</h3>
     <p>Start with the Primer. What LLMs are, what they aren't, whether to care, and a 15-minute exercise you can try right now.</p>
   </a>
-  <a class="hhg-path-card" href="claude/">
+  <a class="hhg-path-card" href="platforms/">
     <div class="time">Pick your platform</div>
     <h3>🧭 I need to use a specific tool</h3>
     <p>Platform manuals for Claude, ChatGPT, Gemini, Copilot, and open-weights models. Practical, operational, task-first.</p>
@@ -61,12 +61,13 @@ hide:
     </ul>
   </div>
   <div class="hhg-sitemap-group">
-    <h4>Platform Manuals</h4>
+    <h4>Platforms</h4>
     <ul>
+      <li><a href="platforms/">How to Choose</a> — Decision guide</li>
       <li><a href="claude/">Claude</a></li>
       <li><a href="chatgpt/">ChatGPT</a></li>
+      <li><a href="platforms/copilot-placeholder/">Microsoft Copilot</a> <small style="color:#d4883a">(coming)</small></li>
       <li><span style="opacity:0.4">Gemini</span> <small style="color:#d4883a">(coming)</small></li>
-      <li><span style="opacity:0.4">Microsoft Copilot</span> <small style="color:#d4883a">(coming)</small></li>
       <li><span style="opacity:0.4">Open-Weights Models</span> <small style="color:#d4883a">(coming)</small></li>
     </ul>
   </div>
