@@ -21,14 +21,6 @@ hide:
   <p>For a fuller overview of how the guide is organised and suggested reading paths, see <a href="how-to-use/">How to use this guide</a>.</p>
 </div>
 
-<div style="max-width: 720px; margin: 16px auto 0; padding: 0 48px;">
-<blockquote style="border-left: 4px solid #d4883a; background: rgba(212,136,58,0.06); padding: 16px 20px; margin: 0; border-radius: 0 4px 4px 0; font-size: 15px; line-height: 1.6;">
-<p style="margin: 0 0 12px 0; font-style: italic;">In many of the more relaxed civilizations on the Outer Eastern Rim of the Galaxy, the Hitch-Hiker's Guide has already supplanted the great Encyclopaedia Galactica as the standard repository of all knowledge and wisdom, for though it has many omissions and contains much that is apocrypulous, or at least wildly inaccurate, it scores over the older, more pedestrian work in two important respects. First, it is slightly cheaper; and secondly it has the words DON'T PANIC inscribed in large friendly letters on its cover.</p>
-<p style="margin: 0 0 12px 0; font-size: 13px; color: #5a5a5a;">— Douglas Adams, <em>The Hitchhiker's Guide to the Galaxy</em></p>
-<p style="margin: 0; font-size: 14px;">This guide is written and updated with the assistance of large language models. It may contain errors. If you spot one, please suggest an improvement — the link is at the top of every page.</p>
-</blockquote>
-</div>
-
 <div class="hhg-paths">
   <a class="hhg-path-card" href="guide/">
     <div class="time">30–60 min</div>
