@@ -98,6 +98,22 @@
   margin-right: 0.4em;
 }
 
+/* Reset left padding for emoji-icon admonition titles (Material default is 2rem for absolute icons) */
+.md-typeset .panic > .admonition-title,
+.md-typeset .panic > summary,
+.md-typeset .essential > .admonition-title,
+.md-typeset .essential > summary,
+.md-typeset .offtrack > .admonition-title,
+.md-typeset .offtrack > summary,
+.md-typeset .caution > .admonition-title,
+.md-typeset .caution > summary,
+.md-typeset .updated > .admonition-title,
+.md-typeset .updated > summary,
+.md-typeset .leifnote > .admonition-title,
+.md-typeset .leifnote > summary {
+  padding-left: 0.6rem;
+}
+
 /* 1. Don't Panic — Teal */
 :root {
   --md-admonition-icon--panic: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 9V5.5a2.5 2.5 0 0 0-5 0V9m-3.5 0h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="12" y="17" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor">OK</text></svg>');
