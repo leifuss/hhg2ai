@@ -7,14 +7,6 @@
 {% block content %}
   {% if page.meta.section %}
     <div class="section-{{ page.meta.section }}">
-      <div class="section-label section-label--{{ page.meta.section }}">
-        {% if page.meta.section == "primer" %}The Primer
-        {% elif page.meta.section == "essentials" %}Essentials
-        {% elif page.meta.section == "field-guides" %}Field Guides
-        {% elif page.meta.section == "platforms" %}Platform Guides
-        {% elif page.meta.section == "basecamp" %}Basecamp
-        {% endif %}
-      </div>
       {{ super() }}
     </div>
   {% else %}
