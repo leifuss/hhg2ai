@@ -7,13 +7,9 @@ last_verified: 2026-03-08
 
 # Briefing — What LLMs Are and Aren't
 
-*This document was produced through iterative use of Generative AI (Claude Opus 4.5) by Leif Isaksen. Errors remain the editor's responsibility.*
-
----
-
 **What this document is for**
 
-This briefing aims to help colleagues make informed decisions about whether and how to engage with LLM technologies. It is not advocacy for adoption. Some readers will find these tools useful for specific tasks; others will reasonably conclude they are not worth the trade-offs. Both positions are defensible. What follows is an attempt to characterise what current systems actually do — correcting misconceptions in both directions — so that decisions rest on accurate information rather than outdated impressions or inflated claims.
+This briefing aims to help colleagues make informed decisions about whether and how to engage with Large Language Model (LLM) and related technologies. It is not advocacy for adoption. Some readers will find these tools useful for specific tasks; others will reasonably conclude they are not worth the trade-offs. Both positions are defensible. What follows is an attempt to characterise what current systems actually do — correcting misconceptions in both directions — so that decisions rest on accurate information rather than outdated impressions or inflated claims.
 
 ## What these systems are
 
