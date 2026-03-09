@@ -19,3 +19,11 @@ If you work in Archaeology, the AI-assisted tasks most relevant to your work are
 4. [Teaching & Assessment](../teaching.md) — preparing seminars, fieldwork briefings, and assessments.
 
 See also: [Archives & Manuscripts](../archives.md) if you work with documentary sources, and [Translation & Language](../translation.md) if you work with inscriptions or texts in ancient languages.
+
+## Further reading
+
+- **Shawn Graham, *Practical Necromancy for Beginners*** (Digital Press at the University of North Dakota, 2025) --- AI for archaeology and history. Good for framing, caution, and classroom discussion.
+
+- **Transkribus** --- Handwritten text recognition for manuscripts and archival material. [transkribus.org](https://www.transkribus.org/)
+
+- **Ithaca** and **Aeneas** (Google DeepMind) --- Inscription restoration and dating for Greek and Latin epigraphy. [ithaca.deepmind.com](https://ithaca.deepmind.com/)

@@ -21,3 +21,23 @@ If you work in Classics or Ancient History, the AI-assisted tasks you are most l
 5. [Teaching & Assessment](../teaching.md) — preparing seminars, tutorials, and assessments.
 
 See also: [Quantitative & Tabular Data](../data.md) if you work with catalogues, databases, or statistical evidence.
+
+## Further reading
+
+### Source-facing AI tools
+
+- **Ithaca** (Google DeepMind) --- Ancient Greek inscriptions: restoration of missing text, geographical attribution, and chronological dating via deep learning on epigraphic parallels. [ithaca.deepmind.com](https://ithaca.deepmind.com/)
+
+- **Aeneas** (Google DeepMind) --- Latin inscriptions: the Latin counterpart to Ithaca. Restoration, dating, and provenance assistance.
+
+- **Vesuvius Challenge** --- Machine learning + imaging applied to carbonised Herculaneum papyri. [scrollprize.org](https://scrollprize.org/)
+
+- **Transkribus** --- Handwritten text recognition for manuscripts and archival material. [transkribus.org](https://www.transkribus.org/)
+
+### Pedagogy
+
+- **Shawn Graham, *Practical Necromancy for Beginners*** (Digital Press at the University of North Dakota, 2025) --- AI for archaeology and history. Good for framing, caution, and classroom discussion.
+
+- **Morrice et al., "Making Use of AI in the Classics Classroom,"** *Journal of Classics Teaching* (2025) --- Practical uses (translation exercises, question generation, comprehension tasks) plus risks and limits.
+
+- **"Artificial Intelligence and the Practice of History: A Forum,"** *American Historical Review* 128, no. 3 (September 2023): 1345--89 --- Multiple perspectives from practising historians.

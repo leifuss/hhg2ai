@@ -112,8 +112,8 @@ nav:
       - Plans & Privacy: gemini/plans-privacy.md
       - Worked Examples: gemini/workflows.md
     - Microsoft Copilot: platforms/copilot-placeholder.md
-  - Bootcamp:
-    - bootcamp/index.md
+  - Basecamp:
+    - basecamp/index.md
   - Resources: resources/index.md
   - About: about/index.md
   - Glossary: glossary/index.md

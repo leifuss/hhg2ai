@@ -19,3 +19,10 @@ If you work in Theology or Religious Studies, the AI-assisted tasks most relevan
 4. [Teaching & Assessment](../teaching.md) — preparing seminars, tutorials, and assessments for theology and religious studies courses.
 
 See also: [Images, Objects & Visual Evidence](../images-objects.md) if you work with illuminated manuscripts, iconography, or material culture of religious communities.
+
+## Further reading
+
+- **"Teaching with Technology, Thinking with Theology"** --- Discussion of agency, authority, and "distinctly human" traits in faith-based pedagogy. Pair with locally published work relevant to your denominational or pedagogical context.
+
+!!! offtrack "Off the Beaten Track"
+    The religion/theology publication landscape on AI is fragmented. Check your denomination's or professional body's latest position statements before relying on any single source.

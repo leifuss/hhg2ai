@@ -5,7 +5,14 @@ description: "An overview of the guide's structure, suggested reading paths, and
 
 # How to Use This Guide
 
+Think of this guide the way you would a travel guide. You would not read a Lonely Planet cover to cover before booking a flight. You would flip to the destination that interests you, skim the practical advice, and ignore the rest until you needed it. This guide works the same way. There is no need to see and do everything. It is here to help you on *your* journey, not to prescribe one.
+
 This guide is organised into five main sections. You do not need to read them in order, and you certainly do not need to read them all. Here is how they fit together and where to start depending on what you need.
+
+!!! info "What this guide covers — and what it doesn't"
+    This guide focuses on large language models (LLMs) and the consumer AI platforms built around them — tools like Claude, ChatGPT, and Gemini that you interact with through conversation. These are the AI tools that most humanities researchers are encountering first, and the ones that raise the most immediate questions about method, ethics, and everyday use.
+
+    Other AI technologies — machine learning for classification and prediction, computer vision, semantic web technologies, knowledge graphs, natural language processing pipelines — are important for digital humanities but are not covered here. For a broader view of AI methods in the humanities, see [The Turing Way](https://book.the-turing-way.org/) and the [AI4LAM resources](https://ai4lam.github.io/).
 
 ## The sections
 
@@ -17,7 +24,7 @@ This guide is organised into five main sections. You do not need to read them in
 
 **[Platform Guides](platforms/index.md)** cover individual AI platforms in detail: Claude, ChatGPT, Gemini, and others. Each guide is self-contained. If you already know which platform you want to use, go directly to its guide. If you are unsure, [How to Choose](platforms/index.md) will help.
 
-**[Bootcamp](bootcamp/index.md)** contains structured training materials for workshops and self-directed learning.
+**[Basecamp](basecamp/index.md)** contains structured training materials for workshops and self-directed learning.
 
 ## Suggested reading paths
 

@@ -1,15 +1,15 @@
 ---
-section: bootcamp
-title: AI Bootcamp
+section: basecamp
+title: AI Basecamp
 description: "Ten structured experiments for humanities scholars to build genuine AI fluency — from foundational setup to advanced critical methods."
 last_verified: 2026-03-08
 ---
 
-# The 10-Experiment AI Bootcamp
+# The 10-Experiment AI Basecamp
 
 *A structured path to advanced AI fluency*
 
-This bootcamp is a series of ten practical experiments, each designed to build a specific AI skill relevant to humanities research and teaching. It is a companion to the rest of this guide: where the other pages provide theoretical foundations, prompting principles, and reference material, these experiments give you structured, hands-on practice.
+This basecamp is a series of ten practical experiments, each designed to build a specific AI skill relevant to humanities research and teaching. It is a companion to the rest of this guide: where the other pages provide theoretical foundations, prompting principles, and reference material, these experiments give you structured, hands-on practice.
 
 **This page is for those who want to lean into AI usage.** It is not an expectation. Many colleagues will reasonably decide that a few of these experiments are enough, or that none of them suit their work right now. That is fine. You can do one, three, or all ten --- and you can come back to any of them later. The experiments are designed to stand alone as well as to build on each other.
 
@@ -24,7 +24,7 @@ This bootcamp is a series of ten practical experiments, each designed to build a
 
     - **Core track (6--8 hours):** Experiments 0, 1, and 2 --- gives you the foundational calibration skills that improve everything else.
     - **Add by role:** Teaching --> add 5 + 9. Research --> add 3 + 4. Public-facing work --> add 8 + 10.
-    - **Full bootcamp (~30 hours):** All 10 experiments plus the bonus, for those who want comprehensive fluency.
+    - **Full basecamp (~30 hours):** All 10 experiments plus the bonus, for those who want comprehensive fluency.
 
 !!! offtrack "Or start from a pain point"
     - "I'm buried in literature" --> [Experiment 4](#experiment-4-the-literature-navigator)
@@ -44,7 +44,7 @@ The experiments are numbered but modular. You can reorder them to suit your need
 
 ### Acknowledgement
 
-This bootcamp is inspired by and adapted from "[The 10-Weekend AI Resolution](https://aidbnewyear.com)" created by *The AI Daily Brief* podcast. Their original framework --- focusing on practical weekend projects with clear deliverables --- has been reimagined here for the specific needs of humanities scholarship. While theirs was built for general AI fluency and productivity (and also worth looking at), this version addresses the particular challenges of research, teaching, and public scholarship in the humanities, and restructures the pedagogical approach around self-contained experiments with explicit learning objectives.
+This basecamp is inspired by and adapted from "[The 10-Weekend AI Resolution](https://aidbnewyear.com)" created by *The AI Daily Brief* podcast. Their original framework --- focusing on practical weekend projects with clear deliverables --- has been reimagined here for the specific needs of humanities scholarship. While theirs was built for general AI fluency and productivity (and also worth looking at), this version addresses the particular challenges of research, teaching, and public scholarship in the humanities, and restructures the pedagogical approach around self-contained experiments with explicit learning objectives.
 
 ---
 
@@ -63,7 +63,7 @@ This bootcamp is inspired by and adapted from "[The 10-Weekend AI Resolution](ht
 - [Experiment 10: Research Infrastructure and Public Scholarship](#experiment-10-research-infrastructure-and-public-scholarship)
 - [Bonus Experiment: The Agent Evaluation](#bonus-experiment-the-agent-evaluation)
 - [Completion Checklist](#completion-checklist)
-- [After the Bootcamp](#after-the-bootcamp)
+- [After the Basecamp](#after-the-basecamp)
 
 ---
 
@@ -73,7 +73,7 @@ This bootcamp is inspired by and adapted from "[The 10-Weekend AI Resolution](ht
 
 ### What you will do
 
-Set up the workspace, accounts, and materials you will need for the rest of the bootcamp.
+Set up the workspace, accounts, and materials you will need for the rest of the basecamp.
 
 ### Why this matters
 
@@ -792,7 +792,7 @@ Test advanced AI capabilities on these scholarly tasks. Use **safe test material
 
 ---
 
-## After the Bootcamp
+## After the Basecamp
 
 If you complete all ten experiments, you will have built:
 

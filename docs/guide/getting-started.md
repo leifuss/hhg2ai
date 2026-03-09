@@ -82,7 +82,7 @@ For a full treatment of prompting strategy, see [Prompting Principles](../essent
 - **[Mindset](mindset.md)** — how to think about these tools
 - **[Ancient Languages](ancient-languages.md)** — if you work with translation and textual criticism
 - **[How to Choose a Platform](../platforms/index.md)** — if you're ready to pick a tool, or go straight to [Claude](../claude/index.md) or [ChatGPT](../chatgpt/index.md)
-- **[AI Bootcamp](../bootcamp/index.md)** — structured exercises for deeper learning
+- **[AI Basecamp](../basecamp/index.md)** — structured exercises for deeper learning
 
 !!! leifnote "Leif's Notes"
     If you tried the exercise and thought "that was underwhelming" — that's a legitimate reaction, and it might mean these tools aren't useful for your particular work. But I'd suggest trying one more thing before deciding: upload a longer document (10+ pages) and ask the tool to identify patterns, inconsistencies, or connections across the whole text. That's where the scale advantage starts to show. The 15-minute exercise above is deliberately modest — it's designed to get you oriented, not to showcase the most impressive capabilities.

@@ -81,5 +81,5 @@ These questions don't have simple answers, and they vary by discipline and level
 - **New to AI?** Start with [Getting Started](getting-started.md) — a 15-minute exercise
 - **Want practical tasks?** See [Use Cases](use-cases.md)
 - **Ready for a specific platform?** See [How to Choose](../platforms/index.md) or go straight to [Claude](../claude/index.md) or [ChatGPT](../chatgpt/index.md)
-- **Want structured learning?** Try the [AI Bootcamp](../bootcamp/index.md)
+- **Want structured learning?** Try the [AI Basecamp](../basecamp/index.md)
 - **Need the cross-platform essentials?** See [Essentials](../essentials/index.md)

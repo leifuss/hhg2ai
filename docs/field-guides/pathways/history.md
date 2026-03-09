@@ -21,3 +21,13 @@ If you work in History, the AI-assisted tasks most relevant to your work are arc
 5. [Teaching & Assessment](../teaching.md) — preparing seminars, tutorials, and assessments.
 
 See also: [Translation & Language](../translation.md) if you work with sources in historical languages.
+
+## Further reading
+
+- **"Artificial Intelligence and the Practice of History: A Forum,"** *American Historical Review* 128, no. 3 (September 2023): 1345--89 --- Multiple perspectives from practising historians. Excellent seminar reading.
+
+- **Shawn Graham, *Practical Necromancy for Beginners*** (Digital Press at the University of North Dakota, 2025) --- AI for archaeology and history. Good for framing, caution, and classroom discussion.
+
+- **Transkribus** --- Handwritten text recognition for manuscripts and archival material. [transkribus.org](https://www.transkribus.org/)
+
+- **eScriptorium** --- Open-source HTR/OCR workflows. [escriptorium.inria.fr](https://escriptorium.inria.fr/)
