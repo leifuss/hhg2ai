@@ -2,7 +2,7 @@
 section: essentials
 title: Cost & Plans
 description: Subscription tiers across AI platforms, API pricing overview, cost-saving strategies, and guidance on what is worth paying for in academic work.
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Cost & Plans
@@ -28,9 +28,12 @@ Every major platform offers a free tier. These are useful for casual experimenta
 
 ---
 
-## Subscription tiers across platforms (early 2026)
+## Subscription tiers across platforms (mid-2026)
 
 Prices and features change frequently. Rather than quoting exact figures that will be outdated by the time you read this, here is the general structure. **Always check the provider's current pricing page** for up-to-date details.
+
+!!! caution "The frontier moves monthly --- and the very top models are increasingly metered"
+    Two mid-2026 developments complicate the simple free-vs-paid picture. First, the frontier is genuinely contested and moving fast: Anthropic released **Claude Fable 5** (June 2026) and OpenAI the **GPT-5.6 family** (July 2026), each briefly claiming the lead. Second, the most capable models are increasingly **metered beyond the allowance included in a subscription** --- for example, Fable 5 access on Claude's paid plans is capped at a share of your weekly limit before switching to usage credits. Check what a subscription *actually includes* before assuming unlimited access to the top model. A new **budget tier** has also appeared (ChatGPT Go, around £5/month, which may carry advertising in some markets) --- more usage than free, but not the frontier models.
 
 ### Claude (Anthropic)
 
@@ -48,7 +51,8 @@ Pricing page: [anthropic.com/pricing](https://www.anthropic.com/pricing)
 
 | Tier | Approximate cost | What you get |
 |------|-----------------|--------------|
-| **Free** | $0 | Access to current base model, limited usage |
+| **Free** | $0 | Access to current base model, limited usage (advertising being introduced in some markets) |
+| **Go** | ~$8 / £5 per month | Budget tier: more usage than free, but not the frontier models; may carry advertising |
 | **Plus** | ~$20/month | Access to frontier models, higher limits, advanced features |
 | **Pro** | ~$200/month | Highest access levels, extended reasoning, priority access |
 | **Team** | Per-seat pricing | Workspace features, admin controls, data not used for training |

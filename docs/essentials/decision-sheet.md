@@ -2,7 +2,7 @@
 section: essentials
 title: Decision Sheet
 description: A one-page printable checklist for using AI in academic work — covering data governance, prompting, verification, citation, and disclosure.
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Decision Sheet
@@ -19,12 +19,16 @@ A scannable reference for every AI session. Print it, pin it next to your monito
 **Data governance** --- [full guide](data-governance.md)
 
 - [ ] **What am I uploading?** Classify the data before you share it with any AI tool.
-    - Published / public domain material? :material-arrow-right: Proceed.
+    - Public domain (out of copyright) or openly licensed (CC)? :material-arrow-right: Proceed.
+    - Paywalled / library-subscription material (journal PDF, ebook)? :material-arrow-right: **Not into consumer tools** --- institutional tool only, and check the licence.
     - My own unpublished work? :material-arrow-right: Safe on paid tiers. Check institutional policy.
     - Personal data about identifiable people? :material-arrow-right: Anonymise first. Check institutional policy.
     - Data under embargo, NDA, or restriction? :material-arrow-right: **Do not upload.**
     - Student data? :material-arrow-right: Check GDPR / FERPA compliance.
     - Unsure? :material-arrow-right: **Do not upload until you have checked.**
+
+    !!! note "\"Public domain\" means out of copyright, not merely publicly available"
+        A journal article you can read online is usually still in copyright. See [Data Governance](data-governance.md#published-public-domain-and-licensed-material).
 - [ ] **Which tier am I on?** Free tiers may use your data for training. Use paid tiers for anything beyond casual experimentation.
 - [ ] **Have I checked my institution's AI policy?** Know the rules before you start, not after.
 

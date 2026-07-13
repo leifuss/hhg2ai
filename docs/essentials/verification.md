@@ -2,7 +2,7 @@
 section: essentials
 title: Verification & Citation
 description: What LLMs get wrong, how to verify their outputs, the verification ladder, checking citations, and recording provenance for academic work.
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Verification & Citation
@@ -24,6 +24,8 @@ LLMs can generate entirely fictional citations --- plausible author names, plaus
 
 !!! caution "Caution"
     **Assume all LLM-generated citations are potentially hallucinated until verified.** This is non-negotiable for anything you will publish, submit, or teach from. Check that the source exists, that the author and title match, and that the page numbers contain what is claimed.
+
+Search-grounded and "deep research" modes (now standard on the major platforms) cite real sources far more often than unassisted generation, because they retrieve documents before answering. This helps --- but it does not remove the need to check: the source may be real while the quotation, page reference, or claimed relevance is still wrong. Verify the *use* of the source, not just its existence.
 
 ### Confident errors of fact
 
@@ -104,7 +106,7 @@ Record what went in, what rules were applied, and what came out. Keep transforma
 If you use LLM output in published research or teaching, document how it was used. Good provenance records include:
 
 - **The date** of the interaction
-- **The model** used (e.g. Claude Opus 4, GPT-4o, Gemini 2.5 Pro) and the interface (Chat, API, Code, etc.)
+- **The model** used (e.g. Claude Fable 5 or Opus 4.x, a GPT-5.6 model, Gemini 3.x) and the interface (Chat, API, Code, etc.)
 - **The prompt** you gave (or a summary of it)
 - **What you used** from the response
 - **How you verified it** --- what checks you ran, what sources you consulted

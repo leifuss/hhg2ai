@@ -1,7 +1,7 @@
 ---
 title: Glossary
 description: "A master glossary of AI and technical terms for humanities readers — plain-language definitions of the terminology used throughout this guide."
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Glossary
@@ -68,7 +68,7 @@ MCP
 :   Model Context Protocol --- an open standard for connecting AI to external tools and data sources (databases, APIs, file systems). Optional; many projects use AI tools without any MCP servers.
 
 Model
-:   The underlying AI system that generates responses. Anthropic offers models at different capability/speed trade-offs: Opus (most capable), Sonnet (balanced), and Haiku (fastest). As of early 2026, the current generation is the Claude 4 family.
+:   The underlying AI system that generates responses. Providers offer models at different capability/speed trade-offs --- for Anthropic, historically Opus (most capable), Sonnet (balanced), and Haiku (fastest). Model generations change rapidly; by mid-2026 Anthropic had released Claude Fable 5 and OpenAI the GPT-5.6 family. Always check which model your tool is currently using rather than relying on a named generation.
 
 npm
 :   Node Package Manager --- a tool for installing JavaScript software packages. A legacy method for installing some AI tools; native installers are now typically preferred.
@@ -84,6 +84,9 @@ Prompt
 
 Prompt engineering
 :   The practice of crafting effective prompts to get better results from AI. Ranges from simple techniques (being specific, providing examples) to complex strategies (chain-of-thought reasoning, role assignment).
+
+Public domain
+:   Material that is out of copyright (in the UK, typically 70 years after the author's death) or was never protected by it. Commonly misunderstood: "public domain" does *not* mean "publicly available" --- a journal article you can read online is usually still in copyright. The distinction matters when deciding what can be uploaded to AI tools. See [Data Governance](../essentials/data-governance.md#published-public-domain-and-licensed-material).
 
 RAG
 :   Retrieval-Augmented Generation --- a technique where an AI retrieves relevant documents before generating a response, rather than relying solely on its training data. Projects approximate this by giving AI access to your uploaded documents.

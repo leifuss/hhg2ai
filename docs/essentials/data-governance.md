@@ -2,7 +2,7 @@
 section: essentials
 title: Data Governance
 description: What AI providers do with your data, institutional policies, practical guidelines by data type, and a quick decision aid for humanities scholars.
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Data Governance
@@ -18,7 +18,7 @@ Before using any AI tool with research data, understand what happens to your dat
 
 Every commercial AI service processes your input on its own servers. The key question is what happens to it afterwards. Policies differ by provider and by tier.
 
-### The general picture (early 2026)
+### The general picture (mid-2026)
 
 | Tier | Training on your data? | Retention | Notes |
 |------|----------------------|-----------|-------|
@@ -29,7 +29,7 @@ Every commercial AI service processes your input on its own servers. The key que
 | **API access** | No (across major providers) | Minimal, governed by API terms | Your data is processed but not retained for training. |
 
 !!! caution "Caution"
-    Policies change. The summary above reflects early 2026 conditions. Always check the provider's **current** privacy policy and terms of service. Links to key policies: [Anthropic (Claude)](https://www.anthropic.com/privacy), [OpenAI (ChatGPT)](https://openai.com/policies/privacy-policy), [Google (Gemini)](https://ai.google/privacy/).
+    Policies change. The summary above reflects mid-2026 conditions. Always check the provider's **current** privacy policy and terms of service. Links to key policies: [Anthropic (Claude)](https://www.anthropic.com/privacy), [OpenAI (ChatGPT)](https://openai.com/policies/privacy-policy), [Google (Gemini)](https://ai.google/privacy/).
 
 ### What "not used for training" does not mean
 
@@ -61,9 +61,23 @@ Most universities and research institutions now have AI policies. Before using A
 
 ## Practical guidelines by data type
 
-### Published and public domain material
+### Published, public domain, and licensed material
 
-**Generally safe to use.** Published texts, out-of-copyright sources, publicly available datasets, and material already in the public domain pose minimal risk. This includes most primary sources in classical and medieval studies, published scholarship, and open-access datasets.
+Privacy is not the only boundary. Copyright and licensing are a **separate question** --- and a published text is not automatically safe to upload. Three categories matter in practice:
+
+- **Public domain material** --- out of copyright (in the UK, typically 70 years after the author's death). Note that "public domain" means *out of copyright*, not "publicly available": a journal article you can read online is not public domain. Genuinely public-domain texts --- most primary sources in classical and medieval studies, out-of-copyright editions, open-access datasets --- can be uploaded freely.
+- **Openly licensed material** --- open-access publications under Creative Commons licences. Generally lower risk; check the specific licence terms.
+- **In-copyright, licensed material** --- paywalled journal articles, ebooks, and databases accessed through your library subscription. Lawful access to *read* is not permission to *upload*. Publisher licence agreements generally prohibit use with AI platforms, and once material enters a consumer tool you cannot control its onward use.
+
+!!! caution "Published does not mean safe to upload"
+    **Do not upload subscription PDFs (journal articles, ebooks) to consumer AI tools.** Lawful access to read a paywalled work is not permission to feed it to a commercial AI service, and most publisher licences prohibit exactly this. A tool with enhanced data protection inside your institution's environment (such as Microsoft 365 Copilot) substantially reduces the risk and is the risk-managed approach librarians currently recommend --- if in doubt, ask your library's copyright team.
+
+**Your institution's own materials** (e.g. teaching materials) raise similar questions, and at most universities the policy is still being settled. Until it is, the risk-managed default is the same: keep them inside institutional tools.
+
+**Research exceptions exist --- use them knowledgeably.** UK law provides copyright exceptions that can support computational research, notably section 29A (copies for text and data analysis for non-commercial research) and the fair dealing provisions. These exceptions cannot be overridden by contract --- a licence agreement cannot remove your right to rely on them. But they carry strict conditions (for example, copies made under s29A may not be transferred to others), much remains untested in the courts, and an exception that covers your *analysis* does not necessarily cover *uploading material to a commercial platform that may retain or train on it*. If your research involves mining licensed corpora, talk to your library's copyright specialist before you start: they can advise whether an exception applies and support you in challenging technical barriers with publishers where the law is on your side.
+
+!!! leifnote "Leif's Notes"
+    Little of this is settled --- it is among the most actively discussed problems facing university copyright officers nationally. Where the guidance feels unclear, that is because the law genuinely is. When in doubt, your library's copyright team would far rather field a quick question than discover a licence breach after the fact.
 
 ### Your own unpublished work
 
@@ -98,8 +112,14 @@ Most universities and research institutions now have AI policies. Before using A
 Before uploading anything to an AI tool, run through this checklist:
 
 ```text
-1. Is this publicly available or out of copyright?
-   YES --> Proceed.
+1. Is this public domain (out of copyright) or openly licensed (CC)?
+   YES --> Proceed. ("Public domain" means out of copyright,
+           NOT merely readable online.)
+
+1a. Is this in-copyright licensed material (a paywalled journal
+    article, ebook, or subscription database)?
+   YES --> Do NOT upload to consumer AI tools. Use an institutional
+           tool with enhanced data protection, and check the licence.
 
 2. Is this my own unpublished work?
    YES --> Generally safe on paid tiers. Check institutional policy.
@@ -121,7 +141,7 @@ Before uploading anything to an AI tool, run through this checklist:
 ```
 
 !!! panic "Don't Panic"
-    Most everyday academic use of AI --- working with published sources, drafting text, brainstorming ideas, formatting references --- falls squarely into the "safe" category. The caution above applies to specific categories of sensitive material. If you are reading a published article and asking an AI to help you understand it, there is no data governance issue.
+    Most everyday academic use of AI --- drafting text, brainstorming ideas, formatting references, working with public-domain or openly licensed sources --- falls squarely into the "safe" category. The cautions above apply to specific categories: sensitive personal data, and in-copyright licensed material (paywalled PDFs). If you are discussing the *ideas* in a published article, or working from an out-of-copyright source, there is no problem; the line to watch is uploading the full text of a paywalled work into a consumer tool.
 
 ---
 

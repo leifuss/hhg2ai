@@ -2,7 +2,7 @@
 section: primer
 title: "Briefing — What LLMs Are and Aren't"
 description: "An informed-choice briefing on large language models for humanities scholars. What they are, what they aren't, and why it matters."
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Briefing — What LLMs Are and Aren't
@@ -19,7 +19,7 @@ They are not knowledge bases, though they can reproduce information from trainin
 
 These systems are capable of things one would not expect — and incapable of things one might reasonably assume they could do. Even their developers do not fully understand where the boundaries lie. The only way to discover what works for particular purposes is experimentation, and what one discovers will change as the technology develops. This is simultaneously one of the frustrations and one of the genuine interests of working with AI.
 
-Current systems (early 2026) differ meaningfully from 2023 versions. Extended reasoning capabilities work through problems step-by-step before responding. Memory systems track context across conversations. Tool use allows searching, code execution, and file generation. These developments make current systems more capable — but capability and reliability are different things. Better outputs make verification-skipping more tempting, which is precisely when vigilance matters most.
+Current systems (mid-2026) differ meaningfully from 2023 versions. Extended reasoning capabilities work through problems step-by-step before responding. Memory systems track context across conversations. Tool use allows searching, code execution, and file generation. Search-grounded and "deep research" modes, now standard across the major platforms, reduce — though do not eliminate — fabricated citations by retrieving real sources before answering. These developments make current systems more capable — but capability and reliability are different things. Better outputs make verification-skipping more tempting, which is precisely when vigilance matters most.
 
 !!! offtrack "Off the Beaten Track"
     LLMs are only one form of AI among many. Computer vision systems are transforming archaeology, art history, and medical imaging. AlphaFold has revolutionised protein structure prediction. Machine learning powers handwriting recognition, spatial analysis, image classification, and network analysis — often without the "chat interface" that makes LLMs so visible. This document focuses on LLMs because they represent the most immediate point of contact for most colleagues, but they are part of a broader landscape.
@@ -69,9 +69,9 @@ One may reasonably decide that LLMs are not worth engaging with for one's own wo
 
 **The pace and direction of change:** AI capabilities have developed faster than most predictions suggested, and this pace shows little sign of slowing. Decisions made now — by institutions, funders, publishers, and governments — will shape the research and teaching environment for years. Being informed enough to participate in those conversations matters, even if one never opens ChatGPT.
 
-**The academic workplace:** Universities are developing policies on AI use in research, teaching, assessment, and administration. These policies affect everyone whether or not they use the tools — they shape what is expected of staff, what is permitted for students, how misconduct is defined, and how workloads evolve.
+**The academic workplace:** Universities are developing policies on AI use in research, teaching, assessment, and administration. These policies affect everyone whether or not they use the tools — they shape what is expected of staff, what is permitted for students, how misconduct is defined, and how workloads evolve. A [May 2026 HEPI study](https://www.hepi.ac.uk/reports/what-uk-university-ai-policies-actually-do-a-study-of-96-institutions/) found 96 of 163 UK institutions with publicly accessible AI policies, varying widely in approach.
 
-**Students and employability:** Students will encounter these tools in their studies and careers regardless of staff practices. Many already use them. Employers increasingly expect AI literacy as a baseline skill. Understanding what students are working with helps one teach and assess effectively.
+**Students and employability:** Students will encounter these tools in their studies and careers regardless of staff practices — and most already use them. The [HEPI Student Generative AI Survey 2026](https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/) found that around 95% of UK undergraduates now use generative AI, with roughly 94% using it in assessed work, yet fewer than half feel their teaching staff are helping them develop AI skills. Employers increasingly expect AI literacy as a baseline skill. Understanding what students are working with helps one teach and assess effectively.
 
 **The computational turn beyond computer science:** Quantitative and computational methods are increasingly present across humanities and social sciences — not replacing traditional approaches, but augmenting them and opening new questions. LLMs represent an acceleration and broadening of this trajectory.
 

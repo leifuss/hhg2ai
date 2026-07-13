@@ -2,7 +2,7 @@
 section: primer
 title: "Getting Started"
 description: "A 15-minute first exercise with an LLM. No prior experience assumed."
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Getting Started
@@ -23,6 +23,9 @@ Any of these will work for this exercise. If you already have an account somewhe
 
 !!! panic "Don't Panic"
     You do not need a paid subscription for this exercise. The free tier on any platform is sufficient. You can always upgrade later if you find the tools useful.
+
+!!! leifnote "Leif's Notes"
+    Once you move beyond this first exercise to judging what these tools can *really* do, the choice of model matters --- and it moves fast. As of mid-2026 the frontier is genuinely contested (Anthropic's Claude Fable 5 and OpenAI's GPT-5.6 family both launched within weeks of each other), and the most capable models are increasingly metered beyond a subscription's included allowance. My advice: don't fixate on one "best" model --- test two or three on a task you understand and see which offers the best value for that job. See [Cost & Plans](../essentials/cost.md) for the current landscape.
 
 ## The exercise (15 minutes)
 

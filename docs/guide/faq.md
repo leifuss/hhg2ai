@@ -72,9 +72,11 @@ The practical implication: **your expertise is the quality filter.** Use AI for 
 
 ## Should I be worried about my students using AI?
 
-You should be *informed* about your students using AI, because many already do. The pedagogical questions are real: How do you assess work when AI assistance is available? How do you teach skills that AI can approximate? How do you help students develop the critical judgement needed to use these tools responsibly?
+You should be *informed* about your students using AI, because most already do. The [HEPI Student Generative AI Survey 2026](https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/) found that around 95% of UK undergraduates now use generative AI, with roughly 94% using it in assessed work — up from a small minority two years earlier. The pedagogical questions are real: How do you assess work when AI assistance is available? How do you teach skills that AI can approximate? How do you help students develop the critical judgement needed to use these tools responsibly?
 
 These questions don't have simple answers, and they vary by discipline and level. But ignoring the reality of student AI use doesn't make it go away — it just means students navigate it without guidance.
+
+The flip side deserves attention too: the same survey found students increasingly anxious about being *falsely accused* of cheating simply for writing well. AI-detection tools are unreliable and produce false positives that fall hardest on honest students (and, disproportionately, on non-native English speakers). Assessment design — oral components, process portfolios, in-class writing, tasks requiring engagement with specific sources — is a more productive response than detection software.
 
 ## Where do I go from here?
 

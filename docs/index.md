@@ -17,6 +17,7 @@ hide:
 <div style="max-width: 720px; margin: 32px auto 0; padding: 0 48px; font-size: 16px; line-height: 1.7;">
   <h2 style="font-family: 'Inter', sans-serif; font-size: 22px; color: var(--md-primary-fg-color); border-bottom: 1px solid #d8d4cc; padding-bottom: 6px;">Welcome</h2>
   <p>This is a practical guide to using AI tools in humanities research, teaching, and administration. It is intended for scholars -- with or without prior technical experience -- who want to understand the applications and implications of using these technologies in academia.</p>
+  <p>If you feel apprehensive about AI, you are in good company -- many colleagues do, and this guide assumes no prior experience and no particular enthusiasm. Whichever way you ultimately decide, informed judgement pays off: the overwhelming majority of students are already using these tools daily, so understanding them is now part of the job.</p>
   <p>It is laid out a bit like a travel guide - you do not need to read it from start to finish. Some people start with one of the <a href="platforms/">platform guides</a> and go from there. If you are entirely new to AI tools, the <a href="guide/">Primer</a> will give you a foundation. If you already know the basics and want to work well, the <a href="essentials/">Essentials</a> apply across all platforms.</p>
   <p>For a fuller overview of how the guide is organised and suggested reading paths, see <a href="how-to-use/">How to use this guide</a>.</p>
 </div>
@@ -83,7 +84,7 @@ hide:
       <li><a href="platforms/">How to Choose</a> — Decision guide</li>
       <li><a href="claude/">Claude</a></li>
       <li><a href="chatgpt/">ChatGPT</a></li>
-      <li><a href="platforms/copilot-placeholder/">Microsoft Copilot</a> <small style="color:#d4883a">(coming)</small></li>
+      <li><a href="platforms/copilot/">Microsoft Copilot</a></li>
       <li><a href="gemini/">Gemini</a></li>
       <li><span style="opacity:0.4">Open-Weights Models</span> <small style="color:#d4883a">(coming)</small></li>
     </ul>

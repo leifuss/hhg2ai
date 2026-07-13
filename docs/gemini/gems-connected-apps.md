@@ -46,7 +46,7 @@ Feature availability for Connected Apps varies by device, country, account type,
 
 ### For humanities researchers
 
-Connected Apps are most useful if you already work within Google's ecosystem. If your research notes are in Drive, your correspondence is in Gmail, and your teaching schedule is in Calendar, the ability to ask Gemini questions across all of them is genuinely powerful. If you use a different ecosystem (Microsoft 365, for instance), this advantage doesn't apply — consider [Copilot](../platforms/copilot-placeholder.md) instead.
+Connected Apps are most useful if you already work within Google's ecosystem. If your research notes are in Drive, your correspondence is in Gmail, and your teaching schedule is in Calendar, the ability to ask Gemini questions across all of them is genuinely powerful. If you use a different ecosystem (Microsoft 365, for instance), this advantage doesn't apply — consider [Copilot](../platforms/copilot.md) instead.
 
 !!! essential "Essential"
     **Connected Apps access your real data.** Before enabling them, understand what Gemini will be able to see. Review [Data Governance](../essentials/data-governance.md) and your institution's policies on third-party access to work accounts.

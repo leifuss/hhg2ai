@@ -1,7 +1,7 @@
 ---
 title: About
-description: "About this guide — editor, how it was made, licensing, workshops, and how to contribute."
-last_verified: 2026-03-08
+description: "About this guide — editor, how it was made, funding, licensing, workshops, and how to contribute."
+last_verified: 2026-07-13
 ---
 
 # About This Guide
@@ -47,6 +47,10 @@ This guide is actively maintained and contributions are invited. Whether you wan
 
 !!! panic "Don't Panic"
     You do not need to be a technologist to contribute. If you have used this guide and found something unclear, missing, or wrong --- or if you have adapted it for your own context and want to share what you learned --- your input is welcome.
+
+## Funding and acknowledgements
+
+This guide was developed at the [University of Exeter](https://www.exeter.ac.uk) and part-funded by [DISKAH](https://www.diskah.org) (Digital Skills in Arts and Humanities), a network funded by the [Arts and Humanities Research Council (AHRC)](https://www.ukri.org/councils/ahrc/) to build digital research capacity across the arts and humanities.
 
 ## Licence
 

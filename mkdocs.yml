@@ -110,7 +110,7 @@ nav:
       - Coding & Developer Tools: gemini/coding-ai-studio-cli.md
       - Plans & Privacy: gemini/plans-privacy.md
       - Worked Examples: gemini/workflows.md
-    - Microsoft Copilot: platforms/copilot-placeholder.md
+    - Microsoft Copilot: platforms/copilot.md
   - Basecamp:
     - basecamp/index.md
   - Resources: resources/index.md
@@ -154,6 +154,7 @@ plugins:
       redirect_maps:
         'claude/shared-principles.md': 'essentials/index.md'
         'guide/rules.md': 'essentials/verification.md'
+        'platforms/copilot-placeholder.md': 'platforms/copilot.md'
 
 copyright: >-
   Leif Isaksen · University of Exeter · 2026 ·
