@@ -84,7 +84,7 @@ hide:
       <li><a href="platforms/">How to Choose</a> — Decision guide</li>
       <li><a href="claude/">Claude</a></li>
       <li><a href="chatgpt/">ChatGPT</a></li>
-      <li><a href="platforms/copilot-placeholder/">Microsoft Copilot</a> <small style="color:#d4883a">(coming)</small></li>
+      <li><a href="platforms/copilot/">Microsoft Copilot</a></li>
       <li><a href="gemini/">Gemini</a></li>
       <li><span style="opacity:0.4">Open-Weights Models</span> <small style="color:#d4883a">(coming)</small></li>
     </ul>
