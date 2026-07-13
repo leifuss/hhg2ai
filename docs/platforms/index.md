@@ -27,10 +27,10 @@ Several AI platforms now offer capable general-purpose assistants, and many of t
     <h3><img src="../assets/images/platforms/Google_Gemini_icon_2025.png" width="240" class="platform-logo"> Gemini</h3>
     <p>Deep ecosystem integration, strong multimodal support.</p>
   </a>
-  <a class="hhg-path-card" href="copilot-placeholder/">
+  <a class="hhg-path-card" href="copilot/">
     <div class="time">Microsoft</div>
     <h3><img src="../assets/images/platforms/Microsoft_Copilot_Icon.svg.png" width="240" class="platform-logo"> Copilot</h3>
-    <p>AI in Microsoft 365. Guide coming soon.</p>
+    <p>AI in Microsoft 365: free vs institutional, data protection, and getting useful results.</p>
   </a>
 </div>
 
