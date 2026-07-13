@@ -79,16 +79,20 @@
             <p>&lsquo;Microsoft Copilot&rsquo; is an umbrella term covering several different products, which can be confusing. The ones relevant to humanities scholars are:</p>
 
             <p><strong>Copilot (free, in Edge or at copilot.microsoft.com)</strong><br>
-            A free chatbot accessible through the Edge browser or directly via the web. This is Microsoft&rsquo;s equivalent of the free tiers of ChatGPT or Claude. It uses OpenAI&rsquo;s models (primarily GPT-4o) and can search the web, generate text, and answer questions. Useful for quick queries but limited compared to paid offerings.</p>
+            A free chatbot accessible through the Edge browser or directly via the web. This is Microsoft&rsquo;s equivalent of the free tiers of ChatGPT or Claude. It uses current GPT-class models, with the free tier selecting the model automatically based on the task. It can search the web, generate text, and answer questions. Crucially, it carries <strong>no enterprise data protection</strong>: it operates in Microsoft&rsquo;s public cloud, not your institution&rsquo;s secure environment. Do not enter confidential, personal, or institutionally sensitive information into the free version.</p>
 
             <p><strong>Microsoft 365 Copilot</strong><br>
-            The institutional product. This is Copilot embedded directly into the Microsoft 365 applications you already use&mdash;Word, Excel, PowerPoint, Outlook, Teams, and OneNote. It works with your documents, emails, and meeting transcripts, drawing on your institutional data through Microsoft Graph. This is the version most UK universities are procuring, and the one this page primarily addresses.</p>
+            The institutional product. This is Copilot embedded directly into the Microsoft 365 applications you already use&mdash;Word, Excel, PowerPoint, Outlook, Teams, and OneNote. It works with your documents, emails, and meeting transcripts, drawing on your institutional data through Microsoft Graph. It uses current GPT-5 class models, and &mdash; unlike the free version &mdash; lets the user choose which model to use. Processing occurs on Microsoft&rsquo;s own servers within its EU Data Boundary (which covers UK institutions), not on OpenAI&rsquo;s. Your data stays within the institution&rsquo;s Microsoft 365 tenancy, inheriting the GDPR arrangements and security policies your university has already negotiated. <strong>This is the version with enterprise data protection</strong>, and the one approved for confidential material where deployed. The cost is borne by the institution or user &mdash; broadly around &pound;25 per user per month under current enterprise agreements (pricing changes from July 2026). This is the version most UK universities are procuring, and the one this page primarily addresses.</p>
 
             <p><strong>Copilot Chat (formerly Copilot for Microsoft 365 Chat)</strong><br>
-            A conversational interface within Microsoft 365 that can search across your emails, files, calendar, and Teams messages. Think of it as a chatbot that knows about your institutional documents and communications. Available as part of Microsoft 365 Copilot licences, or as a lower-cost standalone offering.</p>
+            A conversational interface within Microsoft 365 that can search across your <em>entire</em> email archive, SharePoint, OneDrive, calendar, and Teams messages &mdash; returning answers in seconds. Think of it as a chatbot that knows about your institutional documents and communications. This cross-repository search is one of Copilot&rsquo;s most powerful and distinctive features. Available as part of Microsoft 365 Copilot licences, or as a lower-cost standalone offering.</p>
 
             <div class="note">
                 <p><strong>GitHub Copilot</strong> is a separate product aimed at software developers. It autocompletes code within programming editors. Unless you write code, this is not relevant to your work and is not covered here.</p>
+            </div>
+
+            <div class="highlight">
+                <p style="margin-bottom: 0;"><strong>Confidential material and institutional policy.</strong> At many institutions, confidential material (student data, personnel matters, sensitive governance documents) may <strong>only</strong> be processed using Microsoft 365 Copilot within the institutional tenancy &mdash; not consumer AI tools, and not the free version of Copilot. Check your own institution&rsquo;s policy. The data protection provided by the institutional version is a core reason universities deploy it.</p>
             </div>
         </section>
 
@@ -153,13 +157,13 @@
 
             <p><strong>It works on the document in front of you.</strong> Even in the most restricted institutional configurations, Copilot can help with the file or email you currently have open: rewrite a paragraph, change tone, summarise a long document, draft a reply. This per-document assistance is available everywhere Copilot is enabled, and it is where the tool is most consistently useful.</p>
 
-            <p><strong>Institutional data access (where enabled).</strong> Where institutional permissions allow it, Copilot can draw on your emails, documents, meeting transcripts, and shared files within your tenancy. This means it can answer questions about your actual work context: &ldquo;What was the deadline we agreed for the grant submission?&rdquo; &ldquo;Summarise the feedback from last week&rsquo;s board meeting.&rdquo; No other AI tool can do this without you manually providing the information. Note that many institutions restrict this capability&mdash;if yours does, see the <a href="#restricted">strategies for restricted configurations</a> below.</p>
+            <p><strong>Institutional data access (where enabled).</strong> Where institutional permissions allow it, Copilot can search your entire email archive, all the SharePoint sites you have access to, and your OneDrive &mdash; returning answers in seconds. This means it can answer questions about your actual work context: &ldquo;What was the deadline we agreed for the grant submission?&rdquo; &ldquo;Summarise the feedback from last week&rsquo;s board meeting.&rdquo; For academics juggling multiple projects, committees, and correspondence streams, this is genuinely transformative &mdash; and no other AI tool can do it without you manually providing the information. Note that many institutions restrict this capability&mdash;if yours does, see the <a href="#restricted">strategies for restricted configurations</a> below.</p>
 
             <p><strong>Data protection by default.</strong> When using institutional Copilot, your data stays within your institution&rsquo;s Microsoft tenancy. You do not need to think about privacy settings, opt out of training data collection, or worry about which server processes your request. For work involving student data, personnel matters, or other sensitive institutional information, this is a meaningful advantage over consumer AI tools where you must actively manage privacy settings.</p>
 
             <p><strong>Meeting and email management.</strong> Copilot&rsquo;s Teams summarisation and Outlook capabilities are genuinely useful for the administrative side of academic life. Catching up on a missed meeting, triaging a full inbox after a conference, or extracting action items from a long email thread&mdash;these are tasks where Copilot performs well and the verification burden is low. (Teams features require transcription to be enabled by your institution.)</p>
 
-            <p><strong>No separate account or cost.</strong> If your institution provides it, you already have access through your university login. There is no personal subscription to manage or justify, no account to create, and no question about whether claiming the cost is appropriate.</p>
+            <p><strong>No separate account or cost to you.</strong> If your institution provides it, you already have access through your university login &mdash; the institution bears the licensing cost. There is no personal subscription to manage or justify, no account to create, and no question about whether claiming the cost is appropriate.</p>
         </section>
 
         <hr>
@@ -172,13 +176,15 @@
 
             <p><strong>Weaker for sustained intellectual work.</strong> Copilot is optimised for productivity tasks within Microsoft 365, not for the kind of extended, iterative intellectual engagement that humanities work demands. If you want to test an argument across multiple rounds of critique, explore translation alternatives in depth, or work through a complex analytical problem step by step, dedicated LLMs (Claude, ChatGPT, Gemini) are substantially better. They have larger context windows, more sophisticated reasoning capabilities, and interfaces designed for sustained conversation rather than document-level assistance.</p>
 
-            <p><strong>Less capable for specialist knowledge.</strong> For topics requiring deep domain expertise&mdash;ancient languages, textual criticism, specialised historiography, theological argument&mdash;Copilot generally produces shallower, more generic results than frontier models from Anthropic, OpenAI, or Google. The underlying model (GPT-4o) is capable, but the integration layer and prompt engineering are optimised for business productivity, not scholarly depth.</p>
+            <p><strong>Less capable for specialist knowledge.</strong> For topics requiring deep domain expertise&mdash;ancient languages, textual criticism, specialised historiography, theological argument&mdash;Copilot generally produces shallower, more generic results than frontier models from Anthropic, OpenAI, or Google. The underlying GPT-5 class models are capable, but the integration layer and prompt engineering are optimised for business productivity, not scholarly depth.</p>
 
             <p><strong>Limited context within applications.</strong> When working in Word or PowerPoint, Copilot&rsquo;s context is constrained to the current document and whatever files you explicitly reference. It cannot draw on the broader conversation history that makes dedicated chatbots useful for iterative work. Each interaction is relatively self-contained.</p>
 
             <p><strong>Variable quality across applications.</strong> Copilot is noticeably better in some applications than others. Teams summarisation and Outlook assistance are strong. PowerPoint generation is often disappointing. Excel capabilities are useful for simple queries but struggle with complex analysis. Word assistance varies&mdash;good for restructuring and summarisation, weaker for generating substantive new content.</p>
 
             <p><strong>Hallucination applies here too.</strong> Copilot hallucinates just like any other LLM-based tool. It will confidently cite emails that don&rsquo;t exist, summarise meetings inaccurately, and generate plausible-sounding text that contains errors. The institutional wrapper does not make the underlying model more reliable. The <a href="rules.html#verification-ladder">verification ladder</a> applies equally here.</p>
+
+            <p><strong>Not agentic AI &mdash; despite the &lsquo;agents&rsquo;.</strong> Copilot&rsquo;s &lsquo;agents&rsquo; are not agentic AI as described on the <a href="agentic.html">Agentic AI page</a>. They structure interactions within specific Microsoft 365 apps &mdash; for example, <em>Researcher</em> and <em>Analyst</em> provide specialised workflows for web research and data analysis, and Word, Excel, and PowerPoint agents can generate files (saved to OneDrive within your tenancy). But these are structured assistants, not autonomous agents that plan, write, and execute multi-step tasks across your file system. For those capabilities, see the <a href="agentic.html">Agentic AI</a> page.</p>
 
             <p><strong>The &lsquo;Copilot fatigue&rsquo; problem.</strong> Many colleagues try Copilot, find the initial results underwhelming compared to what they expected or what they get from ChatGPT, and conclude that AI tools in general are not useful. This is a shame, because it conflates Copilot&rsquo;s limitations with AI&rsquo;s limitations. Copilot is one tool with specific strengths; it does not represent the frontier of what LLMs can do. A disappointing experience with Copilot in Word should not discourage you from trying Claude for translation work or ChatGPT for argument testing.</p>
         </section>
@@ -244,6 +250,16 @@
             </div>
 
             <p>There is no contradiction in using both. Each has a purpose, and using the right tool for the right task will give you better results than trying to force one tool to do everything.</p>
+
+            <h3>Extending Copilot: what your administrator can enable</h3>
+
+            <p>Institutional administrators can add capabilities beyond the default configuration:</p>
+
+            <p><strong>Third-party models.</strong> Anthropic&rsquo;s Claude models can be enabled within the Copilot environment, powering features such as the Word, Excel, and PowerPoint agents. These operate under the same enterprise data protection as the rest of Microsoft 365 Copilot and are covered by Microsoft&rsquo;s Customer Copyright Commitment. If you find Copilot&rsquo;s default model insufficient for a particular task, ask your IT administrator whether Anthropic models are available &mdash; they may already be enabled. (Note that Jisc has advised institutions to evaluate the data-processing implications before enabling third-party model integrations, so institutional positions vary.)</p>
+
+            <p><strong>Custom agents.</strong> Copilot Studio lets administrators &mdash; and, where permitted, staff &mdash; build custom agents: structured workflows that combine LLM capabilities with specific data sources or instructions. These can be useful for departmental FAQ bots, onboarding assistants, or research-workflow templates. As noted under Limitations, these are not autonomous agents in the sense described on the <a href="agentic.html">Agentic AI page</a>, but they can meaningfully extend what Copilot does within your institution&rsquo;s environment.</p>
+
+            <p>Check with your IT administrator about which extensions are available at your institution.</p>
         </section>
 
         <hr>
@@ -264,7 +280,7 @@
                 <p><strong>A note on Jisc guidance:</strong> Jisc, which provides digital infrastructure and advice for UK education and research, has published guidance on AI use in higher education, including specific advice on Microsoft Copilot. Notably, Jisc flagged concerns about third-party model integrations within Copilot (such as Anthropic&rsquo;s Claude being available through Copilot&rsquo;s Researcher agent), advising institutions to evaluate data processing implications before enabling these features. Check <a href="https://www.jisc.ac.uk/innovation/artificial-intelligence" target="_blank">Jisc&rsquo;s AI resources</a> and your institution&rsquo;s IT services for the latest guidance.</p>
             </div>
 
-            <p>The goal is not to use one tool exclusively but to make informed choices about which tool suits each task, given the constraints you&rsquo;re working within. Copilot is a solid productivity tool that happens to be the one your institution trusts with sensitive data. Dedicated LLMs are better for deep intellectual work. Neither replaces the other.</p>
+            <p>The goal is not to use one tool exclusively but to make informed choices about which tool suits each task, given the constraints you&rsquo;re working within. Copilot is a solid productivity tool that happens to be the one your institution trusts with sensitive data. Dedicated LLMs are better for deep intellectual work. Neither replaces the other. And the landscape is converging: OpenAI&rsquo;s ChatGPT Work (July 2026) now creates documents and spreadsheets across connected apps, in direct competition with Copilot &mdash; a reminder that institutional data-protection posture, not capability alone, should drive tool choice for sensitive work.</p>
         </section>
 
         <footer>
