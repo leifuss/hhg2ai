@@ -412,6 +412,60 @@ footer {
     text-align: center;
 }
 
+/* Branding footer — institutional and funder acknowledgement */
+
+.branding-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    font-style: normal;
+}
+
+.branding-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.branding-logos a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+
+.branding-logos img {
+    height: 44px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+}
+
+.branding-logos .logo-fallback {
+    display: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+}
+
+.branding-text {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+@media print {
+    .branding-footer {
+        display: block;
+    }
+}
+
 /* Lists */
 
 ul, ol {

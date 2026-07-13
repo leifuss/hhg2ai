@@ -41,7 +41,7 @@
         <header>
             <h1>Rules, Risks &amp; Verification</h1>
             <p class="subtitle">February 2026 &middot; Part of the LLM Guide for the Humanities &amp; Social Sciences</p>
-            <p class="last-updated">Last updated: February 2026</p>
+            <p class="last-updated">Last updated: July 2026</p>
         </header>
 
         <p>This page collects the essential rules and checks in one place. Other pages in the guide apply these principles to specific contexts; this is the canonical reference. If you read only one page beyond the <a href="briefing.html">Briefing</a>, this is the one that will keep you out of trouble.</p>
@@ -102,6 +102,22 @@
             <h3>The practical test</h3>
 
             <p>Before pasting anything into an LLM, ask: <em>would I be comfortable with a commercial company storing this text, even temporarily?</em> If the answer gives you pause, do not input it &mdash; or work with it in an institutional tool where the data governance is established.</p>
+
+            <h3 id="copyright">Copyright and licensed material</h3>
+
+            <p><strong>Privacy is not the only boundary.</strong> The guidance above concerns sensitive and personal data. Copyright and licensing are a separate question &mdash; and a published text is not automatically safe to upload. Three categories matter in practice:</p>
+
+            <ul>
+                <li><strong>Public domain material</strong> &mdash; out of copyright (in the UK, typically 70 years after the author&rsquo;s death). Note that &ldquo;public domain&rdquo; means <em>out of copyright</em>, not &ldquo;publicly available&rdquo;: a journal article you can read online is not public domain. Genuinely public-domain texts can be uploaded freely.</li>
+                <li><strong>Openly licensed material</strong> &mdash; open-access publications under Creative Commons licences. Generally lower risk; check the licence terms.</li>
+                <li><strong>In-copyright, licensed material</strong> &mdash; paywalled journal articles, ebooks, and databases accessed through your library subscription. Lawful access to <em>read</em> is not permission to <em>upload</em>. Publisher licence agreements generally prohibit use with AI platforms, and once material enters a consumer tool you cannot control its onward use. <strong>Do not upload subscription PDFs to consumer AI tools.</strong> A tool with enhanced data protection inside your institution&rsquo;s environment (such as Microsoft 365 Copilot) substantially reduces this risk and is the risk-managed approach librarians currently recommend &mdash; if in doubt, ask your library&rsquo;s copyright team.</li>
+            </ul>
+
+            <p><strong>Your institution&rsquo;s own materials</strong> (e.g. teaching materials) raise similar questions, and at most universities the policy is still being settled. Until it is, the risk-managed default is the same: keep them inside institutional tools.</p>
+
+            <p><strong>Research exceptions exist &mdash; use them knowledgeably.</strong> UK law provides copyright exceptions that can support computational research, notably section 29A (copies for text and data analysis for non-commercial research) and the fair dealing provisions. These exceptions cannot be overridden by contract &mdash; a licence agreement cannot remove your right to rely on them. But they carry strict conditions (for example, copies made under s29A may not be transferred to others), much remains untested in the courts, and an exception that covers your <em>analysis</em> does not necessarily cover <em>uploading material to a commercial platform that may retain or train on it</em>. If your research involves mining licensed corpora, talk to your library&rsquo;s copyright specialist before you start: they can advise whether an exception applies and support you in challenging technical barriers with publishers where the law is on your side.</p>
+
+            <p>Little of this is settled &mdash; it is among the most actively discussed problems facing university copyright officers nationally. Where the guidance feels unclear, that is because the law genuinely is.</p>
         </section>
 
         <hr>
@@ -132,7 +148,7 @@
                 <li>The page numbers contain what is claimed</li>
                 <li>The source actually supports the point being made</li>
             </ul>
-            <p>This is non-negotiable for anything you will publish or submit.</p>
+            <p>This is non-negotiable for anything you will publish or submit. Note that search-grounded modes (now standard on major platforms) cite real sources far more often than unassisted generation &mdash; but the quotation, page reference, and relevance of a real source still need checking.</p>
 
             <h3>Cross-model checking</h3>
 
@@ -281,7 +297,24 @@
                 &nbsp;&nbsp;&middot;&nbsp;&nbsp;
                 <a href="use-cases.html" class="nav-link">Use Cases &rarr;</a>
             </p>
-            <p style="margin-top: 1rem; font-size: 0.85rem;">This guide is actively maintained. If something was useful, unclear, or missing &mdash; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&amp;entry.1470426217=Rules" target="_blank">let us know</a>. (Please do not include personal, confidential, or sensitive information in your feedback.)</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">This guide is actively maintained. If something was useful, unclear, or missing &mdash; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&amp;entry.1470426217=Rules" target="_blank">let us know</a>.</p>
+                    <div class="branding-footer">
+                <div class="branding-logos">
+                    <a href="https://www.exeter.ac.uk" target="_blank" aria-label="University of Exeter">
+                        <img src="images/uoe-logo.png" alt="University of Exeter" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+                        <span class="logo-fallback">University of Exeter</span>
+                    </a>
+                    <a href="https://www.diskah.org" target="_blank" aria-label="DISKAH — Digital Skills in Arts and Humanities">
+                        <img src="images/diskah-logo.png" alt="DISKAH — Digital Skills in Arts and Humanities" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+                        <span class="logo-fallback">DISKAH</span>
+                    </a>
+                    <a href="https://www.ukri.org/councils/ahrc/" target="_blank" aria-label="Arts and Humanities Research Council">
+                        <img src="images/ukri-ahrc-logo.png" alt="UKRI Arts and Humanities Research Council" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+                        <span class="logo-fallback">UKRI &middot; AHRC</span>
+                    </a>
+                </div>
+                <p class="branding-text">Developed at the <a href="https://www.exeter.ac.uk" target="_blank">University of Exeter</a> &middot; Part-funded by <a href="https://www.diskah.org" target="_blank">DISKAH</a> (Digital Skills in Arts and Humanities), an AHRC-funded network.</p>
+            </div>
         </footer>
     </div>
     <script src="js/context.js"></script>
