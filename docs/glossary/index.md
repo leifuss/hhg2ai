@@ -1,7 +1,7 @@
 ---
 title: Glossary
 description: "A master glossary of AI and technical terms for humanities readers — plain-language definitions of the terminology used throughout this guide."
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Glossary

@@ -2,7 +2,7 @@
 section: primer
 title: "Agentic AI — Autonomous Tools That Plan and Execute"
 description: "A field guide to agentic AI systems — what they are, how they differ from conversational AI, and what they mean for humanities work."
-last_verified: 2026-03-08
+last_verified: 2026-07-13
 ---
 
 # Agentic AI — Autonomous Tools That Plan and Execute
@@ -41,7 +41,7 @@ ChatGPT's "Advanced Data Analysis" mode (formerly Code Interpreter) offers limit
 
 ### Other emerging tools
 
-The landscape is developing rapidly. GitHub Copilot Workspace, Google's AI agents, and various open-source frameworks offer agentic capabilities aimed at different audiences. Most are still aimed primarily at software developers.
+The landscape is developing rapidly. GitHub Copilot Workspace, Google's AI agents, and various open-source frameworks offer agentic capabilities aimed at different audiences. Most are still aimed primarily at software developers --- but agentic features are reaching mainstream office tools too: OpenAI's **ChatGPT Work** (July 2026), for instance, can create documents, spreadsheets, and presentations by gathering context across your connected apps and files, a sign of where these capabilities are heading for ordinary knowledge work.
 
 ## What agentic AI can do for humanities work
 
