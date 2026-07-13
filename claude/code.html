@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code &mdash; Claude Best Practice for Humanities Scholars</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="index.html">Overview</a>
+            <span class="nav-sep">|</span>
+            <a href="chat.html">Chat</a>
+            <span class="nav-sep">|</span>
+            <a href="cowork.html">Cowork</a>
+            <span class="nav-sep">|</span>
+            <a href="apps.html">Apps</a>
+            <span class="nav-sep">|</span>
+            <a href="code.html" class="current">Code</a>
+            <span class="nav-sep">|</span>
+            <a href="shared-principles.html">Shared Principles</a>
+            <span class="nav-sep">|</span>
+            <a href="environments.html">Environments</a>
+            <span class="nav-sep">|</span>
+            <a href="skills.html">Prerequisites</a>
+            <span class="nav-sep">|</span>
+            <a href="workflows.html">Workflows</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
+        </nav>
+
+        <header>
+            <h1>Part 4: Claude Code</h1>
+            <p class="subtitle">Part of <a href="index.html">Claude Best Practice for Humanities Scholars</a></p>
+        </header>
+
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#code-what">4.1 What it is and what it&rsquo;s for</a></li>
+                <li><a href="#code-where">4.2 Where it runs</a></li>
+                <li><a href="#code-setup">4.3 Setting up</a></li>
+                <li><a href="#code-commands">4.4 Commands and functionality</a></li>
+                <li><a href="#code-hooks">4.5 Hooks</a></li>
+                <li><a href="#code-mcp">4.6 MCP (Model Context Protocol)</a></li>
+                <li><a href="#code-dos-donts">4.7 Dos and don&rsquo;ts</a></li>
+                <li><a href="#code-practices">4.8 Best working practices</a>
+                    <ul>
+                        <li><a href="#code-explore-plan">The explore&ndash;plan&ndash;execute pattern</a></li>
+                    </ul>
+                </li>
+                <li><a href="#code-combining">4.9 Combining with other tools</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2 id="code-what">4.1 What it is and what it&rsquo;s for</h2>
+
+            <p>Claude Code is an agentic coding tool &mdash; meaning it can take actions autonomously, not just respond to messages. Claude can read files, write files, run commands, search the web, and iterate on its own work. Unlike Chat, where you exchange messages and Claude responds with text, Code gives Claude the ability to <em>act</em>: it can create a project from scratch, modify existing files, run tests, fix errors, and push to <abbr class="glossary" title="A system for tracking changes to files, enabling undo, collaboration, and audit trails">version control</abbr>.</p>
+
+            <p>It is available in three forms:</p>
+
+            <ul>
+                <li><strong>Claude Code on the web</strong> &mdash; runs in your browser at claude.ai. No local installation required. Claude works in a cloud <abbr class="glossary" title="An isolated environment where code runs without access to your real files or system">sandbox</abbr> with its own file system. You upload files, Claude works on them, and you download the results.</li>
+                <li><strong>Claude Code Desktop</strong> &mdash; a graphical Code interface within the Claude Desktop app. If you prefer a graphical interface, the Desktop app includes a Code tab that provides the same capabilities without requiring the terminal, plus visual diff review and app previews. Good for humanities scholars who find the terminal intimidating but want Code&rsquo;s capabilities.</li>
+                <li><strong>Claude Code CLI</strong> &mdash; runs in your terminal (macOS, Linux, or Windows via <abbr class="glossary" title="Windows Subsystem for Linux &mdash; lets Windows run Linux tools natively">WSL</abbr>). Claude works directly on your local files, in your git repository, using your tools. The most powerful and flexible option &mdash; but requires some comfort with a command-line interface.</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Why humanities scholars should care about Code:</strong> Claude Code is not just for software engineers. It can build you a searchable digital edition of a text corpus. It can create an interactive map of historical trade routes. It can clean and transform a messy spreadsheet of archival data into a structured database. It can build a static website to present your research. The &ldquo;code&rdquo; is the means; the output is a humanities tool, resource, or dataset that works entirely without AI once built.</p>
+            </div>
+
+            <p>What Claude Code is particularly good at for humanities work:</p>
+
+            <ul>
+                <li><strong>Building web-based tools and resources</strong> &mdash; interactive editions, teaching tools, visualisations, project websites</li>
+                <li><strong>Data transformation</strong> &mdash; converting between formats (XML to JSON, OCR output to clean text, spreadsheet to database), cleaning inconsistent data, merging sources</li>
+                <li><strong>Text processing at scale</strong> &mdash; batch operations across hundreds of files that would be impractical by hand</li>
+                <li><strong>Automating repetitive tasks</strong> &mdash; formatting bibliographies, standardising metadata, generating indices</li>
+                <li><strong>Creating visualisations</strong> &mdash; charts, timelines, network graphs, maps from your data</li>
+                <li><strong>Document preparation</strong> &mdash; LaTeX formatting, converting between document formats, preparing camera-ready copy</li>
+            </ul>
+
+            <p>Claude Code is included with Pro, Max, Team, and Enterprise subscriptions. On the web and in the Desktop app, no separate installation is needed &mdash; just sign in and start a session. For the CLI, install the native binary (free) and authenticate with your existing Anthropic account. API key access is also available for those who want direct usage-based billing. For most humanities scholars starting out, the Pro subscription is the simplest entry point; upgrade to Max if you find the token limits restrictive. See <a href="shared-principles.html#cost-awareness">cost awareness</a> for more detail.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-where">4.2 Where it runs</h2>
+
+            <p>Understanding where Claude Code runs matters because it determines what files Claude can access and what happens to your work.</p>
+
+            <h3>Claude Code on the web</h3>
+
+            <p>When you use Claude Code through the web interface at claude.ai, Claude works in a cloud-hosted sandbox &mdash; a temporary virtual environment with its own file system. You upload files into this sandbox, Claude works on them, and you download the results.</p>
+
+            <p>Key characteristics:</p>
+            <ul>
+                <li>No installation required &mdash; works in any modern browser</li>
+                <li>Claude has its own temporary file system in the cloud</li>
+                <li>You upload and download files manually</li>
+                <li>The sandbox persists for the duration of your session but is not a permanent workspace</li>
+                <li>Good for: trying Claude Code for the first time, one-off tasks, building something self-contained that you will download when finished</li>
+            </ul>
+
+            <h3>Claude Code CLI (terminal)</h3>
+
+            <p>The <abbr class="glossary" title="Command Line Interface &mdash; a text-based way of interacting with your computer by typing commands">CLI</abbr> version runs on your own machine (or a cloud server you control). Claude operates directly on your local file system, in your <abbr class="glossary" title="A version control system that tracks changes to files over time">git</abbr> repositories, with access to your installed tools.</p>
+
+            <p>Key characteristics:</p>
+            <ul>
+                <li>Requires the native installer (see §4.3) or the legacy npm method</li>
+                <li>Claude reads and writes your actual files</li>
+                <li>Works within git repositories, can commit and push</li>
+                <li>Has access to any tools installed on your system (Python, pandoc, LaTeX, etc.)</li>
+                <li>You approve or deny each action Claude takes &mdash; it asks before writing files or running commands</li>
+                <li>Good for: sustained projects, version-controlled work, anything that needs local tools or large file sets</li>
+            </ul>
+
+            <h3>Claude Code Desktop</h3>
+
+            <p>The Claude Desktop app (macOS or Windows) includes a Code tab that provides the same capabilities as the CLI through a graphical interface &mdash; no terminal required.</p>
+
+            <p>Key characteristics:</p>
+            <ul>
+                <li>Requires the Claude Desktop app &mdash; no separate Claude Code installation</li>
+                <li>Select a project folder from within the app</li>
+                <li>Visual diff view &mdash; see exactly what Claude changed before accepting</li>
+                <li>Preview running web apps directly within the app</li>
+                <li>Remote sessions: can run in the cloud and continue even if you close the app</li>
+                <li>Good for: humanities scholars who want Code&rsquo;s capabilities without learning the terminal</li>
+            </ul>
+
+            <p>For a detailed comparison of environments, including cloud-hosted options, see <a href="environments.html">Part 6: Environments</a>.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-setup">4.3 Setting up</h2>
+
+            <h3>Claude Code on the web</h3>
+
+            <p>No setup required beyond having a Pro or Max subscription. Go to claude.ai, start a new conversation, and select Claude Code as the mode. You will see a file panel on the left and a conversation panel where you can talk to Claude and watch it work.</p>
+
+            <h3>Claude Code CLI</h3>
+
+            <p>Setting up the CLI requires a few steps. If any of these are unfamiliar, see <a href="skills.html">Part 7: Prerequisites</a> for guidance on building the necessary skills.</p>
+
+            <ol>
+                <li>
+                    <strong>Install Claude Code.</strong> The recommended method depends on your platform:
+                    <ul>
+                        <li><strong>macOS / Linux (recommended):</strong> Run in your terminal:
+                            <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+                            No Node.js required.
+                        </li>
+                        <li><strong>Windows (recommended):</strong> Run in PowerShell:
+                            <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+                            Requires <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>. Works in PowerShell, CMD, or Git Bash. No Node.js required.
+                        </li>
+                        <li><strong>Windows via WSL (alternative):</strong> Install WSL (Windows Subsystem for Linux), then run the Linux installer within it. Gives you a full Linux environment. No longer required for Windows, but still supported.</li>
+                        <li><strong>Via <abbr class="glossary" title="Node Package Manager &mdash; a tool for installing JavaScript software packages">npm</abbr> (legacy):</strong> <code>npm install -g @anthropic-ai/claude-code</code>. Requires Node.js 18+. Still works, but the native installer above is now preferred.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Authenticate.</strong> Run <code>claude</code> in your terminal. The first time, it will open a browser window for you to log in with your Anthropic account. If using an API key instead, set the environment variable: <code>export ANTHROPIC_API_KEY=your-key-here</code>
+                </li>
+                <li>
+                    <strong>Navigate to your project directory</strong> and run <code>claude</code> to start a session:
+                    <pre><code>cd ~/my-research-project
+claude</code></pre>
+                </li>
+            </ol>
+
+            <p>Claude will now see all the files in that directory (and subdirectories). It will ask permission before reading, writing, or executing anything.</p>
+
+            <h3>The CLAUDE.md file</h3>
+
+            <p>The most important configuration concept in Claude Code is the <code>CLAUDE.md</code> file. This is a plain text file you place in the root of your project directory. Claude reads it at the start of every session. It functions like the &ldquo;custom instructions&rdquo; in a Chat Project, but for Code.</p>
+
+            <p>A minimal <code>CLAUDE.md</code> for a humanities project might be just a few lines:</p>
+
+            <pre><code># Project: Conference Paper Figures
+
+## Context
+Generating charts and maps for a conference paper on medieval
+trade networks. Source data in data/trade_routes.csv.
+
+## Conventions
+- Use British English
+- Output figures to figures/ directory
+- Use print-friendly colours (no neon)</code></pre>
+
+            <p>For a digital humanities project with specific technical requirements, you might include build commands, file conventions, and protective rules:</p>
+
+            <pre><code># Project: Digital Edition of the Leptis Magna Inscriptions
+
+## Context
+This project creates a searchable web-based edition of Latin
+inscriptions from Leptis Magna. The source data is in EpiDoc XML
+(TEI-compliant). The output is a static HTML/CSS/JS website.
+
+## Conventions
+- Use British English in all comments and documentation
+- Follow TEI P5 guidelines for markup
+- CSS: use BEM naming convention
+- File encoding: UTF-8 throughout
+- Greek text: use Unicode polytonic Greek, never transliteration
+
+## Commands
+- Build the site: python build.py
+- Run tests: python -m pytest tests/
+- Validate XML: xmllint --schema tei_all.xsd inscriptions/*.xml
+
+## Important
+- Never modify files in the source-data/ directory without asking
+- The canonical text is always the XML; HTML is generated from it
+- Cite inscriptions by IRT number (e.g., IRT 321)</code></pre>
+
+            <p>Keep your <code>CLAUDE.md</code> concise and factual. Claude reads it every session, so brevity saves <abbr class="glossary" title="The total amount of text Claude can hold in working memory during a single conversation">context window</abbr> space. Focus on what Claude needs to know to work effectively in your project: what the project is, what conventions to follow, how to build and test, and what to be careful about. See <a href="https://code.claude.com/docs/en/memory" target="_blank">CLAUDE.md documentation</a>.</p>
+
+            <h3>Permissions and trust</h3>
+
+            <p>Claude Code operates in one of three permission modes. You switch between them by pressing <kbd>Shift+Tab</kbd> twice in the CLI (cycles through all three), or by starting a session with a flag:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mode</th>
+                        <th>What Claude can do</th>
+                        <th>When to use it</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Normal</strong> (default)</td>
+                        <td>Reads files freely. Asks before writing files or running shell commands.</td>
+                        <td>Day-to-day work. The right balance for most sessions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plan mode</strong></td>
+                        <td>Read-only. Claude can explore the codebase and create a plan but cannot write, edit, or execute anything.</td>
+                        <td>Starting a new project or unfamiliar codebase. Review what Claude intends to do before it does it.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Auto-accept</strong></td>
+                        <td>Claude makes changes without asking. Fast but risky.</td>
+                        <td>Only when you fully trust the task and have version control in place to catch mistakes.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Start a session in plan mode from the command line: <code>claude --permission-mode plan</code>. Or type <code>/plan</code> after starting a session. For humanities scholars new to Claude Code, <strong>plan mode is the recommended starting point</strong> &mdash; it lets Claude explore your project, explain what it finds, and propose a course of action before touching anything.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-commands">4.4 Commands and core functionality</h2>
+
+            <h3>Starting a session</h3>
+
+            <p>On the CLI, you start Claude Code by running <code>claude</code> in your terminal. You can also pass an initial instruction directly:</p>
+
+            <pre><code>claude "create a timeline visualisation from dates.csv"</code></pre>
+
+            <p>On the web, you simply type your request in the conversation panel.</p>
+
+            <h3>What Claude can do in a session</h3>
+
+            <p>Within a Code session, Claude can:</p>
+
+            <ul>
+                <li><strong>Read files</strong> &mdash; any file in your project directory (or uploaded to the web sandbox)</li>
+                <li><strong>Write and edit files</strong> &mdash; create new files or modify existing ones</li>
+                <li><strong>Run shell commands</strong> &mdash; execute Python scripts, install packages, run build tools, use git</li>
+                <li><strong>Search your codebase</strong> &mdash; find files by name or content, navigate large projects</li>
+                <li><strong>Search the web</strong> &mdash; look up documentation, find examples, check current information</li>
+                <li><strong>Iterate on errors</strong> &mdash; if something fails, Claude reads the error, diagnoses the problem, and tries again</li>
+            </ul>
+
+            <p>This last point &mdash; iteration &mdash; is what makes Claude Code qualitatively different from Chat. In Chat, if Claude produces a Python script with a bug, you have to copy the error message back into the conversation and ask Claude to fix it. In Code, Claude runs the script, sees the error, and fixes it automatically. This loop of write &rarr; run &rarr; read error &rarr; fix can happen many times without your intervention.</p>
+
+            <h3>Slash commands (CLI)</h3>
+
+            <p>In the CLI, several built-in commands are available. Claude Code adds commands regularly &mdash; run <code>/help</code> to see the current full list.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What it does</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/help</code></td>
+                        <td>Show available commands and usage information</td>
+                    </tr>
+                    <tr>
+                        <td><code>/plan</code></td>
+                        <td>Enter plan mode &mdash; Claude explores and plans without modifying anything</td>
+                    </tr>
+                    <tr>
+                        <td><code>/clear</code></td>
+                        <td>Clear the conversation history (start fresh within the same session)</td>
+                    </tr>
+                    <tr>
+                        <td><code>/compact</code></td>
+                        <td>Compress the conversation to save context window space</td>
+                    </tr>
+                    <tr>
+                        <td><code>/cost</code></td>
+                        <td>Show how much the current session has cost (API users)</td>
+                    </tr>
+                    <tr>
+                        <td><code>/model</code></td>
+                        <td>Switch between models (Opus, Sonnet, Haiku) mid-session</td>
+                    </tr>
+                    <tr>
+                        <td><code>/agents</code></td>
+                        <td>View and manage sub-agents spawned during the session</td>
+                    </tr>
+                    <tr>
+                        <td><code>/doctor</code></td>
+                        <td>Diagnose and fix common installation or configuration issues</td>
+                    </tr>
+                    <tr>
+                        <td><code>/init</code></td>
+                        <td>Generate a <code>CLAUDE.md</code> file for the current project</td>
+                    </tr>
+                    <tr>
+                        <td><code>/review</code></td>
+                        <td>Review a pull request or set of changes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Custom slash commands.</strong> You can create your own commands by placing a Markdown file in <code>.claude/commands/</code> in your project directory. The filename becomes the command. For example, a file called <code>check-encoding.md</code> containing instructions for verifying UTF-8 encoding across your corpus would be triggered by typing <code>/check-encoding</code>. This is useful for standardising repetitive tasks: a <code>/validate-tei</code> command for TEI XML checking, a <code>/update-bibliography</code> command for bibliography maintenance. Global commands (available in all projects) go in <code>~/.claude/commands/</code>.</p>
+
+            <p><strong>Sub-agents.</strong> Claude Code can delegate specific tasks to specialised sub-agents, each working in its own context window with its own instructions and tool access. Use <code>/agents</code> to view and manage active sub-agents. This is useful for repetitive specialist tasks &mdash; for example, a sub-agent configured to validate TEI XML encoding could check every file in your corpus while your main session handles other work. Sub-agents can also be defined as Markdown files in <code>.claude/agents/</code>. See <a href="https://code.claude.com/docs/en/sub-agents" target="_blank">Sub-agents documentation</a>.</p>
+
+            <h3>Headless and non-interactive mode (advanced)</h3>
+
+            <p>Claude Code can run without interactive input, which is useful for automation:</p>
+
+            <pre><code># Process every XML file in a directory
+claude -p "validate all XML files in inscriptions/ against the TEI schema and report any errors"
+
+# Pipe input to Claude
+cat report.txt | claude -p "summarise this report in three bullet points"</code></pre>
+
+            <p>The <code>-p</code> flag (print mode) runs Claude with your prompt and outputs the result to stdout, then exits. This lets you incorporate Claude into shell scripts and batch workflows.</p>
+
+            <h3>Multi-file operations</h3>
+
+            <p>One of Claude Code&rsquo;s strengths is working across multiple files. You can ask it to:</p>
+
+            <ul>
+                <li>Rename a field across an entire codebase</li>
+                <li>Convert a directory of Markdown files to HTML</li>
+                <li>Add consistent metadata headers to 200 XML files</li>
+                <li>Find and fix a pattern across all files matching a glob</li>
+            </ul>
+
+            <p>Claude will read the relevant files, plan the changes, and ask for permission before modifying anything. For large batch operations, it often proposes a strategy first (&ldquo;I&rsquo;ll process these 150 files in groups of 10&rdquo;) and checks with you before proceeding.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-hooks">4.5 Hooks</h2>
+
+            <div class="note">
+                <p><strong>Advanced topic.</strong> You do not need <abbr class="glossary" title="A shell command that runs automatically at a specific point in Claude Code's workflow">hooks</abbr> to use Claude Code effectively. Skip this section on first reading and come back when you have a specific need.</p>
+            </div>
+
+            <p>Hooks are shell commands that run automatically in response to Claude Code events. They let you add guardrails, automation, and custom behaviour without modifying Claude itself.</p>
+
+            <p>Hooks are configured in your Claude Code settings file (<code>~/.claude/settings.json</code> for global settings, or <code>.claude/settings.json</code> in a project directory for project-specific hooks). They fire at specific points in Claude&rsquo;s workflow:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hook event</th>
+                        <th>When it fires</th>
+                        <th>Humanities example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>PreToolUse</code></td>
+                        <td>Before Claude uses a tool (reads a file, runs a command, etc.)</td>
+                        <td>Block Claude from modifying files in your <code>source-data/</code> directory</td>
+                    </tr>
+                    <tr>
+                        <td><code>PostToolUse</code></td>
+                        <td>After Claude uses a tool</td>
+                        <td>Auto-format XML files after Claude edits them</td>
+                    </tr>
+                    <tr>
+                        <td><code>Notification</code></td>
+                        <td>When Claude sends a notification (e.g., task complete)</td>
+                        <td>Play a sound or send a system notification when a long task finishes</td>
+                    </tr>
+                    <tr>
+                        <td><code>SessionStart</code></td>
+                        <td>When a new Claude Code session begins</td>
+                        <td>Run a git pull to ensure you&rsquo;re working on the latest version</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>A practical example &mdash; protecting source data from accidental modification:</p>
+
+            <pre><code>// In .claude/settings.json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "command": "bash -c '[[ \"$CLAUDE_FILE_PATH\" == source-data/* ]] && echo \"BLOCKED: Do not modify source data files\" && exit 1 || exit 0'"
+      }
+    ]
+  }
+}</code></pre>
+
+            <p>This hook checks every file write operation. If Claude tries to modify anything in <code>source-data/</code>, the hook blocks it and explains why. Claude will see the blocked message and adjust its approach.</p>
+
+            <p>Hooks are optional and you do not need them to use Claude Code effectively. But as your projects grow, they become a useful safety net &mdash; especially for protecting canonical source files that should never be modified by an automated tool. See <a href="https://code.claude.com/docs/en/hooks" target="_blank">Hooks documentation</a>.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-mcp">4.6 MCP (Model Context Protocol)</h2>
+
+            <div class="note">
+                <p><strong>Advanced topic.</strong> <abbr class="glossary" title="Model Context Protocol &mdash; a standard way to connect Claude to external tools and data sources">MCP</abbr> is optional. Many excellent projects use Claude Code without any MCP servers. Skip this section on first reading and come back when you have a concrete need for Claude to access an external database, API, or service.</p>
+            </div>
+
+            <p>MCP is an open protocol that lets Claude connect to external data sources and tools. Think of it as a standardised way to give Claude access to things beyond its built-in capabilities &mdash; databases, file systems, APIs, specialised software.</p>
+
+            <p>For most humanities scholars, MCP matters in two ways:</p>
+
+            <ol>
+                <li><strong>Using existing MCP servers</strong> that give Claude access to useful services</li>
+                <li><strong>Understanding the concept</strong> so you can evaluate whether a particular MCP integration would help your work</li>
+            </ol>
+
+            <h3>What MCP servers do</h3>
+
+            <p>An MCP server is a small program that exposes a specific capability to Claude. When you connect an MCP server, Claude gains new tools it can use during your session. Some examples relevant to humanities work:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>MCP server</th>
+                        <th>What it gives Claude</th>
+                        <th>Humanities use case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Filesystem</td>
+                        <td>Access to specific directories outside the project</td>
+                        <td>Reading source texts stored in a shared network drive</td>
+                    </tr>
+                    <tr>
+                        <td>PostgreSQL / SQLite</td>
+                        <td>Direct database queries</td>
+                        <td>Querying a prosopographical or epigraphic database</td>
+                    </tr>
+                    <tr>
+                        <td>Fetch</td>
+                        <td>Ability to retrieve web pages and APIs</td>
+                        <td>Pulling data from digital archives, library catalogues, or APIs like Pleiades, Pelagios, or IIIF manifests</td>
+                    </tr>
+                    <tr>
+                        <td>GitHub</td>
+                        <td>Interact with repositories, issues, pull requests</td>
+                        <td>Managing a collaborative digital edition project</td>
+                    </tr>
+                    <tr>
+                        <td>Google Drive</td>
+                        <td>Read and search files in Google Drive</td>
+                        <td>Accessing shared research documents without downloading them</td>
+                    </tr>
+                    <tr>
+                        <td>Zotero (community)</td>
+                        <td>Search and retrieve references from your Zotero library</td>
+                        <td>Pulling citations directly into your workflow</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Setting up MCP</h3>
+
+            <p>MCP servers are configured in your Claude Code settings. For the CLI, this lives in <code>~/.claude/settings.json</code> (global) or <code>.claude/settings.json</code> (per-project):</p>
+
+            <pre><code>// In .claude/settings.json
+{
+  "mcpServers": {
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-sqlite",
+               "--db-path", "./data/inscriptions.db"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-fetch"]
+    }
+  }
+}</code></pre>
+
+            <p>Once configured, Claude automatically discovers the available tools when a session starts. You do not need to tell Claude to &ldquo;use the database server&rdquo; &mdash; it will see the database tools and use them when relevant.</p>
+
+            <p>On the web version of Claude Code, MCP configuration is available through the interface settings rather than a JSON file. See <a href="https://code.claude.com/docs/en/mcp" target="_blank">MCP in Claude Code</a>.</p>
+
+            <h3>When MCP is worth the setup</h3>
+
+            <p>MCP is optional. Many excellent projects use Claude Code without any MCP servers. Consider adding MCP when:</p>
+
+            <ul>
+                <li>You repeatedly need Claude to access the same external resource (a database, an API, a shared drive)</li>
+                <li>You want Claude to query structured data directly rather than exporting and uploading CSV files</li>
+                <li>You are building a workflow that needs to pull from multiple sources automatically</li>
+            </ul>
+
+            <p>If you are just starting with Claude Code, skip MCP for now and come back to it when you have a concrete need.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-dos-donts">4.7 Dos and don&rsquo;ts</h2>
+
+            <h3>Do:</h3>
+            <ul>
+                <li><strong>Use version control (git).</strong> This is the single most important practice. Git lets you track every change Claude makes and revert anything you do not want. Even if you are not a programmer, learn the basics of git before using Claude Code for serious work (see <a href="skills.html">Part 7</a>).</li>
+                <li><strong>Write a good <code>CLAUDE.md</code>.</strong> Five minutes of setup saves hours of repeated instructions. Include your project&rsquo;s conventions, important file locations, and anything Claude should be careful about.</li>
+                <li><strong>Review changes before committing.</strong> Claude will show you what it has changed. Read the diffs. Understand what was modified and why before accepting it into your project.</li>
+                <li><strong>Start small.</strong> Ask Claude to do one well-defined thing at a time rather than everything at once. &ldquo;Convert this one XML file to HTML&rdquo; before &ldquo;build an entire digital edition.&rdquo;</li>
+                <li><strong>Use <code>/compact</code> in long sessions.</strong> If Claude starts losing context or repeating itself, compact the conversation to free up context window space.</li>
+                <li><strong>Keep source data separate from generated output.</strong> Maintain a clear distinction between your canonical sources (which Claude should never modify unsupervised) and the outputs Claude generates from them.</li>
+                <li><strong>Test outputs.</strong> If Claude builds you a web page, open it in a browser. If it writes a script, run it on a sample. If it transforms data, spot-check the results.</li>
+                <li><strong>Use the web version first</strong> if you are new to Claude Code. It is lower-risk (sandboxed) and requires no local setup.</li>
+            </ul>
+
+            <h3>Don&rsquo;t:</h3>
+            <ul>
+                <li><strong>Work without version control on anything you care about.</strong> Claude is powerful but imperfect. Without git, a bad edit has no undo button.</li>
+                <li><strong>Grant blanket permissions before you understand what Claude is doing.</strong> Start with the default &ldquo;ask every time&rdquo; mode. Loosen permissions only after you are comfortable with the patterns.</li>
+                <li><strong>Let Claude modify your canonical source files directly.</strong> Work on copies, or use hooks to protect originals. The master copy of a critical text or dataset should be modified only by you, deliberately.</li>
+                <li><strong>Assume Claude&rsquo;s first approach is optimal.</strong> Claude may choose a complex solution when a simple one exists, or use a library you do not need. Question its architectural choices, especially early in a project.</li>
+                <li><strong>Ignore error messages.</strong> If Claude encounters an error and &ldquo;fixes&rdquo; it, make sure the fix addresses the root cause rather than papering over a symptom. Ask Claude to explain what went wrong.</li>
+                <li><strong>Upload sensitive or personally identifiable data</strong> without understanding your institution&rsquo;s data governance policies (see <a href="shared-principles.html#data-governance">5.2</a>).</li>
+                <li><strong>Use Claude Code for tasks better suited to Chat.</strong> If you just want to discuss an idea, get feedback on your writing, or brainstorm &mdash; use <a href="chat.html">Chat</a>. Code is for building things.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-practices">4.8 Best working practices</h2>
+
+            <h3>The project setup pattern</h3>
+
+            <p>Before asking Claude to build anything, spend five minutes setting up your project properly:</p>
+
+            <ol>
+                <li>Create a directory for your project</li>
+                <li>Initialise a git repository: <code>git init</code></li>
+                <li>Create a <code>CLAUDE.md</code> with your project context, conventions, and any rules</li>
+                <li>Add your source files (texts, data, images) to the directory</li>
+                <li>Make an initial commit: <code>git add -A &amp;&amp; git commit -m "initial project setup"</code></li>
+            </ol>
+
+            <p>Now when you start Claude Code, it has your context, your files, and a safety net (git history) in place from the very beginning.</p>
+
+            <h3>The incremental building pattern</h3>
+
+            <p>The most reliable way to build something with Claude Code is incrementally:</p>
+
+            <ol>
+                <li><strong>Describe the end goal</strong> clearly but ask Claude to start with the simplest possible version</li>
+                <li><strong>Get the basics working</strong> before adding complexity &mdash; a plain HTML page before styling, one file processed before the whole directory</li>
+                <li><strong>Commit after each working milestone.</strong> If the next step goes wrong, you can revert to the last good state</li>
+                <li><strong>Add features one at a time,</strong> testing each before moving to the next</li>
+            </ol>
+
+            <p>This pattern avoids the common failure mode where Claude attempts to build an entire complex system at once, hits a problem three layers deep, and produces something that half-works in a way that is hard to debug.</p>
+
+            <h3>Working with existing codebases</h3>
+
+            <p>Claude Code is not just for new projects. It can work effectively with existing code, data, or websites. When pointing Claude at an existing project:</p>
+
+            <ul>
+                <li>Make sure the project is in a git repository (so you can track and revert changes)</li>
+                <li>Write a <code>CLAUDE.md</code> that explains the project structure, key files, and any conventions</li>
+                <li>Ask Claude to explore and understand the project before modifying it: &ldquo;Read through this project and explain its structure to me&rdquo;</li>
+                <li>Start with small, well-defined changes rather than major refactoring</li>
+            </ul>
+
+            <h3 id="code-explore-plan">The explore&ndash;plan&ndash;execute pattern</h3>
+
+            <p>For any project that matters &mdash; especially when working with existing files, source data, or unfamiliar codebases &mdash; the most reliable approach is a three-phase workflow that separates understanding from action:</p>
+
+            <ol>
+                <li><strong>Explore (plan mode).</strong> Start a session in plan mode: <code>claude --permission-mode plan</code> or type <code>/plan</code>. In this mode, Claude reads files, searches your project, and builds understanding &mdash; but cannot write, edit, or execute anything. Ask it to explain what it finds: &ldquo;Read through this project and describe its structure and any potential issues.&rdquo;</li>
+                <li><strong>Plan (still in plan mode).</strong> Ask Claude to propose a course of action: &ldquo;Create a plan for adding a search function to this edition.&rdquo; Claude produces a written plan. Review it, ask questions, and refine it. Because Claude is still in plan mode, it cannot act until you say so.</li>
+                <li><strong>Execute (normal mode).</strong> Switch to normal mode (press <kbd>Shift+Tab</kbd> twice, or start a new session without the plan flag). Claude implements the agreed plan, asking permission before each individual change.</li>
+            </ol>
+
+            <p>This pattern directly addresses the most common anxiety about AI coding tools: that Claude will &ldquo;just start changing things.&rdquo; Plan mode guarantees it cannot &mdash; Claude literally has no write or execute capability until you switch modes. It is the built-in mechanism for the &ldquo;understand before acting&rdquo; principle the guide already advocates. See <a href="https://code.claude.com/docs/en/common-workflows" target="_blank">Common workflows</a> for more patterns.</p>
+
+            <h3>Extended thinking</h3>
+
+            <p>Claude Code has extended thinking enabled by default for complex tasks: before responding, Claude reasons through the problem step-by-step. You can see this reasoning in verbose mode (toggle with <kbd>Ctrl+O</kbd>). This is the built-in equivalent of the &ldquo;think step by step&rdquo; prompt described in <a href="shared-principles.html">Shared Principles</a> &mdash; you do not need to ask for it separately in Code sessions. Turning on verbose mode is particularly useful when Claude is making decisions about your data or proposing a structural approach you want to understand.</p>
+
+            <h3>Context window management</h3>
+
+            <p>Claude Code sessions have the same context window limits as Chat, but they fill up faster because Claude is reading files, running commands, and processing output. Practical strategies:</p>
+
+            <ul>
+                <li><strong>Use <code>/compact</code></strong> when the conversation gets long. This compresses earlier context while preserving the essential information.</li>
+                <li><strong>Use <code>/clear</code></strong> to start fresh within the same session if you are switching to a different task within the same project.</li>
+                <li><strong>Keep your <code>CLAUDE.md</code> concise.</strong> Claude reads it every session &mdash; a 2,000-word CLAUDE.md consumes significant context that could be used for actual work.</li>
+                <li><strong>Break large tasks into sessions.</strong> Rather than processing 500 files in one session, do 50 at a time, committing between batches.</li>
+            </ul>
+
+            <h3>When things go wrong</h3>
+
+            <p>Claude will sometimes produce code that does not work, make changes you did not want, or go down an unproductive path. This is normal. Strategies:</p>
+
+            <ul>
+                <li><strong>Revert with git:</strong> <code>git checkout -- .</code> undoes all uncommitted changes. <code>git revert HEAD</code> undoes the last commit. This is why version control is non-negotiable.</li>
+                <li><strong>Be specific about what went wrong.</strong> &ldquo;That didn&rsquo;t work&rdquo; is less helpful than &ldquo;the table headings are misaligned in Firefox&rdquo; or &ldquo;the script fails on files with non-ASCII characters.&rdquo;</li>
+                <li><strong>Ask Claude to explain its reasoning.</strong> Sometimes the approach is sound but the implementation has a bug; sometimes the approach itself is wrong. Understanding which helps you guide the fix.</li>
+                <li><strong>Start a new conversation</strong> if Claude seems stuck in a loop or keeps making the same mistake. A fresh start with a clearer prompt often works better than persisting.</li>
+            </ul>
+
+            <h3>Documentation and reproducibility</h3>
+
+            <p>Good academic practice applies to AI-assisted work too. For any project built with Claude Code:</p>
+
+            <ul>
+                <li>Keep your git history clean and well-commented &mdash; it is your audit trail</li>
+                <li>Document how to run, build, or deploy the project (a <code>README.md</code> is standard)</li>
+                <li>Note which parts were AI-generated and which were hand-written, if this matters for your context</li>
+                <li>If the project processes data, document the pipeline: what goes in, what transformations happen, what comes out</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-reproducibility">4.10 Reproducibility</h2>
+
+            <p>If your project processes research data, reproducibility matters &mdash; for your own future work, for collaborators, and for peer review. Claude Code makes it easy to build pipelines; these practices make those pipelines trustworthy:</p>
+
+            <ul>
+                <li><strong>Pin dependencies.</strong> If Claude installs Python packages, save the exact versions: <code>pip freeze &gt; requirements.txt</code>. For JavaScript projects, commit the <code>package-lock.json</code>. This ensures someone else (or you, next year) can recreate the same environment.</li>
+                <li><strong>Record the environment.</strong> Note the Python version, operating system, and key library versions. A <code>README.md</code> in your project root is the standard place for this.</li>
+                <li><strong>Write a data dictionary.</strong> For any transformed dataset, document what each column or field contains, how it was derived, and what assumptions were made. Claude can draft this for you: &ldquo;Write a data dictionary for metadata.csv explaining each column.&rdquo;</li>
+                <li><strong>Include test runs.</strong> Keep a small set of sample inputs with expected outputs. This lets you (or anyone) verify the pipeline produces correct results after changes. Claude can create these: &ldquo;Create a test directory with 5 sample inputs and their expected outputs.&rdquo;</li>
+                <li><strong>Document encoding assumptions.</strong> Specify character encoding (UTF-8 is standard), Unicode normalisation form if relevant, and how the pipeline handles non-Latin scripts, diacritics, and special characters.</li>
+                <li><strong>Keep scripts alongside data.</strong> Transformation scripts belong in the same version-controlled repository as the data they produce. The git history then documents exactly how the data was processed, when, and what changed.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="code-combining">4.9 Combining with other tools</h2>
+
+            <h3>Code + Chat pipeline</h3>
+
+            <p>A productive pattern is to use Chat and Code together, each for what it does best:</p>
+
+            <ul>
+                <li><strong>Chat for planning:</strong> Discuss the project design, work through edge cases, decide on architecture. Chat is better for open-ended thinking because it does not try to execute anything &mdash; it just talks.</li>
+                <li><strong>Code for building:</strong> Once you know what you want, switch to Code to implement it. Paste key decisions from your Chat conversation into the <code>CLAUDE.md</code> so Code has the same context.</li>
+                <li><strong>Chat for review:</strong> After Code builds something, use Chat to review the output. Upload the generated files and ask Chat to critique them, check for errors, or suggest improvements.</li>
+            </ul>
+
+            <h3>Code + version control platforms</h3>
+
+            <p>Claude Code integrates naturally with GitHub (and other git platforms). It can:</p>
+
+            <ul>
+                <li>Create branches, commit, and push</li>
+                <li>Open pull requests with descriptive summaries</li>
+                <li>Review pull requests from collaborators</li>
+                <li>Work within a CI/CD pipeline (automated testing on each commit)</li>
+            </ul>
+
+            <p>This makes Claude Code suitable for collaborative projects where multiple people contribute to a shared repository &mdash; for example, a team building a digital edition or a shared dataset.</p>
+
+            <h3>Code + specialist software</h3>
+
+            <p>Because Claude Code (CLI) runs on your machine, it can use any software you have installed:</p>
+
+            <ul>
+                <li><strong>pandoc</strong> &mdash; convert between document formats (Markdown, LaTeX, DOCX, HTML, EPUB)</li>
+                <li><strong>LaTeX</strong> &mdash; typeset documents, format mathematical notation, prepare camera-ready papers</li>
+                <li><strong>Python scientific stack</strong> &mdash; pandas for data analysis, matplotlib for visualisation, NLTK/spaCy for text processing</li>
+                <li><strong>xmllint / Saxon</strong> &mdash; validate and transform XML/TEI documents</li>
+                <li><strong>ImageMagick</strong> &mdash; batch process images (resize, convert, annotate)</li>
+                <li><strong>ffmpeg</strong> &mdash; process audio and video files (useful for oral history or linguistic fieldwork data)</li>
+                <li><strong>Tesseract</strong> &mdash; OCR processing of scanned documents and images</li>
+            </ul>
+
+            <p>Claude knows how to use these tools. You install them on your system; Claude calls them as part of its workflow. You do not need to learn their command-line syntax &mdash; Claude handles that &mdash; but understanding what they do helps you direct Claude effectively.</p>
+
+            <h3>Code + other AI models</h3>
+
+            <p>Claude Code can call other AI models via their APIs as part of a workflow. For example, a script that uses a local Whisper model for speech-to-text transcription, then passes the text to Claude for analysis. Or a pipeline that uses a specialised OCR model for handwriting recognition and Claude for the subsequent text processing. See <a href="shared-principles.html#multi-model">5.5</a> for more on multi-model strategies.</p>
+        </section>
+
+        <div class="highlight">
+            <h4 style="margin-top: 0;">Going further with Claude Code</h4>
+            <p>The features above cover what most humanities scholars need. Claude Code has additional capabilities that may be useful as your projects grow:</p>
+            <ul style="margin-bottom: 0;">
+                <li><strong>Output styles</strong> let you change how Claude Code communicates &mdash; from concise to explanatory to fully custom. See <a href="https://code.claude.com/docs/en/output-styles" target="_blank">Output styles documentation</a>.</li>
+                <li><strong>Agent teams</strong> coordinate multiple Claude instances working in parallel across separate git branches. Useful for large projects with independent components. See <a href="https://code.claude.com/docs/en/agent-teams" target="_blank">Agent teams documentation</a>.</li>
+                <li><strong>The Claude Agent SDK</strong> lets you build custom agent workflows programmatically &mdash; for automation, CI/CD, or integration with other tools. See <a href="https://code.claude.com/docs/en/sdk" target="_blank">Agent SDK documentation</a>.</li>
+                <li><strong>Plugins</strong> bundle skills, sub-agents, commands, and connectors into shareable packages. See <a href="https://code.claude.com/docs/en/plugins" target="_blank">Plugins documentation</a>.</li>
+                <li><strong>GitHub Actions integration</strong> lets Claude Code run as part of automated testing and review pipelines. See <a href="https://code.claude.com/docs/en/github-actions" target="_blank">CI/CD documentation</a>.</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><a href="apps.html" class="nav-link">&larr; Part 3: Claude in Your Apps</a></p>
+            <p><a href="shared-principles.html" class="nav-link">Part 5: Shared Principles &rarr;</a></p>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem;">v1.0 &middot; Last updated 8 March 2026</p>
+            <p style="font-size: 0.85rem;">This guide is actively maintained. If something was useful, unclear, or missing &mdash; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&amp;entry.1470426217=Claude+Best+Practice" target="_blank">let us know</a>. (Please do not include personal, confidential, or sensitive information in your feedback.)</p>
+        </footer>
+    </div>
+</body>
+</html>

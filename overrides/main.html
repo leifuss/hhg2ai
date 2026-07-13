@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block tabs %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  {% if page.meta.section %}
+    <div class="section-{{ page.meta.section }}">
+      {{ super() }}
+    </div>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}

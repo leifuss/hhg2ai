@@ -1,0 +1,586 @@
+/* ============================================================
+   HHG2AI Brand — Custom CSS for MkDocs Material
+   Colours, typography, and six custom admonition types
+   ============================================================ */
+
+/* --- Colour palette (hhg scheme) --- */
+:root,
+[data-md-color-scheme="hhg"] {
+  --md-primary-fg-color:        #1a5c5c;
+  --md-primary-fg-color--light: #237878;
+  --md-primary-fg-color--dark:  #0f3d3d;
+  --md-accent-fg-color:         #d4883a;
+  --md-accent-fg-color--transparent: rgba(212, 136, 58, 0.1);
+  --md-default-bg-color:        #faf8f4;
+  --md-default-bg-color--light: #f0ece4;
+  --md-default-fg-color:        #2c2c2c;
+  --md-default-fg-color--light: #5a5a5a;
+
+  /* Sidebar */
+  --md-code-bg-color: #f0ece4;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #e6a45c;
+}
+
+/* --- Typography overrides --- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-nav,
+.md-tabs,
+.md-header,
+.md-footer,
+.md-search__input {
+  font-family: "Inter", var(--md-text-font-family), sans-serif;
+}
+
+.md-typeset h1 {
+  color: var(--md-primary-fg-color--dark);
+  letter-spacing: -0.5px;
+}
+
+.md-typeset h2 {
+  color: var(--md-primary-fg-color);
+  border-bottom: 1px solid #d8d4cc;
+  padding-bottom: 6px;
+}
+
+/* --- Verified date badge --- */
+.verified-date {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+  background: var(--md-code-bg-color);
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   CUSTOM ADMONITION TYPES
+   Six types mapped to the travel-guide voice
+   ============================================================ */
+
+/* Match body text size in admonition boxes */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.8rem;
+}
+
+/* Shared fix: disable Material's mask/background icon system for emoji icons */
+.md-typeset .panic > .admonition-title::before,
+.md-typeset .panic > summary::before,
+.md-typeset .essential > .admonition-title::before,
+.md-typeset .essential > summary::before,
+.md-typeset .offtrack > .admonition-title::before,
+.md-typeset .offtrack > summary::before,
+.md-typeset .caution > .admonition-title::before,
+.md-typeset .caution > summary::before,
+.md-typeset .updated > .admonition-title::before,
+.md-typeset .updated > summary::before,
+.md-typeset .leifnote > .admonition-title::before,
+.md-typeset .leifnote > summary::before {
+  background-color: transparent;
+  -webkit-mask-image: none;
+  mask-image: none;
+  width: auto;
+  height: auto;
+  position: relative;
+  top: auto;
+  left: 0;
+  display: inline-block;
+  margin-right: 0.4em;
+}
+
+/* Reset left padding for emoji-icon admonition titles (Material default is 2rem for absolute icons) */
+.md-typeset .panic > .admonition-title,
+.md-typeset .panic > summary,
+.md-typeset .essential > .admonition-title,
+.md-typeset .essential > summary,
+.md-typeset .offtrack > .admonition-title,
+.md-typeset .offtrack > summary,
+.md-typeset .caution > .admonition-title,
+.md-typeset .caution > summary,
+.md-typeset .updated > .admonition-title,
+.md-typeset .updated > summary,
+.md-typeset .leifnote > .admonition-title,
+.md-typeset .leifnote > summary {
+  padding-left: 0.6rem;
+}
+
+/* 1. Don't Panic — Teal */
+:root {
+  --md-admonition-icon--panic: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 9V5.5a2.5 2.5 0 0 0-5 0V9m-3.5 0h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="12" y="17" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor">OK</text></svg>');
+}
+.md-typeset .admonition.panic,
+.md-typeset details.panic {
+  border-color: #1a5c5c;
+}
+.md-typeset .panic > .admonition-title,
+.md-typeset .panic > summary {
+  background-color: rgba(26, 92, 92, 0.1);
+  border-color: #1a5c5c;
+}
+.md-typeset .panic > .admonition-title::before,
+.md-typeset .panic > summary::before {
+  content: "👍 ";
+  font-style: normal;
+}
+
+/* 2. Essential — Green */
+.md-typeset .admonition.essential,
+.md-typeset details.essential {
+  border-color: #4a8c3f;
+}
+.md-typeset .essential > .admonition-title,
+.md-typeset .essential > summary {
+  background-color: rgba(74, 140, 63, 0.1);
+  border-color: #4a8c3f;
+}
+.md-typeset .essential > .admonition-title::before,
+.md-typeset .essential > summary::before {
+  content: "✓ ";
+  font-style: normal;
+}
+
+/* 3. Off the Beaten Track — Amber */
+.md-typeset .admonition.offtrack,
+.md-typeset details.offtrack {
+  border-color: #d4883a;
+}
+.md-typeset .offtrack > .admonition-title,
+.md-typeset .offtrack > summary {
+  background-color: rgba(212, 136, 58, 0.1);
+  border-color: #d4883a;
+}
+.md-typeset .offtrack > .admonition-title::before,
+.md-typeset .offtrack > summary::before {
+  content: "🗺️ ";
+  font-style: normal;
+}
+
+/* 4. Caution — Red */
+.md-typeset .admonition.caution,
+.md-typeset details.caution {
+  border-color: #cc4444;
+}
+.md-typeset .caution > .admonition-title,
+.md-typeset .caution > summary {
+  background-color: rgba(204, 68, 68, 0.1);
+  border-color: #cc4444;
+}
+.md-typeset .caution > .admonition-title::before,
+.md-typeset .caution > summary::before {
+  content: "⚠️ ";
+  font-style: normal;
+}
+
+/* 5. Recently Updated — Blue-grey */
+.md-typeset .admonition.updated,
+.md-typeset details.updated {
+  border-color: #607d8b;
+}
+.md-typeset .updated > .admonition-title,
+.md-typeset .updated > summary {
+  background-color: rgba(96, 125, 139, 0.1);
+  border-color: #607d8b;
+}
+.md-typeset .updated > .admonition-title::before,
+.md-typeset .updated > summary::before {
+  content: "🔄 ";
+  font-style: normal;
+}
+
+/* 6. Leif's Notes — Warm brown/sienna */
+.md-typeset .admonition.leifnote,
+.md-typeset details.leifnote {
+  border-color: #8b6914;
+}
+.md-typeset .leifnote > .admonition-title,
+.md-typeset .leifnote > summary {
+  background-color: rgba(139, 105, 20, 0.1);
+  border-color: #8b6914;
+}
+.md-typeset .leifnote > .admonition-title::before,
+.md-typeset .leifnote > summary::before {
+  content: "✏️ ";
+  font-style: normal;
+}
+
+/* 7. Going Deeper — Muted blue-grey (technical/optional content) */
+:root {
+  --md-admonition-icon--deeper: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 320c88.4 0 160-71.6 160-160c0-15.3-2.2-30.1-6.2-44.2c-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8c-3 3-7.1 4.7-11.3 4.7H336c-8.8 0-16-7.2-16-16V118.6c0-4.2 1.7-8.3 4.7-11.3l76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C382.1 2.2 367.3 0 352 0C263.6 0 192 71.6 192 160c0 19.1 3.4 37.5 9.5 54.5L19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9l181.6-181.6c17 6.2 35.4 9.5 54.5 9.5zM80 456c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg>');
+}
+.md-typeset .admonition.deeper,
+.md-typeset details.deeper {
+  border-color: #6d7f8b;
+}
+.md-typeset .deeper > .admonition-title,
+.md-typeset .deeper > summary {
+  background-color: rgba(109, 127, 139, 0.1);
+  border-color: #6d7f8b;
+}
+.md-typeset .deeper > .admonition-title::before,
+.md-typeset .deeper > summary::before {
+  -webkit-mask-image: var(--md-admonition-icon--deeper);
+          mask-image: var(--md-admonition-icon--deeper);
+}
+
+/* --- Platform logo styling --- */
+.platform-logo {
+  height: 40px !important;
+  max-height: 40px !important;
+  width: 40px !important;
+  max-width: 40px !important;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* --- Platform nav icons (left sidebar, section headers only) --- */
+.md-nav__container > .md-nav__link[href*="claude/"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/claude-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.md-nav__container > .md-nav__link[href*="chatgpt/"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/chatgpt-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.md-nav__container > .md-nav__link[href*="gemini/"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/gemini-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.md-nav__container > .md-nav__link[href*="copilot"]::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-image: url('../images/platforms/copilot-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* --- TOC page title --- */
+.md-toc__title {
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.6rem;
+  margin: 0 0 0.4rem 0;
+  color: var(--md-default-fg-color--light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* --- Hide header repo icon (kept in footer via extra.social) --- */
+.md-header__source {
+  display: none;
+}
+
+/* --- Section colour wayfinding --- */
+:root {
+  --section-color-primer: #7b8fa2;
+  --section-color-essentials: #5a9e8f;
+  --section-color-field-guides: #b8914a;
+  --section-color-platforms: #7678a8;
+  --section-color-basecamp: #a87066;
+}
+
+.section-primer .md-content {
+  border-top: 3px solid var(--section-color-primer);
+}
+.section-essentials .md-content {
+  border-top: 3px solid var(--section-color-essentials);
+}
+.section-field-guides .md-content {
+  border-top: 3px solid var(--section-color-field-guides);
+}
+.section-platforms .md-content {
+  border-top: 3px solid var(--section-color-platforms);
+}
+.section-basecamp .md-content {
+  border-top: 3px solid var(--section-color-basecamp);
+}
+
+/* Beta superscript on site title in header */
+.md-header__topic:first-child .md-ellipsis::after {
+  content: "beta";
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 8px;
+  vertical-align: super;
+}
+
+/* ============================================================
+   LANDING PAGE STYLES
+   Custom hero, pathway cards, sitemap, mailing box
+   ============================================================ */
+
+/* Hide sidebar and TOC on landing page */
+.md-main__inner.landing-page .md-sidebar {
+  display: none;
+}
+.landing-page .md-content {
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Hero section */
+.hhg-hero {
+  background: linear-gradient(135deg, #0f3d3d 0%, #1a5c5c 60%, #237878 100%);
+  color: #faf8f4;
+  padding: 72px 48px 64px;
+  text-align: center;
+  margin: -20px -20px 0;
+}
+.hhg-hero .panic-title {
+  font-size: 64px;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: #e6a45c;
+  margin-bottom: 16px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+.hhg-hero h1 {
+  color: #faf8f4 !important;
+  font-size: 42px !important;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 4px !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.hhg-hero p {
+  font-size: 18px;
+  max-width: 580px;
+  margin: 0 auto;
+  opacity: 0.88;
+  line-height: 1.6;
+}
+
+/* Map placeholder */
+.hhg-map {
+  background: linear-gradient(135deg, #e8f0e8 0%, #f0ece4 30%, #e8eef4 60%, #f4ece8 100%);
+  border: 1px solid #d8d4cc;
+  border-radius: 8px;
+  padding: 48px 32px;
+  text-align: center;
+  margin: 48px auto 8px;
+  max-width: 960px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.hhg-map .map-caption {
+  font-family: "Source Serif 4", serif;
+  font-size: 12px;
+  color: #5a5a5a;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* Pathway cards */
+.hhg-paths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 48px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.hhg-path-card {
+  background: #ffffff;
+  border: 1px solid #d8d4cc;
+  border-radius: 8px;
+  padding: 28px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.hhg-path-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border-color: #237878;
+  transform: translateY(-2px);
+}
+.hhg-path-card h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  color: #1a5c5c;
+  margin-bottom: 8px;
+  border: none !important;
+  padding: 0 !important;
+}
+.hhg-path-card .time {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #d4883a;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.hhg-path-card p {
+  font-size: 14.5px;
+  color: #5a5a5a;
+  line-height: 1.5;
+}
+
+/* Landing section heading */
+.hhg-landing-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 48px 16px;
+}
+.hhg-landing-section h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #d8d4cc;
+}
+
+/* Sitemap */
+.hhg-sitemap {
+  columns: 2;
+  column-gap: 48px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 48px 48px;
+}
+.hhg-sitemap-group {
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+.hhg-sitemap-group h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #5a5a5a;
+  margin-bottom: 6px;
+}
+.hhg-sitemap-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hhg-sitemap-group li {
+  padding: 3px 0;
+}
+.hhg-sitemap-group a {
+  color: #237878;
+  text-decoration: none;
+}
+.hhg-sitemap-group a:hover {
+  color: #d4883a;
+  text-decoration: underline;
+}
+
+/* Mailing box */
+.hhg-mailing-box {
+  background: #ffffff;
+  border: 1px solid #d8d4cc;
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin: 32px auto;
+  max-width: 864px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.hhg-mailing-box h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #1a5c5c;
+  margin-bottom: 6px;
+  border: none !important;
+  padding: 0 !important;
+}
+.hhg-mailing-box p {
+  font-size: 14px;
+  color: #5a5a5a;
+  margin-bottom: 12px;
+}
+
+/* Footer columns */
+.hhg-footer-cols {
+  display: flex;
+  gap: 32px;
+  max-width: 864px;
+  margin: 24px auto;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+.hhg-footer-cols > div {
+  flex: 1;
+}
+.hhg-footer-cols h3 {
+  font-size: 15px;
+  color: #1a5c5c;
+  margin-bottom: 6px;
+  border: none !important;
+  padding: 0 !important;
+}
+.hhg-footer-cols p {
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .hhg-paths {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .hhg-sitemap {
+    columns: 1;
+    padding: 0 24px 24px;
+  }
+  .hhg-hero .panic-title {
+    font-size: 42px;
+  }
+  .hhg-hero h1 {
+    font-size: 28px !important;
+  }
+  .hhg-footer-cols {
+    flex-direction: column;
+  }
+}

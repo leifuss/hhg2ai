@@ -1,0 +1,160 @@
+site_name: "A Hitchhiker's Guide to AI for the Humanities"
+site_url: https://leifuss.github.io/hhg2ai/
+site_description: >-
+  A practical, independent guide for humanities scholars navigating artificial
+  intelligence. Written by a working academic. No hype, no hard sell, no assumed expertise.
+site_author: Leif Isaksen
+repo_url: https://github.com/leifuss/hhg2ai
+edit_uri: edit/claude/create-draft-readme-WtIgb/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
+  font:
+    text: Source Serif 4
+    code: JetBrains Mono
+  palette:
+    - scheme: hhg
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.action.edit
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - How to Use This Guide: how-to-use.md
+  - The Primer:
+    - guide/index.md
+    - Briefing: guide/briefing.md
+    - Getting Started: guide/getting-started.md
+    - Mindset: guide/mindset.md
+    - Use Cases: guide/use-cases.md
+    - Agentic AI: guide/agentic.md
+    - FAQ: guide/faq.md
+  - Essentials:
+    - essentials/index.md
+    - Verification & Citation: essentials/verification.md
+    - Data Governance: essentials/data-governance.md
+    - Prompting Principles: essentials/prompting.md
+    - Disclosure & Ethics: essentials/disclosure.md
+    - Multi-Model Strategy: essentials/multi-model.md
+    - Decision Sheet: essentials/decision-sheet.md
+    - Cost & Plans: essentials/cost.md
+  - Field Guides:
+    - field-guides/index.md
+    - Activities:
+      - Translation & Language: field-guides/translation.md
+      - Ancient Languages & Texts: field-guides/ancient-languages.md
+      - Close Reading & Textual Analysis (coming soon): field-guides/close-reading.md
+      - Images, Objects & Visual Evidence (coming soon): field-guides/images-objects.md
+      - Archives & Manuscripts (coming soon): field-guides/archives.md
+      - Spatial & Geographic Analysis (coming soon): field-guides/spatial.md
+      - Quantitative & Tabular Data (coming soon): field-guides/data.md
+      - Teaching & Assessment (coming soon): field-guides/teaching.md
+    - Discipline Pathways:
+      - Classics & Ancient History: field-guides/pathways/classics.md
+      - Theology & Religious Studies: field-guides/pathways/theology.md
+      - History: field-guides/pathways/history.md
+      - Archaeology: field-guides/pathways/archaeology.md
+      - Literature & Languages: field-guides/pathways/literature.md
+      - Philosophy: field-guides/pathways/philosophy.md
+  - Platform Guides:
+    - How to Choose: platforms/index.md
+    - Claude:
+      - claude/index.md
+      - Chat: claude/chat.md
+      - Cowork: claude/cowork.md
+      - Apps & Extensions: claude/apps.md
+      - Code: claude/code.md
+      - Environments: claude/environments.md
+      - Prerequisites: claude/prerequisites.md
+      - Worked Examples: claude/workflows.md
+      - Glossary: claude/glossary.md
+    - ChatGPT:
+      - chatgpt/index.md
+      - Chat: chatgpt/chat.md
+      - Projects: chatgpt/projects.md
+      - Research, Apps & Agent: chatgpt/research-apps-agent.md
+      - Canvas, Data & Study: chatgpt/canvas-data-study.md
+      - GPTs & Codex: chatgpt/gpts-codex.md
+      - Plans & Privacy: chatgpt/plans-privacy.md
+      - Worked Examples: chatgpt/workflows.md
+    - Gemini:
+      - gemini/index.md
+      - Chat: gemini/chat.md
+      - Gems & Connected Apps: gemini/gems-connected-apps.md
+      - Deep Research, Canvas & Live: gemini/deep-research-canvas-live.md
+      - Coding & Developer Tools: gemini/coding-ai-studio-cli.md
+      - Plans & Privacy: gemini/plans-privacy.md
+      - Worked Examples: gemini/workflows.md
+    - Microsoft Copilot: platforms/copilot-placeholder.md
+  - Basecamp:
+    - basecamp/index.md
+  - Resources: resources/index.md
+  - About: about/index.md
+  - Glossary: glossary/index.md
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/leifuss/hhg2ai
+      name: Contribute on GitHub
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+  - tags
+  - redirects:
+      redirect_maps:
+        'claude/shared-principles.md': 'essentials/index.md'
+        'guide/rules.md': 'essentials/verification.md'
+
+copyright: >-
+  Leif Isaksen · University of Exeter · 2026 ·
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>

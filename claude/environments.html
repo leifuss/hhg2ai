@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Run Claude Code &mdash; Claude Best Practice for Humanities Scholars</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="index.html">Overview</a>
+            <span class="nav-sep">|</span>
+            <a href="chat.html">Chat</a>
+            <span class="nav-sep">|</span>
+            <a href="cowork.html">Cowork</a>
+            <span class="nav-sep">|</span>
+            <a href="apps.html">Apps</a>
+            <span class="nav-sep">|</span>
+            <a href="code.html">Code</a>
+            <span class="nav-sep">|</span>
+            <a href="shared-principles.html">Shared Principles</a>
+            <span class="nav-sep">|</span>
+            <a href="environments.html" class="current">Environments</a>
+            <span class="nav-sep">|</span>
+            <a href="skills.html">Prerequisites</a>
+            <span class="nav-sep">|</span>
+            <a href="workflows.html">Workflows</a>
+            <span class="nav-sep">|</span>
+            <a href="glossary.html">Glossary</a>
+        </nav>
+
+        <header>
+            <h1>Part 6: Where to Run Claude Code</h1>
+            <p class="subtitle">Part of <a href="index.html">Claude Best Practice for Humanities Scholars</a></p>
+        </header>
+
+        <p>Claude Code can run in several environments. Each has trade-offs in terms of setup difficulty, cost, and capability. This section helps you choose.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Environment</th>
+                    <th>Setup difficulty</th>
+                    <th>Cost</th>
+                    <th>Best for</th>
+                    <th>Limitations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Claude Code on the web</strong></td>
+                    <td>None</td>
+                    <td>Pro or Max subscription</td>
+                    <td>Getting started, one-off tasks, self-contained projects</td>
+                    <td>No persistent file system; must upload/download files; no access to local tools</td>
+                </tr>
+                <tr>
+                    <td><strong>Your own laptop/desktop</strong></td>
+                    <td>Low &mdash; run the native installer</td>
+                    <td>Pro or Max subscription, or <abbr class="glossary" title="A unique code that identifies you when using an API, like a password for software access">API key</abbr></td>
+                    <td>Most users. Full control, local files, your own tools</td>
+                    <td>Relies on your machine&rsquo;s hardware; you manage your own software</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Code Desktop</strong></td>
+                    <td>None beyond the desktop app</td>
+                    <td>Pro or Max subscription</td>
+                    <td>Users who want local Code capabilities without the terminal</td>
+                    <td>Requires the Claude Desktop app; less flexible than CLI for scripting and automation</td>
+                </tr>
+                <tr>
+                    <td><strong>GitHub Codespaces</strong></td>
+                    <td>Medium &mdash; create a codespace from a repo</td>
+                    <td>GitHub free tier (60 hrs/month) or paid; plus Claude API key or subscription</td>
+                    <td>Collaborative projects, consistent environments, working from any device</td>
+                    <td>Requires GitHub familiarity; free tier has time limits</td>
+                </tr>
+                <tr>
+                    <td><strong>University/institutional server</strong></td>
+                    <td>Medium to high &mdash; depends on IT support</td>
+                    <td>Usually free (institutional infrastructure); plus Claude API key</td>
+                    <td>Large datasets, shared projects, data governance compliance</td>
+                    <td>May need IT approval; institutional firewalls may block API calls</td>
+                </tr>
+                <tr>
+                    <td><strong>Cloud <abbr class="glossary" title="Virtual Machine &mdash; a computer simulated in software, used to run code in isolation from your real system">VM</abbr> (AWS, GCP, Azure)</strong></td>
+                    <td>High &mdash; cloud account setup, VM management</td>
+                    <td>Cloud compute costs + Claude API key</td>
+                    <td>Heavy compute tasks, long-running batch processing, team projects</td>
+                    <td>Requires cloud infrastructure knowledge; ongoing costs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section>
+            <h2>Recommendations by situation</h2>
+
+            <h3>I&rsquo;m just starting out</h3>
+            <p>If you are new to Claude entirely, start with <a href="chat.html">Chat</a> &mdash; you do not need Code at all for most humanities work. If you have used Chat and want to try building something, <strong>Claude Code on the web</strong> is the lowest-friction entry point: no installation, no configuration, no risk to your local files. Try a small project and see whether Code is useful for your work before investing in a more complex setup.</p>
+
+            <h3>I want to use Code regularly for my research</h3>
+            <p>Install <strong>Claude Code on your laptop or desktop</strong>. This gives you full access to your files, your reference managers, your LaTeX installation, and any other tools you use. It is the most natural environment for sustained work.</p>
+
+            <h3>I&rsquo;m working with collaborators on a shared project</h3>
+            <p>Consider <strong>GitHub Codespaces</strong>. Everyone gets the same environment, the project lives in a shared repository, and you can work from any machine with a browser. This is especially useful for digital edition projects or collaborative tool-building where consistency matters.</p>
+
+            <h3>I need to process sensitive or restricted data</h3>
+            <p>Talk to your <strong>institutional IT team</strong> about running Claude Code on an institutional server. This keeps data within your institution&rsquo;s infrastructure. You will still need an API key for Claude, and you should confirm that API calls to Anthropic&rsquo;s servers are permitted under your data governance policy. Note that the data is still sent to Anthropic for processing &mdash; the institutional server controls where files are stored, not where the AI processing happens.</p>
+
+            <h3>I have very large datasets or long-running tasks</h3>
+            <p>A <strong>cloud VM</strong> may be appropriate, but only if you (or someone on your team) is comfortable managing cloud infrastructure. For most humanities projects, the web version or a local installation will be sufficient.</p>
+        </section>
+
+        <section>
+            <h2>A note on IDE integration</h2>
+
+            <p>Claude Code can also run inside code editors like VS Code and JetBrains IDEs as an extension. If you already use one of these editors for other work (LaTeX editing, Python scripting, web development), the integrated experience can be convenient &mdash; you get Claude&rsquo;s assistance directly alongside your files and terminal. But an IDE is not required; the standalone CLI works perfectly well.</p>
+
+            <p>The Claude Desktop app also supports <strong>remote sessions</strong> &mdash; Code sessions that run on Anthropic&rsquo;s cloud infrastructure and continue even if you close the app. This is useful for long-running tasks (batch processing large corpora, overnight builds) where you do not want to keep your machine running. Remote sessions are available through the Desktop app&rsquo;s Code tab.</p>
+        </section>
+
+        <footer>
+            <p><a href="shared-principles.html" class="nav-link">&larr; Part 5: Shared Principles</a></p>
+            <p><a href="skills.html" class="nav-link">Part 7: Prerequisites &rarr;</a></p>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem;">v1.0 &middot; Last updated 8 March 2026</p>
+            <p style="font-size: 0.85rem;">This guide is actively maintained. If something was useful, unclear, or missing &mdash; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZSvChJSQgi428ByMSdFCs0Ltk1BBk1tce2zteZEVY5jT63Q/viewform?usp=pp_url&amp;entry.1470426217=Claude+Best+Practice" target="_blank">let us know</a>. (Please do not include personal, confidential, or sensitive information in your feedback.)</p>
+        </footer>
+    </div>
+</body>
+</html>

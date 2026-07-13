@@ -10,16 +10,16 @@ window.defined_institutions.exeter = {
         'resources-institution':
             '<h2>At Exeter</h2>' +
             '<div class="highlight">' +
-                '<p>These are your institutional starting points. Bookmark them; they change.</p>' +
+                '<p>These are your institutional starting points. Bookmark them.</p>' +
 
                 '<h3>Enabling AI at Exeter</h3>' +
                 '<ul>' +
                     '<li><strong>Enabling AI hub</strong> &mdash; The university&rsquo;s central page for AI strategy, policy, the AI Catalogue of approved tools, and training resources.<br>' +
-                    '<a href="https://www.exeter.ac.uk/about/vision/enabling-ai/" target="_blank">exeter.ac.uk/about/vision/enabling-ai/</a></li>' +
+                    '<a href="https://www.exeter.ac.uk/about/strategies/enabling-ai/" target="_blank">exeter.ac.uk/about/strategies/enabling-ai/</a></li>' +
                     '<li><strong>AI Policy</strong> &mdash; Principles for using AI at Exeter: fairness, transparency, data protection, and ethical standards.<br>' +
                     '<a href="https://www.exeter.ac.uk/v8media/aboutus/strategies/documents/POL020_-_AI_Policy.pdf" target="_blank">AI Policy (PDF)</a></li>' +
                     '<li><strong>Responsible use of AI in research</strong> &mdash; Guidance for researchers, including the AI Catalogue and sustainability considerations.<br>' +
-                    '<a href="https://www.exeter.ac.uk/about/vision/enabling-ai/ai-for-researchers/" target="_blank">exeter.ac.uk/&hellip;/ai-for-researchers/</a></li>' +
+                    '<a href="https://www.exeter.ac.uk/about/strategies/enabling-ai/ai-for-researchers/" target="_blank">exeter.ac.uk/&hellip;/ai-for-researchers/</a></li>' +
                 '</ul>' +
 
                 '<h3>Teaching and assessment</h3>' +
@@ -32,7 +32,7 @@ window.defined_institutions.exeter = {
 
                 '<h3>Research centres and institutes</h3>' +
                 '<ul>' +
-                    '<li><strong>CRAIC</strong> (Centre for Sherlock Holmes AI and Creativity) &mdash; Interdisciplinary research centre exploring AI and creativity.<br>' +
+                    '<li><strong>CRAIC</strong> (Critical AI Centre) &mdash; interdisciplinary research hub dedicated to exploring the complex and evolving roles and risks associated with conceptions of artificial intelligence in society.<br>' +
                     '<a href="https://cdf.exeter.ac.uk/communications/research/centres/craic/" target="_blank">cdf.exeter.ac.uk/&hellip;/craic/</a></li>' +
                     '<li><strong>Digital Humanities Lab</strong> &mdash; Supporting digital methods across the humanities, including text analysis, spatial humanities, and data visualisation.<br>' +
                     '<a href="https://www.exeter.ac.uk/research/digitalhumanities/digital-lab/" target="_blank">exeter.ac.uk/research/digitalhumanities/digital-lab/</a></li>' +
