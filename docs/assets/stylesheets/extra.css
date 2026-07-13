@@ -584,3 +584,37 @@
     flex-direction: column;
   }
 }
+
+/* Site-wide branding / funder acknowledgement footer */
+.hhg-brand-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 16px 8px;
+  text-align: center;
+}
+.hhg-brand-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px 40px;
+  margin-bottom: 10px;
+}
+.hhg-brand-logos img {
+  height: 44px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+.hhg-brand-text {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  max-width: 640px;
+  margin: 0 auto;
+}
+[data-md-color-scheme="slate"] .hhg-brand-footer {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+@media print {
+  .hhg-brand-footer { display: block; }
+}
