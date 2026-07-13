@@ -68,7 +68,7 @@ MCP
 :   Model Context Protocol --- an open standard for connecting AI to external tools and data sources (databases, APIs, file systems). Optional; many projects use AI tools without any MCP servers.
 
 Model
-:   The underlying AI system that generates responses. Anthropic offers models at different capability/speed trade-offs: Opus (most capable), Sonnet (balanced), and Haiku (fastest). As of early 2026, the current generation is the Claude 4 family.
+:   The underlying AI system that generates responses. Providers offer models at different capability/speed trade-offs --- for Anthropic, historically Opus (most capable), Sonnet (balanced), and Haiku (fastest). Model generations change rapidly; by mid-2026 Anthropic had released Claude Fable 5 and OpenAI the GPT-5.6 family. Always check which model your tool is currently using rather than relying on a named generation.
 
 npm
 :   Node Package Manager --- a tool for installing JavaScript software packages. A legacy method for installing some AI tools; native installers are now typically preferred.

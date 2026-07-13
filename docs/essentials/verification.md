@@ -106,7 +106,7 @@ Record what went in, what rules were applied, and what came out. Keep transforma
 If you use LLM output in published research or teaching, document how it was used. Good provenance records include:
 
 - **The date** of the interaction
-- **The model** used (e.g. Claude Opus 4, GPT-4o, Gemini 2.5 Pro) and the interface (Chat, API, Code, etc.)
+- **The model** used (e.g. Claude Fable 5 or Opus 4.x, a GPT-5.6 model, Gemini 3.x) and the interface (Chat, API, Code, etc.)
 - **The prompt** you gave (or a summary of it)
 - **What you used** from the response
 - **How you verified it** --- what checks you ran, what sources you consulted
