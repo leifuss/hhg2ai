@@ -85,6 +85,9 @@ Prompt
 Prompt engineering
 :   The practice of crafting effective prompts to get better results from AI. Ranges from simple techniques (being specific, providing examples) to complex strategies (chain-of-thought reasoning, role assignment).
 
+Public domain
+:   Material that is out of copyright (in the UK, typically 70 years after the author's death) or was never protected by it. Commonly misunderstood: "public domain" does *not* mean "publicly available" --- a journal article you can read online is usually still in copyright. The distinction matters when deciding what can be uploaded to AI tools. See [Data Governance](../essentials/data-governance.md#published-public-domain-and-licensed-material).
+
 RAG
 :   Retrieval-Augmented Generation --- a technique where an AI retrieves relevant documents before generating a response, rather than relying solely on its training data. Projects approximate this by giving AI access to your uploaded documents.
 
